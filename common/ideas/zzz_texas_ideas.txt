@@ -1,0 +1,23 @@
+# ideas = {
+# 	country = {
+# 		houston_concrete_city = {
+# 			picture = GFX_idea_generic_religion
+# 			allowed = {
+# 				always = yes
+# 			}
+# 			allowed_civil_war = {
+# 				always = yes
+# 			}
+# 			removal_cost = -1
+# 			research_bonus = {
+# 				air_tech_category = 0.10
+# 			}
+# 			modifier = {
+# 				stability_factor = -0.10
+# 				caps_flat_income_modifier = -15
+# 				consumer_goods_expected_value = 0.15
+# 				monthly_population = 0.15
+# 			}
+# 		}
+# 	}
+# }

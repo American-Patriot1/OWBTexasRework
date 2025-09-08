@@ -1,0 +1,169 @@
+﻿division_template = {
+	name = "Patrol Basher"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+	}
+	support = {
+		demolitions_support = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Beating Bikers"
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+	}
+	support = {
+		demolitions_support = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	#
+	division = {
+		name = "Advanced Beaters"
+		location = 11959
+		division_template = "Beating Bikers"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Beating Riders"
+		location = 11959
+		division_template = "Beating Bikers"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Riding Beaters"
+		location = 11959
+		division_template = "Beating Bikers"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Lightning Riders"
+		location = 11961
+		division_template = "Beating Bikers"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Frech Riders"
+		location = 12014
+		division_template = "Beating Bikers"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+
+	# Infantry
+	division = {
+		name = "Stunning Beaters"
+		location = 851
+		division_template = "Patrol Basher"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Boundless Beaters"
+		location = 851
+		division_template = "Patrol Basher"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Annoying Beaters"
+		location = 11980
+		division_template = "Patrol Basher"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Hard Beaters"
+		location = 11980
+		division_template = "Patrol Basher"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Hardass Beaters"
+		location = 11956
+		division_template = "Patrol Basher"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "More Rookies"
+		location = 11956
+		division_template = "Patrol Basher"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Even More Rookies"
+		location = 11956
+		division_template = "Patrol Basher"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Absurd Amounts of Rookies"
+		location = 11956
+		division_template = "Patrol Basher"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Rookies for Sale"
+		location = 11956
+		division_template = "Patrol Basher"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Rookies Everywhere"
+		location = 11956
+		division_template = "Patrol Basher"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Tubeheaded Rookies"
+		location = 12014
+		division_template = "Patrol Basher"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Tincan Spooks"
+		location = 11961
+		division_template = "Patrol Basher"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment
+			creator = "GAM"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

@@ -1,0 +1,168 @@
+﻿capital = 928
+
+oob = "LNS_2275"
+
+set_technology = {
+	basic_supply_transport_tech = 1
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	#infantry_tech_level_scientific = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	#support_tech_level_scientific = 1
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	#special_forces_tech_level_scientific = 1
+	#power_armour_tech_level_settler = 1
+	#1power_armour_tech_level_scientific = 1
+	vehicles_tech_level_tribal = 1
+	vehicles_tech_level_settler = 1
+	#vehicles_tech_level_scientific = 1
+	robotics_tech_level_tribal = 1
+	robotics_tech_level_settler = 1
+	#robotics_tech_level_scientific = 1
+	air_tech_level_tribal = 1
+	air_tech_level_settler = 1
+	#air_tech_level_scientific = 1
+	naval_tech_level_tribal = 1
+	naval_tech_level_settler = 1
+	#naval_tech_level_scientific = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	#tools_tech_level_scientific = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	#habitation_tech_level_scientific = 1
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	#exploitation_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+	#electronics_tech_level_scientific = 1
+	tribal_civilization = 1
+	settled_civilization = 1
+	tool_engineering = 1
+	standard_weaponry_tech = 1
+	ballistic_weaponry_tech_1 = 1
+	melee_weaponry_tech_1 = 1
+	pre_construction_industry_tech = 1
+	pre_agriculture_industry_tech = 1
+	pre_recycling_industry_tech = 1
+	basic_industry_tech = 1
+	support_weaponry = 1
+	nautics_tech_1 = 1
+	light_navy_hull_tech_1 = 1
+	naval_invasion_tech_1 = 1
+	bike_tech_1 = 1
+	spec_ops_equipment_tech_1 = 1
+}
+
+set_country_flag = dont_give_settler_generic_political_advisors
+set_country_flag = dont_give_settler_generic_high_command
+set_country_flag = dont_give_settler_generic_theorists
+set_country_flag = dont_give_settler_generic_chiefs
+set_country_flag = no_generic_advisor
+set_country_flag = no_generic_chief
+set_country_flag = no_generic_political_advisors
+set_country_flag = no_generic_high_command
+set_country_flag = no_generic_theorists
+set_country_flag = has_unique_manpower_law
+set_country_flag = is_texas_nation
+set_country_flag = grand_doctrine_ai
+set_country_flag = grand_infantry_doctrine_ai
+
+set_stability = 0.45
+set_war_support = 0.4
+set_research_slots = 3
+
+add_opinion_modifier = {
+	target = LUB
+	modifier = lubbock_expedition
+}
+reverse_add_opinion_modifier = {
+	target = LUB
+	modifier = lubbock_expedition
+}
+
+set_politics = {
+	ruling_party = people
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 20
+	elites = 7
+	intellectuals = 3
+	ruler = 70
+}
+
+add_ideas = {
+	# Ideas #
+	LNS_idea_hand_gang_resurgence
+	LNS_idea_fatigued_lawmen
+	LNS_idea_controllers_of_the_I20
+	LNS_idea_tbh_advisors
+	# Laws #
+	lns_mercenary_primacy
+	outsider_law_auxiliaries
+	undesirables_law_none
+	mutant_law_both
+	officer_law_professional_mercenaries
+	training_law_mercenaries
+	low_economic_mobilisation
+	free_trade
+	political_effort_press
+	chems_legalised
+	currencytexdollar
+}
+
+add_dynamic_modifier = {
+	modifier = texan_economic_union
+}
+
+diplomatic_relation = {
+	country = LUB
+	relation = guarantee
+	active = yes
+}
+add_ai_strategy = {
+	type = protect
+	id = LUB
+	value = 50
+}
+
+recruit_character = LNS_warlord_hand
+recruit_character = LNS_col_lane_ward
+recruit_character = LNS_maj_mason_oliver
+recruit_character = LNS_cpt_marvin_burch
+recruit_character = LNS_centurion_sarrius
+recruit_character = LNS_centurion_renatus
+recruit_character = LNS_cyamus_asina
+recruit_character = LNS_eastern_hodge
+recruit_character = LNS_faustus_of_amarillo
+recruit_character = LNS_ralph_murdok
+recruit_character = LNS_wound_breeder
+recruit_character = LNS_marcus_fletcher
+recruit_character = LNS_arnold_gore
+recruit_character = LNS_TEX_congress
+recruit_character = LNS_r_hacius
+recruit_character = LNS_chak_conway
+
+random_character = {
+	limit = {
+		is_character = LNS_warlord_hand
+	}
+	save_global_event_target_as = LNS_warlord_hand_target
+}
+random_character = {
+	limit = {
+		is_character = LNS_centurion_sarrius
+	}
+	save_global_event_target_as = LNS_centurion_sarrius_target
+}
+random_character = {
+	limit = {
+		is_character = LNS_centurion_renatus
+	}
+	save_global_event_target_as = LNS_centurion_renatus_target
+}

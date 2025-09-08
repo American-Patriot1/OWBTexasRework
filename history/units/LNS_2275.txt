@@ -1,0 +1,141 @@
+﻿division_template = {
+	name = "Settlement Garrison Mercenaries"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	is_locked = yes
+	priority = 0
+}
+
+division_template = {
+	name = "Mixed Mercenary Force"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+	}
+	is_locked = yes
+}
+
+division_template = {
+	name = "I-20 Patrolmen"
+	regiments = {
+		spec_ops = { x = 0 y = 0 }
+		spec_ops = { x = 0 y = 1 }
+		spec_ops = { x = 1 y = 0 }
+		spec_ops = { x = 1 y = 1 }
+		spec_ops = { x = 1 y = 1 }
+		spec_ops = { x = 2 y = 0 }
+	}
+	support = {
+		recon_company = { x = 0 y = 0 }
+	}
+	priority = 2
+}
+
+division_template = {
+	name = "Rapid Response Corps"
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 2 y = 0 }
+	}
+	support = {
+		recon_company = { x = 0 y = 0 }
+	}
+	priority = 2
+}
+
+units = {
+	# Settlement Garrison Mercs
+	division = {
+		name = "Haskell Garrison"
+		location = 11700
+		division_template = "Settlement Garrison Mercenaries"
+		start_experience_factor = 0.25
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Lone Star Garrison"
+		location = 11666
+		division_template = "Settlement Garrison Mercenaries"
+		start_experience_factor = 0.25
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Leetown Garrison"
+		location = 3141
+		division_template = "Settlement Garrison Mercenaries"
+		start_experience_factor = 0.25
+		start_equipment_factor = 1.0
+	}
+	# I-20 Patrolmen
+	division = {
+		name = "Southern Patrol"
+		location = 3141
+		division_template = "I-20 Patrolmen"
+		start_experience_factor = 0.45
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Northern Patrol"
+		location = 11705
+		division_template = "I-20 Patrolmen"
+		start_experience_factor = 0.45
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Western Patrol"
+		location = 1845
+		division_template = "I-20 Patrolmen"
+		start_experience_factor = 0.45
+		start_equipment_factor = 1.0
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = ballistic_equipment_1
+			creator = "LNS"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = spec_ops_equipment_1
+			creator = "LNS"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "LNS"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = bike_equipment_1
+			creator = "LNS"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

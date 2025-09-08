@@ -1,0 +1,2602 @@
+focus_tree = {
+	id = Alamo_chapter_nf
+	country = {
+		factor = 0
+		modifier = {
+			add = 25
+			tag = ACH
+		}
+	}
+
+	default = no
+
+	focus = {
+		id = ach_nf_consolidation
+		icon = GFX_goal_ACH_Insignia
+		cost = 7
+		x = 14
+		y = 0
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] Alamo_chapter_nf entered"
+			}
+			country_event = nf_event_ach.1
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] Alamo_chapter_nf exited"
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_technological_recovery
+		icon = GFX_goal_ACH_startup
+		cost = 7
+		x = 0
+		y = 1
+
+		relative_position_id = ach_nf_consolidation
+
+		prerequisite = {
+			focus = ach_nf_consolidation
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_technological_recovery entered"
+			}
+			country_event = nf_event_ach.2
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_technological_recovery exited"
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_houston_communications
+		icon = GFX_goal_moj_repconn_rocket
+		cost = 30
+		x = 0
+		y = 1
+
+		relative_position_id = ach_nf_technological_recovery
+
+		prerequisite = {
+			focus = ach_nf_technological_recovery
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_houston_communications entered"
+			}
+			country_event = nf_event_ach.4
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_houston_communications exited"
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_stop_the_manhunt
+		icon = GFX_goal_cph_sledgehammer_raider
+		cost = 30
+		x = 2
+		y = 1
+
+		relative_position_id = ach_nf_technological_recovery
+
+		prerequisite = {
+			focus = ach_nf_technological_recovery
+		}
+
+		bypass = {
+			OR = {
+				NOT = { country_exists = PER }
+				PER = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+		}
+		will_lead_to_war_with = PER
+		completion_reward = {
+			PER = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = {
+		id = ach_nf_mutant_bulwark
+		icon = GFX_goal_generic_helm_mutant
+		cost = 30
+		x = -2
+		y = 1
+
+		relative_position_id = ach_nf_technological_recovery
+
+		prerequisite = {
+			focus = ach_nf_technological_recovery
+		}
+
+		completion_reward = {
+			hidden_effect = {
+				903 = {
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11366
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11359
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11352
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11348
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11345
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11337
+					}
+				}
+				910 = {
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11399
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11390
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 783
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 787
+					}
+				}
+				908 = {
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11437
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11440
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11455
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11439
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11423
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 6984
+					}
+				}
+				909 = {
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11457
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11449
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11443
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11438
+					}
+				}
+			}
+			custom_effect_tooltip = alamo_mutant_bulwark_tt
+		}
+	}
+
+	focus = {
+		id = ach_nf_contact_west
+		icon = GFX_goal_BOS_generic
+		cost = 30
+		x = 0
+		y = 1
+
+		relative_position_id = ach_nf_houston_communications
+
+		prerequisite = {
+			focus = ach_nf_houston_communications
+		}
+		prerequisite = {
+			focus = ach_nf_stop_the_manhunt
+		}
+
+		available = {
+			OR = {
+				has_military_access_to = HRO
+				has_full_control_of_state = 880
+			}
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_contact_west entered"
+			}
+			country_event = nf_event_ach.5
+			#ARM Wargoal on ACH, delayed to be about ~320ish days after ACH's conquest of PER
+			hidden_effect = {
+				ARM = {
+					ARM_zapata_good = {
+						unit_leader_event = {
+							id = nf_arm.40
+							days = 175
+						}
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_contact_west exited"
+			}
+		}
+	}
+
+	# Boost the Coms
+	focus = {
+		id = ach_nf_boost_the_signal
+		icon = GFX_goal_generic_radar
+		cost = 30
+		x = 0
+		y = 1
+
+		relative_position_id = ach_nf_contact_west
+
+		prerequisite = {
+			focus = ach_nf_contact_west
+		}
+
+		available = {
+			OR = {
+				has_full_control_of_state = 880
+				has_military_access_to = HRO
+			}
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_boost_the_signal entered"
+			}
+			add_tech_bonus = {
+				name = "Signal Boosts"
+				bonus = 0.75
+				uses = 1
+				category = radar_tech
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_boost_the_signal exited"
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_fix_arrays
+		icon = GFX_goal_enc_radio_military
+		cost = 30
+		x = 0
+		y = 1
+
+		relative_position_id = ach_nf_boost_the_signal
+
+		prerequisite = {
+			focus = ach_nf_boost_the_signal
+		}
+
+		available = {
+			has_tech = decimetric_radar
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_fix_arrays entered"
+			}
+			880 = {
+				add_building_construction = {
+					type = radar_station
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_fix_arrays exited"
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_boost_the_signal_2
+		icon = GFX_goal_usa_gecko_power_plant
+		cost = 30
+		x = 0
+		y = 1
+
+		relative_position_id = ach_nf_fix_arrays
+
+		prerequisite = {
+			focus = ach_nf_fix_arrays
+		}
+		available = {
+			has_tech = resource_generator_power_tech_1
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_boost_the_signal_2 entered"
+			}
+			880 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = electricity_generator
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_boost_the_signal_2 exited"
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_fix_arrays_2
+		icon = GFX_goal_MOJ_scribal_thought
+		cost = 30
+		x = 0
+		y = 1
+
+		relative_position_id = ach_nf_boost_the_signal_2
+
+		prerequisite = {
+			focus = ach_nf_boost_the_signal_2
+		}
+
+		available = {
+			has_tech = improved_decimetric_radar
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_fix_arrays_2 entered"
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 4
+				category = encryption_tech
+				category = decryption_tech
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_fix_arrays_2 exited"
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_boost_the_signal_3
+		icon = GFX_goal_MOJ_contact_the_west
+		cost = 30
+		x = 0
+		y = 1
+
+		relative_position_id = ach_nf_fix_arrays_2
+
+		prerequisite = {
+			focus = ach_nf_fix_arrays_2
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_boost_the_signal_3 entered"
+			}
+			set_technology = {
+				electronics_tech_level_scientific = 1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_boost_the_signal_3 exited"
+			}
+		}
+	}
+	focus = {
+		id = ach_nf_plea_for_help_bos
+		icon = GFX_goal_BOS_elder_recalled
+		cost = 30
+		x = 0
+		y = 1
+
+		relative_position_id = ach_nf_boost_the_signal_3
+
+		prerequisite = {
+			focus = ach_nf_boost_the_signal_3
+		}
+
+		#available = {
+		#	has_completed_focus = ach_nf_boost_the_signal_3
+		#}
+
+		#mutually_exclusive = {
+		#	focus = ach_nf_united_front
+		#}
+
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_plea_for_help_bos entered"
+			}
+			country_event = nf_event_ach.42
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_plea_for_help_bos exited"
+			}
+		}
+	}
+
+	# Circle of Steel/armed forces
+	focus = {
+		id = ach_nf_elder_emergency_authority
+		icon = GFX_goal_TBH_two_coins
+		cost = 30
+		x = -7
+		y = 1
+
+		relative_position_id = ach_nf_contact_west
+
+		prerequisite = {
+			focus = ach_nf_contact_west
+		}
+
+		available = {
+			has_war = yes
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_elder_emergency_authority entered"
+			}
+			add_country_leader_trait = elder_emergency_authority_trait
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_elder_emergency_authority exited"
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_military_upgrades_2
+		icon = GFX_goal_fortify_the_westwall
+		cost = 30
+		x = -2
+		y = 1
+
+		relative_position_id = ach_nf_elder_emergency_authority
+
+		prerequisite = {
+			focus = ach_nf_elder_emergency_authority
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_military_upgrades_2 entered"
+			}
+			#add_ideas = { ach_emergency_defenses_idea }
+			add_timed_idea = {
+				idea = ach_emergency_defenses_idea
+				days = 600
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_military_upgrades_2 exited"
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_bunker_grid
+		icon = GFX_goal_generic_bunkers_focus
+		cost = 30
+		x = -1
+		y = 1
+
+		relative_position_id = ach_nf_military_upgrades_2
+
+		prerequisite = {
+			focus = ach_nf_military_upgrades_2
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_bunker_grid entered"
+			}
+			hidden_effect = {
+				908 = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = 11427
+					}
+				}
+				903 = {
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						instant_build = yes
+						province = {
+							all_provinces = yes
+							limit_to_naval_base = yes
+						}
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11366
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11359
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11352
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11348
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11345
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11337
+					}
+				}
+				910 = {
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11399
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11390
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 783
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 787
+					}
+				}
+				908 = {
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11437
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11440
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11455
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11439
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11423
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 6984
+					}
+				}
+				909 = {
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11457
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11449
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11443
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = 11438
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						instant_build = yes
+						province = 11446
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						instant_build = yes
+						province = 11429
+					}
+				}
+				799 = {
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						instant_build = yes
+						province = {
+							all_provinces = yes
+							limit_to_naval_base = yes
+						}
+					}
+				}
+				if = {
+					limit = { controls_state = 904 }
+					904 = {
+						add_building_construction = {
+							type = bunker
+							level = 1
+							instant_build = yes
+							province = 11465
+						}
+						add_building_construction = {
+							type = bunker
+							level = 1
+							instant_build = yes
+							province = 11459
+						}
+						add_building_construction = {
+							type = bunker
+							level = 1
+							instant_build = yes
+							province = 8590
+						}
+					}
+				}
+			}
+			custom_effect_tooltip = fortify_alamo_tooltip
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_bunker_grid entered"
+			}
+		}
+	}
+	focus = {
+		id = ach_nf_bunker_grid_2
+		icon = GFX_goal_generic_fortify_city
+		cost = 30
+		x = 0
+		y = 1
+
+		relative_position_id = ach_nf_bunker_grid
+
+		prerequisite = {
+			focus = ach_nf_bunker_grid
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_bunker_grid_2 entered"
+			}
+			hidden_effect = {
+				908 = {
+					add_building_construction = {
+						type = bunker2
+						level = 2
+						instant_build = yes
+						province = 11427
+					}
+				}
+				908 = {
+					add_building_construction = {
+						type = bunker2
+						level = 1
+						instant_build = yes
+						province = 11437
+					}
+					add_building_construction = {
+						type = bunker2
+						level = 1
+						instant_build = yes
+						province = 11440
+					}
+					add_building_construction = {
+						type = bunker2
+						level = 1
+						instant_build = yes
+						province = 11455
+					}
+					add_building_construction = {
+						type = bunker2
+						level = 1
+						instant_build = yes
+						province = 11439
+					}
+					add_building_construction = {
+						type = bunker2
+						level = 1
+						instant_build = yes
+						province = 11423
+					}
+					add_building_construction = {
+						type = bunker2
+						level = 1
+						instant_build = yes
+						province = 6984
+					}
+				}
+				if = {
+					limit = { controls_state = 904 }
+					904 = {
+						add_building_construction = {
+							type = bunker2
+							level = 2
+							instant_build = yes
+							province = 11465
+						}
+						add_building_construction = {
+							type = bunker2
+							level = 2
+							instant_build = yes
+							province = 11459
+						}
+						add_building_construction = {
+							type = bunker2
+							level = 2
+							instant_build = yes
+							province = 8590
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							instant_build = yes
+							province = {
+								all_provinces = yes
+								limit_to_border = yes
+							}
+						}
+					}
+				}
+			}
+			custom_effect_tooltip = fortify_alamo_2_tooltip
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_bunker_grid_2 exited"
+			}
+		}
+	}
+	focus = {
+		id = ach_nf_military_upgrades
+		icon = GFX_goal_generic_BOS_focus_surface_outposts
+		cost = 30
+		x = 2
+		y = 1
+
+		relative_position_id = ach_nf_elder_emergency_authority
+
+		prerequisite = {
+			focus = ach_nf_elder_emergency_authority
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_military_upgrades entered"
+			}
+			add_timed_idea = {
+				idea = ach_emergency_production_idea
+				days = 150
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_military_upgrades exited"
+			}
+		}
+	}
+	focus = {
+		id = ach_nf_emergency_draft
+		icon = GFX_goal_BOS_welcoming_committee
+		cost = 30
+		x = 1
+		y = 1
+
+		relative_position_id = ach_nf_military_upgrades
+
+		prerequisite = {
+			focus = ach_nf_military_upgrades
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_emergency_draft entered"
+			}
+			if = {
+				limit = {
+					has_idea = ach_emergency_draft_idea
+				}
+				swap_ideas = {
+					remove_idea = ach_emergency_draft_idea
+					add_idea = ach_emergency_draft_idea_2
+				}
+			}
+			else = {
+				add_ideas = ach_emergency_draft_idea
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_nf_emergency_draft exited"
+			}
+		}
+	}
+	focus = {
+		id = ach_nf_emergency_xp
+		icon = GFX_goal_bos_scribes
+		cost = 30
+		x = 0
+		y = 1
+
+		relative_position_id = ach_nf_emergency_draft
+
+		prerequisite = {
+			focus = ach_nf_emergency_draft
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			add_stability = -0.025
+			army_experience = 25
+			add_command_power = 25
+		}
+	}
+
+	focus = {
+		id = ach_nf_desperate_defense
+		icon = GFX_goal_generic_bos_outcast
+		cost = 30
+		x = 0
+		y = 1
+
+		relative_position_id = ach_nf_elder_emergency_authority
+
+		prerequisite = {
+			focus = ach_nf_elder_emergency_authority
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_tech = demolitions_weaponry_tech } }
+					set_technology = {
+						demolitions_weaponry_tech = 1
+						popup = no
+					}
+				}
+				if = {
+					limit = { NOT = { has_tech = fireteam_weaponry_tech } }
+					set_technology = {
+						fireteam_weaponry_tech = 1
+						popup = no
+					}
+				}
+				if = {
+					limit = { NOT = { has_tech = support_weaponry } }
+					set_technology = {
+						support_weaponry = 1
+						popup = no
+					}
+				}
+				load_oob = ACH_alamo_defenders
+			}
+			custom_effect_tooltip = alamo_desperate_defence_tooltip
+		}
+	}
+
+	focus = {
+		id = ach_nf_yeomen
+		icon = GFX_goal_BOS_outsider_recruitment
+		cost = 30
+		x = 1
+		y = 1
+
+		relative_position_id = ach_nf_desperate_defense
+
+		prerequisite = {
+			focus = ach_nf_desperate_defense
+		}
+
+		mutually_exclusive = {
+			focus = ach_nf_robot_production
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ach_emergency_draft_idea
+				}
+				swap_ideas = {
+					remove_idea = ach_emergency_draft_idea
+					add_idea = ach_emergency_draft_idea_2
+				}
+			}
+			else = {
+				add_ideas = ach_emergency_draft_idea
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_robot_production
+		icon = GFX_goal_generic_protectron_conceptart_primm_slimm
+		cost = 30
+		x = -1
+		y = 1
+
+		relative_position_id = ach_nf_desperate_defense
+
+		prerequisite = {
+			focus = ach_nf_desperate_defense
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		mutually_exclusive = {
+			focus = ach_nf_yeomen
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_tech = robotics_tech_level_settler }
+				set_technology = { robotics_tech_level_scientific = 1 }
+			}
+			else = {
+				# limit = { has_tech = robotics_tech_level_tribal }
+				set_technology = { robotics_tech_level_settler = 1 }
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_circuit_breakers
+		icon = GFX_goal_CES_bos_war
+		cost = 30
+		x = -1
+		y = 3
+
+		relative_position_id = ach_nf_elder_emergency_authority
+
+		prerequisite = {
+			focus = ach_nf_yeomen
+			focus = ach_nf_robot_production
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			custom_effect_tooltip = ach_robot_war_idea_tt
+			hidden_effect = {
+				add_ideas = ach_robot_war_idea
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_warmongering_mutants
+		icon = GFX_goal_BOS_steel_giants
+		cost = 30
+		x = 1
+		y = 3
+
+		relative_position_id = ach_nf_elder_emergency_authority
+
+		prerequisite = {
+			focus = ach_nf_yeomen
+			focus = ach_nf_robot_production
+		}
+
+		completion_reward = {
+			add_ideas = ach_mutant_war_idea
+		}
+	}
+
+	focus = {
+		id = ach_nf_united_front
+		icon = GFX_goal_RRG_rio_bos
+		cost = 30
+		x = -1
+		y = 1
+
+		relative_position_id = ach_nf_warmongering_mutants
+
+		prerequisite = {
+			focus = ach_nf_warmongering_mutants
+		}
+		prerequisite = {
+			focus = ach_nf_circuit_breakers
+		}
+		prerequisite = {
+			focus = ach_nf_emergency_xp
+		}
+		prerequisite = {
+			focus = ach_nf_bunker_grid_2
+		}
+		#mutually_exclusive = {
+		#	focus = ach_nf_plea_for_help_bos
+		#	focus = ach_nf_tex_comes
+		#}
+		available = {
+			TBH = {
+				exists = yes
+				NOT = {
+					has_war_with = ACH
+				}
+			}
+			surrender_progress > 0.15
+		}
+		completion_reward = {
+			custom_effect_tooltip = ACH_join_tbh_tt
+			TBH = { country_event = { id = nf_event_ach.45 } }
+		}
+		ai_will_do = {
+			base = 100
+			modifier = {
+				surrender_progress < 0.25
+				factor = 0.5
+			}
+			modifier = {
+				surrender_progress > 0.5
+				factor = 5
+			}
+			modifier = {
+				surrender_progress > 0.75
+				factor = 5	# Stacking with above is intentional
+			}
+		}
+	}
+	# Industrial Development
+	focus = {
+		id = ach_nf_workshop_forges
+		icon = GFX_goal_CAR_april_Begin_Industrialization
+		cost = 60
+		x = -16
+		y = 1
+
+		relative_position_id = ach_nf_contact_west
+
+		prerequisite = {
+			focus = ach_nf_contact_west
+		}
+
+		completion_reward = {
+			910 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ach_nf_civilian_forges
+		icon = GFX_goal_enc_reform_industry_3
+		cost = 45
+		x = -2
+		y = 2
+
+		relative_position_id = ach_nf_workshop_forges
+
+		prerequisite = {
+			focus = ach_nf_workshop_forges
+		}
+
+		mutually_exclusive = {
+			focus = ach_nf_military_forges
+		}
+
+		completion_reward = {
+			910 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ach_nf_civilian_forges_2
+		icon = GFX_goal_enc_reform_industry_3
+		cost = 45
+		x = 1
+		y = 1
+
+		relative_position_id = ach_nf_workshop_forges
+
+		prerequisite = {
+			focus = ach_nf_workshop_forges
+		}
+
+		mutually_exclusive = {
+			focus = ach_nf_military_forges_2
+		}
+
+		completion_reward = {
+			903 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ach_nf_civilian_forges_3
+		icon = GFX_goal_enc_reform_industry_3
+		cost = 45
+		x = -1
+		y = 1
+
+		relative_position_id = ach_nf_workshop_forges
+
+		prerequisite = {
+			focus = ach_nf_workshop_forges
+		}
+
+		mutually_exclusive = {
+			focus = ach_nf_military_forges_3
+		}
+
+		completion_reward = {
+			799 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ach_nf_civilian_forges_4
+		icon = GFX_goal_enc_reform_industry_3
+		cost = 45
+		x = 2
+		y = 2
+
+		relative_position_id = ach_nf_workshop_forges
+
+		prerequisite = {
+			focus = ach_nf_workshop_forges
+		}
+
+		mutually_exclusive = {
+			focus = ach_nf_military_forges_4
+		}
+
+		completion_reward = {
+			909 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+
+	focus = {
+		id = ach_nf_military_forges
+		icon = GFX_goal_RRG_usa_industry
+		cost = 45
+		x = -4
+		y = 2
+
+		relative_position_id = ach_nf_workshop_forges
+
+		prerequisite = {
+			focus = ach_nf_workshop_forges
+		}
+
+		mutually_exclusive = {
+			focus = ach_nf_civilian_forges
+		}
+
+		completion_reward = {
+			910 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ach_nf_military_forges_2
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 45
+		x = 3
+		y = 1
+
+		relative_position_id = ach_nf_workshop_forges
+
+		prerequisite = {
+			focus = ach_nf_workshop_forges
+		}
+
+		mutually_exclusive = {
+			focus = ach_nf_civilian_forges_2
+		}
+
+		completion_reward = {
+			903 = {
+				if = {
+					limit = {
+						is_valid_state_for_dockyard = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = metal_generator
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ach_nf_military_forges_3
+		icon = GFX_goal_BOS_steel_cage
+		cost = 45
+		x = -3
+		y = 1
+
+		relative_position_id = ach_nf_workshop_forges
+
+		prerequisite = {
+			focus = ach_nf_workshop_forges
+		}
+
+		mutually_exclusive = {
+			focus = ach_nf_civilian_forges_3
+		}
+
+		completion_reward = {
+			799 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = metal_generator
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ach_nf_military_forges_4
+		icon = GFX_goal_RRG_usa_industry
+		cost = 45
+		x = 4
+		y = 2
+
+		relative_position_id = ach_nf_workshop_forges
+
+		prerequisite = {
+			focus = ach_nf_workshop_forges
+		}
+
+		mutually_exclusive = {
+			focus = ach_nf_civilian_forges_4
+		}
+
+		completion_reward = {
+			909 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = ach_nf_military_forges_5
+		icon = GFX_goal_usa_construct_mil_factory
+		cost = 60
+		x = 0
+		y = 3
+
+		relative_position_id = ach_nf_workshop_forges
+
+		prerequisite = {
+			focus = ach_nf_workshop_forges
+		}
+		available = {
+			OR = {
+				has_completed_focus = ach_nf_military_forges
+				has_completed_focus = ach_nf_civilian_forges
+			}
+			OR = {
+				has_completed_focus = ach_nf_military_forges_2
+				has_completed_focus = ach_nf_civilian_forges_2
+			}
+			OR = {
+				has_completed_focus = ach_nf_military_forges_3
+				has_completed_focus = ach_nf_civilian_forges_3
+			}
+			OR = {
+				has_completed_focus = ach_nf_military_forges_4
+				has_completed_focus = ach_nf_civilian_forges_4
+			}
+		}
+
+		completion_reward = {
+			908 = {
+				if = {
+					limit = {
+						is_valid_state_for_5_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 5
+					add_building_construction = {
+						type = arms_factory
+						level = 3
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = metal_generator
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	# Scientific developments
+	focus = {
+		id = ach_nf_scribes
+		icon = GFX_goal_bos_scribes
+		cost = 30
+		x = 16
+		y = 1
+
+		relative_position_id = ach_nf_contact_west
+
+		prerequisite = {
+			focus = ach_nf_contact_west
+		}
+
+		completion_reward = {
+			set_technology = {
+				scribes_unlock_tech = 1
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_study_codex
+		icon = GFX_goal_CHC_study_project_ACAPELLA
+		cost = 30
+		x = 2
+		y = 1
+
+		relative_position_id = ach_nf_scribes
+
+		prerequisite = {
+			focus = ach_nf_scribes
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = doctrine_bonus
+				bonus = 0.4
+				uses = 1
+				category = cat_land_doctrine
+			}
+			add_doctrine_cost_reduction = {
+				name = doctrine_bonus
+				cost_reduction = 0.2
+				uses = 1
+				category = cat_naval_doctrine
+			}
+			add_doctrine_cost_reduction = {
+				name = doctrine_bonus
+				cost_reduction = 0.2
+				uses = 1
+				category = cat_air_doctrine
+			}
+			add_doctrine_cost_reduction = {
+				name = doctrine_bonus
+				cost_reduction = 0.2
+				uses = 1
+				category = caf_land_doctrine_xp
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_study_codex_2
+		icon = GFX_goal_generic_BOS_focus_combined_operations
+		cost = 30
+		x = 0
+		y = 1
+
+		relative_position_id = ach_nf_study_codex
+
+		prerequisite = {
+			focus = ach_nf_study_codex
+		}
+
+		completion_reward = {
+			#set_technology = {
+			#	knights_unlock_tech
+			#}
+			add_tech_bonus = {
+				name = doctrine_bonus
+				bonus = 0.4
+				uses = 1
+				category = cat_land_doctrine
+			}
+			add_doctrine_cost_reduction = {
+				name = doctrine_bonus
+				cost_reduction = 0.2
+				uses = 1
+				category = cat_naval_doctrine
+			}
+			add_doctrine_cost_reduction = {
+				name = doctrine_bonus
+				cost_reduction = 0.2
+				uses = 1
+				category = cat_air_doctrine
+			}
+			add_doctrine_cost_reduction = {
+				name = doctrine_bonus
+				cost_reduction = 0.2
+				uses = 1
+				category = caf_land_doctrine_xp
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_study_guns
+		icon = GFX_goal_BOS_forbidden_weapons
+		cost = 30
+		x = 0
+		y = 1
+
+		relative_position_id = ach_nf_scribes
+
+		prerequisite = {
+			focus = ach_nf_scribes
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = weapon_bonus
+				bonus = 0.4
+				uses = 2
+				category = support_fireteam_tech_category
+				category = infantry_weapons_tech_category
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_study_guns_2
+		icon = GFX_goal_generic_advanced_firearms_focus
+		cost = 30
+		x = 0
+		y = 1
+
+		relative_position_id = ach_nf_study_guns
+
+		prerequisite = {
+			focus = ach_nf_study_guns
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = weapon_bonus
+				bonus = 0.4
+				uses = 2
+				category = support_fireteam_tech_category
+				category = infantry_weapons_tech_category
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_study_armor
+		icon = GFX_goal_generic_BOS_focus_t45d_production
+		cost = 30
+		x = -2
+		y = 1
+
+		relative_position_id = ach_nf_scribes
+
+		prerequisite = {
+			focus = ach_nf_scribes
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = doctrine_bonus
+				bonus = 0.4
+				uses = 2
+				category = spec_force_equipment_tech_category
+				category = power_armor_tech_category
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_study_armor_2
+		icon = GFX_goal_generic_BOS_focus_t51b_production
+		cost = 30
+		x = 0
+		y = 1
+
+		relative_position_id = ach_nf_study_armor
+
+		prerequisite = {
+			focus = ach_nf_study_armor
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = doctrine_bonus
+				bonus = 0.4
+				uses = 2
+				category = spec_force_equipment_tech_category
+				category = power_armor_tech_category
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_study_aviation
+		icon = GFX_goal_BOS_vertibird_schematics
+		cost = 30
+		x = 0
+		y = 1
+		relative_position_id = ach_nf_study_guns_2
+
+		available = {
+			has_completed_focus = ach_nf_airfield_2
+		}
+		prerequisite = {
+			focus = ach_nf_study_guns_2
+			focus = ach_nf_study_armor_2
+			focus = ach_nf_study_codex_2
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = air_bonus
+				bonus = 0.4
+				uses = 2
+				category = air_tech_category
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_study_aviation_fighter
+		icon = GFX_goal_generic_nuclear_fighter
+		cost = 30
+		x = 2
+		y = 1
+
+		relative_position_id = ach_nf_study_aviation
+
+		prerequisite = {
+			focus = ach_nf_study_aviation
+
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = air_bonus
+				bonus = 0.4
+				uses = 2
+				category = fighter_tech_category
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_study_aviation_cas
+		icon = GFX_goal_generic_jet_bomber
+		cost = 30
+		x = -2
+		y = 1
+
+		relative_position_id = ach_nf_study_aviation
+
+		prerequisite = {
+			focus = ach_nf_study_aviation
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = air_bonus
+				bonus = 0.4
+				uses = 2
+				category = cas_bomber_tech_category
+			}
+		}
+	}
+	focus = {
+		id = ach_nf_study_aviation_transport
+		icon = GFX_goal_generic_Steel_crate
+		cost = 30
+		x = -1
+		y = 2
+
+		relative_position_id = ach_nf_study_aviation
+
+		prerequisite = {
+			focus = ach_nf_study_aviation
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = air_bonus
+				bonus = 0.4
+				uses = 2
+				category = cargo_air_tech_category
+			}
+		}
+	}
+	focus = {
+		id = ach_nf_study_aviation_blimp
+		icon = GFX_goal_generic_airship_1
+		cost = 30
+		x = 1
+		y = 2
+
+		relative_position_id = ach_nf_study_aviation
+
+		prerequisite = {
+			focus = ach_nf_study_aviation
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = air_bonus
+				bonus = 0.4
+				uses = 2
+				category = blimp_tech_category
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_scribes_2
+		icon = GFX_goal_max_scribe_industrial_insights
+		cost = 30
+		x = -1
+		y = 1
+
+		relative_position_id = ach_nf_study_aviation_blimp
+
+		prerequisite = {
+			focus = ach_nf_study_aviation_blimp
+			focus = ach_nf_study_aviation_transport
+		}
+
+		completion_reward = {
+			#swap_ideas = {
+			#	remove_idea = ach_idea_scribes
+			#	add_idea = ach_idea_scribes_2
+			#}
+			add_ideas = ach_idea_scribes
+		}
+	}
+
+	focus = {
+		id = ach_nf_study_air_tactics
+		icon = GFX_goal_generic_BOS_focus_flight_academy
+		cost = 30
+		x = 0
+		y = 1
+
+		relative_position_id = ach_nf_study_aviation
+
+		prerequisite = {
+			focus = ach_nf_study_aviation
+		}
+
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = air_bonus
+				cost_reduction = 0.4
+				uses = 2
+				category = cat_air_doctrine
+			}
+		}
+	}
+	# Alamo Airfield
+	focus = {
+		id = ach_nf_airfield
+		icon = GFX_goal_generic_airbases_focus
+		cost = 30
+		x = -2
+		y = 1
+
+		relative_position_id = ach_nf_contact_west
+
+		prerequisite = {
+			focus = ach_nf_contact_west
+		}
+
+		completion_reward = {
+			908 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_air_defenses
+		icon = GFX_goal_generic_air_doctrines_focus
+		cost = 30
+		x = 0
+		y = 2
+
+		relative_position_id = ach_nf_airfield
+
+		prerequisite = {
+			focus = ach_nf_airfield
+		}
+
+		completion_reward = {
+			908 = {
+				add_building_construction = {
+					type = anti_air_building
+					level = 5
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_airfield_2
+		icon = GFX_goal_generic_airplane
+		cost = 30
+		x = 0
+		y = 2
+
+		relative_position_id = ach_nf_air_defenses
+
+		prerequisite = {
+			focus = ach_nf_air_defenses
+		}
+
+		completion_reward = {
+			set_technology = { air_tech_level_scientific = 1 }
+		}
+	}
+
+	# Mothball
+	focus = {
+		id = ach_nf_mothball_1
+		icon = GFX_goal_TBH_T51
+		cost = 30
+		x = 2
+		y = 1
+
+		relative_position_id = ach_nf_contact_west
+
+		prerequisite = {
+			focus = ach_nf_contact_west
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_completed_focus = ach_nf_elder_emergency_authority
+					date > 2276.01.01
+				}
+				date > 2276.06.01
+			}
+			# set_technology = {
+
+			# }
+		}
+
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = power_armor_equipment_4
+				amount = 125
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = gauss_equipment_1
+				amount = 100
+				producer = USA
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_mothball_2
+		icon = GFX_goal_generic_pa_t51
+		cost = 30
+		x = 0
+		y = 2
+
+		relative_position_id = ach_nf_mothball_1
+
+		prerequisite = {
+			focus = ach_nf_mothball_1
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_completed_focus = ach_nf_elder_emergency_authority
+					date > 2277.01.01
+				}
+				date > 2277.06.01
+			}
+		}
+
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = power_armor_equipment_4
+				amount = 125
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = plasma_equipment_1
+				amount = 100
+				producer = USA
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_mothball_3
+		icon = GFX_goal_generic_pa_t51_fatman
+		cost = 30
+		x = 0
+		y = 2
+
+		relative_position_id = ach_nf_mothball_2
+
+		prerequisite = {
+			focus = ach_nf_mothball_2
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_completed_focus = ach_nf_elder_emergency_authority
+					date > 2278.01.01
+				}
+				date > 2278.06.01
+			}
+		}
+
+		completion_reward = {
+			set_technology = {
+				mininuke_unlock_tech = 1
+			}
+			add_equipment_to_stockpile = {
+				type = mininuke_equipment_1
+				amount = 9
+				producer = USA
+			}
+		}
+	}
+
+	# Old World treasures
+	focus = {
+		id = ach_nf_treasures_of_the_old_world
+		icon = GFX_goal_ACH_startup
+		cost = 30
+		x = 8
+		y = 1
+
+		relative_position_id = ach_nf_contact_west
+
+		prerequisite = {
+			focus = ach_nf_contact_west
+		}
+
+		completion_reward = {
+			add_ideas = ach_treasures_of_the_old_world
+		}
+	}
+
+	focus = {
+		id = ach_nf_enter_the_corpse
+		icon = GFX_goal_poseidon_poster
+		cost = 30
+		x = 0
+		y = 1
+
+		relative_position_id = ach_nf_treasures_of_the_old_world
+
+		prerequisite = {
+			focus = ach_nf_treasures_of_the_old_world
+		}
+
+		completion_reward = {
+			add_ideas = ach_corpse_secrets
+		}
+	}
+
+	focus = {
+		id = ach_nf_enter_the_corpse_2
+		icon = GFX_goal_generic_boat_battleship
+		cost = 30
+		x = 0
+		y = 2
+
+		relative_position_id = ach_nf_enter_the_corpse
+
+		prerequisite = {
+			focus = ach_nf_enter_the_corpse
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ach_corpse_secrets
+				add_idea = ach_corpse_secrets_2
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_secrets_of_fort_hood
+		icon = GFX_goal_RRG_usa_industry
+		cost = 30
+		x = 3
+		y = 1
+
+		relative_position_id = ach_nf_treasures_of_the_old_world
+
+		prerequisite = {
+			focus = ach_nf_treasures_of_the_old_world
+		}
+
+		completion_reward = {
+			set_variable = {
+				var = ACH_fort_hood_progress
+				value = 8
+			}
+			set_variable = {
+				var = ACH_fort_hood_readiness_troopers
+				value = 50
+			}
+			set_variable = {
+				var = ACH_fort_hood_readiness_codes
+				value = 1
+			}
+			custom_effect_tooltip = ach_fort_hood_focus_unlock_tt
+		}
+	}
+
+	focus = {
+		id = ach_nf_secrets_of_fort_hood_electronics
+		icon = GFX_goal_generic_terminal_2
+		cost = 30
+		x = 1
+		y = 1
+
+		relative_position_id = ach_nf_secrets_of_fort_hood
+
+		prerequisite = {
+			focus = ach_nf_secrets_of_fort_hood
+		}
+
+		mutually_exclusive = {
+			focus = ach_nf_secrets_of_fort_hood_readiness
+		}
+
+		completion_reward = {
+			add_to_variable = {
+				var = ACH_fort_hood_readiness_codes
+				value = 3
+			}
+			custom_effect_tooltip = ach_fort_hood_focus_hack_tt
+		}
+	}
+
+	focus = {
+		id = ach_nf_secrets_of_fort_hood_readiness
+		icon = GFX_goal_MOJ_paladin_thought
+		cost = 30
+		x = -1
+		y = 1
+
+		relative_position_id = ach_nf_secrets_of_fort_hood
+
+		prerequisite = {
+			focus = ach_nf_secrets_of_fort_hood
+		}
+
+		mutually_exclusive = {
+			focus = ach_nf_secrets_of_fort_hood_electronics
+		}
+
+		completion_reward = {
+			add_to_variable = {
+				var = ACH_fort_hood_readiness_troopers
+				value = 125
+			}
+			custom_effect_tooltip = ach_fort_hood_focus_readiness_tt
+		}
+	}
+
+	focus = {
+		id = ach_nf_secrets_of_fort_hood_2
+		icon = GFX_goal_focus_alamo_ach
+		cost = 30
+		x = 0
+		y = 2
+
+		relative_position_id = ach_nf_secrets_of_fort_hood
+
+		prerequisite = {
+			focus = ach_nf_secrets_of_fort_hood_readiness
+			focus = ach_nf_secrets_of_fort_hood_electronics
+		}
+
+		available = {
+			has_country_flag = fort_hood_exploited
+		}
+
+		completion_reward = {
+			add_ideas = ach_fort_hood_secrets
+			every_army_leader = {
+				add_attack = 1
+				add_defense = 1
+				add_planning = 1
+				add_logistics = 1
+			}
+			set_country_flag = fort_hood_closed
+		}
+	}
+
+	# Secrets of houston
+	focus = {
+		id = ach_nf_secrets_houston
+		icon = GFX_goal_generic_focus_magazine_gunsandbullets_doomsday
+		cost = 30
+		x = -3
+		y = 1
+
+		relative_position_id = ach_nf_treasures_of_the_old_world
+
+		prerequisite = {
+			focus = ach_nf_treasures_of_the_old_world
+		}
+
+		completion_reward = {
+			add_ideas = ach_houston_secrets
+		}
+	}
+
+	focus = {
+		id = ach_nf_secrets_houston_satelite_air_focus
+		icon = GFX_goal_generic_vertibird
+		cost = 30
+		x = 1
+		y = 1
+
+		relative_position_id = ach_nf_secrets_houston
+
+		prerequisite = {
+			focus = ach_nf_secrets_houston
+		}
+
+		mutually_exclusive = {
+			focus = ach_nf_secrets_houston_satelite_recon_focus
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ach_houston_secrets
+				add_idea = ach_houston_secrets_air
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_secrets_houston_satelite_recon_focus
+		icon = GFX_goal_generic_spotlight
+		cost = 30
+		x = -1
+		y = 1
+
+		relative_position_id = ach_nf_secrets_houston
+
+		prerequisite = {
+			focus = ach_nf_secrets_houston
+		}
+
+		mutually_exclusive = {
+			focus = ach_nf_secrets_houston_satelite_air_focus
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ach_houston_secrets
+				add_idea = ach_houston_secrets_recon
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_secrets_houston_2
+		icon = GFX_goal_generic_satellite
+		cost = 30
+		x = 0
+		y = 2
+
+		relative_position_id = ach_nf_secrets_houston
+
+		prerequisite = {
+			focus = ach_nf_secrets_houston_satelite_recon_focus
+			focus = ach_nf_secrets_houston_satelite_air_focus
+		}
+
+		completion_reward = {
+			country_event = nf_event_ach.6
+		}
+	}
+
+	focus = {
+		id = ach_nf_treasures_of_the_old_world_2
+		icon = GFX_goal_BOS_tesla_cannon
+		cost = 30
+		x = 0
+		y = 1
+
+		relative_position_id = ach_nf_enter_the_corpse_2
+
+		prerequisite = {
+			focus = ach_nf_secrets_houston_2
+		}
+		prerequisite = {
+			focus = ach_nf_secrets_of_fort_hood_2
+		}
+		prerequisite = {
+			focus = ach_nf_enter_the_corpse_2
+		}
+
+		completion_reward = {
+		custom_effect_tooltip = ACH_merge_hood_ideas
+		hidden_effect = {
+			if = {
+				limit = { has_idea = ach_houston_secrets_2_recon }
+				remove_ideas = {
+					ach_houston_secrets_2_recon
+					ach_treasures_of_the_old_world
+					ach_fort_hood_secrets
+					ach_corpse_secrets_2
+				}
+				add_ideas = ach_treasures_of_the_old_world_2_recon
+			}
+			else = {
+				remove_ideas = {
+					ach_houston_secrets_2_air
+					ach_treasures_of_the_old_world
+					ach_fort_hood_secrets
+					ach_corpse_secrets_2
+				}
+				add_ideas = ach_treasures_of_the_old_world_2_air
+			}
+		}
+		}
+	}
+
+	focus = {
+		id = ach_nf_cross_referencing_code_snippets
+		icon = GFX_KHA_focus_research_tech
+		cost = 120
+		x = 0
+		y = 1
+
+		relative_position_id = ach_nf_treasures_of_the_old_world_2
+
+		prerequisite = {
+			focus = ach_nf_enter_the_corpse_2
+		}
+
+		prerequisite = {
+			focus = ach_nf_treasures_of_the_old_world_2
+		}
+
+		prerequisite = {
+			focus = ach_nf_secrets_houston_2
+		}
+
+		available = { has_completed_focus = ach_nf_scribes_2 }
+
+		completion_reward = {
+			custom_effect_tooltip = ach_nf_cross_referencing_code_snippets_tt
+			hidden_effect = {
+				country_event = nf_event_ach.101
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_poseidon_oil_iff
+		icon = GFX_goal_moj_poseidon_relic_circuitry
+		cost = 60
+		x = 0
+		y = 1
+
+		relative_position_id = ach_nf_cross_referencing_code_snippets
+
+		prerequisite = {
+			focus = ach_nf_cross_referencing_code_snippets
+		}
+		available = {
+			has_completed_focus = ach_nf_airfield_2
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_completed_focus = ach_nf_cross_referencing_code_snippets }
+				custom_effect_tooltip = ach_nf_poseidon_oil_iff_tt
+				hidden_effect = {
+					country_event = nf_event_ach.102
+				}
+				else = {
+					custom_effect_tooltip = ach_nf_no_idea_what_this_does_tt
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_harbinger_of_armageddon
+		icon = GFX_goal_generic_nuke
+		cost = 60
+		x = 2
+		y = 1
+
+		relative_position_id = ach_nf_poseidon_oil_iff
+
+		prerequisite = {
+			focus = ach_nf_poseidon_oil_iff
+		}
+
+		available = {
+			761 = {
+				is_controlled_by_ROOT_or_ally = yes
+			}
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ach_nf_harbinger_of_armageddon_tt
+			hidden_effect = {
+				country_event = nf_event_ach.103
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_control_core_tlaloc
+		icon = GFX_goal_TLA_programming
+		cost = 60
+		x = -2
+		y = 1
+
+		relative_position_id = ach_nf_poseidon_oil_iff
+
+		prerequisite = {
+			focus = ach_nf_poseidon_oil_iff
+		}
+
+		available = {
+			769 = {
+				is_controlled_by_ROOT_or_ally = yes
+			}
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ach_nf_control_core_tlaloc_tt
+			hidden_effect = {
+				country_event = nf_event_ach.104
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_texico_oil_rig
+		icon = GFX_goal_ACH_texico_rig
+		cost = 60
+		x = 0
+		y = 1
+
+		relative_position_id = ach_nf_poseidon_oil_iff
+
+		prerequisite = {
+			focus = ach_nf_poseidon_oil_iff
+		}
+		completion_reward = {
+			custom_effect_tooltip = ach_nf_texico_oil_rig_tt
+			hidden_effect = {
+				country_event = nf_event_ach.105
+			}
+		}
+	}
+
+	focus = {
+		id = ach_nf_send_it_all_west
+		icon = GFX_goal_BOS_generic
+		cost = 30
+		x = 0
+		y = 2
+
+		relative_position_id = ach_nf_poseidon_oil_iff
+
+		prerequisite = {
+			focus = ach_nf_control_core_tlaloc
+		}
+		prerequisite = {
+			focus = ach_nf_texico_oil_rig
+		}
+		prerequisite = {
+			focus = ach_nf_harbinger_of_armageddon
+		}
+
+		available = {
+			BOS = {
+				exists = yes
+				NOT = {
+					has_war_with = ACH
+				}
+			}
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ACH_send_it_to_bos_tt
+			BOS = {
+				add_opinion_modifier = {
+					target = ACH
+					modifier = send_it_west_modifier
+				}
+			}
+			hidden_effect = {
+			#	country_event = nf_event_ach.106
+			}
+		}
+	}
+}

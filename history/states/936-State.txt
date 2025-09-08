@@ -1,0 +1,31 @@
+state={
+	id=936
+	name="STATE_936"
+	resources={
+		metal=12.000
+		energy=4.000
+		water=15.000
+	}
+	history = {
+		owner = EDN
+		add_core_of = EDN
+		victory_points = {
+			11615 15
+		}
+		victory_points = {
+			2283 5
+		}
+		buildings = {
+			infrastructure = 4
+			arms_factory = 4
+			industrial_complex = 1
+		}
+	}
+	provinces={
+		827 2283 3024 11553 11560 11570 11583 11590 11603 11615 11735 11737 
+	}
+	manpower=36000
+	buildings_max_level_factor=1.000
+	state_category=megalopolis
+	local_supplies=0.000
+}

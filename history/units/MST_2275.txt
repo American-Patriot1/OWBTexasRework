@@ -1,0 +1,47 @@
+division_template = {
+	name = "Tribals"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+	}
+}
+division_template = {
+	name = "Tribal Warriors"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+	}
+	support = {
+		demolitions_support = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	division = {
+		name = "Mississippi Warriors"
+		location = 11889
+		division_template = "Tribal Warriors"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "MST"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

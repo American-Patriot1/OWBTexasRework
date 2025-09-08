@@ -1,0 +1,164 @@
+﻿division_template = {
+	name = "Brotherhood Knights"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+	}
+}
+division_template = {
+	name = "Brotherhood Paladins"
+	regiments = {
+		power_armour = { x = 0 y = 0 }
+		power_armour = { x = 0 y = 1 }
+		power_armour = { x = 1 y = 0 }
+		power_armour = { x = 1 y = 1 }
+		power_armour = { x = 2 y = 0 }
+		power_armour = { x = 2 y = 1 }
+	}
+}
+division_template = {
+	name = "Rapid Deployment Group"
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+	}
+}
+
+units = {
+	division = {
+		name = "Circle Detachment 1"
+		location = 11427
+		division_template = "Brotherhood Paladins"
+		start_experience_factor = 0.9
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Circle Detachment 12"
+		location = 11427
+		division_template = "Brotherhood Paladins"
+		start_experience_factor = 0.9
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Alamo Paladins"
+		location = 11427
+		division_template = "Brotherhood Paladins"
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.8
+	}
+	division = {
+		name = "Lavca Paladins"
+		location = 11372
+		division_template = "Brotherhood Paladins"
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.8
+	}
+	division = {
+		name = "Corpse Paladins"
+		location = 2248
+		division_template = "Brotherhood Paladins"
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.8
+	}
+	division = {
+		name = "Corpse Knight"
+		location = 2248
+		division_template = "Brotherhood Knights"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Twelve Knights Regiment"
+		location = 2248
+		division_template = "Brotherhood Knights"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Advanced Recon Group"
+		location = 11372
+		division_template = "Brotherhood Knights"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "Crockets Throwers"
+		location = 11372
+		division_template = "Brotherhood Knights"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "1st Lineguard"
+		location = 11396
+		division_template = "Brotherhood Knights"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "2nd Lineguard"
+		location = 11413
+		division_template = "Brotherhood Knights"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "3nd Lineguard"
+		location = 11429
+		division_template = "Brotherhood Knights"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "4nd Lineguard"
+		location = 11446
+		division_template = "Brotherhood Knights"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "5nd Lineguard"
+		location = 11457
+		division_template = "Brotherhood Knights"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = ballistic_equipment_1
+			creator = "ACH"
+		}
+		requested_factories = 2
+		progress = 0.75
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = power_armor_equipment_tbh
+			creator = "ACH"
+		}
+		requested_factories = 1
+		progress = 0.5
+		efficiency = 50
+	}
+	add_equipment_production = {
+		equipment = {
+			type = bike_equipment_1
+			creator = "ACH"
+		}
+		requested_factories = 1
+		progress = 0.5
+		efficiency = 50
+	}
+}

@@ -1,0 +1,153 @@
+texas_rework_houston_concrete_city = {
+    enable = { always = yes }
+	monthly_population = 0.10
+	consumer_goods_expected_value = 0.10
+	stability_factor = -0.10
+}
+texas_rework_houston_concrete_city_state = {
+    icon = GFX_idea_generic_religion
+    enable = { always = yes }
+	local_supplies = 1.5
+	monthly_population = 0.10
+	consumer_goods_expected_value = 0.10
+	stability_factor = -0.10
+	local_building_slots_factor = 0.2
+}
+texas_rework_houston_concrete_city_lesser = {
+    enable = { always = yes }
+	monthly_population = 0.05
+	consumer_goods_expected_value = 0.05
+	stability_factor = -0.05
+}
+texas_rework_houston_concrete_city_lesser_state = {
+    icon = GFX_idea_generic_religion
+    enable = { always = yes }
+	local_supplies = 1.2
+	monthly_population = 0.05
+	consumer_goods_expected_value = 0.05
+	stability_factor = -0.05
+	local_building_slots_factor = 0.2
+}
+texas_rework_the_alamo = {
+    enable = { always = yes }
+	war_support_factor = 0.15
+	recruitable_population_factor = 0.05
+}
+texas_rework_the_alamo_state = {
+    icon = GFX_goal_focus_alamo_enc
+    enable = { always = yes }
+	local_supplies = 1.5
+	war_support_factor = 0.15
+	local_building_slots_factor = 0.2
+	recruitable_population_factor = 0.05
+}
+texas_rework_the_cannery = {
+    enable = { always = yes }
+	stability_factor = 0.15
+	consumer_goods_expected_value = -0.15
+}
+texas_rework_the_cannery_state = {
+    icon = GFX_idea_generic_naval_industry
+    enable = { always = yes }
+	local_supplies = 1.2
+	stability_factor = 0.15
+	local_building_slots_factor = -0.1
+	consumer_goods_expected_value = -0.15
+}
+texas_rework_paradise = {
+    enable = { always = yes }
+	stability_factor = 0.05
+	monthly_population = 0.10
+}
+texas_rework_paradise_state = {
+    icon = GFX_idea_EDN_paradise
+    enable = { always = yes }
+	local_supplies = 1.2
+	stability_factor = 0.05
+	local_building_slots_factor = 0.15
+	monthly_population = 0.10
+}
+texas_rework_carthage_gas_fields = {
+    enable = { always = yes }
+	fuel_gain_factor = tep_fuel
+	max_fuel_factor = tep_fuel
+	production_oil_factor = tep_oil
+}
+texas_rework_carthage_gas_fields_state = {
+    icon = GFX_idea_TIM_patch_energy
+    enable = { always = yes }
+	fuel_gain_factor = tep_fuel
+	max_fuel_factor = tep_fuel
+	production_oil_factor = tep_oil
+	local_resources_factor = tep_resources
+}
+texas_rework_city_of_unity = {
+    enable = { always = yes }
+	monthly_population = 0.25
+	stability_factor = 0.10
+}
+texas_rework_city_of_unity_state = {
+    icon = GFX_idea_BDT_unity
+    enable = { always = yes }
+	local_supplies = 1.2
+	monthly_population = 0.25
+	stability_factor = 0.10
+}
+texas_rework_economic_hub_texas = {
+	enable = { always = yes }
+	consumer_goods_expected_value = -0.05
+	local_resources_factor = 0.1
+}
+texas_rework_economic_hub_texas_state = {
+	icon = GFX_idea_lns_lubbock_expedition
+    enable = { always = yes }
+	local_supplies = 1.5
+	consumer_goods_expected_value = -0.05
+	local_resources_factor = 0.1
+}
+texas_rework_industrial_center_texas_dallas = {
+    enable = { always = yes }
+	consumer_goods_expected_value = -0.05
+	local_resources_factor = 0.05
+	production_speed_buildings_factor = 0.05
+}
+texas_rework_industrial_center_texas_dallas_state = {
+    icon = GFX_idea_pre-war_industry
+    enable = { always = yes }
+	local_supplies = 1.5
+	local_building_slots_factor = 0.1
+	consumer_goods_expected_value = -0.05
+	local_resources_factor = 0.05
+	production_speed_buildings_factor = 0.05
+}
+texas_rework_industrial_center_texas_fort_worth = {
+    enable = { always = yes }
+	consumer_goods_expected_value = -0.05
+	local_resources_factor = 0.05
+	production_speed_buildings_factor = 0.05
+}
+texas_rework_industrial_center_texas_fort_worth_state = {
+    icon = GFX_idea_pre-war_industry
+    enable = { always = yes }
+	local_supplies = 1.5
+	local_building_slots_factor = 0.1
+	consumer_goods_expected_value = -0.05
+	local_resources_factor = 0.05
+	production_speed_buildings_factor = 0.05
+}
+texas_rework_communications_hub_texas = {
+    enable = { always = yes }
+	consumer_goods_expected_value = 0.05
+	production_speed_buildings_factor = 0.05
+	initiative_factor = 0.2
+	diplomacy_distance = 200
+}
+texas_rework_communications_hub_texas_state = {
+    icon = GFX_idea_generic_radio_pack
+    enable = { always = yes }
+	local_building_slots_factor = -0.1
+	consumer_goods_expected_value = 0.1
+	production_speed_buildings_factor = 0.05
+	initiative_factor = 0.2
+	diplomacy_distance = 200
+}

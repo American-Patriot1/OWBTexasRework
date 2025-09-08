@@ -1,0 +1,89 @@
+﻿division_template = {
+	name = "Patrolmen"
+	division_names_group = _TPM_LAW_01
+	regiments = {
+		police_infantry = { x = 0 y = 0 }
+		police_infantry = { x = 0 y = 1 }
+		police_infantry = { x = 1 y = 0 }
+		police_infantry = { x = 1 y = 1 }
+		police_infantry = { x = 2 y = 0 }
+		police_infantry = { x = 2 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Clankers"
+	division_names_group = _TPM_LAW_01
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Special Weapons Patrol"
+	division_names_group = _TPM_LAW_01
+	regiments = {
+		spec_ops = { x = 0 y = 0}
+		spec_ops = { x = 1 y = 0}
+		spec_ops = { x = 0 y = 1}
+		spec_ops = { x = 1 y = 1}
+	}
+}
+
+units = {
+	division = {
+		name = "3rd Patrol: Gary's Grumblers"
+		location = 11812
+		division_template = "Patrolmen"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "17th Patrol: Coolant's Clankers"
+		location = 11809
+		division_template = "Clankers"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "1st Patrol: Franklin's Fighters"
+		location = 11812
+		division_template = "Special Weapons Patrol"
+		start_equipment_factor = 1.0
+		start_experience_factor = 0.8
+	}
+}
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = ballistic_equipment_1
+			creator = "TPM"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 20
+	}
+	add_equipment_production = {
+		equipment = {
+			type = light_motorized_equipment_2
+			creator = "TPM"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 20
+	}
+	add_equipment_production = {
+		equipment = {
+			type = spec_ops_equipment_1
+			creator = "TPM"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 20
+	}
+}

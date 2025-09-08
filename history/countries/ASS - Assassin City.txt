@@ -1,0 +1,70 @@
+﻿capital = 878
+
+oob = "ASS_2275"
+
+set_technology = {
+	basic_supply_transport_tech = 1
+	tool_engineering = 1
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	support_weaponry = 1
+	skater_tech = 1
+
+	nautics_tech_1 = 1
+	light_navy_hull_tech_1 = 1
+
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	vehicles_tech_level_tribal = 1
+	vehicles_tech_level_settler = 1
+	air_tech_level_tribal = 1
+	air_tech_level_settler = 1
+	naval_tech_level_tribal = 1
+	naval_tech_level_settler = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	habitation_tech_level_tribal = 1
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+}
+
+set_stability = 0.35
+set_war_support = 0.4
+set_research_slots = 3
+set_country_flag = is_raider_nation
+set_country_flag = is_texas_nation
+set_country_flag = tribal_doctrine_ai
+set_country_flag = wasteland_doctrine_ai
+
+set_politics = {
+	ruling_party = ruler
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 15
+	elites = 15
+	intellectuals = 15
+	ruler = 55
+}
+
+add_ideas = {
+	all_female_leadership
+	ASS_hit_and_runner_blades
+	undesirables_law_raider
+	currencytexdollar
+}
+
+recruit_character = ASS_tuffy
+recruit_character = ASS_holly_wrath
+recruit_character = ASS_roxxy_roll
+recruit_character = ASS_peggy_macdeath
+
+set_country_flag = infantry_melee_ai
+# vim: set ft=pdx ts=2 sw=2 tw=79 :

@@ -1,0 +1,39 @@
+state={
+	id=796
+	name="STATE_796"
+	resources={
+		water=4.000
+		metal=8.000
+		energy=8.000
+		circuitry=4.000
+	}
+	history = {
+		owner = TAA
+		add_core_of = TAA
+		add_core_of = RRG
+		victory_points = {
+			9707 3
+		}
+		victory_points = {
+			9714 3
+		}
+		victory_points = {
+			9715 20
+		}
+		victory_points = {
+			9725 3
+		}
+		buildings = {
+			infrastructure = 6
+			arms_factory = 4
+			industrial_complex = 2
+			9707 = { naval_base = 1 }
+		}
+	}
+	provinces={
+		9707 9708 9710 9712 9714 9715 9717 9718 9719 9720 9721 9722 9723 9724 9725 9729 
+	}
+	manpower=42468
+	buildings_max_level_factor=1.000
+	state_category=large_city
+}

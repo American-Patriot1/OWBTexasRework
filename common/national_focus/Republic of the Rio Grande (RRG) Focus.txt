@@ -1,0 +1,7708 @@
+####################################################
+#         Republic of Rio Grande Focus Tree        #
+#          Originally Planned by Zapdude           #
+# 2.0 Tree                                         #
+# Coded by Happy, Faeelin, Shudderfly, and Zapdude #
+# 3.0 Tree                                         #
+# Coded by Faeelin                                 #
+####################################################
+focus_tree = {
+	id = nf_rrg
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = RRG
+		}
+	}
+	default = no
+	## Opening Chain
+	focus = {
+		id = rrg_american_intervention
+		x = 16
+		y = 0
+		icon = GFX_goal_ITZ_oil_and_imperialism
+		cost = 7
+		completion_reward = {
+			country_event = nf_rrg.1
+		}
+	}
+	focus = {
+		id = rrg_el_apocalipsis
+		x = 0
+		y = 1
+		icon = GFX_goal_the_last_argument_of_presidents
+		cost = 7
+		prerequisite = {
+			focus = rrg_american_intervention
+		}
+		relative_position_id = rrg_american_intervention
+		completion_reward = {
+			country_event = nf_rrg.2
+		}
+	}
+	focus = {
+		id = rrg_reclaim_republic
+		x = 0
+		y = 1
+		icon = GFX_goal_RRG_handshake
+		cost = 7
+		prerequisite = {
+			focus = rrg_el_apocalipsis
+		}
+		relative_position_id = rrg_el_apocalipsis
+		completion_reward = {
+			country_event = nf_rrg.3
+		}
+	}
+	focus = {
+		id = rrg_last_ace
+		x = 0
+		y = 1
+		icon = GFX_goal_RRG_guns_on_flag
+		cost = 7
+		prerequisite = {
+			focus = rrg_reclaim_republic
+		}
+		relative_position_id = rrg_reclaim_republic
+		completion_reward = {
+			country_event = nf_rrg.4
+		}
+	}
+	## Industrial Tree
+	focus = {
+		id = rrg_industrial_subsidies
+		x = -11
+		y = 1
+		icon = GFX_goal_RRG_industry
+		cost = 30
+		prerequisite = {
+			focus = rrg_last_ace
+		}
+		relative_position_id = rrg_last_ace
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	# Infrastructre
+	focus = {
+		id = rrg_gloria_road
+		x = -2
+		y = 1
+		icon = GFX_goal_NCR_Long15
+		cost = 30
+		prerequisite = {
+			focus = rrg_industrial_subsidies
+		}
+		relative_position_id = rrg_industrial_subsidies
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_core_of = ROOT
+					infrastructure < 9
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_scav_stations
+		x = -2
+		y = 1
+		icon = GFX_goal_generic_building_focus
+		cost = 30
+		prerequisite = {
+			focus = rrg_gloria_road
+		}
+		relative_position_id = rrg_gloria_road
+		available = {
+			746 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			add_resource = {
+				type = water
+				amount = 2
+				state = 746
+			}
+			add_resource = {
+				type = energy
+				amount = 2
+				state = 746
+			}
+			add_resource = {
+				type = metal
+				amount = 2
+				state = 746
+			}
+			add_resource = {
+				type = composites
+				amount = 2
+				state = 746
+			}
+			add_resource = {
+				type = circuitry
+				amount = 2
+				state = 746
+			}
+			add_resource = {
+				type = advanced
+				amount = 2
+				state = 746
+			}
+		}
+	}
+	focus = {
+		id = rrg_gloria_res
+		x = 0
+		y = 1
+		icon = GFX_goal_RRG_water
+		cost = 30
+		prerequisite = {
+			focus = rrg_scav_stations
+		}
+		relative_position_id = rrg_scav_stations
+		available = {
+			746 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			add_resource = {
+				type = water
+				amount = 10
+				state = 746
+			}
+		}
+	}
+	focus = {
+		id = rrg_resource_grants
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_metal_focus
+		cost = 30
+		prerequisite = {
+			focus = rrg_gloria_road
+		}
+		relative_position_id = rrg_gloria_road
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 3
+				category = building_tech
+			}
+		}
+	}
+	focus = {
+		id = rrg_foundry_reestablishment
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_cities_focus
+		cost = 30
+		prerequisite = {
+			focus = rrg_resource_grants
+		}
+		relative_position_id = rrg_resource_grants
+		available = {
+			742 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			add_resource = {
+				type = metal
+				amount = 10
+				state = 742
+			}
+		}
+	}
+	focus = {
+		id = rrg_prewar_tech
+		x = 2
+		y = 1
+		icon = GFX_goal_generic_advanced_technology_focus
+		cost = 30
+		prerequisite = {
+			focus = rrg_foundry_reestablishment
+			focus = rrg_riverside_industrial
+		}
+		relative_position_id = rrg_foundry_reestablishment
+		completion_reward = {
+			add_resource = {
+				type = advanced
+				amount = 10
+				state = 742
+			}
+			add_resource = {
+				type = circuitry
+				amount = 10
+				state = 742
+			}
+		}
+	}
+	# Reclamation
+	focus = {
+		id = rrg_reestablish_reclamation_bureau
+		x = 2
+		y = 1
+		icon = GFX_goal_RRG_reclamation_bureau
+		cost = 30
+		prerequisite = {
+			focus = rrg_industrial_subsidies
+		}
+		relative_position_id = rrg_industrial_subsidies
+		completion_reward = {
+			add_ideas = rrg_idea_rgrb
+		}
+	}
+	focus = {
+		id = rrg_house_subsidies
+		x = -2
+		y = 1
+		icon = GFX_goal_generic_slums_focus
+		cost = 30
+		prerequisite = {
+			focus = rrg_reestablish_reclamation_bureau
+		}
+		relative_position_id = rrg_reestablish_reclamation_bureau
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = habitation_category
+			}
+		}
+	}
+	focus = {
+		id = rrg_urban_industry
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_cities_focus
+		cost = 30
+		available = {
+			791 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		prerequisite = {
+			focus = rrg_reestablish_reclamation_bureau
+		}
+		relative_position_id = rrg_reestablish_reclamation_bureau
+		completion_reward = {
+			791 = {
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_riverside_industrial
+		x = 0
+		y = 1
+		icon = GFX_goal_NCR_Industrialcomplex
+		cost = 30
+		available = {
+			747 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		prerequisite = {
+			focus = rrg_urban_industry
+		}
+		relative_position_id = rrg_urban_industry
+		completion_reward = {
+			747 = {
+				#Â Hey that's a plane
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_mexican_arms
+		x = 2
+		y = 1
+		icon = GFX_goal_generic_mexico_shield
+		cost = 30
+		available = {
+			746 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		prerequisite = {
+			focus = rrg_reestablish_reclamation_bureau
+		}
+		relative_position_id = rrg_reestablish_reclamation_bureau
+		completion_reward = {
+			746 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons_tech_category
+			}
+		}
+	}
+	focus = {
+		id = rrg_original_designs
+		x = 0
+		y = 1
+		icon = GFX_goal_RRG_research
+		cost = 30
+		prerequisite = {
+			focus = rrg_mexican_arms
+		}
+		relative_position_id = rrg_mexican_arms
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = rrg_idea_rgrb
+				add_idea = rrg_idea_rgrb_mod
+			}
+		}
+	}
+	focus = {
+		id = rrg_every_man_a_308
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_ammo_boxes_focus
+		cost = 30
+		available = {
+			745 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		prerequisite = {
+			focus = rrg_original_designs
+		}
+		relative_position_id = rrg_original_designs
+		completion_reward = {
+			745 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_gloria_harbour
+		x = -1
+		y = 1
+		icon = GFX_goal_generic_harbours_focus
+		cost = 30
+		available = {
+			746 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		prerequisite = {
+			focus = rrg_every_man_a_308
+		}
+		prerequisite = {
+			focus = rrg_riverside_industrial
+		}
+		relative_position_id = rrg_every_man_a_308
+		completion_reward = {
+			746 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_dockyards = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					province = 8599
+					instant_build = yes
+				}
+			}
+		}
+	}
+	# Reclaim Rio Grande
+	focus = {
+		id = rrg_reclaim_rio_grande
+		x = 11
+		y = 1
+		icon = GFX_focus_generic_provoke_border_clashes
+		cost = 30
+		prerequisite = {
+			focus = rrg_last_ace
+		}
+		relative_position_id = rrg_last_ace
+		completion_reward = {
+			add_ideas = rrg_idea_reclaim_rio
+		}
+	}
+	focus = {
+		id = rrg_naval_big_thonk
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_harbours_focus
+		cost = 30
+		prerequisite = {
+			focus = rrg_reclaim_rio_grande
+		}
+		relative_position_id = rrg_reclaim_rio_grande
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = naval_tech_category
+			}
+		}
+	}
+	focus = {
+		id = rrg_nuevo_harbour
+		x = -2
+		y = 1
+		icon = GFX_goal_generic_harbours_focus
+		cost = 30
+		available = {
+			747 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		prerequisite = {
+			focus = rrg_naval_big_thonk
+		}
+		relative_position_id = rrg_naval_big_thonk
+		completion_reward = {
+			747 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_dockyards = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					province = 9622
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_reynosa_harbour
+		x = -4
+		y = 2
+		icon = GFX_goal_generic_harbours_focus
+		cost = 30
+		available = {
+			755 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		prerequisite = {
+			focus = rrg_reclaim_rio_grande
+		}
+		relative_position_id = rrg_reclaim_rio_grande
+		completion_reward = {
+			755 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_dockyards = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					province = 9622
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_steal_from_itza
+		x = 0
+		y = 1
+		icon = GFX_goal_ITZ_dominate_the_caribbean_trade
+		cost = 30
+		prerequisite = {
+			focus = rrg_reynosa_harbour
+		}
+		available = {
+			ITZ = {
+				has_completed_focus = itz_new_designs
+			}
+		}
+		bypass = {
+			ITZ = {
+				exists = no
+			}
+		}
+		relative_position_id = rrg_reynosa_harbour
+		completion_reward = {
+			add_tech_bonus = {
+				ahead_reduction = 0.5
+				uses = 2
+				category = naval_tech_category
+			}
+		}
+	}
+	focus = {
+		id = rrg_dock_side_trade
+		x = 0
+		y = 1
+		icon = GFX_goal_ITZ_dockside_trade
+		cost = 30
+		prerequisite = {
+			focus = rrg_steal_from_itza
+		}
+		available = {
+			755 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		relative_position_id = rrg_steal_from_itza
+		completion_reward = {
+			755 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_dockyards = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					province = 9622
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_admiral_reappointment
+		x = 0
+		y = 1
+		icon = GFX_goal_NCR_River_Patrols
+		cost = 30
+		prerequisite = {
+			focus = rrg_naval_big_thonk
+		}
+		relative_position_id = rrg_naval_big_thonk
+		completion_reward = {
+			RRG_leoncio_alonso = {
+				add_coordination = 1
+				add_maneuver = 1
+			}
+			custom_effect_tooltip = rrg_unlock_pablo_reyna
+			add_naval_commander_role = {
+				character = RRG_pablo_reyna
+				traits = {
+					fleet_protector
+				}
+				skill = 3
+				attack_skill = 2
+				defense_skill = 2
+				maneuvering_skill = 3
+				coordination_skill = 2
+			}
+		}
+	}
+	focus = {
+		id = rrg_naval_officers_prog
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_naval_doctrines_focus
+		cost = 30
+		prerequisite = {
+			focus = rrg_admiral_reappointment
+		}
+		relative_position_id = rrg_admiral_reappointment
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = naval_doctrine_bonus
+				cost_reduction = 0.5
+				uses = 3
+				category = cat_naval_doctrine
+			}
+		}
+	}
+	focus = {
+		id = rrg_future_concepts
+		x = -1
+		y = 1
+		icon = GFX_goal_RRG_research
+		cost = 30
+		prerequisite = {
+			focus = rrg_naval_officers_prog
+		}
+		mutually_exclusive = {
+			focus = rrg_innovative_solutions
+		}
+		relative_position_id = rrg_naval_officers_prog
+		completion_reward = {
+			add_tech_bonus = {
+				ahead_reduction = 0.5
+				uses = 2
+				category = naval_tech_category
+			}
+		}
+	}
+	focus = {
+		id = rrg_innovative_solutions
+		x = 1
+		y = 1
+		icon = GFX_goal_generic_navy_cruiser
+		cost = 30
+		prerequisite = {
+			focus = rrg_naval_officers_prog
+		}
+		mutually_exclusive = {
+			focus = rrg_future_concepts
+		}
+		relative_position_id = rrg_naval_officers_prog
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = naval_tech_category
+			}
+		}
+	}
+	focus = {
+		id = rrg_naval_drills
+		x = 2
+		y = 2
+		icon = GFX_goal_generic_wooden_ship
+		cost = 30
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+		prerequisite = {
+			focus = rrg_naval_big_thonk
+		}
+		relative_position_id = rrg_naval_big_thonk
+		completion_reward = {
+			navy_experience = 50
+		}
+	}
+	focus = {
+		id = rrg_three_star_fleet
+		x = 0
+		y = 1
+		icon = GFX_goal_RRG_navy
+		cost = 30
+		available = {
+			747 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		prerequisite = {
+			focus = rrg_nuevo_harbour
+		}
+		relative_position_id = rrg_nuevo_harbour
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "Man the Guns"
+				}
+				custom_effect_tooltip = three_star_fleet_tt
+				hidden_effect = {
+					load_oob = three_star_fleet
+				}
+			}
+			else = {
+				random_owned_state = {
+					limit = {
+						is_valid_state_for_dockyard = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	## Air
+	focus = {
+		id = rrg_air_corps
+		x = 15
+		y = 1
+		icon = GFX_goal_generic_air_doctrines_focus
+		cost = 30
+		available = {
+			746 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		bypass = {
+			746 = {
+				air_base > 9
+			}
+		}
+		prerequisite = {
+			focus = rrg_last_ace
+		}
+		relative_position_id = rrg_last_ace
+		completion_reward = {
+			random_owned_controlled_state = {
+				#Â Done like this so it looks the same loc wise as the following
+				limit = {
+					state = 746
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					NOT = {
+						state = 746
+					}
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_fighter_schematics
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_airbases_focus
+		cost = 30
+		prerequisite = {
+			focus = rrg_air_corps
+		}
+		relative_position_id = rrg_air_corps
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = light_air_tech_category
+			}
+		}
+	}
+	focus = {
+		id = rrg_nat_flight_academy
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_air_doctrines_focus
+		cost = 30
+		prerequisite = {
+			focus = rrg_fighter_schematics
+		}
+		relative_position_id = rrg_fighter_schematics
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 3
+				category = cat_air_doctrine
+			}
+		}
+	}
+	focus = {
+		id = rrg_sortie_drills
+		x = 0
+		y = 1
+		icon = GFX_goal_RRG_biplane
+		cost = 30
+		prerequisite = {
+			focus = rrg_nat_flight_academy
+		}
+		relative_position_id = rrg_nat_flight_academy
+		completion_reward = {
+			air_experience = 50
+		}
+	}
+	focus = {
+		id = rrg_all_branch_drills
+		x = 0
+		y = 1
+		icon = GFX_goal_RRG_combined_arms
+		cost = 30
+		prerequisite = {
+			focus = rrg_naval_drills
+		}
+		prerequisite = {
+			focus = rrg_sortie_drills
+		}
+		prerequisite = {
+			focus = rrg_war_games
+		}
+		relative_position_id = rrg_sortie_drills
+		completion_reward = {
+			navy_experience = 25
+			air_experience = 25
+			army_experience = 25
+			add_command_power = 25
+		}
+	}
+	## Military
+	focus = {
+		id = rrg_prioritise_mil
+		x = 18
+		y = 1
+		icon = GFX_goal_generic_recruitment_focus
+		cost = 30
+		prerequisite = {
+			focus = rrg_last_ace
+		}
+		relative_position_id = rrg_last_ace
+		completion_reward = {
+			add_political_power = 100
+			army_experience = 25
+		}
+	}
+	focus = {
+		id = rrg_mil_innovation
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_advanced_firearms_focus
+		cost = 30
+		prerequisite = {
+			focus = rrg_prioritise_mil
+		}
+		relative_position_id = rrg_prioritise_mil
+		completion_reward = {
+			add_tech_bonus = {
+				ahead_reduction = 0.5
+				uses = 2
+				category = vehicle_tech_category
+				category = support_combat_tech_category
+			}
+		}
+	}
+	focus = {
+		id = rrg_armour_dev
+		x = -1
+		y = 1
+		icon = GFX_goal_power_armor
+		cost = 30
+		prerequisite = {
+			focus = rrg_mil_innovation
+		}
+		relative_position_id = rrg_mil_innovation
+		completion_reward = {
+			add_ideas = rdd_idea_radic
+		}
+	}
+	focus = {
+		id = rrg_war_games
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_data_focus
+		cost = 30
+		prerequisite = {
+			focus = rrg_armour_dev
+		}
+		relative_position_id = rrg_armour_dev
+		completion_reward = {
+			army_experience = 50
+		}
+	}
+	focus = {
+		id = rrg_gloria_mil_academy
+		x = 5
+		y = 1
+		icon = GFX_goal_RRG_combined_arms
+		cost = 30
+		available = {
+			746 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		prerequisite = {
+			focus = rrg_mil_innovation
+		}
+		relative_position_id = rrg_mil_innovation
+		completion_reward = {
+			add_command_power = 100
+			every_unit_leader = {
+				add_skill_level = 1
+				add_planning = 1
+			}
+		}
+	}
+	focus = {
+		id = rrg_automated_warfare
+		x = 2
+		y = 1
+		icon = GFX_goal_ARM_santa_anna_arrives_in_ciudad_victoria
+		cost = 15
+		prerequisite = {
+			focus = rrg_gloria_mil_academy
+		}
+		relative_position_id = rrg_gloria_mil_academy
+		mutually_exclusive = {
+			focus = rrg_conventional_warfare
+			focus = rrg_specialized_warfare
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = rrg_automated_warfare
+				bonus = 0.5
+				uses = 2
+				category = cat_automated_warfare
+			}
+			add_popularity = {
+				ideology = intellectuals
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = rrg_robot_recovery
+		x = 2
+		y = 1
+		icon = GFX_goal_ENC_eyebot_reform
+		cost = 15
+		prerequisite = {
+			focus = rrg_automated_warfare
+		}
+		relative_position_id = rrg_automated_warfare
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 3
+				category = robotics_tech_category
+			}
+		}
+	}
+	focus = {
+		id = rrg_machine_age
+		x = -1
+		y = 1
+		icon = GFX_goal_ARM_robco_factory_rearmament
+		cost = 15
+		prerequisite = {
+			focus = rrg_robot_recovery
+		}
+		relative_position_id = rrg_robot_recovery
+		completion_reward = {
+			add_tech_bonus = {
+				name = rrg_machine_age
+				bonus = 0.5
+				uses = 2
+				category = cat_automated_warfare
+			}
+			add_popularity = {
+				ideology = intellectuals
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = rrg_chico_stash
+		x = 1
+		y = 1
+		icon = GFX_goal_generic_robots_focus
+		cost = 15
+		prerequisite = {
+			focus = rrg_robot_recovery
+		}
+		relative_position_id = rrg_robot_recovery
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = support_robot_thruster_equipment_1
+				amount = 500
+				producer = USA
+			}
+		}
+	}
+	focus = {
+		id = rrg_conventional_warfare
+		x = 0
+		y = 1
+		icon = GFX_goal_NCR_Weapon_Standardization
+		cost = 15
+		prerequisite = {
+			focus = rrg_gloria_mil_academy
+		}
+		relative_position_id = rrg_gloria_mil_academy
+		mutually_exclusive = {
+			focus = rrg_automated_warfare
+			focus = rrg_specialized_warfare
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = rrg_conventional_warfare
+				bonus = 0.5
+				uses = 2
+				category = cat_grand_army
+			}
+			add_popularity = {
+				ideology = people
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = rrg_old_tactics_new_vistas
+		x = 1
+		y = 1
+		icon = GFX_goal_generic_land_doctrines_focus
+		cost = 15
+		prerequisite = {
+			focus = rrg_conventional_warfare
+		}
+		relative_position_id = rrg_conventional_warfare
+		completion_reward = {
+			add_tech_bonus = {
+				name = rrg_old_tactics_new_vistas
+				bonus = 0.5
+				uses = 2
+				category = cat_grand_army
+			}
+			add_popularity = {
+				ideology = people
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = rrg_chop_shop_initiative
+		x = -1
+		y = 1
+		icon = GFX_goal_generic_army_motorized
+		cost = 15
+		prerequisite = {
+			focus = rrg_conventional_warfare
+		}
+		relative_position_id = rrg_conventional_warfare
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 2
+				category = vehicle_tech_category
+			}
+			add_equipment_to_stockpile = {
+				type = light_motorized_equipment_1
+				amount = 500
+				producer = USA
+			}
+		}
+	}
+	focus = {
+		id = rrg_chico_stash_conventional
+		x = -1
+		y = 1
+		icon = GFX_goal_generic_ammo_boxes_focus
+		cost = 15
+		prerequisite = {
+			focus = rrg_old_tactics_new_vistas
+		}
+		prerequisite = {
+			focus = rrg_chop_shop_initiative
+		}
+		relative_position_id = rrg_old_tactics_new_vistas
+		available = {
+			TLA = {
+				has_tech = ballistic_weaponry_tech_2
+			}
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_2
+				amount = 500
+				producer = TLA
+			}
+		}
+	}
+	focus = {
+		id = rrg_specialized_warfare
+		x = -2
+		y = 1
+		icon = GFX_goal_generic_advanced_firearms_focus
+		cost = 15
+		prerequisite = {
+			focus = rrg_gloria_mil_academy
+		}
+		relative_position_id = rrg_gloria_mil_academy
+		mutually_exclusive = {
+			focus = rrg_automated_warfare
+			focus = rrg_conventional_warfare
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = rrg_specialized_warfare
+				bonus = 0.5
+				uses = 2
+				category = cat_elite_army
+			}
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = rrg_specialized_equipment_requisition
+		x = -2
+		y = 1
+		icon = GFX_goal_generic_common_firearms_focus
+		cost = 15
+		prerequisite = {
+			focus = rrg_specialized_warfare
+		}
+		relative_position_id = rrg_specialized_warfare
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 3
+				category = spec_force_equipment_tech_category
+			}
+		}
+	}
+	focus = {
+		id = rrg_best_of_best
+		x = 1
+		y = 1
+		icon = GFX_goal_generic_regular_firearms_focus
+		cost = 15
+		prerequisite = {
+			focus = rrg_specialized_equipment_requisition
+		}
+		relative_position_id = rrg_specialized_equipment_requisition
+		completion_reward = {
+			add_tech_bonus = {
+				name = rrg_best_of_best
+				bonus = 0.5
+				uses = 2
+				category = cat_elite_army
+			}
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = rrg_chico_stash_elite
+		x = -1
+		y = 1
+		icon = GFX_goal_NCR_Rangers_Lead_the_War
+		cost = 15
+		prerequisite = {
+			focus = rrg_specialized_equipment_requisition
+		}
+		relative_position_id = rrg_specialized_equipment_requisition
+		available = {
+			TLA = {
+				has_tech = spec_ops_equipment_tech_2
+			}
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = spec_ops_equipment_2
+				amount = 500
+				producer = TLA
+			}
+		}
+	}
+	## Political
+	focus = {
+		id = rrg_gloria_in_flames
+		x = 0
+		y = 1
+		icon = GFX_goal_TAA_molotov
+		cost = 15
+		prerequisite = {
+			focus = rrg_last_ace
+		}
+		relative_position_id = rrg_last_ace
+		available = {
+			has_country_flag = rrg_desperate_times
+		}
+		completion_reward = {
+			add_stability = -0.05
+		}
+	}
+	focus = {
+		id = rrg_hero_oath
+		x = -2
+		y = 1
+		icon = GFX_goal_RRG_mora
+		cost = 15
+		prerequisite = {
+			focus = rrg_gloria_in_flames
+		}
+		relative_position_id = rrg_gloria_in_flames
+		mutually_exclusive = {
+			focus = rrg_president_speech
+		}
+		mutually_exclusive = {
+			focus = rrg_engineer_ambition
+		}
+		completion_reward = {
+			unlock_decision_category_tooltip = RRG_mora_campaign
+			custom_effect_tooltip = on_map_decision_only_tt
+		}
+	}
+	focus = {
+		id = rrg_president_speech
+		x = 0
+		y = 1
+		icon = GFX_goal_RRG_Dante_Microphone
+		cost = 15
+		prerequisite = {
+			focus = rrg_gloria_in_flames
+		}
+		relative_position_id = rrg_gloria_in_flames
+		mutually_exclusive = {
+			focus = rrg_hero_oath
+		}
+		mutually_exclusive = {
+			focus = rrg_engineer_ambition
+		}
+		completion_reward = {
+			unlock_decision_category_tooltip = RRG_guerra_campaign
+			custom_effect_tooltip = on_map_decision_only_tt
+		}
+	}
+	focus = {
+		id = rrg_engineer_ambition
+		x = 2
+		y = 1
+		icon = GFX_goal_RRG_Rosado_New
+		cost = 15
+		prerequisite = {
+			focus = rrg_gloria_in_flames
+		}
+		relative_position_id = rrg_gloria_in_flames
+		mutually_exclusive = {
+			focus = rrg_president_speech
+		}
+		mutually_exclusive = {
+			focus = rrg_hero_oath
+		}
+		completion_reward = {
+			unlock_decision_category_tooltip = RRG_rosado_campaign
+			custom_effect_tooltip = on_map_decision_only_tt
+		}
+	}
+	focus = {
+		id = rrg_contingency
+		x = 0
+		y = 2
+		icon = GFX_goal_RRG_industry
+		cost = 15
+		prerequisite = {
+			focus = rrg_president_speech
+			focus = rrg_engineer_ambition
+			focus = rrg_hero_oath
+		}
+		relative_position_id = rrg_gloria_in_flames
+		completion_reward = {
+			custom_effect_tooltip = rrg_unlock_carlos_avila
+		}
+	}
+	##########################
+	##### Economic Development
+	##########################
+	focus = {
+		id = rrg_new_deal
+		x = -2
+		y = 1
+		icon = GFX_focus_generic_self_management
+		cost = 30
+		prerequisite = {
+			focus = rrg_contingency
+		}
+		relative_position_id = rrg_contingency
+		mutually_exclusive = {
+			focus = rrg_hard_reset
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = rrg_new_deal_idea
+				days = 722
+			}
+			set_country_flag = rrg_new_deal_flag
+		}
+	}
+	focus = {
+		id = rrg_hard_reset
+		x = 2
+		y = 1
+		icon = GFX_focus_hol_abandon_the_gold_standard
+		cost = 30
+		prerequisite = {
+			focus = rrg_contingency
+		}
+		mutually_exclusive = {
+			focus = rrg_new_deal
+		}
+		relative_position_id = rrg_contingency
+		completion_reward = {
+			add_timed_idea = {
+				idea = rrg_economic_crackdown1
+				days = 722
+			}
+		}
+	}
+	focus = {
+		id = rrg_military_industrial_bailout
+		x = -2
+		y = 1
+		icon = GFX_goal_RRG_guns_on_flag
+		cost = 30
+		prerequisite = {
+			focus = rrg_hard_reset
+			focus = rrg_new_deal
+		}
+		relative_position_id = rrg_hard_reset
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = rrg_national_crisis
+				add_idea = rrg_stabilization
+			}
+		}
+	}
+	focus = {
+		id = rrg_protect_small_manufacturers
+		x = -1
+		y = 1
+		icon = GFX_goal_RRG_industry
+		cost = 30
+		mutually_exclusive = {
+			focus = rrg_approach_cartels
+		}
+		prerequisite = {
+			focus = rrg_military_industrial_bailout
+		}
+		relative_position_id = rrg_military_industrial_bailout
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_2_arms_factories = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_texan_expertise
+		x = 0
+		y = 1
+		icon = GFX_goal_cowboy_hat
+		cost = 30
+		prerequisite = {
+			focus = rrg_protect_small_manufacturers
+		}
+		relative_position_id = rrg_protect_small_manufacturers
+		completion_reward = {
+			add_tech_bonus = {
+				name = ballist_research_bonus
+				bonus = 0.5
+				uses = 2
+				category = infantry_tech_category
+			}
+		}
+	}
+	focus = {
+		id = rrg_american_arms
+		x = 0
+		y = 1
+		icon = GFX_goal_RRG_usa_industry
+		cost = 30
+		prerequisite = {
+			focus = rrg_texan_expertise
+		}
+		relative_position_id = rrg_texan_expertise
+		completion_reward = {
+			add_tech_bonus = {
+				name = explosive_bonus
+				bonus = 0.5
+				uses = 2
+				category = support_demolitions_tech_category
+			}
+		}
+	}
+	focus = {
+		id = rrg_approach_cartels
+		x = 1
+		y = 1
+		icon = GFX_goal_cartel_alliance
+		cost = 30
+		mutually_exclusive = {
+			focus = rrg_protect_small_manufacturers
+		}
+		prerequisite = {
+			focus = rrg_military_industrial_bailout
+		}
+		relative_position_id = rrg_military_industrial_bailout
+		completion_reward = {
+			add_ideas = cartel_rejects
+			every_country = {
+				limit = {
+					OR = {
+						tag = SIN
+						tag = BLO
+					}
+				}
+				country_event = { id = nf_cartel.26 }
+				custom_effect_tooltip = needs_approval
+			}
+
+			effect_tooltip = {
+				add_equipment_to_stockpile = {
+					type = ballistic_equipment_1
+					amount = 375
+				}
+				custom_effect_tooltip = cartel_warning_tt
+			}
+
+		}
+	}
+	focus = {
+		id = rrg_ghoul_gunsmiths
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_ghouls_focus
+		cost = 30
+		prerequisite = {
+			focus = rrg_approach_cartels
+		}
+		relative_position_id = rrg_approach_cartels
+		completion_reward = {
+			746 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_mexican_arms2
+		x = 0
+		y = 1
+		icon = GFX_goal_revolver
+		cost = 30
+		prerequisite = {
+			focus = rrg_ghoul_gunsmiths
+		}
+		relative_position_id = rrg_ghoul_gunsmiths
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = infantry_tech_category
+			}
+		}
+	}
+	focus = {
+		id = rrg_hand_market
+		x = -1
+		y = 1
+		icon = GFX_goal_bottlecap
+		cost = 30
+		prerequisite = {
+			focus = rrg_mexican_arms2
+			focus = rrg_american_arms
+		}
+		relative_position_id = rrg_mexican_arms2
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = rrg_stabilization
+				add_idea = rrg_stabilization2
+			}
+		}
+	}
+	focus = {
+		id = rrg_foreign_loans
+		x = 1
+		y = 1
+		icon = GFX_goal_ancient_wealth
+		cost = 30
+		prerequisite = {
+			focus = rrg_hand_market
+		}
+		relative_position_id = rrg_hand_market
+		completion_reward = {
+			add_dynamic_modifier = {
+				modifier = rrg_trader_loans_invested_dynamic
+			}
+			custom_effect_tooltip = rrg_foreign_loans_tt
+		}
+	}
+	focus = {
+		id = rrg_river_merchants
+		x = -1
+		y = 1
+		icon = GFX_goal_generic_generic_diplomatic_focus
+		cost = 30
+		prerequisite = {
+			focus = rrg_hand_market
+		}
+		relative_position_id = rrg_hand_market
+		completion_reward = {
+			add_ideas = rrg_river_guild_support
+		}
+	}
+	focus = {
+		id = rrg_trade_mogul
+		x = -1
+		y = 1
+		icon = GFX_goal_generic_ghouls_focus
+		cost = 30
+		prerequisite = {
+			focus = rrg_river_merchants
+		}
+		relative_position_id = rrg_river_merchants
+		completion_reward = {
+			custom_effect_tooltip = rrg_trade_mogul_tt
+		}
+	}
+	focus = {
+		id = rrg_trade_baroness
+		x = 1
+		y = 1
+		icon = GFX_focus_hun_elect_a_king
+		cost = 30
+		prerequisite = {
+			focus = rrg_foreign_loans
+		}
+		relative_position_id = rrg_foreign_loans
+		completion_reward = {
+			custom_effect_tooltip = rrg_trade_baroness_tt
+		}
+	}
+	focus = {
+		id = rrg_time_the_healer
+		x = 1
+		y = 1
+		icon = GFX_goal_generic_cities_focus
+		cost = 30
+		prerequisite = {
+			focus = rrg_river_merchants
+		}
+		prerequisite = {
+			focus = rrg_foreign_loans
+		}
+		relative_position_id = rrg_river_merchants
+		available = {
+			NOT = {
+				has_idea = rrg_economic_crackdown1
+			}
+			NOT = {
+				has_idea = rrg_new_deal_idea
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = rrg_stabilization2
+				}
+				remove_ideas = rrg_stabilization2
+			}
+			if = {
+				limit = {
+					has_country_flag = rrg_new_deal_flag
+				}
+				add_ideas = rrg_new_deal2
+			}
+			else = {
+				add_ideas = rrg_economic_crackdown2
+			}
+		}
+	}
+	##########################
+	##### TAAA
+	##########################
+	focus = {
+		id = rrg_beyond_rio_grande
+		icon = GFX_focus_generic_provoke_border_clashes
+		x = 5
+		y = 2
+		cost = 15
+		prerequisite = {
+			focus = rrg_contingency
+		}
+		relative_position_id = rrg_contingency
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = rrg_warn_TAA_citizens
+		icon = GFX_goal_RRG_radio_broadcast
+		x = 0
+		y = 1
+		cost = 15
+		prerequisite = {
+			focus = rrg_beyond_rio_grande
+		}
+		relative_position_id = rrg_beyond_rio_grande
+		completion_reward = {
+			TAA = {
+				add_ideas = TAA_demoralization_campaign
+				country_event = nf_taa.79
+			}
+		}
+	}
+	focus = {
+		id = rrg_rally_the_people
+		icon = GFX_goal_generic_ideological_fury_focus
+		x = -2
+		mutually_exclusive = {
+			focus = rrg_negotiate_taa
+		}
+		mutually_exclusive = {
+			focus = rrg_path_progress
+		}
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_warn_TAA_citizens
+		}
+		relative_position_id = rrg_warn_TAA_citizens
+		completion_reward = {
+			country_event = {
+				id = nf_rrg.13
+			}
+		}
+	}
+	focus = {
+		id = rrg_raise_moras_militia
+		icon = GFX_goal_NCR_Weapon_Standardization
+		x = 0
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_rally_the_people
+		}
+		relative_position_id = rrg_rally_the_people
+		completion_reward = {
+			custom_effect_tooltip = rrg_raise_TAA_militias
+			hidden_effect = {
+				load_oob = moramilitia
+				TAA = { country_event = nf_taa.742 }
+			}
+			custom_effect_tooltip = on_map_decision_only_tt
+		}
+	}
+	focus = {
+		id = rrg_manifest_destiny
+		icon = GFX_goal_flag_mexico
+		x = 0
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_raise_moras_militia
+		}
+		relative_position_id = rrg_raise_moras_militia
+		completion_reward = {
+			country_event = {
+				id = nf_rrg.14
+			}
+		}
+	}
+	focus = {
+		id = rrg_negotiate_taa
+		icon = GFX_goal_tripartite_pact
+		x = 0
+		y = 1
+		mutually_exclusive = {
+			focus = rrg_rally_the_people
+		}
+		mutually_exclusive = {
+			focus = rrg_path_progress
+		}
+		cost = 30
+		prerequisite = {
+			focus = rrg_warn_TAA_citizens
+		}
+		relative_position_id = rrg_warn_TAA_citizens
+		completion_reward = {
+			country_event = nf_rrg.15
+		}
+	}
+	focus = {
+		id = rrg_sign_trade_accord
+		icon = GFX_goal_RRG_champagne
+		x = 0
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_negotiate_taa
+		}
+		relative_position_id = rrg_negotiate_taa
+		completion_reward = {
+			country_event = nf_rrg.16
+		}
+	}
+	focus = {
+		id = rrg_to_future_ventures
+		icon = GFX_goal_RRG_texan_trade
+		x = 0
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_sign_trade_accord
+		}
+		relative_position_id = rrg_sign_trade_accord
+		completion_reward = {
+			country_event = nf_rrg.17
+		}
+	}
+	focus = {
+		id = rrg_path_progress
+		icon = GFX_goal_generic_BOS_focus_t51b_production
+		x = 2
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_warn_TAA_citizens
+		}
+		mutually_exclusive = {
+			focus = rrg_rally_the_people
+		}
+		mutually_exclusive = {
+			focus = rrg_negotiate_taa
+		}
+		relative_position_id = rrg_warn_TAA_citizens
+		completion_reward = {
+			add_political_power = 50
+			add_equipment_to_stockpile = {
+				type = energy_equipment_2
+				amount = 500
+				producer = USA
+			}
+			custom_effect_tooltip = rrg_path_progress_tt
+		}
+	}
+	focus = {
+		id = rrg_steel_reclamation
+		icon = GFX_goal_generic_power_armor_blue
+		x = 0
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_path_progress
+		}
+		relative_position_id = rrg_path_progress
+		completion_reward = {
+			add_tech_bonus = {
+				name = ballist_research_bonus
+				bonus = 0.5
+				uses = 2
+				category = infantry_tech_category
+			}
+			add_equipment_to_stockpile = {
+				type = power_armor_equipment_2
+				amount = 500
+				producer = USA
+			}
+		}
+	}
+	focus = {
+		id = rrg_the_rio_chapter
+		icon = GFX_goal_RRG_laser_gun
+		x = 0
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_steel_reclamation
+		}
+		will_lead_to_war_with = TAA
+		relative_position_id = rrg_steel_reclamation
+		completion_reward = {
+			custom_effect_tooltip = rrg_the_rio_chapter_tt
+			division_template = {
+				name = "Texan Volunteers"
+				regiments = {
+					power_armour = { x = 0 y = 0 }
+					power_armour = { x = 0 y = 1 }
+					power_armour = { x = 1 y = 0 }
+					power_armour = { x = 1 y = 1 }
+					power_armour = { x = 2 y = 0 }
+					power_armour = { x = 2 y = 1 }
+				}
+			}
+			746 = {
+				create_unit = {
+					division = "name = \"Brotherhood Colleagues\" division_template = \"Texan Volunteers\" start_experience_factor = 0.75 start_equipment_factor = 1.0 force_equipment_variants = { ballistic_equipment_3 = { owner = \"USA\" } power_armor_equipment_3 = { owner = \"USA\" }}"
+					owner = RRG
+					allow_spawning_on_enemy_provs = yes
+					count = 3
+				}
+			}
+			TAA = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			remove_ideas = rrg_texas_secessionists
+		}
+	}
+
+	##########################
+	##### LEGION Crisis
+	##########################
+	focus = {
+		id = rrg_legion_shame
+		icon = GFX_goal_CES_generic_focus
+		x = -5
+		y = 2
+		cost = 15
+		prerequisite = {
+			focus = rrg_contingency
+		}
+		relative_position_id = rrg_contingency
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = rrg_paullus_directive
+		x = 0
+		y = 1
+		icon = GFX_goal_NCR_openlong15
+		cost = 15
+		prerequisite = {
+			focus = rrg_legion_shame
+		}
+		relative_position_id = rrg_legion_shame
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = rrg_call_in_favors
+		x = -2
+		y = 1
+		icon = GFX_goal_RRG_handshake
+		cost = 30
+		prerequisite = {
+			focus = rrg_paullus_directive
+		}
+		relative_position_id = rrg_paullus_directive
+		bypass = {
+			has_country_flag = pls_paul_strikes_back
+		}
+		mutually_exclusive = {
+			focus = rrg_northern_protection_act
+		}
+		mutually_exclusive = {
+			focus = rrg_summon_paladins
+		}
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = rrg_red_sun_ambassador
+		x = 0
+		y = 1
+		icon = GFX_goal_CES_diplomatic
+		cost = 30
+		prerequisite = {
+			focus = rrg_call_in_favors
+		}
+		relative_position_id = rrg_call_in_favors
+		bypass = {
+			has_country_flag = pls_paul_strikes_back
+		}
+		completion_reward = {
+			country_event = nf_rrg.6
+		}
+	}
+	focus = {
+		id = rrg_moras_left_eye
+		x = 0
+		y = 1
+		icon = GFX_goal_NCR_Big_Jims_Army
+		cost = 30
+		prerequisite = {
+			focus = rrg_red_sun_ambassador
+		}
+		bypass = {
+			has_country_flag = pls_paul_strikes_back
+		}
+		relative_position_id = rrg_red_sun_ambassador
+		available = {
+			has_country_flag = paullus_diplomat
+		}
+		completion_reward = {
+			custom_effect_tooltip = rrg_unlock_paullus
+			custom_effect_tooltip = PAULLUS_TT
+			hidden_effect = {
+				add_corps_commander_role = {
+					character = RRG_paullus
+					traits = {
+						charismatic_trait
+						strong_trait
+					}
+					skill = 3
+					attack_skill = 2
+					defense_skill = 2
+					planning_skill = 2
+					logistics_skill = 2
+					legacy_id = -1
+				}
+
+				division_template = {
+					name = "Legionary"
+
+					division_names_group = _CES_INF_01
+
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+					}
+					support = {
+						medical_chem_company = { x = 0 y = 0 }
+					}
+				}
+
+			}
+			746 = {
+				create_unit = {
+					division = "name = \"Los Minutos\" division_template = \"Legionary\" start_experience_factor = 0.28"
+					owner = RRG
+				}
+				create_unit = {
+					division = "name = \"Los Segundos\" division_template = \"Legionary\" start_experience_factor = 0.28"
+					owner = RRG
+				}
+			}
+			remove_ideas = rrg_idea_paullus_raiders
+			clr_country_flag = paullus_raids
+		}
+	}
+	focus = {
+		id = rrg_northern_protection_act
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_RRG_flag_shield
+		cost = 30
+		prerequisite = {
+			focus = rrg_paullus_directive
+		}
+		bypass = {
+			has_country_flag = pls_paul_strikes_back
+		}
+		mutually_exclusive = {
+			focus = rrg_call_in_favors
+		}
+		mutually_exclusive = {
+			focus = rrg_summon_paladins
+		}
+		relative_position_id = rrg_paullus_directive
+		completion_reward = {
+			custom_effect_tooltip = rrg_arm_militia
+			custom_effect_tooltip = on_map_decision_only_tt
+		}
+	}
+	focus = {
+		id = rrg_highland_protection_act
+		x = 0
+		y = 1
+		icon = GFX_goal_RRG_the_common_man
+		cost = 30
+		prerequisite = {
+			focus = rrg_northern_protection_act
+		}
+		bypass = {
+			has_country_flag = pls_paul_strikes_back
+		}
+		available = {
+			has_country_flag = rrg_arm_militias
+		}
+		relative_position_id = rrg_northern_protection_act
+		completion_reward = {
+			hidden_effect = {
+				division_template = {
+					name = "Los Minutos"
+					division_names_group = REBEL_INF_01
+					regiments = {
+						militia = {
+							x = 0
+							y = 0
+						}
+						militia = {
+							x = 0
+							y = 1
+						}
+						militia = {
+							x = 0
+							y = 2
+						}
+						militia = {
+							x = 1
+							y = 0
+						}
+					}
+					# support = {
+					# }
+				}
+			}
+			746 = {
+				create_unit = {
+					division = "name = \"Los Minutos\" division_template = \"Los Minutos\" start_experience_factor = 0.28"
+					owner = RRG
+				}
+				create_unit = {
+					division = "name = \"Los Minutos\" division_template = \"Los Minutos\" start_experience_factor = 0.28"
+					owner = RRG
+				}
+				create_unit = {
+					division = "name = \"Los Minutos\" division_template = \"Los Minutos\" start_experience_factor = 0.28"
+					owner = RRG
+				}
+				create_unit = {
+					division = "name = \"Los Minutos\" division_template = \"Los Minutos\" start_experience_factor = 0.28"
+					owner = RRG
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_end_paullus
+		x = 0
+		y = 1
+		icon = GFX_goal_RRG_poison_bull
+		cost = 30
+		prerequisite = {
+			focus = rrg_highland_protection_act
+		}
+		bypass = {
+			has_country_flag = pls_paul_strikes_back
+		}
+		relative_position_id = rrg_highland_protection_act
+		completion_reward = {
+			remove_ideas = rrg_idea_paullus_raiders
+			add_war_support = 0.1
+			clr_country_flag = paullus_raids
+		}
+	}
+	focus = {
+		id = rrg_summon_paladins
+		x = 2
+		y = 1
+		icon = GFX_goal_BOS_generic
+		cost = 30
+		mutually_exclusive = {
+			focus = rrg_call_in_favors
+		}
+		bypass = {
+			has_country_flag = pls_paul_strikes_back
+		}
+		mutually_exclusive = {
+			focus = rrg_northern_protection_act
+		}
+		prerequisite = {
+			focus = rrg_paullus_directive
+		}
+		relative_position_id = rrg_paullus_directive
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = rrg_memento_colorado
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_common_energy_weapons_focus
+		cost = 30
+		prerequisite = {
+			focus = rrg_summon_paladins
+		}
+		bypass = {
+			has_country_flag = pls_paul_strikes_back
+		}
+		relative_position_id = rrg_summon_paladins
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+	focus = {
+		id = rrg_wipe_slate_clean
+		x = 0
+		y = 1
+		icon = GFX_goal_BOS_steel_rain
+		cost = 30
+		prerequisite = {
+			focus = rrg_memento_colorado
+		}
+		bypass = {
+			has_country_flag = pls_paul_strikes_back
+		}
+		relative_position_id = rrg_memento_colorado
+		completion_reward = {
+			remove_ideas = rrg_idea_paullus_raiders
+			clr_country_flag = paullus_raids
+			745 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			capital_scope = {
+				add_resource = {
+					type = metal
+					amount = 16
+				}
+			}
+		}
+	}
+	##########################
+	##### Da Vinci of War
+	##########################
+	focus = {
+		id = rrg_davinci_of_war
+		x = -21
+		y = 11
+		icon = GFX_goal_RRG_mora
+		cost = 30
+		mutually_exclusive = {
+			focus = rrg_dantes_inferno
+			focus = rrg_rose_of_mexico
+		}
+		available = {
+			has_country_flag = RRG_election_held
+			is_mora_leader = yes
+		}
+		allow_branch = {
+			NOT = {
+				OR = {
+					has_completed_focus = rrg_dantes_inferno
+					has_completed_focus = rrg_rose_of_mexico
+				}
+			}
+		}
+		offset = {
+			x = 21
+			y = 0
+			trigger = {
+				has_completed_focus = rrg_davinci_of_war
+			}
+		}
+		relative_position_id = rrg_gloria_in_flames
+		completion_reward = {
+			add_ideas = rrg_slowshift
+			news_event = nf_rrg.19
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+	focus = {
+		id = rrg_mora_amigos
+		x = -1
+		y = 1
+		icon = GFX_focus_mex_caudillo_private_armies
+		cost = 30
+		available = {
+			is_mora_leader = yes
+		}
+		prerequisite = {
+			focus = rrg_davinci_of_war
+		}
+		relative_position_id = rrg_davinci_of_war
+		completion_reward = {
+			custom_effect_tooltip = RAFAEL_ORTEGA_TT
+			hidden_effect = {
+				add_corps_commander_role = {
+					character = RRG_rafael_ortega
+					traits = {
+						perceptive_trait
+						enduring_trait
+					}
+					skill = 4
+					attack_skill = 3
+					defense_skill = 2
+					planning_skill = 3
+					logistics_skill = 2
+					legacy_id = -1
+				}
+			}
+			custom_effect_tooltip = rrg_mora_amigos_tt
+		}
+	}
+	focus = {
+		id = rrg_presidential_guard
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_naval_doctrines_focus
+		cost = 30
+		prerequisite = {
+			focus = rrg_mora_amigos
+		}
+		relative_position_id = rrg_mora_amigos
+		completion_reward = {
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.05
+			}
+			news_event = nf_rrg.29
+		}
+	}
+	focus = {
+		id = rrg_general_mora
+		x = -1
+		y = 1
+		icon = GFX_goal_RRG_mora
+		cost = 30
+		prerequisite = {
+			focus = rrg_presidential_guard
+		}
+		relative_position_id = rrg_presidential_guard
+		completion_reward = {
+			custom_effect_tooltip = LEONARDO_MORA_TT
+			hidden_effect = {
+				add_field_marshal_role = {
+					character = RRG_leonardo_mora
+					traits = {
+						charismatic_trait
+						intelligent_trait
+						inspirational_trait
+					}
+					skill = 6
+					attack_skill = 4
+					defense_skill = 3
+					planning_skill = 4
+					logistics_skill = 3
+					legacy_id = -1
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_moras_schools
+		x = -2
+		y = 1
+		icon = GFX_goal_RRG_schooling_mex
+		cost = 30
+		prerequisite = {
+			focus = rrg_general_mora
+		}
+		relative_position_id = rrg_general_mora
+		completion_reward = {
+			add_political_power = 50
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.15
+			}
+		}
+	}
+	focus = {
+		id = rrg_moras_book
+		x = 0
+		y = 1
+		icon = GFX_goal_RRG_mexico_book
+		cost = 30
+		prerequisite = {
+			focus = rrg_general_mora
+		}
+		relative_position_id = rrg_general_mora
+		completion_reward = {
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.05
+			}
+			country_event = nf_rrg.28
+		}
+	}
+	focus = {
+		id = rrg_guerra_eternal
+		x = 1
+		y = 1
+		icon = GFX_goal_generic_mexico_shield
+		cost = 30
+		prerequisite = {
+			focus = rrg_presidential_guard
+		}
+		prerequisite = {
+			focus = rrg_new_army_war
+		}
+		relative_position_id = rrg_presidential_guard
+		completion_reward = {
+			add_ideas = rrg_guerra_eterna_idea
+		}
+	}
+	focus = {
+		id = rrg_mexico_reborn
+		x = 0
+		y = 1
+		icon = GFX_goal_flag_mexico
+		cost = 30
+		prerequisite = {
+			focus = rrg_guerra_eternal
+		}
+		relative_position_id = rrg_guerra_eternal
+		completion_reward = {
+			news_event = nf_rrg.20
+		}
+	}
+	focus = {
+		id = rrg_new_draft_war
+		x = 1
+		y = 1
+		icon = GFX_goal_NCR_Urban_Draft
+		cost = 30
+		available = {
+			is_mora_leader = yes
+		}
+		prerequisite = {
+			focus = rrg_davinci_of_war
+		}
+		relative_position_id = rrg_davinci_of_war
+		completion_reward = {
+			add_ideas = rrg_new_draft
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = rrg_new_army_war
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_common_firearms_focus
+		cost = 30
+		prerequisite = {
+			focus = rrg_new_draft_war
+		}
+		relative_position_id = rrg_new_draft_war
+		completion_reward = {
+			add_ideas = rrg_new_army
+		}
+	}
+	focus = {
+		id = rrg_future_war
+		x = 1
+		y = 1
+		icon = GFX_goal_generic_advanced_energy_weapons_focus
+		cost = 30
+		prerequisite = {
+			focus = rrg_new_army_war
+		}
+		relative_position_id = rrg_new_army_war
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.4
+				uses = 2
+				category = cat_land_doctrine
+			}
+			army_experience = 15
+		}
+	}
+	focus = {
+		id = rrg_future_peace
+		x = 0
+		y = 1
+		icon = GFX_goal_ENC_vac
+		cost = 30
+		prerequisite = {
+			focus = rrg_future_war
+		}
+		relative_position_id = rrg_future_war
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = support_medical_tech_category
+			}
+		}
+	}
+	focus = {
+		id = rrg_future_society
+		x = 2
+		y = 1
+		icon = GFX_goal_RRG_plans
+		cost = 30
+		prerequisite = {
+			focus = rrg_future_war
+		}
+		relative_position_id = rrg_future_war
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				ahead_reduction = 1
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = rrg_army_renewed
+		x = -8
+		y = 1
+		icon = GFX_goal_RRG_santa_anna
+		cost = 30
+		prerequisite = {
+			focus = rrg_mexico_reborn
+		}
+		relative_position_id = rrg_mexico_reborn
+		available = {
+			TLA = {
+				exists = no
+			}
+			ARM = {
+				exists = yes
+				is_subject = no
+			}
+		}
+		bypass = {
+			OR = {
+				has_war_with = ARM
+				ARM = { exists = no }
+				ARM = { is_in_faction_with = ROOT }
+			}
+		}
+		will_lead_to_war_with = ARM
+		completion_reward = {
+			ARM = {
+				country_event = nf_rrg.25
+			}
+		}
+	}
+	focus = {
+		id = rrg_hero_mexico
+		x = -2
+		y = 1
+		icon = GFX_goal_RRG_arm_good
+		cost = 30
+		available = {
+			NOT = {
+				has_completed_focus = rrg_despot_mexico
+			}
+			NOT = {
+				has_country_flag = spurn_santa_anna
+			}
+			NOT = {
+				has_war_with = ARM
+			}
+		}
+		prerequisite = {
+			focus = rrg_army_renewed
+		}
+		relative_position_id = rrg_army_renewed
+		completion_reward = {
+			ARM = {
+				add_political_power = 100
+				give_guarantee = rrg
+			}
+		}
+	}
+	focus = {
+		id = rrg_arm_free_people
+		x = 0
+		y = 1
+		icon = GFX_goal_RRG_mexico_civilian
+		cost = 30
+		prerequisite = {
+			focus = rrg_hero_mexico
+		}
+		relative_position_id = rrg_hero_mexico
+		available = {
+			NOT = {
+				has_country_flag = spurn_santa_anna
+			}
+		}
+		completion_reward = {
+			ARM = {
+				random_owned_state = {
+					limit = {
+						is_valid_state_for_3_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = industrial_complex
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_honor_the_constitution
+		x = 0
+		y = 1
+		icon = GFX_goal_RRG_arm_constitution
+		cost = 30
+		prerequisite = {
+			focus = rrg_arm_free_people
+		}
+		relative_position_id = rrg_arm_free_people
+		completion_reward = {
+			ARM = {
+				add_war_support = 0.1
+				add_stability = 0.1
+			}
+		}
+	}
+	focus = {
+		id = rrg_despot_mexico
+		x = 2
+		y = 1
+		icon = GFX_goal_RRG_arm_bad
+		cost = 30
+		prerequisite = {
+			focus = rrg_army_renewed
+		}
+		relative_position_id = rrg_army_renewed
+		available = {
+			NOT = {
+				has_completed_focus = rrg_hero_mexico
+			}
+		}
+		bypass = {
+			ARM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		will_lead_to_war_with = ARM
+		completion_reward = {
+			if = {
+				limit = {
+					ARM = { exists = yes }
+				}
+				declare_war_on = {
+					target = ARM
+					type = annex_everything
+				}
+			}
+			else = {
+				ARM = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_fight_for_liberty
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_advanced_firearms_focus
+		cost = 30
+		prerequisite = {
+			focus = rrg_despot_mexico
+		}
+		relative_position_id = rrg_despot_mexico
+		available = {
+			has_war_with = ARM
+		}
+		bypass = {
+			ARM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = rrg_fight_for_liberty_tt
+			hidden_effect = {
+				division_template = {
+					name = "Rebel Militia"
+					division_names_group = REBEL_INF_01
+					regiments = {
+						militia = {
+							x = 0
+							y = 0
+						}
+						militia = {
+							x = 0
+							y = 1
+						}
+						militia = {
+							x = 0
+							y = 2
+						}
+						militia = {
+							x = 1
+							y = 0
+						}
+						militia = {
+							x = 1
+							y = 1
+						}
+						militia = {
+							x = 1
+							y = 2
+						}
+					}
+					# support = {
+					# }
+				}
+				771 = {
+					create_unit = {
+						division = "name = \"Rebel Militia\" division_template = \"Rebel Militia\" start_experience_factor = 0.28"
+						owner = RRG
+					}
+					create_unit = {
+						division = "name = \"Rebel Militia\" division_template = \"Rebel Militia\" start_experience_factor = 0.28"
+						owner = RRG
+					}
+					create_unit = {
+						division = "name = \"Rebel Militia\" division_template = \"Rebel Militia\" start_experience_factor = 0.28"
+						owner = RRG
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_down_with_general
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 30
+		prerequisite = {
+			focus = rrg_fight_for_liberty
+		}
+		bypass = {
+			ARM = {
+				exists = no
+			}
+		}
+		relative_position_id = rrg_fight_for_liberty
+		completion_reward = {
+			custom_effect_tooltip = rrg_down_with_general_tt
+		}
+	}
+	focus = {
+		id = rrg_robot_knowledge
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_robots_focus
+		cost = 30
+		prerequisite = {
+			focus = rrg_army_renewed
+		}
+		relative_position_id = rrg_army_renewed
+		completion_reward = {
+			add_tech_bonus = {
+				name = vault_robotics
+				bonus = 0.5
+				uses = 2
+				ahead_reduction = 1
+				category = robotics_tech_category
+			}
+		}
+	}
+	focus = {
+		id = rrg_ghosts_machine
+		x = 0
+		y = 1
+		icon = GFX_goal_army_of_mexico_mockup
+		cost = 30
+		prerequisite = {
+			focus = rrg_robot_knowledge
+		}
+		relative_position_id = rrg_robot_knowledge
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = industry
+				category = electronics
+			}
+		}
+	}
+	focus = {
+		id = rrg_mexican_army
+		x = -2
+		y = 1
+		icon = GFX_goal_generic_mexico_shield
+		cost = 30
+		prerequisite = {
+			focus = rrg_down_with_general
+			focus = rrg_honor_the_constitution
+		}
+		available = {
+			OR = {
+				ARM = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+				is_in_faction_with = ARM
+			}
+		}
+		relative_position_id = rrg_down_with_general
+		completion_reward = {
+			add_ideas = rrg_robot_friends
+		}
+	}
+	focus = {
+		id = rrg_station_unlocked
+		x = 8
+		y = 1
+		icon = GFX_goal_the_last_argument_of_presidents
+		cost = 30
+		prerequisite = {
+			focus = rrg_mexico_reborn
+		}
+		available = {
+			has_country_flag = key_1
+			has_country_flag = key_2
+			has_country_flag = key_3
+			has_country_flag = key_4
+		}
+		relative_position_id = rrg_mexico_reborn
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					is_mexican_nation = yes
+				}
+				news_event = {
+					id = nf_rrg.32
+					days = 5
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_ancient_sciences
+		x = 1
+		y = 1
+		icon = GFX_goal_usa_science_reform
+		cost = 15
+		prerequisite = {
+			focus = rrg_station_unlocked
+		}
+		relative_position_id = rrg_station_unlocked
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.7
+				uses = 1
+				category = infantry_tech_category
+			}
+		}
+	}
+	focus = {
+		id = rrg_ancient_weapons
+		x = -1
+		y = 1
+		icon = GFX_goal_ENC_laser_weapons_reform
+		cost = 15
+		prerequisite = {
+			focus = rrg_station_unlocked
+		}
+		relative_position_id = rrg_station_unlocked
+		completion_reward = {
+			748 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = ballistic_equipment_3
+				amount = 400
+				producer = USA
+			}
+		}
+	}
+	focus = {
+		id = rrg_ancient_factories
+		x = -1
+		y = 1
+		icon = GFX_goal_RRG_usa_industry
+		cost = 15
+		prerequisite = {
+			focus = rrg_ancient_weapons
+		}
+		relative_position_id = rrg_ancient_weapons
+		completion_reward = {
+			748 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_ancient_technology
+		x = 1
+		y = 1
+		icon = GFX_goal_generic_advanced_technology_focus
+		cost = 15
+		prerequisite = {
+			focus = rrg_ancient_weapons
+		}
+		prerequisite = {
+			focus = rrg_ancient_sciences
+		}
+		relative_position_id = rrg_ancient_weapons
+		completion_reward = {
+			add_resource = {
+				type = composites
+				amount = 4
+				state = 746
+			}
+			add_resource = {
+				type = circuitry
+				amount = 4
+				state = 746
+			}
+			add_resource = {
+				type = advanced
+				amount = 4
+				state = 746
+			}
+		}
+	}
+	focus = {
+		id = rrg_ancient_electronics
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_electronics_focus
+		cost = 15
+		prerequisite = {
+			focus = rrg_ancient_technology
+		}
+		relative_position_id = rrg_ancient_technology
+		completion_reward = {
+			add_resource = {
+				type = circuitry
+				amount = 4
+				state = 746
+			}
+			add_resource = {
+				type = advanced
+				amount = 4
+				state = 746
+			}
+		}
+	}
+	focus = {
+		id = rrg_armageddon_nukes
+		x = 0
+		y = 1
+		icon = GFX_goal_the_last_argument_of_presidents
+		cost = 15
+		prerequisite = {
+			focus = rrg_ancient_factories
+		}
+		relative_position_id = rrg_ancient_factories
+		completion_reward = {
+			add_nuclear_bombs = 1
+			if = {
+				limit = {
+					has_dlc = "Gotterdammerung"
+				}
+				748 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = rocket_site
+						level = 1
+					}
+				}
+				hidden_effect = {
+					set_technology = {
+						nuclear_missile_unlock_tech = 1
+						popup = no
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = nuclear_missile_equipment_2
+					amount = 1
+					producer = USA
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_turn_on_power
+		x = 1
+		y = 1
+		icon = GFX_goal_usa_gecko_power_plant
+		cost = 15
+		prerequisite = {
+			focus = rrg_ancient_sciences
+		}
+		relative_position_id = rrg_ancient_sciences
+		completion_reward = {
+			add_resource = {
+				type = energy
+				amount = 8
+				state = 748
+			}
+		}
+	}
+	focus = {
+		id = rrg_distribute_power
+		x = 0
+		y = 1
+		icon = GFX_goal_usa_electricity
+		cost = 15
+		prerequisite = {
+			focus = rrg_turn_on_power
+		}
+		relative_position_id = rrg_turn_on_power
+		completion_reward = {
+			add_resource = {
+				type = energy
+				amount = 6
+				state = 748
+			}
+		}
+	}
+	focus = {
+		id = rrg_new_weapons
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_advanced_firearms_focus
+		cost = 15
+		prerequisite = {
+			focus = rrg_ancient_electronics
+		}
+		available = {
+			has_tech = ballistic_weaponry_tech_2
+		}
+		relative_position_id = rrg_ancient_electronics
+		completion_reward = {
+			set_technology = {
+				ballistic_weaponry_tech_3 = 1
+			}
+		}
+	}
+	##########################
+	##### Internal Expansion
+	##########################
+	focus = {
+		id = rrg_mexico_radio
+		icon = GFX_goal_RRG_radio_broadcast
+		x = 3
+		y = 1
+		#icon =
+		cost = 30
+		prerequisite = {
+			focus = rrg_mexico_reborn
+		}
+		relative_position_id = rrg_mexico_reborn
+		completion_reward = {
+			add_ideas = rrg_radio
+			add_resource = {
+				type = energy
+				amount = -2
+				state = 746
+			}
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = rrg_declaration_intent
+		icon = GFX_goal_RRG_mexico_law
+		x = 1
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_mexico_reborn
+		}
+		relative_position_id = rrg_mexico_reborn
+		completion_reward = {
+			add_political_power = 150
+			every_other_country = {
+				limit = {
+					OR = {
+						is_mexican_nation = yes
+						is_neighbor_of = RRG
+					}
+					has_government = people
+				}
+				add_opinion_modifier = {
+					modifier = mexico_reborn
+					target = RRG
+				}
+			}
+			every_other_country = {
+				limit = {
+					is_mexican_nation = yes
+					NOT = {
+						has_government = people
+					}
+					is_neighbor_of = RRG
+				}
+				add_stability = -0.05
+			}
+		}
+	}
+	focus = {
+		id = rrg_declaration_authority
+		icon = GFX_goal_RRG_mexico_reborn
+		x = -1
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_mexico_reborn
+		}
+		relative_position_id = rrg_mexico_reborn
+		completion_reward = {
+			add_political_power = 150
+			add_opinion_modifier = {
+				modifier = illegitimate_mexico
+				target = ITZ
+			}
+			ITZ = {
+				add_opinion_modifier = {
+					modifier = crazy_mora
+					target = RRG
+				}
+			}
+			add_opinion_modifier = {
+				modifier = illegitimate_mexico
+				target = ATE
+			}
+			ATE = {
+				add_opinion_modifier = {
+					modifier = crazy_mora
+					target = RRG
+				}
+			}
+			add_opinion_modifier = {
+				modifier = illegitimate_mexico
+				target = BLO
+			}
+			BLO = {
+				add_opinion_modifier = {
+					modifier = crazy_mora
+					target = RRG
+				}
+			}
+			add_opinion_modifier = {
+				modifier = illegitimate_mexico
+				target = FFI
+			}
+			FFI = {
+				add_opinion_modifier = {
+					modifier = crazy_mora
+					target = RRG
+				}
+			}
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.1
+			}
+		}
+	}
+	focus = {
+		id = rrg_bank_mexico
+		icon = GFX_goal_ancient_wealth
+		x = -3
+		y = 1
+		#icon =
+		cost = 30
+		prerequisite = {
+			focus = rrg_mexico_reborn
+		}
+		relative_position_id = rrg_mexico_reborn
+		available = {
+			has_political_power > 100
+		}
+		completion_reward = {
+			add_ideas = rrg_bank_mexico_idea
+			add_ideas = currencypeso
+			add_political_power = -100
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = rrg_integration_act
+		icon = GFX_goal_RRG_mexico_law
+		x = 1
+		y = 1
+		#icon =
+		cost = 30
+		prerequisite = {
+			focus = rrg_declaration_authority
+			focus = rrg_declaration_intent
+		}
+		relative_position_id = rrg_declaration_authority
+		completion_reward = {
+			custom_effect_tooltip = rrg_integration_act_tt
+			add_popularity = {
+				ideology = ruler
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = rrg_lunch_free_fighters
+		icon = GFX_goal_RRG_ffi
+		x = -4
+		y = 1
+		#icon =
+		cost = 30
+		prerequisite = {
+			focus = rrg_integration_act
+		}
+		available = {
+			owns_state = 687
+		}
+		relative_position_id = rrg_integration_act
+		completion_reward = {
+			687 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_free_dessert
+		icon = GFX_goal_generic_land_doctrines_focus
+		x = 0
+		y = 1
+		#icon =
+		cost = 30
+		prerequisite = {
+			focus = rrg_lunch_free_fighters
+		}
+		relative_position_id = rrg_lunch_free_fighters
+		completion_reward = {
+			army_experience = 30
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = cat_land_doctrine
+			}
+		}
+	}
+	focus = {
+		id = rrg_corner_black_market
+		icon = GFX_goal_generic_SIN_shield
+		x = -2
+		y = 1
+		#icon =
+		cost = 30
+		prerequisite = {
+			focus = rrg_integration_act
+		}
+		available = {
+			owns_state = 681
+		}
+		bypass = {
+			681 = {
+				is_owned_and_controlled_by = CES
+			}
+		}
+		relative_position_id = rrg_integration_act
+		completion_reward = {
+			681 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_mexican_coffee
+		icon = GFX_goal_RRG_mexico_coffee
+		x = 0
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_corner_black_market
+		}
+		bypass = {
+			681 = {
+				is_owned_and_controlled_by = CES
+			}
+		}
+		relative_position_id = rrg_corner_black_market
+		completion_reward = {
+			add_ideas = rrg_caffeinated
+		}
+	}
+	focus = {
+		id = rrg_integrate_colony
+		icon = GFX_goal_generic_PEC_shield
+		x = 0
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_integration_act
+		}
+		bypass = {
+			200 = {
+				is_owned_and_controlled_by = CES
+			}
+		}
+		relative_position_id = rrg_integration_act
+		available = {
+			owns_state = 200
+		}
+		completion_reward = {
+			200 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_texas_trade
+		icon = GFX_goal_generic_mexican_trade
+		x = 0
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_integrate_colony
+		}
+		relative_position_id = rrg_integrate_colony
+		available = {
+			owns_state = 200
+		}
+		bypass = {
+			200 = {
+				is_owned_and_controlled_by = CES
+			}
+		}
+		completion_reward = {
+			200 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_fund_breadbasket
+		icon = GFX_goal_grangas_flag
+		x = 2
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_integration_act
+		}
+		available = {
+			owns_state = 122
+		}
+		bypass = {
+			122 = {
+				is_owned_and_controlled_by = CES
+			}
+		}
+		relative_position_id = rrg_integration_act
+		completion_reward = {
+			add_resource = {
+				type = water
+				amount = 5
+				state = 122
+			}
+			add_resource = {
+				type = metal
+				amount = 2
+				state = 122
+			}
+			add_resource = {
+				type = composites
+				amount = 2
+				state = 122
+			}
+			add_resource = {
+				type = circuitry
+				amount = 2
+				state = 122
+			}
+		}
+	}
+	focus = {
+		id = rrg_fund_cattle_drives
+		icon = GFX_goal_NCR_Brahminbill
+		x = 0
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_fund_breadbasket
+		}
+		bypass = {
+			122 = {
+				is_owned_and_controlled_by = CES
+			}
+		}
+		relative_position_id = rrg_fund_breadbasket
+		completion_reward = {
+			add_war_support = 0.05
+			122 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_ranchers_to_work
+		icon = GFX_goal_RRG_rbd
+		x = 4
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_integration_act
+		}
+		available = {
+			owns_state = 579
+		}
+		bypass = {
+			579 = {
+				is_owned_and_controlled_by = CES
+			}
+		}
+		relative_position_id = rrg_integration_act
+		completion_reward = {
+			579 = {
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_fracking
+		icon = GFX_goal_generic_fuel_focus
+		x = 0
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_ranchers_to_work
+		}
+		bypass = {
+			579 = {
+				is_owned_and_controlled_by = CES
+			}
+		}
+		relative_position_id = rrg_ranchers_to_work
+		completion_reward = {
+			746 = {
+				add_resource = {
+					type = energy
+					amount = 10
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_northern_mexico
+		icon = GFX_goal_RRG_mex_diplomatic
+		x = -2
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_texas_trade
+		}
+		prerequisite = {
+			focus = rrg_fracking
+		}
+		prerequisite = {
+			focus = rrg_fund_cattle_drives
+		}
+		prerequisite = {
+			focus = rrg_mexican_coffee
+		}
+		prerequisite = {
+			focus = rrg_free_dessert
+		}
+		relative_position_id = rrg_fund_cattle_drives
+		completion_reward = {
+			add_state_core = 200
+			add_state_core = 122
+			add_state_core = 681
+			add_state_core = 687
+			add_state_core = 579
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = rrg_blood_debt
+		icon = GFX_goal_generic_ITZ_shield_muzzled
+		x = 4
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_northern_mexico
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		will_lead_to_war_with = ITZ
+		relative_position_id = rrg_northern_mexico
+		bypass = {
+			ITZ = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			CAF = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			TDT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			GRH = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			ITZ = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			CAF = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			TDT = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			GRH = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_tihuun
+		icon = GFX_goal_ITZ_the_kalomte_rules_again
+		x = -1
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_blood_debt
+		}
+		relative_position_id = rrg_blood_debt
+		completion_reward = {
+			add_ideas = rrg_stole_iea_itz
+		}
+	}
+	focus = {
+		id = rrg_asaltantes
+		icon = GFX_goal_ITZ_death_or_glory
+		x = 0
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_tihuun
+		}
+		relative_position_id = rrg_tihuun
+		completion_reward = {
+			custom_effect_tooltip = rrg_asalantes_tt
+				hidden_effect = { load_oob = asaltantes }
+			}
+	}
+	focus = {
+		id = rrg_tuhunaan
+		icon = GFX_goal_ITZ_dominate_the_caribbean_trade
+		x = 1
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_blood_debt
+		}
+		relative_position_id = rrg_blood_debt
+		completion_reward = {
+			add_naval_commander_role = {
+				character = RRG_almirante_martinez
+				traits = {
+					silent_hunter
+					ironside
+				}
+				skill = 3
+				attack_skill = 1
+				defense_skill = 2
+				maneuvering_skill = 3
+				coordination_skill = 2
+				legacy_id = -1
+			}
+		}
+	}
+	focus = {
+		id = rrg_itza_subordinates
+		icon = GFX_goal_NCR_Weapon_Standardization
+		x = 0
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_tuhunaan
+		}
+		relative_position_id = rrg_tuhunaan
+		completion_reward = {
+			custom_effect_tooltip = rrg_subordinates_tt
+				hidden_effect = { load_oob = rrg_subordinatesoob }
+			}
+	}
+	focus = {
+		id = rrg_culture_recognized
+		icon = GFX_goal_ITZ_civilised_times
+		x = -1
+		y = 1
+		cost = 30
+		available = {
+			owns_state = 788
+		}
+		prerequisite = {
+			focus = rrg_itza_subordinates
+		}
+		prerequisite = {
+			focus = rrg_asaltantes
+		}
+		relative_position_id = rrg_itza_subordinates
+		completion_reward = {
+			add_state_core = 788
+		}
+	}
+	focus = {
+		id = rrg_attack_legion
+		icon = GFX_goal_attack_legion
+		x = -4
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_northern_mexico
+		}
+		relative_position_id = rrg_northern_mexico
+		completion_reward = {
+			unlock_decision_tooltip = rrg_fight_for_gente
+			unlock_decision_tooltip = rrg_fight_for_tohono
+			unlock_decision_tooltip = rrg_fight_for_twosun
+			unlock_decision_tooltip = rrg_fight_for_cowboys
+		}
+	}
+	focus = {
+		id = rrg_sun_burns_bright
+		icon = GFX_goal_generic_GDH_shield
+		x = -1
+		y = 1
+		cost = 30
+		available = {
+			controls_state = 22
+		}
+		prerequisite = {
+			focus = rrg_attack_legion
+		}
+		relative_position_id = rrg_attack_legion
+		completion_reward = {
+			add_state_core = 22
+		}
+	}
+	focus = {
+		id = rrg_two_suns
+		icon = GFX_goal_generic_TWO_shield
+		x = 1
+		y = 1
+		cost = 30
+		available = {
+			controls_state = 516
+		}
+		prerequisite = {
+			focus = rrg_attack_legion
+		}
+		relative_position_id = rrg_attack_legion
+		completion_reward = {
+			add_state_core = 516
+		}
+	}
+	focus = {
+		id = rrg_cowboys
+		icon = GFX_goal_generic_COW_shield
+		x = 0
+		y = 1
+		cost = 30
+		available = {
+			controls_state = 2
+		}
+		prerequisite = {
+			focus = rrg_two_suns
+		}
+		relative_position_id = rrg_two_suns
+		completion_reward = {
+			add_state_core = 2
+		}
+	}
+	focus = {
+		id = rrg_yuma
+		icon = GFX_goal_generic_TON_shield
+		x = 0
+		y = 1
+		cost = 30
+		available = {
+			controls_state = 517
+		}
+		prerequisite = {
+			focus = rrg_sun_burns_bright
+		}
+		relative_position_id = rrg_sun_burns_bright
+		completion_reward = {
+			add_state_core = 517
+		}
+	}
+	focus = {
+		id = rrg_bear
+		icon = GFX_goal_NCR_Bears_Roar
+		x = -1
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_yuma
+		}
+		prerequisite = {
+			focus = rrg_cowboys
+		}
+		relative_position_id = rrg_cowboys
+		completion_reward = {
+			unlock_decision_tooltip = rrg_fight_for_baja
+		}
+	}
+	focus = {
+		id = rrg_second_conquista
+		icon = GFX_goal_generic_AZT_shield_burning
+		x = 0
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_northern_mexico
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		will_lead_to_war_with = ATE
+		relative_position_id = rrg_northern_mexico
+		bypass = {
+			ATE = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			TVR = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			ATE = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			TVR = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_tribus
+		icon = GFX_goal_generic_communcation_focus
+		x = 1
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_second_conquista
+		}
+		relative_position_id = rrg_second_conquista
+		completion_reward = {
+			custom_effect_tooltip = rrg_tribus_tt
+		}
+	}
+	focus = {
+		id = rrg_flota_mercantile
+		icon = GFX_goal_generic_naval_doctrines_focus
+		x = 0
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_tribus
+		}
+		relative_position_id = rrg_tribus
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "Man the Guns"
+				}
+				custom_effect_tooltip = rrg_flota_tt
+				hidden_effect = { load_oob = flota_mercantile }
+			}
+			else = {
+				random_owned_state = {
+					limit = {
+						is_valid_state_for_dockyard = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_ocelotl
+		icon = GFX_goal_ITZ_atz_destruction
+		x = -1
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_second_conquista
+		}
+		available = {
+			ATE = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			any_country = {
+				has_character = ATE_rafael_cuauhtli
+			}
+		}
+		bypass = {
+			NOT = {
+				any_country = {
+					has_character = ATE_rafael_cuauhtli
+				}
+			}
+		}
+		relative_position_id = rrg_second_conquista
+		completion_reward = {
+			event_target:ATE_armando_ocelotl_target = {
+				set_nationality = RRG
+				promote_leader = yes
+				add_unit_leader_trait = perceptive_trait
+				add_unit_leader_trait = agile_trait
+			}
+		}
+	}
+	focus = {
+		id = rrg_ocelomeh
+		icon = GFX_goal_generic_advanced_firearms_focus
+		x = 0
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_ocelotl
+		}
+		relative_position_id = rrg_ocelotl
+		completion_reward = {
+			custom_effect_tooltip = rrg_ocelomehoob_tt
+				hidden_effect = { load_oob = ocelomeh }
+			}
+		}
+
+	focus = {
+		id = rrg_immortal_empire
+		icon = GFX_goal_generic_ancient_mexican_artifact
+		x = 1
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_ocelomeh
+		}
+		prerequisite = {
+			focus = rrg_flota_mercantile
+		}
+		available = {
+			863 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		relative_position_id = rrg_ocelomeh
+		completion_reward = {
+			add_state_core = 863
+		}
+	}
+	focus = {
+		id = rrg_mexican_unity
+		icon = GFX_goal_siempre_unidos
+		x = 0
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_immortal_empire
+		}
+		prerequisite = {
+			focus = rrg_bear
+		}
+		prerequisite = {
+			focus = rrg_culture_recognized
+		}
+		relative_position_id = rrg_immortal_empire
+		completion_reward = {
+			add_ideas = mexican_unity
+			custom_effect_tooltip = mexican_unity_tt
+		}
+	}
+	#####################
+	##### Dante's Inferno
+	#####################
+	focus = {
+		id = rrg_dantes_inferno
+		x = 0
+		y = 11
+		icon = GFX_goal_RRG_Dante_Microphone
+		cost = 30
+		mutually_exclusive = {
+			focus = rrg_davinci_of_war
+			focus = rrg_rose_of_mexico
+		}
+		available = {
+			has_country_flag = RRG_election_held
+			is_guerra_leader = yes
+		}
+		allow_branch = {
+			NOT = {
+				OR = {
+					has_completed_focus = rrg_davinci_of_war
+					has_completed_focus = rrg_rose_of_mexico
+				}
+			}
+		}
+		relative_position_id = rrg_gloria_in_flames
+		completion_reward = {
+			news_event = nf_rrg.80
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+
+
+	focus = {
+		id = rrg_true_north_strong_and_free
+		icon = GFX_goal_RRG_Dante_Handshake
+		x = 5
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_dantes_inferno
+		}
+		available = {
+			is_guerra_leader = yes
+			ai_has_no_other_wars_or_wargoals = yes			#Why would they want to join while Anna's destroying them
+			is_faction_leader = yes
+		}
+		relative_position_id = rrg_dantes_inferno
+		completion_reward = {
+			custom_effect_tooltip = rrg_heart_of_mexico_add_tt
+			hidden_effect = {
+				add_dynamic_modifier = {
+					modifier = rrg_heart_of_mexico
+				}
+				add_to_variable = {
+					rrg_war_support = 0.05
+				}
+				add_to_variable = {
+					rrg_guerra_factory = 0.02
+				}
+				force_update_dynamic_modifier = yes
+			}
+			if = {
+				limit = {
+					PEC = {
+						exists = yes
+						is_subject = no
+					}
+				}
+				PEC = {
+					invite_to_root_faction = yes
+				}
+			}
+			if = {
+				limit = {
+					LGS = {
+						exists = yes
+						is_subject = no
+					}
+				}
+				LGS = {
+					invite_to_root_faction = yes
+				}
+			}
+			if = {
+				limit = {
+					RBD = {
+						exists = yes
+						is_subject = no
+					}
+				}
+				RBD = {
+					invite_to_root_faction = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_texan_ties
+		icon = GFX_goal_RRG_Dante_Texas
+		x = -1
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_dantes_inferno
+		}
+		bypass = {
+			OR = {
+				has_war_with = TBH
+				TBH = {
+					exists = no
+				}
+			}
+		}
+		available = {
+			has_completed_focus = rrg_vindicta
+			is_guerra_leader = yes
+		}
+		relative_position_id = rrg_dantes_inferno
+		completion_reward = {
+			TBH = {
+				country_event = nf_rrg.161
+			}
+		}
+	}
+	focus = {
+		id = rrg_mutant_rights
+		icon = GFX_goal_RRG_Dante_Mutant_Rights
+		x = 1
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_texan_ties
+		}
+		relative_position_id = rrg_texan_ties
+		completion_reward = {
+			add_resource = {
+				type = circuitry
+				amount = 4
+				state = 746
+			}
+			add_resource = {
+				type = advanced
+				amount = 3
+				state = 746
+			}
+			add_ideas = mutant_law_both
+		}
+	}
+	focus = {
+		id = rrg_rosado_still_has_a_job
+		icon = GFX_goal_RRG_Dante_Rosado
+		x = 0
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_mutant_rights
+		}
+		relative_position_id = rrg_mutant_rights
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.4
+				uses = 2
+				category = robotics_tech_category
+			}
+			add_equipment_to_stockpile = {
+				type = support_robot_two_legs_equipment_2
+				amount = 400
+				producer = USA
+			}
+		}
+	}
+	focus = {
+		id = rrg_build_up_monterrey
+		icon = GFX_goal_RRG_Dante_Lightbulb
+		x = 0
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_rosado_still_has_a_job
+		}
+		available = {
+			owns_state = 753
+		}
+		relative_position_id = rrg_rosado_still_has_a_job
+		completion_reward = {
+			add_resource = {
+				type = circuitry
+				amount = 3
+				state = 753
+			}
+			add_resource = {
+				type = advanced
+				amount = 5
+				state = 753
+			}
+			add_political_power = 25
+		}
+	}
+	focus = {
+		id = rrg_best_little_whorehouse
+		icon = GFX_goal_RRG_Dante_Pin_Ups
+		x = -1
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_texan_ties
+		}
+		relative_position_id = rrg_texan_ties
+		completion_reward = {
+			746 = {
+				set_temp_variable = {
+					development_to_add = 0.6
+				}
+				add_development_to_node = yes
+			}
+			if = {
+				limit = {
+					CBN = {
+						exists = yes
+						NOT = { is_subject_of = SHA }
+					}
+				}
+				CBN = {
+					set_temp_variable = { caps_to_add = 100 }
+					add_caps = yes
+					country_event = nf_rrg.167
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_broadcast_entertainment
+		icon = GFX_goal_RRG_Dante_Mr_Radio
+		x = 0
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_best_little_whorehouse
+		}
+		relative_position_id = rrg_best_little_whorehouse
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = industry
+				category = electronics
+			}
+			if = {
+				limit = { country_exists = TUB }
+				TUB = {
+					add_political_power = 150
+					country_event = nf_rrg.168
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_guerra_luchador_friend
+		x = -1
+		y = 1
+		icon = GFX_goal_FFI_host_matches
+		cost = 30
+		mutually_exclusive = {
+			focus = rrg_guerra_luchador_enemy
+		}
+		prerequisite = {
+			focus = rrg_true_north_strong_and_free
+		}
+		available = {
+			FFI = {
+				exists = yes
+				is_subject = no
+			}
+		}
+		ai_will_do = { factor = 100 }
+		relative_position_id = rrg_true_north_strong_and_free
+		completion_reward = {
+			FFI = {
+				invite_to_root_faction = yes
+			}
+		}
+	}
+	focus = {
+		id = rrg_guerra_luchador_enemy
+		icon = GFX_goal_fuckthefreefighters
+		cost = 30
+		x = 1
+		y = 1
+		mutually_exclusive = {
+			focus = rrg_guerra_luchador_friend
+		}
+		prerequisite = {
+			focus = rrg_true_north_strong_and_free
+		}
+		available = {
+			FFI = {
+				NOT = {
+					has_country_flag = ffi_santo_wins
+				}
+			}
+			FFI = {
+				is_subject = yes
+			}
+		}
+		will_lead_to_war_with = FFI
+		bypass = {
+			FFI = {
+				exists = no
+			}
+		}
+		relative_position_id = rrg_true_north_strong_and_free
+		completion_reward = {
+			news_event = nf_rrg.85
+		}
+	}
+	focus = {
+		id = rrg_bring_cartels_to_heel
+		icon = GFX_goal_VEG_Addiction_For_Sale
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = rrg_guerra_luchador_enemy
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		relative_position_id = rrg_guerra_luchador_enemy
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = SIN
+			}
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = BLO
+			}
+		}
+	}
+	focus = {
+		id = rrg_guerra_drug_trade
+		icon = GFX_KHA_focus_synthetic_opioids
+		cost = 30
+		x = 1
+		y = 1
+		available = {
+			SIN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			BLO = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		prerequisite = {
+			focus = rrg_bring_cartels_to_heel
+		}
+		relative_position_id = rrg_bring_cartels_to_heel
+		completion_reward = {
+			custom_effect_tooltip = rrg_guerra_drug_trade_tt
+			clr_country_flag = bans_drugs
+			swap_ideas = {
+				remove_idea = chems_banned
+				add_idea = chems_legalised
+			}
+		}
+	}
+	focus = {
+		id = rrg_spice_must_flow
+		icon = GFX_goal_RRG_mexico_coffee
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = rrg_guerra_drug_trade
+		}
+		prerequisite = {
+			focus = rrg_mexican_trade_alliance
+		}
+		relative_position_id = rrg_guerra_drug_trade
+		completion_reward = {
+			add_ideas = rrg_idea_drug_runs
+			add_stability = -0.05
+			add_opinion_modifier = {
+				modifier = legalized_drug_trade
+				target = CAF
+			}
+			CAF = {
+				add_opinion_modifier = {
+					modifier = legalized_drug_trade
+					target = RRG
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_statehood_for_all
+		icon = GFX_goal_RRG_Dante_Glasses
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = rrg_guerra_luchador_enemy
+			focus = rrg_guerra_luchador_friend
+		}
+		relative_position_id = rrg_guerra_luchador_friend
+		completion_reward = {
+			custom_effect_tooltip = rrg_statehood_for_all_tt
+		}
+	}
+	focus = {
+		id = rrg_beacon_of_talent
+		icon = GFX_goal_RRG_Dante_Beaker
+		cost = 30
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = rrg_statehood_for_all
+		}
+		relative_position_id = rrg_statehood_for_all
+		completion_reward = {
+			add_to_tech_sharing_group = rio_research_pact
+			custom_effect_tooltip = rrg_beacon_of_talent_tt
+		}
+	}
+	focus = {
+		id = rrg_vindicta
+		icon = GFX_goal_RRG_poison_bull
+		cost = 30
+		x = -8
+		y = 1
+		available = {
+			is_guerra_leader = yes
+			OR = {
+				borders_caesars_legion = yes
+				any_allied_country = {
+					borders_caesars_legion = yes
+				}
+			}
+		}
+		prerequisite = {
+			focus = rrg_beacon_of_talent
+		}
+		relative_position_id = rrg_beacon_of_talent
+		completion_reward = {
+			add_ideas = rrg_vindicta_idea
+		}
+	}
+	focus = {
+		id = rrg_dante_matador
+		icon = GFX_goal_RRG_Dante_Matador
+		cost = 30
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = rrg_vindicta
+		}
+		relative_position_id = rrg_vindicta
+		completion_reward = {
+			custom_effect_tooltip = DANTE_GUERRA_TT
+			hidden_effect = {
+				add_field_marshal_role = {
+					character = RRG_dante_guerra
+					traits = {
+						enduring_trait
+						idiot_savant_trait
+						lucky_trait
+					}
+					skill = 3
+					attack_skill = 4
+					defense_skill = 2
+					planning_skill = 2
+					logistics_skill = 1
+					legacy_id = -1
+				}
+			}
+
+		}
+	}
+	focus = {
+		id = rrg_matadors_heir
+		icon = GFX_goal_RRG_Dante_Family
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = rrg_dante_matador
+		}
+		relative_position_id = rrg_dante_matador
+		completion_reward = {
+			custom_effect_tooltip = VERONICA_GUERRA_TT
+			hidden_effect = {
+				add_corps_commander_role = {
+					character = RRG_veronica_guerra
+					traits = {
+						charismatic_trait
+						local_leader_trait
+						agile_trait
+					}
+					skill = 3
+					attack_skill = 1
+					defense_skill = 2
+					planning_skill = 3
+					logistics_skill = 2
+					legacy_id = -1
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_matador_academy
+		icon = GFX_goal_generic_recruitment_focus
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = rrg_matadors_heir
+		}
+		relative_position_id = rrg_matadors_heir
+		completion_reward = {
+			add_ideas = matadatores
+		}
+	}
+	focus = {
+		id = rrg_free_north
+		icon = GFX_goal_RRG_combined_arms
+		cost = 30
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = rrg_matador_academy
+		}
+		mutually_exclusive = {
+			focus = rrg_shield_mexico
+		}
+		available = {
+			TLA = {
+				exists = no
+			}
+		}
+		relative_position_id = rrg_matador_academy
+		completion_reward = {
+			give_guarantee = PEC
+			give_guarantee = LGS
+			give_guarantee = FFI
+			give_guarantee = BLO
+			give_guarantee = SIN
+			give_guarantee = TVR
+			give_guarantee = TLA
+			give_guarantee = PET
+			##This temp array is here for convenience, in case anyone wants to expand upon the interactions between Guerra and these guaranteed tags. Mexico rework when?
+			add_to_temp_array = {free_north_temp = PEC}
+			add_to_temp_array = {free_north_temp = LGS}
+			add_to_temp_array = {free_north_temp = FFI}
+			add_to_temp_array = {free_north_temp = BLO}
+			add_to_temp_array = {free_north_temp = SIN}
+			add_to_temp_array = {free_north_temp = TVR}
+			add_to_temp_array = {free_north_temp = TLA}
+			add_to_temp_array = {free_north_temp = PET}
+			for_each_scope_loop = { ##can't just spam list the tags.
+				array = free_north_temp
+				country_event = nf_rrg.175
+			}
+			custom_effect_tooltip = guerra_guaranteed_nations_targeted
+			add_war_support = 0.05
+			add_stability = 0.05
+			add_political_power = 100
+
+			every_country = {
+				limit = {
+					OR= {
+						is_east_legion_member = yes ##east legion may not actually interact with Mexico? But it's difficult to know.
+						is_west_legion_member = yes
+					}
+				}
+				country_event = nf_rrg.176
+			}
+		}
+	}
+	focus = {
+		id = rrg_shield_mexico
+		icon = GFX_goal_RRG_mexico_reborn
+		mutually_exclusive = {
+			focus = rrg_free_north
+		}
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = rrg_matador_academy
+		}
+		available = {
+			TLA = {
+				exists = no
+			}
+		}
+		relative_position_id = rrg_matador_academy
+		completion_reward = {
+			give_guarantee = PEC
+			give_guarantee = RBD
+			give_guarantee = FFI
+			give_guarantee = BLO
+			give_guarantee = GDH
+			give_guarantee = SIN
+
+			give_guarantee = TLA
+			give_guarantee = PET
+			give_guarantee = CAF
+			give_guarantee = GRH
+			give_guarantee = TDT
+			##This temp array is here for convenience, in case anyone wants to expand upon the interactions between Guerra and these guaranteed tags. Mexico rework when?
+			add_to_temp_array = {shield_mexico_temp = PEC }
+			add_to_temp_array = {shield_mexico_temp = RBD }
+			add_to_temp_array = {shield_mexico_temp = FFI }
+			add_to_temp_array = {shield_mexico_temp = BLO }
+			add_to_temp_array = {shield_mexico_temp = GDH }
+			add_to_temp_array = {shield_mexico_temp = SIN }
+			add_to_temp_array = {shield_mexico_temp = TLA }
+			add_to_temp_array = {shield_mexico_temp = PET }
+			add_to_temp_array = {shield_mexico_temp = CAF }
+			add_to_temp_array = {shield_mexico_temp = GRH }
+			add_to_temp_array = {shield_mexico_temp = TDT }
+			custom_effect_tooltip = guerra_guaranteed_nations_targeted
+			for_each_scope_loop = { ##can't just spam list the tags.
+				array = shield_mexico_temp
+				country_event = nf_rrg.174
+			}
+			add_war_support = 0.15
+			add_stability = 0.15
+			add_political_power = 300
+
+			every_country = {
+				limit = {
+					OR= {
+						is_east_legion_member = yes ##east legion may not actually interact with Mexico? But it's difficult to know.
+						is_west_legion_member = yes
+					}
+				}
+				country_event = nf_rrg.176
+			}
+		}
+	}
+	focus = {
+		id = rrg_might_oppressed
+		icon = GFX_goal_NCR_Weapon_Standardization
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = rrg_shield_mexico
+			focus = rrg_free_north
+		}
+		relative_position_id = rrg_free_north
+		completion_reward = {
+			add_manpower = 3000
+			add_political_power = 150
+		}
+	}
+
+	focus = {
+		id = rrg_mexico_failure
+		icon = GFX_goal_ARM_focus_master_of_mexico
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = rrg_beacon_of_talent
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		relative_position_id = rrg_beacon_of_talent
+		will_lead_to_war_with = ARM
+		bypass = {
+			ARM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			ARM = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_state_reynosa
+		icon = GFX_goal_RRG_arm_constitution
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = rrg_mexico_failure
+		}
+		available = {
+			755 = {
+				is_owned_and_controlled_by = RRG
+			}
+		}
+		relative_position_id = rrg_mexico_failure
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_core_of = ARM
+				}
+				add_core_of = RRG
+			}
+		}
+	}
+	focus = {
+		id = rrg_armageddon_waiting
+		icon = GFX_goal_the_last_argument_of_presidents
+		cost = 30
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = rrg_state_reynosa
+		}
+		available = {
+			748 = {
+				is_owned_and_controlled_by = RRG
+			}
+			has_country_flag = key_1
+			has_country_flag = key_2
+			has_country_flag = key_3
+			has_country_flag = key_4
+		}
+		relative_position_id = rrg_mexico_failure
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					is_mexican_nation = yes
+				}
+				news_event = {
+					id = nf_rrg.32
+					days = 5
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_history_repeats
+		icon = GFX_goal_generic_mini_nukes
+		cost = 30
+		x = 0
+		y = 4
+		prerequisite = {
+			focus = rrg_armageddon_waiting
+		}
+		available = {
+			748 = {
+				is_owned_and_controlled_by = RRG
+			}
+		}
+		relative_position_id = rrg_mexico_failure
+		completion_reward = {
+			add_nuclear_bombs = 1
+			if = {
+				limit = {
+					has_dlc = "Gotterdammerung"
+				}
+				748 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = rocket_site
+						level = 1
+					}
+				}
+				hidden_effect = {
+					set_technology = {
+						nuclear_missile_unlock_tech = 1
+						popup = no
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = nuclear_missile_equipment_2
+					amount = 1
+					producer = USA
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_power_to_people
+		icon = GFX_goal_usa_electricity
+		cost = 30
+		x = 0
+		y = 6
+		prerequisite = {
+			focus = rrg_history_repeats
+		}
+		available = {
+			748 = {
+				is_owned_and_controlled_by = RRG
+			}
+		}
+		relative_position_id = rrg_mexico_failure
+		completion_reward = {
+			add_resource = {
+				type = energy
+				amount = 16
+				state = 745
+			}
+		}
+	}
+	focus = {
+		id = rrg_redistribute_armories
+		icon = GFX_goal_RRG_mexico_industry_guns
+		cost = 30
+		x = 1
+		y = 7
+		prerequisite = {
+			focus = rrg_power_to_people
+		}
+		available = {
+			748 = {
+				is_owned_and_controlled_by = RRG
+			}
+			796 = {
+				arms_factory > 1
+			}
+			795 = {
+				arms_factory > 1
+			}
+			792 = {
+				arms_factory > 1
+			}
+		}
+		relative_position_id = rrg_mexico_failure
+		completion_reward = {
+			796 = {
+				remove_building = {
+					type = arms_factory
+					level = 1
+				}
+			}
+			795 = {
+				remove_building = {
+					type = arms_factory
+					level = 1
+				}
+			}
+			792 = {
+				remove_building = {
+					type = arms_factory
+					level = 1
+				}
+			}
+			749 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			742 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			791 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			745 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			746 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_public_works
+		icon = GFX_goal_RRG_industry
+		cost = 30
+		x = -1
+		y = 7
+		prerequisite = {
+			focus = rrg_power_to_people
+		}
+		available = {
+			748 = {
+				is_owned_and_controlled_by = RRG
+			}
+		}
+		relative_position_id = rrg_mexico_failure
+		completion_reward = {
+			744 = {
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			751 = {
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			743 = {
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_wasteland_ambitions
+		icon = GFX_goal_generic_ideological_fury_focus
+		cost = 7
+		x = 1
+		y = 3
+		prerequisite = {
+			focus = rrg_armageddon_waiting
+		}
+		mutually_exclusive = {
+			focus = rrg_old_world_glory
+		}
+		available = {
+			748 = {
+				is_owned_and_controlled_by = RRG
+			}
+		}
+		relative_position_id = rrg_mexico_failure
+		completion_reward = {
+			add_tech_bonus = {
+				name = gun_research_bonus
+				bonus = 0.5
+				uses = 1
+				category = infantry_tech_category
+			}
+		}
+	}
+	focus = {
+		id = rrg_strip_the_labs
+		icon = GFX_goal_generic_electronics_focus
+		cost = 30
+		x = 2
+		y = 4
+		prerequisite = {
+			focus = rrg_wasteland_ambitions
+		}
+		available = {
+			748 = {
+				is_owned_and_controlled_by = RRG
+			}
+		}
+		relative_position_id = rrg_mexico_failure
+		completion_reward = {
+			add_resource = {
+				type = advanced
+				amount = 5
+				state = 748
+			}
+			add_resource = {
+				type = metal
+				amount = 12
+				state = 748
+			}
+			add_resource = {
+				type = circuitry
+				amount = 5
+				state = 748
+			}
+		}
+	}
+	focus = {
+		id = rrg_industrial_planning
+		icon = GFX_goal_usa_construction_usa
+		cost = 30
+		x = 1
+		y = 5
+		prerequisite = {
+			focus = rrg_strip_the_labs
+		}
+		available = {
+			748 = {
+				is_owned_and_controlled_by = RRG
+			}
+		}
+		relative_position_id = rrg_mexico_failure
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.6
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = rrg_arms_factories
+		icon = GFX_goal_RRG_guns_on_flag
+		cost = 30
+		x = 3
+		y = 5
+		prerequisite = {
+			focus = rrg_strip_the_labs
+		}
+		available = {
+			748 = {
+				is_owned_and_controlled_by = RRG
+			}
+		}
+		relative_position_id = rrg_mexico_failure
+		completion_reward = {
+			748 = {
+				if = {
+					limit = {
+						is_valid_state_for_3_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = arms_factory
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_automated_extraction
+		icon = GFX_goal_generic_building_focus
+		cost = 30
+		x = 2
+		y = 6
+		prerequisite = {
+			focus = rrg_arms_factories
+		}
+		prerequisite = {
+			focus = rrg_industrial_planning
+		}
+		available = {
+			748 = {
+				is_owned_and_controlled_by = RRG
+			}
+		}
+		relative_position_id = rrg_mexico_failure
+		completion_reward = {
+			add_ideas = {
+				rrg_idea_automated_extraction
+			}
+		}
+	}
+	focus = {
+		id = rrg_old_world_glory
+		icon = GFX_goal_NEW_the_old_world
+		cost = 7
+		x = -1
+		y = 3
+		prerequisite = {
+			focus = rrg_armageddon_waiting
+		}
+		mutually_exclusive = {
+			focus = rrg_wasteland_ambitions
+		}
+		available = {
+			748 = {
+				is_owned_and_controlled_by = RRG
+			}
+		}
+		relative_position_id = rrg_mexico_failure
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = rrg_american_research
+		icon = GFX_goal_usa_science_reform
+		cost = 30
+		x = -2
+		y = 4
+		prerequisite = {
+			focus = rrg_old_world_glory
+		}
+		available = {
+			748 = {
+				is_owned_and_controlled_by = RRG
+			}
+		}
+		relative_position_id = rrg_mexico_failure
+		completion_reward = {
+			country_event = nf_rrg.40
+		}
+	}
+	focus = {
+		id = rrg_pre_war_electronics
+		icon = GFX_goal_RRG_Dante_Radio
+		cost = 30
+		x = -3
+		y = 5
+		prerequisite = {
+			focus = rrg_american_research
+		}
+		available = {
+			748 = {
+				is_owned_and_controlled_by = RRG
+			}
+		}
+		relative_position_id = rrg_mexico_failure
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.6
+				uses = 2
+				category = electronics
+			}
+		}
+	}
+	focus = {
+		id = rrg_pre_war_guns
+		icon = GFX_goal_ENC_laser_weapons_reform
+		cost = 30
+		x = -1
+		y = 5
+		prerequisite = {
+			focus = rrg_american_research
+		}
+		available = {
+			748 = {
+				is_owned_and_controlled_by = RRG
+			}
+		}
+		relative_position_id = rrg_mexico_failure
+		completion_reward = {
+			set_technology = {
+				ballistic_weaponry_tech_4 = 1
+			}
+		}
+	}
+	focus = {
+		id = rrg_dante_geck
+		icon = GFX_goal_ENC_geck
+		cost = 30
+		x = -2
+		y = 6
+		prerequisite = {
+			focus = rrg_pre_war_guns
+		}
+		prerequisite = {
+			focus = rrg_pre_war_electronics
+		}
+		available = {
+			748 = {
+				is_owned_and_controlled_by = RRG
+			}
+		}
+		relative_position_id = rrg_mexico_failure
+		completion_reward = {
+			add_to_variable = {
+				geck_count = 1
+			}
+			custom_effect_tooltip = rrg_dante_geck_tt
+		}
+	}
+	focus = {
+		id = rrg_mexican_unity_guerra
+		icon = GFX_goal_CAF_expansion
+		cost = 30
+		x = -4
+		y = 1
+		prerequisite = {
+			focus = rrg_beacon_of_talent
+		}
+		relative_position_id = rrg_beacon_of_talent
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					is_in_faction_with = ROOT
+				}
+				add_ideas = rrg_unity
+			}
+			every_country = { ##RRG gets this one
+				limit = {
+					is_in_faction_with = ROOT
+					NOT = {
+						has_country_flag = no_more_rrg_notifications
+					}
+				}
+				country_event = nf_rrg.170
+			}
+		}
+	}
+	focus = {
+		id = rrg_mexican_pride
+		icon = GFX_goal_RRG_mex_diplomatic
+		cost = 30
+		x = -3
+		y = 1
+		prerequisite = {
+			focus = rrg_texan_ties
+		}
+		relative_position_id = rrg_texan_ties
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					is_in_faction_with = ROOT
+				}
+				add_stability = 0.1
+				add_political_power = 50
+			}
+			every_country = { ##RRG gets this one
+				limit = {
+					is_in_faction_with = ROOT
+					NOT = {
+						has_country_flag = no_more_rrg_notifications
+					}
+				}
+				country_event = nf_rrg.166
+			}
+		}
+	}
+	focus = {
+		id = rrg_business_partners
+		icon = GFX_goal_CAF_treaty
+		cost = 30
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = rrg_beacon_of_talent
+		}
+		relative_position_id = rrg_beacon_of_talent
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					is_mexican_nation = yes
+				}
+				random_owned_state = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			every_country = { ##RRG gets this one
+				limit = {
+					is_mexican_nation = yes
+					NOT = {
+						has_country_flag = no_more_rrg_notifications
+					}
+				}
+				country_event = nf_rrg.169
+			}
+		}
+	}
+	focus = {
+		id = rrg_trade_routes
+		icon = GFX_goal_CAF_stocks
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = rrg_business_partners
+		}
+		relative_position_id = rrg_business_partners
+		completion_reward = {
+			746 = {
+				add_state_modifier = {
+					modifier = {
+						caps_node_trade_modifier = 0.2
+					}
+				}
+				if = {
+					limit = {
+						is_valid_state_for_dockyard = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					province = 8599
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_mexican_trade_alliance
+		icon = GFX_goal_petro_chico_bottle_cap
+		x = 1
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_statehood_for_all
+		}
+		relative_position_id = rrg_statehood_for_all
+		completion_reward = {
+			country_event = nf_rrg.81
+		}
+	}
+	focus = {
+		id = rrg_railway_north
+		icon = GFX_goal_generic_building_focus
+		x = -1
+		y = 1
+		cost = 30
+		prerequisite = {
+			focus = rrg_statehood_for_all
+		}
+		relative_position_id = rrg_statehood_for_all
+		completion_reward = {
+			custom_effect_tooltip = rrg_railway_north_tt
+		}
+	}
+	focus = {
+		id = rrg_eliminate_criminal_elements
+		icon = GFX_goal_FFI_fist_angry
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = rrg_guerra_luchador_friend
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		relative_position_id = rrg_guerra_luchador_friend
+		bypass = {
+			SIN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			BLO = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			SIN = {
+				FFI = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			BLO = {
+				FFI = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_luchador_patrols
+		icon = GFX_goal_FFI_Last_Fight
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = rrg_eliminate_criminal_elements
+		}
+		relative_position_id = rrg_eliminate_criminal_elements
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = infantry_tech_category
+			}
+		}
+	}
+	focus = {
+		id = rrg_mexicos_superheros
+		icon = GFX_goal_FFI_Cartel_love_luchas
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = rrg_luchador_patrols
+		}
+		prerequisite = {
+			focus = rrg_railway_north
+		}
+		relative_position_id = rrg_luchador_patrols
+		completion_reward = {
+			FFI = {
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 2
+					category = infantry_tech_category
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_burning_heart
+		icon = GFX_goal_generic_workshop
+		cost = 30
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = rrg_mexican_pride
+		}
+		relative_position_id = rrg_mexican_pride
+		completion_reward = {
+			746 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_arms_race
+		icon = GFX_goal_RRG_industry
+		cost = 30
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = rrg_burning_heart
+		}
+		relative_position_id = rrg_burning_heart
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				ahead_reduction = 1
+				category = industry_specialisation_category
+				category = infantry_weapons_tech_category
+			}
+		}
+	}
+	focus = {
+		id = rrg_home_effort
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_cities_focus
+		cost = 30
+		prerequisite = {
+			focus = rrg_burning_heart
+		}
+		relative_position_id = rrg_burning_heart
+		available = {
+			742 = {
+				is_owned_and_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			add_ideas = rrg_bolsteredworkforce
+			add_resource = {
+				type = metal
+				amount = 10
+				state = 742
+			}
+		}
+	}
+	focus = {
+		id = rrg_together_rio
+		x = 2
+		y = 1
+		icon = GFX_goal_generic_large_scale_normal_industry_focus
+		cost = 30
+		prerequisite = {
+			focus = rrg_burning_heart
+		}
+		relative_position_id = rrg_burning_heart
+		completion_reward = {
+			746 = {
+				set_temp_variable = {
+					development_to_add = 2
+				}
+				add_development_to_node = yes
+				add_state_modifier = {
+					modifier = {
+						caps_node_base_modifier = 0.35
+					}
+				}
+			}
+			add_resource = {
+				type = composites
+				amount = 4
+				state = 748
+			}
+			if = {
+				limit = {
+					TBH = {
+						exists = yes
+					}
+				}
+				TBH = {
+					news_event = nf_rrg.164
+				}
+			}
+			if = {
+				limit = {
+					TEX = {
+						exists = yes
+					}
+				}
+				TEX = {
+					news_event = nf_rrg.164
+				}
+			}
+			every_allied_country = {
+				set_country_flag = accept_texdollar
+				if = {
+					limit = {
+						has_idea = currencygenericcap
+					}
+					remove_ideas = currencygenericcap
+				}
+				else_if = {
+					limit = {
+						has_idea = currencybawlsguarana
+					}
+					remove_ideas = currencybawlsguarana
+				}
+				add_ideas = currencytexdollar
+			}
+		}
+	}
+	focus = {
+		id = rrg_build_future
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_advanced_technology_focus
+		cost = 30
+		prerequisite = {
+			focus = rrg_together_rio
+		}
+		relative_position_id = rrg_together_rio
+		completion_reward = {
+			add_tech_bonus = {
+				name = rrg_build_future
+				bonus = 0.4
+				uses = 1
+				category = electronics
+			}
+			add_resource = {
+				type = advanced
+				amount = 7
+				state = 746
+			}
+			add_resource = {
+				type = circuitry
+				amount = 3
+				state = 746
+			}
+		}
+	}
+	focus = {
+		id = rrg_industrial_apprenticeships
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_slums_focus
+		cost = 30
+		prerequisite = {
+			focus = rrg_home_effort
+		}
+		relative_position_id = rrg_home_effort
+		completion_reward = {
+			add_ideas = rio_apprenticeships
+		}
+	}
+	focus = {
+		id = rrg_final_jaripeo
+		icon = GFX_goal_generic_legion_speared
+		cost = 30
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = rrg_vindicta
+		}
+		relative_position_id = rrg_vindicta
+		completion_reward = {
+			swap_ideas = {
+				add_idea = rrg_vindicta_idea1
+				remove_idea = rrg_vindicta_idea
+			}
+			every_other_country = {
+				limit = {
+					is_in_faction_with = ROOT
+				}
+				add_war_support = 0.05
+				add_command_power = 25
+				country_event = nf_rrg.177
+			}
+		}
+	}
+	focus = {
+		id = rrg_tercio_varas
+		icon = GFX_goal_attack_legion
+		cost = 30
+		x = -3
+		y = 1
+		prerequisite = {
+			focus = rrg_dante_matador
+			focus = rrg_final_jaripeo
+		}
+		will_lead_to_war_with = CES
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			OR = {
+				has_war_with = CES
+				CES = {
+					all_core_land_owned_by_prev_sphere = yes
+				}
+			}
+		}
+		relative_position_id = rrg_dante_matador
+		completion_reward = {
+			CES = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_tercio_banderillas
+		icon = GFX_goal_CES_burning_blade
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = rrg_tercio_varas
+		}
+		available = {
+			has_war_with = CES
+		}
+		bypass = {
+			CES = {
+				exists = no
+			}
+		}
+		relative_position_id = rrg_tercio_varas
+		completion_reward = {
+			swap_ideas = {
+				add_idea = rrg_vindicta_idea2
+				remove_idea = rrg_vindicta_idea1
+			}
+			CES = {
+				add_stability = -0.01
+				add_war_support = -0.01
+				add_political_power = -10
+			}
+		}
+	}
+	focus = {
+		id = rrg_tercio_muerte
+		icon = GFX_goal_generic_legion_speared
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = rrg_tercio_banderillas
+		}
+		available = {
+			controls_state = 520
+		}
+		relative_position_id = rrg_tercio_banderillas
+		completion_reward = {
+			country_event = nf_rrg.88
+		}
+	}
+	focus = {
+		id = rrg_the_conquered
+		icon = GFX_goal_CES_slaves
+		cost = 30
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = rrg_final_jaripeo
+		}
+		relative_position_id = rrg_final_jaripeo
+		completion_reward = {
+			add_timed_idea = {
+				idea = rrg_freedom_hoy
+				days = 365
+			}
+		}
+	}
+	focus = {
+		id = rrg_sack_flagstaff
+		icon = GFX_goal_NEW_Caps_for_Loyalty
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = rrg_tercio_muerte
+		}
+		available = {
+			OR = {
+				controls_state = 520
+				any_other_country = {
+					controls_state = 520
+					is_subject_of = RRG
+				}
+			}
+		}
+		relative_position_id = rrg_tercio_muerte
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					is_valid_state_for_4_arms_factories = yes
+				}
+				add_extra_state_shared_building_slots = 6
+				add_building_construction = {
+					type = arms_factory
+					level = 4
+					instant_build = yes
+				}
+			}
+			520 = {
+				remove_building = {
+					type = arms_factory
+					level = 4
+				}
+			}
+			add_resource = {
+				type = composites
+				amount = -5
+				state = 520
+			}
+			add_resource = {
+				type = metal
+				amount = -2
+				state = 520
+			}
+			add_resource = {
+				type = circuitry
+				amount = -2
+				state = 520
+			}
+			add_resource = {
+				type = composites
+				amount = 5
+				state = 746
+			}
+			add_resource = {
+				type = metal
+				amount = 2
+				state = 746
+			}
+			add_resource = {
+				type = circuitry
+				amount = 2
+				state = 746
+			}
+		}
+	}
+	focus = {
+		id = rrg_new_world_hopes
+		icon = GFX_goal_generic_creature_bald_eagle
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = rrg_sack_flagstaff
+		}
+		relative_position_id = rrg_sack_flagstaff
+		completion_reward = {
+			news_event = nf_rrg.89
+			custom_effect_tooltip = guerra_coring_costs_arizona_tt
+		}
+	}
+	focus = {
+		id = rrg_quiet_rebellion
+		icon = GFX_goal_generic_freedom
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = rrg_the_conquered
+		}
+		relative_position_id = rrg_the_conquered
+		completion_reward = {
+			custom_effect_tooltip = rrg_quiet_rebellion_tt
+			CES = {
+				if = {
+					limit = {
+						122 = {
+							is_core_of = CES
+						}
+					}
+					every_state = {
+						limit = {
+							is_core_of = LGS
+						}
+						force_enable_resistance = {
+							occupier = CES
+							occupied = LGS
+						}
+						force_enable_resistance = {
+							occupier = LAC
+							occupied = LGS
+						}
+						start_resistance = LGS
+					}
+				}
+				else = {
+					every_state = {
+						limit = {
+							is_core_of = LGS
+							is_owned_by = CES
+						}
+						add_resistance_target = {
+							amount = 25
+							tooltip = CES_send_frumentarii_tt
+						}
+					}
+				}
+			}
+			CES = {
+				if = {
+					limit = {
+						579 = {
+							is_core_of = CES
+						}
+					}
+					every_state = {
+						limit = {
+							is_core_of = RBD
+						}
+						force_enable_resistance = {
+							occupier = CES
+							occupied = RBD
+						}
+						force_enable_resistance = {
+							occupier = LAC
+							occupied = RBD
+						}
+						start_resistance = RBD
+					}
+				}
+				else = {
+					every_state = {
+						limit = {
+							is_core_of = RBD
+							is_owned_by = CES
+						}
+						add_resistance_target = {
+							amount = 25
+							tooltip = CES_send_frumentarii_tt
+						}
+					}
+				}
+				news_event = nf_rrg.87
+			}
+		}
+	}
+	focus = {
+		id = rrg_volunteer_overtime
+		icon = GFX_goal_generic_military_industry_focus
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = rrg_quiet_rebellion
+		}
+		available = {
+			has_war_with = CES
+		}
+		mutually_exclusive = {
+			focus = rrg_clutch_rifles
+		}
+		relative_position_id = rrg_quiet_rebellion
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					is_in_faction_with = ROOT
+				}
+				add_ideas = rrg_overtime
+			}
+			every_country = { ##RRG gets this one.
+				limit = {
+					is_in_faction_with = ROOT
+					NOT = {
+						has_country_flag = no_more_rrg_notifications
+					}
+				}
+				country_event = nf_rrg.171
+			}
+		}
+	}
+	focus = {
+		id = rrg_clutch_rifles
+		icon = GFX_focus_mex_caudillo_private_armies
+		cost = 30
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = rrg_quiet_rebellion
+		}
+		available = {
+			has_war_with = CES
+		}
+		mutually_exclusive = {
+			focus = rrg_volunteer_overtime
+		}
+		relative_position_id = rrg_quiet_rebellion
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					is_in_faction_with = ROOT
+				}
+				add_ideas = rrg_clutch_rifles_idea
+			}
+			every_country = { ##RRG gets this one.
+				limit = {
+					is_in_faction_with = ROOT
+					NOT = {
+						has_country_flag = no_more_rrg_notifications
+					}
+				}
+				country_event = nf_rrg.172
+			}
+		}
+	}
+	focus = {
+		id = rrg_red_white_black
+		icon = GFX_goal_RRG_handshake
+		cost = 30
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = rrg_clutch_rifles
+			focus = rrg_volunteer_overtime
+		}
+		relative_position_id = rrg_clutch_rifles
+		completion_reward = {
+			every_other_country = {
+				limit = {
+					is_in_faction_with = ROOT
+				}
+				add_war_support = 0.1
+			}
+			every_country = { #RRG gets this one.
+				limit = {
+					is_in_faction_with = ROOT
+					NOT = {
+						has_country_flag = no_more_rrg_notifications
+					}
+				}
+				country_event = nf_rrg.173
+			}
+		}
+	}
+
+
+
+	##########################
+	##### Rosado
+	##########################
+	focus = {
+		id = rrg_rose_of_mexico
+		x = 20
+		y = 11
+		icon = GFX_goal_RRG_Rosado_New
+		cost = 30
+		mutually_exclusive = {
+			focus = rrg_dantes_inferno
+			focus = rrg_davinci_of_war
+		}
+		available = {
+			has_country_flag = RRG_election_held
+			is_rosado_leader = yes
+		}
+		allow_branch = {
+			NOT = {
+				OR = {
+					has_completed_focus = rrg_davinci_of_war
+					has_completed_focus = rrg_dantes_inferno
+				}
+			}
+		}
+		offset = {
+			x = -20
+			trigger = {
+				has_completed_focus = rrg_rose_of_mexico
+			}
+		}
+		relative_position_id = rrg_gloria_in_flames
+		completion_reward = {
+			news_event = nf_rrg.35
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+	focus = {
+		id = rrg_brotherhood_influence
+		x = -1
+		y = 1
+		icon = GFX_goal_TBH_startup_icon
+		cost = 30
+		available = {
+			is_rosado_leader = yes
+		}
+		relative_position_id = rrg_rose_of_mexico
+		mutually_exclusive = {
+			focus = rrg_brotherhood_interference
+		}
+		prerequisite = {
+			focus = rrg_rose_of_mexico
+		}
+		completion_reward = {
+			add_ideas = brotherhood_influence_rrg_idea
+			TBH = {
+				country_event = nf_rrg.159
+			}
+		}
+	}
+	focus = {
+		id = rrg_scribe_tutors
+		x = -2
+		y = 1
+		icon = GFX_goal_generic_BoS_diplomatic_focus
+		cost = 30
+		relative_position_id = rrg_brotherhood_influence
+		prerequisite = {
+			focus = rrg_brotherhood_influence
+		}
+		completion_reward = {
+			add_resource = {
+				type = circuitry
+				amount = 4
+				state = 746
+			}
+			add_resource = {
+				type = advanced
+				amount = 4
+				state = 746
+			}
+		}
+	}
+	focus = {
+		id = rrg_scribe_commerce
+		x = -1
+		y = 1
+		icon = GFX_goal_RRG_texan_trade
+		cost = 30
+		relative_position_id = rrg_scribe_tutors
+		prerequisite = {
+			focus = rrg_scribe_tutors
+		}
+		completion_reward = {
+			TBH = {
+				add_offsite_building = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 1
+			}
+			add_resource = {
+				type = composites
+				amount = 6
+				state = 792
+			}
+			add_resource = {
+				type = advanced
+				amount = 3
+				state = 746
+			}
+			every_allied_country = {
+				set_country_flag = accept_texdollar
+				if = {
+					limit = {
+						has_idea = currencygenericcap
+					}
+					remove_ideas = currencygenericcap
+				}
+				else_if = {
+					limit = {
+						has_idea = currencybawlsguarana
+					}
+					remove_ideas = currencybawlsguarana
+				}
+				add_ideas = currencytexdollar
+			}
+		}
+	}
+	focus = {
+		id = rrg_bos_healers
+		x = 1
+		y = 1
+		icon = GFX_goal_ENC_vac
+		cost = 30
+		relative_position_id = rrg_scribe_tutors
+		prerequisite = {
+			focus = rrg_scribe_tutors
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = support_medical_tech_category
+			}
+		}
+	}
+	focus = {
+		id = rrg_industrial_support
+		x = 0
+		y = 1
+		icon = GFX_goal_BOS_generic_industrial
+		cost = 30
+		relative_position_id = rrg_brotherhood_influence
+		prerequisite = {
+			focus = rrg_brotherhood_influence
+		}
+		completion_reward = {
+			746 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_brotherhood_interference
+		x = 1
+		y = 1
+		icon = GFX_goal_RRG_bos_subjects
+		cost = 30
+		available = {
+			is_rosado_leader = yes
+			ACH = {
+				exists = yes
+			}
+		}
+		mutually_exclusive = {
+			focus = rrg_brotherhood_influence
+		}
+		relative_position_id = rrg_rose_of_mexico
+		prerequisite = {
+			focus = rrg_rose_of_mexico
+		}
+		completion_reward = {
+			add_ideas = ACH_research_bonus
+			ACH = {
+				country_event = nf_rrg.158
+			}
+		}
+	}
+	focus = {
+		id = rrg_bunker_codes
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_BOS_focus_surface_outposts
+		cost = 30
+		relative_position_id = rrg_brotherhood_interference
+		prerequisite = {
+			focus = rrg_brotherhood_interference
+		}
+		completion_reward = {
+			add_resource = {
+				type = advanced
+				amount = 8
+				state = 746
+			}
+		}
+	}
+	focus = {
+		id = rrg_scribe_assistants
+		x = 2
+		y = 1
+		icon = GFX_goal_BOS_generic_research
+		cost = 30
+		relative_position_id = rrg_brotherhood_interference
+		prerequisite = {
+			focus = rrg_brotherhood_interference
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ACH_research_bonus
+				add_idea = ACH_research_bonus_good
+			}
+		}
+	}
+	focus = {
+		id = rrg_brotherhood_research_pact
+		x = 1
+		y = 1
+		icon = GFX_goal_uoa_holotape
+		cost = 30
+		available = {
+			OR = {
+				TBH = {
+					exists = yes
+				}
+				LNS = {
+					exists = yes
+				}
+			}
+		}
+		bypass = {
+			OR = {
+				has_war_with = TBH
+				has_war_with = LNS
+			}
+		}
+		relative_position_id = rrg_scribe_assistants
+		prerequisite = {
+			focus = rrg_scribe_assistants
+		}
+		completion_reward = {
+			add_to_tech_sharing_group = rosado_research_pact
+			TAA = {
+				add_to_tech_sharing_group = rosado_research_pact
+			}
+			ACH = {
+			}
+		}
+	}
+	focus = {
+		id = rrg_bos_weapons
+		x = -1
+		y = 1
+		icon = GFX_goal_MOJ_aggressive_policy
+		cost = 30
+		relative_position_id = rrg_scribe_assistants
+		prerequisite = {
+			focus = rrg_scribe_assistants
+		}
+		available = {
+			NOT = {
+				has_war_with = ACH
+			}
+		}
+		completion_reward = {
+			ACH = {
+				country_event = nf_rrg.160
+			}
+			custom_effect_tooltip = rrg_bos_weapons_tt
+			hidden_effect = {
+				load_oob = texas_brotherhood_detachment
+			}
+		}
+	}
+	focus = {
+		id = rrg_show_of_faith
+		x = -1
+		y = 1
+		icon = GFX_goal_BOS_victory_or_death
+		cost = 30
+		relative_position_id = rrg_bunker_codes
+		prerequisite = {
+			focus = rrg_bunker_codes
+			focus = rrg_industrial_support
+		}
+		completion_reward = {
+			custom_effect_tooltip = MILLER_TT
+			hidden_effect = {
+				add_corps_commander_role = {
+					character = RRG_senior_scribe_miller
+					traits = {
+						perceptive_trait
+						awareness_trait
+						urban_assault_specialist
+					}
+					skill = 4
+					attack_skill = 2
+					defense_skill = 3
+					planning_skill = 3
+					logistics_skill = 2
+					legacy_id = -1
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_second_time_coming
+		x = 5
+		y = 1
+		icon = GFX_KHA_focus_backstab
+		cost = 30
+		relative_position_id = rrg_show_of_faith
+		prerequisite = {
+			focus = rrg_show_of_faith
+		}
+		bypass = {
+			TAA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			TAA = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = TAA
+				}
+				add_claim_by = RRG
+			}
+		}
+	}
+	focus = {
+		id = rrg_america_dead_tyrant
+		x = 5
+		y = 2
+		icon = GFX_goal_LNS_rising_star
+		cost = 30
+		relative_position_id = rrg_show_of_faith
+		prerequisite = {
+			focus = rrg_second_time_coming
+		}
+		available = {
+			OR = {
+				TAA = {
+					all_core_state = {
+						is_owned_by = RRG
+					}
+				}
+				TAA = { is_subject_of = RRG }
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					TAA = { is_subject_of = RRG }
+				}
+				TAA = {
+					add_stability = 0.15
+					add_political_power = 300
+				}
+				add_political_power = 50
+			}
+			else_if = {
+				limit = {
+					TAA = {
+						all_core_state = {
+							is_owned_by = RRG
+						}
+					}
+				}
+				release_puppet = TAA
+				country_event = nf_rrg.9
+			}
+		}
+	}
+	focus = {
+		id = rrg_pecos_rosado
+		x = -1
+		y = 1
+		icon = GFX_goal_food_razor_grain
+		cost = 30
+		relative_position_id = rrg_show_of_faith
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		prerequisite = {
+			focus = rrg_show_of_faith
+		}
+		available = {
+			PEC = {
+				is_subject = no
+			}
+		}
+		completion_reward = {
+			PEC = {
+				country_event = nf_rrg.153
+			}
+		}
+	}
+	focus = {
+		id = rrg_build_the_future_together
+		x = 1
+		y = 1
+		icon = GFX_goal_RRG_Rosado_Kate_And_Rosado
+		cost = 30
+		relative_position_id = rrg_show_of_faith
+		available = {
+			has_completed_focus = rrg_brotherhood_interference
+			ACH = {
+				exists = yes
+				is_subject = no
+			}
+			is_faction_leader = yes
+		}
+		prerequisite = {
+			focus = rrg_show_of_faith
+		}
+		completion_reward = {
+			ACH = {
+				invite_to_rio_pact = yes
+			}
+		}
+	}
+	focus = {
+		id = rrg_welcome_free_thinkers
+		x = 2
+		y = 1
+		icon = GFX_goal_generic_welcome_home
+		cost = 30
+		relative_position_id = rrg_america_dead_tyrant
+		prerequisite = {
+			focus = rrg_america_dead_tyrant
+		}
+		completion_reward = {
+			TAA = {
+				add_ideas = rrg_welcome_refugees
+			}
+		}
+	}
+
+	focus = {
+		id = rrg_literally_shale
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_fusion_core
+		cost = 30
+		relative_position_id = rrg_welcome_free_thinkers
+		available = {
+			SHA = {
+				exists = no
+			}
+		}
+		prerequisite = {
+			focus = rrg_welcome_free_thinkers
+		}
+		completion_reward = {
+			add_resource = {
+				type = energy
+				amount = 13
+				state = 796
+			}
+		}
+	}
+	focus = {
+		id = rrg_irrigate_wasteland
+		x = 0
+		y = 1
+		icon = GFX_goal_food_various_fruits
+		cost = 30
+		relative_position_id = rrg_literally_shale
+		available = {
+			SHA = {
+				exists = no
+			}
+		}
+		prerequisite = {
+			focus = rrg_literally_shale
+		}
+		completion_reward = {
+			add_resource = {
+				type = water
+				amount = 13
+				state = 796
+			}
+			796 = {
+				add_state_modifier = {
+					modifier = {
+						monthly_population = 0.2
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_encourage_consumer_industry
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_vault_tec_workshop
+		cost = 30
+		relative_position_id = rrg_america_dead_tyrant
+		prerequisite = {
+			focus = rrg_america_dead_tyrant
+		}
+		completion_reward = {
+			796 = {
+				add_resource = {
+					type = metal
+					amount = 12
+				}
+				add_resource = {
+					type = circuitry
+					amount = 6
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_welcome_mutants
+		x = -2
+		y = 1
+		icon = GFX_goal_NEW_Super_Mutant_Technician
+		cost = 30
+		relative_position_id = rrg_america_dead_tyrant
+		prerequisite = {
+			focus = rrg_america_dead_tyrant
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					UOA = {
+						exists = yes
+					}
+				}
+				UOA = {
+					country_event = nf_rrg.155
+				}
+			}
+			else_if = {
+				limit = {
+					TBH = {
+						controls_state = 915
+					}
+				}
+				TBH = {
+					country_event = nf_rrg.155
+				}
+			}
+			else = {
+				country_event = nf_rrg.157
+			}
+		}
+	}
+
+	focus = {
+		id = rrg_maquiladoras
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_circuit_reg
+		cost = 30
+		relative_position_id = rrg_welcome_mutants
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		prerequisite = {
+			focus = rrg_welcome_mutants
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		completion_reward = {
+			TAA = {
+				random_owned_state = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	# focus = {
+	# 	id = rrg_clean_out_ironmongers
+	# 	x = 0
+	# 	y = 1
+	# 	icon = GFX_goal_generic_helm_mutant_alt
+	# 	cost = 30
+	# 	relative_position_id = rrg_welcome_mutants
+	# 	available = {
+	# 		ai_has_no_other_wars_or_wargoals = yes
+	# 	}
+	# 	bypass = {
+	# 		OR = {
+	# 			IMO = {
+	# 				all_core_land_owned_by_prev_sphere = yes
+	# 			}
+	# 			907 = {
+	# 				is_controlled_by = UOA
+	# 			}
+	# 		}
+	# 	}
+	# 	prerequisite = {
+	# 		focus = rrg_welcome_mutants
+	# 	}
+	# 	completion_reward = {
+	# 		IMO = {
+	# 			ROOT = {
+	# 				grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+	# 			}
+	# 		}
+	# 		every_state = {
+	# 			limit = {
+	# 				is_core_of = IMO
+	# 			}
+	# 			add_claim_by = TAA
+	# 		}
+	# 	}
+	# }
+	focus = {
+		id = rrg_ironworks
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_workshop
+		cost = 30
+		relative_position_id = rrg_maquiladoras
+
+		prerequisite = {
+			focus = rrg_maquiladoras
+		}
+		completion_reward = {
+			add_resource = {
+				type = composites
+				amount = 6
+				state = 796
+			}
+			add_resource = {
+				type = metal
+				amount = 5
+				state = 796
+			}
+		}
+	}
+	focus = {
+		id = rrg_making_a_note_here
+		x = 0
+		y = 1
+		icon = GFX_goal_uoa_blueprint
+		cost = 30
+		relative_position_id = rrg_encourage_consumer_industry
+		prerequisite = {
+			focus = rrg_encourage_consumer_industry
+		}
+		completion_reward = {
+			TAA = {
+				add_research_slot = 1
+			}
+		}
+	}
+	focus = {
+		id = rrg_taa_breakthroughs
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_circuit_adv
+		cost = 30
+		relative_position_id = rrg_making_a_note_here
+		prerequisite = {
+			focus = rrg_making_a_note_here
+		}
+		completion_reward = {
+			TAA = {
+				custom_effect_tooltip = " "
+				set_technology = {
+					exploitation_tech_level_scientific = 1
+					electronics_tech_level_scientific = 1
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_clean_out_ironmongers
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_helm_mutant_alt
+		cost = 30
+		relative_position_id = rrg_taa_breakthroughs
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		prerequisite = {
+			focus = rrg_taa_breakthroughs
+		}
+		bypass = {
+			IMO = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			IMO = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = IMO
+				}
+				add_claim_by = TAA
+			}
+		}
+	}
+	focus = {
+		id = rrg_eden_second_chance
+		x = 0
+		y = 1
+		icon = GFX_goal_BDT_geck_corrupted
+		cost = 30
+		relative_position_id = rrg_clean_out_ironmongers
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			EDN = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		prerequisite = {
+			focus = rrg_clean_out_ironmongers
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					OR = {
+						NOT = {
+							936 = {
+								is_owned_by = UOA
+							}
+							936 = {
+								is_owned_by = TBH
+							}
+							936 = {
+								is_owned_by = LNS
+							}
+						}
+					}
+				}
+				EDN = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_garden_eden
+		x = 0
+		y = 1
+		icon = GFX_goal_ENC_geck
+		cost = 30
+		relative_position_id = rrg_eden_second_chance
+		available = {
+			936 = {
+				is_controlled_by_ROOT_or_ally = yes
+			}
+		}
+		prerequisite = {
+			focus = rrg_eden_second_chance
+		}
+		completion_reward = {
+			936 = {
+				add_state_modifier = {
+					modifier = {
+						local_building_slots_factor = 2
+						local_supplies = 0.33
+						local_resources = 0.15
+						local_manpower = 0.1
+					}
+				}
+				add_resource = {
+					type = water
+					amount = 6
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_shale_rosado
+		icon = GFX_goal_attis_army
+		cost = 30
+		x = -2
+		y = 1
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		prerequisite = {
+			focus = rrg_clean_out_ironmongers
+		}
+		bypass = {
+			SHA = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = rrg_clean_out_ironmongers
+		completion_reward = {
+			SHA = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = SHA
+				}
+				add_claim_by = TAA
+			}
+		}
+	}
+	focus = {
+		id = rrg_tbh_sucks
+		icon = GFX_goal_TBH_T51
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = rrg_shale_rosado
+		}
+		available = {
+			OR = {
+				controls_state = 892
+				any_other_country = {
+					is_subject_of = RRG
+					controls_state = 892
+				}
+				892 = {
+					controller = {
+						is_in_faction_with = RRG
+					}
+				}
+			}
+		}
+		relative_position_id = rrg_shale_rosado
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = infantry_tech_category
+			}
+			TAA = {
+				set_technology = {
+					power_armour_tech_level_settler = 1
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_welcome_rockets
+		icon = GFX_goal_generic_bomb_space_station
+		cost = 30
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = rrg_clean_out_ironmongers
+		}
+		available = {
+			HRO = {
+				exists = yes
+				is_in_faction = no
+				borders_rio_pact  = yes
+			}
+			is_faction_leader = yes
+		}
+		bypass = {
+			HRO = {
+				OR = {
+					exists = no
+					is_in_faction = yes
+				}
+			}
+		}
+		relative_position_id = rrg_clean_out_ironmongers
+		completion_reward = {
+			HRO = {
+				invite_to_rio_pact = yes
+			}
+		}
+	}
+	focus = {
+		id = rrg_welcome_rockets_cool
+		icon = GFX_goal_moj_repconn_rocket
+		cost = 30
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = rrg_welcome_rockets
+		}
+		available = {
+			HRO = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = rrg_welcome_rockets
+		completion_reward = {
+			set_technology = { air_tech_level_scientific = 1 }
+		}
+	}
+	focus = {
+		id = rrg_mexico_great_jewel
+		x = -5
+		y = 1
+		icon = GFX_goal_RRG_mexico_law
+		cost = 30
+		relative_position_id = rrg_show_of_faith
+		prerequisite = {
+			focus = rrg_show_of_faith
+		}
+		completion_reward = {
+			custom_effect_tooltip = rrg_mexico_great_jewel_tt
+			custom_effect_tooltip = rrg_tlaloc_idle_mind_tt
+		}
+	}
+	focus = {
+		id = rrg_hostile_takeover
+		x = 2
+		y = 1
+		icon = GFX_goal_generic_PET_shield
+		cost = 30
+		relative_position_id = rrg_mexico_great_jewel
+		will_lead_to_war_with = PET
+		prerequisite = {
+			focus = rrg_mexico_great_jewel
+		}
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			PET = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		completion_reward = {
+			country_event = nf_rrg.36
+			unlock_decision_tooltip = RRG_salvage_munitions_depot
+			unlock_decision_tooltip = RRG_study_motor_parks
+			unlock_decision_tooltip = RRG_raid_refinery
+			custom_effect_tooltip = on_map_decision_only_tt
+		}
+	}
+	focus = {
+		id = rrg_oil_must_flow
+		icon = GFX_goal_generic_fuel_focus
+		x = 0
+		y = 1
+		#icon =
+		cost = 30
+		prerequisite = {
+			focus = rrg_hostile_takeover
+		}
+		relative_position_id = rrg_hostile_takeover
+		available = {
+			OR = {
+				776 = {
+					is_owned_and_controlled_by = ROOT
+				}
+				776 = {
+					owner = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		completion_reward = {
+			776 = {
+				add_resource = {
+					type = energy
+					amount = 3
+				}
+			}
+			custom_effect_tooltip = rrg_oil_must_flow_tt
+			custom_effect_tooltip = on_map_decision_only_tt
+		}
+	}
+	focus = {
+		id = rrg_fuel_economy
+		icon = GFX_goal_petro_chico_bottle_cap
+		x = 0
+		y = 1
+		#icon =
+		cost = 30
+		prerequisite = {
+			focus = rrg_oil_must_flow
+		}
+		relative_position_id = rrg_oil_must_flow
+		available = {
+			OR = {
+				776 = {
+					is_owned_and_controlled_by = ROOT
+				}
+				776 = {
+					owner = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		completion_reward = {
+			set_technology = {
+				exploitation_tech_level_scientific = 1
+			}
+		}
+	}
+	focus = {
+		id = rrg_fools_army
+		x = 0
+		y = 1
+		icon = GFX_goal_army_of_mexico_mockup
+		cost = 30
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		prerequisite = {
+			focus = rrg_mexico_great_jewel
+		}
+		will_lead_to_war_with = ARM
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			ARM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+			NOT = {
+				ACH = {
+					ARM = {
+						all_core_land_owned_by_prev_sphere = yes
+					}
+				}
+			}
+		}
+		relative_position_id = rrg_mexico_great_jewel
+		completion_reward = {
+			if = {
+				limit = {
+					ACH = {
+						exists = yes	# Stops error spam when hovering over focus
+						ARM = {
+							all_core_land_owned_by_prev_sphere = yes
+						}
+					}
+				}
+				custom_effect_tooltip = rrg_ask_best_friend_tt
+				ACH = {
+					country_event = nf_rrg.165
+				}
+			}
+			else = {
+				country_event = nf_rrg.37
+			}
+			unlock_decision_tooltip = RRG_salvage_tech
+			unlock_decision_tooltip = RRG_steal_convoy
+			custom_effect_tooltip = on_map_decision_only_tt
+		}
+	}
+	focus = {
+		id = rrg_shackling_santa_anna
+		x = 0
+		y = 1
+		icon = GFX_goal_shackled_santa_anna
+		cost = 30
+		prerequisite = {
+			focus = rrg_fools_army
+		}
+		available = {
+			ARM = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = rrg_fools_army
+		completion_reward = {
+			country_event = nf_rrg.38
+		}
+	}
+	focus = {
+		id = rrg_scorned_emperor
+		x = -2
+		y = 1
+		icon = GFX_goal_generic_focus_magazine_tesla_robots_rule
+		cost = 30
+		prerequisite = {
+			focus = rrg_mexico_great_jewel
+		}
+		relative_position_id = rrg_mexico_great_jewel
+		available = {
+			OR = {
+				MAX = {
+					exists = yes
+				}
+				TLA = {
+					exists = no
+				}
+			}
+			# YARD1: ADD TOOLTIP
+			check_variable = {
+				MAX.core_states^num > 0
+			}
+		}
+		bypass = {
+			OR = {
+				has_war_with = MAX
+				AND = {
+					check_variable = {
+						MAX.core_states^num > 0
+					}
+					MAX = {
+						all_core_land_owned_by_prev_sphere = yes
+					}
+				}
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = rrg_scorned_emperor_tt
+			hidden_effect = {
+				MAX = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_friends_with_benefits
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_vault_girl_riding_rocket
+		cost = 30
+		prerequisite = {
+			focus = rrg_scorned_emperor
+		}
+		relative_position_id = rrg_scorned_emperor
+		available = {
+			MAX = { all_core_land_owned_by_prev_sphere = yes }
+		}
+		completion_reward = {
+			custom_effect_tooltip = rrg_friends_with_benefits_tt
+			hidden_effect = {
+				MAX = {
+					release_from_prev_as_puppet = yes
+				}
+				MAX = {
+					set_politics = {
+						ruling_party = ruler
+						elections_allowed = no
+					}
+					set_popularities = {
+						people = 0
+						elites = 0
+						intellectuals = 0
+						ruler = 100
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_benefits_of_robot_friends
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_focus_magainze_msj_maternal_robot
+		cost = 30
+		prerequisite = {
+			focus = rrg_friends_with_benefits
+		}
+		relative_position_id = rrg_friends_with_benefits
+		available = {
+			MAX = {
+				is_subject_of = RRG
+			}
+		}
+		completion_reward = {
+			set_technology = {
+				habitation_tech_level_scientific = 1
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = robotics_tech_category
+			}
+		}
+	}
+	focus = {
+		id = rrg_machine_empress
+		x = 2
+		y = 1
+		icon = GFX_goal_generic_focus_magazine_lal_married_a_robot
+		cost = 30
+		prerequisite = {
+			focus = rrg_friends_with_benefits
+		}
+		prerequisite = {
+			focus = rrg_shackling_santa_anna
+		}
+		prerequisite = {
+			focus = rrg_oil_must_flow
+		}
+		relative_position_id = rrg_friends_with_benefits
+		completion_reward = {
+			add_ideas = rrg_machine_empress_idea
+		}
+	}
+	focus = {
+		id = rrg_rosa_armageddon_station
+		x = 4
+		y = 1
+		icon = GFX_goal_the_last_argument_of_presidents
+		cost = 30
+		prerequisite = {
+			focus = rrg_machine_empress
+		}
+		available = {
+			has_country_flag = key_1
+			has_country_flag = key_2
+			has_country_flag = key_3
+			has_country_flag = key_4
+		}
+		relative_position_id = rrg_machine_empress
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = rrg_prewar_stockpiles
+		x = 1
+		y = 1
+		icon = GFX_goal_generic_advanced_technology_focus
+		cost = 30
+		prerequisite = {
+			focus = rrg_rosa_armageddon_station
+		}
+		relative_position_id = rrg_rosa_armageddon_station
+		completion_reward = {
+			add_resource = {
+				type = advanced
+				amount = 8
+				state = 748
+			}
+			add_resource = {
+				type = composites
+				amount = 4
+				state = 748
+			}
+		}
+	}
+	focus = {
+		id = rrg_lab_results
+		x = 1
+		y = 1
+		icon = GFX_goal_usa_science_reform
+		cost = 30
+		prerequisite = {
+			focus = rrg_prewar_stockpiles
+		}
+		relative_position_id = rrg_prewar_stockpiles
+		completion_reward = {
+			country_event = nf_rrg.40
+		}
+	}
+	focus = {
+		id = rrg_safe_and_sound
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_protectron_conceptart_police
+		cost = 30
+		prerequisite = {
+			focus = rrg_lab_results
+		}
+		relative_position_id = rrg_lab_results
+		completion_reward = {
+			add_tech_bonus = {
+				name = vault_robotics
+				bonus = 0.5
+				uses = 2
+				category = robotics_tech_category
+			}
+			add_equipment_to_stockpile = {
+				type = support_robot_two_legs_equipment_2
+				amount = 400
+				producer = USA
+			}
+		}
+	}
+	focus = {
+		id = rrg_rosa_nuke
+		x = -1
+		y = 1
+		icon = GFX_goal_generic_mini_nukes
+		cost = 30
+		prerequisite = {
+			focus = rrg_rosa_armageddon_station
+		}
+		relative_position_id = rrg_rosa_armageddon_station
+		completion_reward = {
+			add_nuclear_bombs = 1
+			if = {
+				limit = {
+					has_dlc = "Gotterdammerung"
+				}
+				748 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = rocket_site
+						level = 1
+					}
+				}
+				hidden_effect = {
+					set_technology = {
+						nuclear_missile_unlock_tech = 1
+						popup = no
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = nuclear_missile_equipment_2
+					amount = 1
+					producer = USA
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_armageddon_lasers
+		x = -1
+		y = 1
+		icon = GFX_goal_generic_laser_muskets_focus
+		cost = 30
+		prerequisite = {
+			focus = rrg_rosa_nuke
+		}
+		relative_position_id = rrg_rosa_nuke
+		completion_reward = {
+			if = {
+				limit = {
+					has_tech = energy_weaponry_tech_1
+				}
+				set_technology = {
+					energy_weaponry_tech_2 = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = energy_weaponry_tech_1
+				}
+				set_technology = {
+					energy_weaponry_tech_2 = 1
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = energy_weaponry_tech_2
+				}
+				set_technology = {
+					energy_weaponry_tech_3 = 1
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						has_tech = energy_weaponry_tech_1
+					}
+				}
+				set_technology = {
+					energy_weaponry_tech_1 = 1
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = infantry_tech_category
+			}
+		}
+	}
+	focus = {
+		id = rrg_rosado_eyebots
+		x = 0
+		y = 1
+		icon = GFX_goal_ENC_eyebot_reform
+		cost = 30
+		prerequisite = {
+			focus = rrg_armageddon_lasers
+		}
+		relative_position_id = rrg_armageddon_lasers
+		available = {
+			has_tech = robot_fission_batteries_tech
+		}
+		completion_reward = {
+			country_event = nf_rrg.42
+			set_technology = {
+				robot_command_equipment_tech_1 = 1
+				robot_miniature_thruster_tech = 1
+				robot_command_equipment_tech_2 = 1
+			}
+		}
+	}
+	focus = {
+		id = rrg_future_plans_armageddon
+		x = -1
+		y = 1
+		icon = GFX_goal_RRG_reclamation_bureau
+		cost = 30
+		prerequisite = {
+			focus = rrg_rosa_nuke
+		}
+		prerequisite = {
+			focus = rrg_prewar_stockpiles
+		}
+		relative_position_id = rrg_prewar_stockpiles
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				ahead_reduction = 1
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = rrg_fatman
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_nuka_break_nuke
+		cost = 30
+		prerequisite = {
+			focus = rrg_future_plans_armageddon
+		}
+		relative_position_id = rrg_future_plans_armageddon
+		completion_reward = {
+			set_technology = {
+				mininuke_unlock_tech = 1
+			}
+		}
+	}
+	focus = {
+		id = rrg_tlaloc_sons
+		x = -1
+		y = 1
+		icon = GFX_goal_generic_TLA_shield
+		cost = 30
+		prerequisite = {
+			focus = rrg_machine_empress
+		}
+		relative_position_id = rrg_machine_empress
+		completion_reward = {
+			custom_effect_tooltip = rrg_tlaloc_sons_tt
+		}
+	}
+	focus = {
+		id = rrg_dangerous_child
+		x = -1
+		y = 1
+		icon = GFX_goal_generic_ZAP_shield
+		cost = 30
+		available = {
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			ZAP = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		prerequisite = {
+			focus = rrg_tlaloc_sons
+		}
+		relative_position_id = rrg_tlaloc_sons
+		completion_reward = {
+			hidden_effect = {
+				ZAP = {
+					ROOT = {
+						grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+					}
+				}
+			}
+			custom_effect_tooltip = rrg_dangerous_child_tt
+		}
+	}
+	focus = {
+		id = rrg_counterrevolution_zapata
+		x = 0
+		y = 1
+		icon = GFX_goal_RRG_laser_gun
+		cost = 30
+		prerequisite = {
+			focus = rrg_dangerous_child
+		}
+		relative_position_id = rrg_dangerous_child
+		available = {
+			owns_state = 763
+		}
+		completion_reward = {
+			add_resource = {
+				type = water
+				amount = 5
+				state = 746
+			}
+			add_resource = {
+				type = composites
+				amount = 3
+				state = 746
+			}
+		}
+	}
+	focus = {
+		id = rrg_revolutionary_empress
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_focus_magazine_tesla_robots_rule
+		cost = 30
+		prerequisite = {
+			focus = rrg_counterrevolution_zapata
+		}
+		relative_position_id = rrg_counterrevolution_zapata
+		completion_reward = {
+			news_event = nf_rrg.46
+		}
+	}
+	focus = {
+		id = rrg_unruly_child
+		x = 1
+		y = 1
+		icon = GFX_goal_generic_MOC_shield
+		cost = 30
+		prerequisite = {
+			focus = rrg_tlaloc_sons
+		}
+		available = {
+			TLA = {
+				exists = no
+			}
+			ai_has_no_other_wars_or_wargoals = yes
+		}
+		bypass = {
+			MOC = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		relative_position_id = rrg_tlaloc_sons
+		completion_reward = {
+			MOC = {
+				ROOT = {
+					grant_wargoals_on_core_states_of_prev_force_ai_war = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = rrg_Mictlantecuhtli
+		x = 0
+		y = 1
+		icon = GFX_goal_ITZ_atz_destruction
+		cost = 30
+		prerequisite = {
+			focus = rrg_unruly_child
+		}
+		relative_position_id = rrg_unruly_child
+		available = {
+			owns_state = 765
+		}
+		completion_reward = {
+			add_resource = {
+				type = composites
+				amount = 2
+				state = 746
+			}
+			add_resource = {
+				type = circuitry
+				amount = 2
+				state = 746
+			}
+			add_resource = {
+				type = advanced
+				amount = 2
+				state = 746
+			}
+		}
+	}
+	focus = {
+		id = rrg_servant_underworld
+		x = 0
+		y = 1
+		icon = GFX_goal_TLA_skull
+		cost = 30
+		prerequisite = {
+			focus = rrg_Mictlantecuhtli
+		}
+		relative_position_id = rrg_Mictlantecuhtli
+		completion_reward = {
+			news_event = nf_rrg.47
+		}
+	}
+	focus = {
+		id = rrg_tlaloc_broken_heart
+		x = -1
+		y = 1
+		icon = GFX_goal_TLA_programming
+		cost = 30
+		prerequisite = {
+			focus = rrg_servant_underworld
+			focus = rrg_revolutionary_empress
+		}
+		available = {
+			has_country_flag = overseer_key
+			ARM = {
+				is_subject_of = RRG
+			}
+			MAX = {
+				is_subject_of = RRG
+			}
+			ZAP = {
+				is_subject_of = RRG
+			}
+			MOC = {
+				is_subject_of = RRG
+			}
+		}
+		relative_position_id = rrg_servant_underworld
+		completion_reward = {
+			country_event = nf_rrg.152
+		}
+	}
+}

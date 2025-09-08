@@ -1,0 +1,1152 @@
+﻿add_namespace = nf_event_ach
+
+country_event = { # ach intro 1, consolidation
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.1" }
+	id = nf_event_ach.1
+	title = nf_event_ach.1.t
+	desc = nf_event_ach.1.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_computer_scav
+
+
+	option = { # give me dem building slots
+		name = nf_event_ach.1.a
+		ACH = {
+			every_owned_state = {
+				limit = { is_core_of = ACH }
+				add_extra_state_shared_building_slots = 4
+				set_temp_variable = {
+					pop_add = 500
+				}
+				add_state_population_no_state_name = yes
+			}
+		}
+
+		# TBH = {
+		# 	every_owned_state = {
+		# 		limit = { is_core_of = TBH }
+		# 		set_temp_variable = {
+		# 			pop_add = -250
+		# 		}
+		# 		add_state_population_no_state_name = yes
+		# 	}
+		# }
+		custom_effect_tooltip = ACH_startup_oob_tt
+		hidden_effect = {
+			load_oob = "ACH_startup"
+		}
+	}
+}
+
+country_event = { # ach intro 2 open the tech vaults
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.2" }
+	id = nf_event_ach.2
+	title = nf_event_ach.2.t
+	desc = nf_event_ach.2.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_computer_core
+
+
+	option = { # give me dem tech
+		name = nf_event_ach.2.a
+		set_technology = {
+			infantry_tech_level_scientific = 1
+			special_forces_tech_level_scientific = 1
+			power_armour_tech_level_scientific = 1
+			support_tech_level_scientific = 1
+			vehicles_tech_level_scientific = 1
+			underground_industry_tech = 1
+			#air_tech_level_scientific = 1
+			#habitation_tech_level_scientific = 1
+			#exploitation_tech_level_scientific = 1
+			#electronics_tech_level_scientific = 1
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 1200
+			producer = ACH
+		}
+		add_equipment_to_stockpile = {
+			type = motorized_equipment
+			amount = 300
+			producer = ACH
+		}
+		add_equipment_to_stockpile = {
+			type = power_armor_equipment
+			amount = 300
+			producer = ACH
+		}
+		set_research_slots = 5
+	}
+}
+
+country_event = { # Demand Richmond
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.3" }
+	id = nf_event_ach.3
+	title = nf_event_ach.3.t
+	desc = nf_event_ach.3.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_city
+
+
+	option = { # Demand Richmond
+		name = nf_event_ach.3.a
+		TBH = { country_event = { id = nf_tbh.26 } }
+		add_political_power = -25
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = { # ach Demand HRO Submission
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.4" }
+	id = nf_event_ach.4
+	title = nf_event_ach.4.t
+	desc = nf_event_ach.4.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_fortress
+
+
+	option = { # ACH Demands HRO Submission
+		name = nf_event_ach.4.a
+		HRO = { country_event = { id = nf_event_ach.100 } }
+		add_political_power = -25
+	}
+}
+
+country_event = { # ach intro 5, Contact West
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.5" }
+	id = nf_event_ach.5
+	title = nf_event_ach.5.t
+	desc = nf_event_ach.5.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_MOJ_contact_the_west
+
+
+	option = { # contact failed
+		name = nf_event_ach.5.a
+		add_ideas = ach_we_are_alone
+	}
+}
+
+country_event = { # Houston Command subtree
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.6" }
+	id = nf_event_ach.6
+	title = nf_event_ach.6.t
+	desc = nf_event_ach.6.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_reactor_1
+
+
+	option = { # Reward
+		name = nf_event_ach.6.a
+		if = {
+			limit = { has_idea = ach_houston_secrets_recon }
+			swap_ideas = {
+				remove_idea = ach_houston_secrets_recon
+				add_idea = ach_houston_secrets_2_recon
+			}
+		}
+		else = {
+			swap_ideas = {
+				remove_idea = ach_houston_secrets_air
+				add_idea = ach_houston_secrets_2_air
+			}
+		}
+	}
+}
+
+# Fort Hood Chain
+
+country_event = { # Request Rosado Aid, RRG get's the event
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.23" }
+	id = nf_event_ach.23
+	title = nf_event_ach.23.t
+	desc = nf_event_ach.23.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_rrg_election
+
+
+	option = { # RRG agrees
+		name = nf_event_ach.23.a
+		ACH = { news_event = nf_event_ach.43 }
+	}
+	option = { # RRG Denies
+		name = nf_event_ach.23.b
+		ACH = { news_event = nf_event_ach.44 }
+	}
+}
+
+
+
+country_event = { # Security Door Gamma thirteen
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.24" }
+	id = nf_event_ach.24
+	title = nf_event_ach.24.t
+	desc = nf_event_ach.24.d
+	is_triggered_only = yes
+	picture = GFX_event_ach_hood_entrance
+
+
+	option = { # Brute Force
+		name = nf_event_ach.24.a
+		custom_effect_tooltip = nf_event_ach_24_a_tt
+		Hidden_effect = {
+			if = {
+				limit = {
+					check_variable = {
+						var = ACH_fort_hood_readiness_troopers
+						value = 100
+						compare = greater_than_or_equals
+					}
+				}
+				country_event = nf_event_ach.25
+				else = {
+					country_event = nf_event_ach.26
+					set_variable = {
+						var = ACH_fort_hood_readiness_troopers
+						value = 0
+					}
+				}
+			}
+		}
+	}
+	option = { # attempt to hack
+		name = nf_event_ach.24.b
+		custom_effect_tooltip = nf_event_ach_24_b_tt
+		trigger = {
+			check_variable = {
+				var = ACH_fort_hood_readiness_codes
+				value = 3
+				compare = greater_than_or_equals
+			}
+		}
+		Hidden_effect = {
+			add_to_variable = {
+				var = ACH_fort_hood_readiness_codes
+				value = -3
+			}
+			country_event = nf_event_ach.25
+		}
+	}
+	option = { # try to bypass the door
+		name = nf_event_ach.24.c
+		custom_effect_tooltip = nf_event_ach_24_c_tt
+		Hidden_effect = {
+			random_list = {
+				90 = {
+					country_event = nf_event_ach.27
+				}
+				5 = {
+					country_event = nf_event_ach.26
+				}
+				5 = {
+					country_event = nf_event_ach.25
+				}
+			}
+		}
+	}
+	option = { # retreat
+		name = nf_event_ach.24.e
+		custom_effect_tooltip = nf_event_ach_24_e_tt
+	}
+}
+
+country_event = { # Success Security Door
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.25" }
+	id = nf_event_ach.25
+	title = nf_event_ach.25.t
+	desc = nf_event_ach.25.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_ach_hood_progress
+
+
+	option = {
+		name = nf_event_ach.25.a
+		add_tech_bonus = {
+			bonus = 0.4
+			uses = 1
+			category = infantry_tech_category
+		}
+		add_tech_bonus = {
+			bonus = 0.4
+			uses = 1
+			category = support_tech_category
+		}
+		add_tech_bonus = {
+			bonus = 0.4
+			uses = 1
+			category = vehicle_tech_category
+		}
+		908 = {
+			if = {
+				limit = {
+					is_valid_state_for_2_arms_factories = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		set_variable = {
+			var = ACH_fort_hood_progress
+			value = 14
+		}
+	}
+}
+
+country_event = { # Door Failure, Everybody dies
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.26" }
+	id = nf_event_ach.26
+	title = nf_event_ach.26.t
+	desc = nf_event_ach.26.d
+	is_triggered_only = yes
+	picture = GFX_event_sub_generic_war_room
+
+
+	option = {
+		name = nf_event_ach.26.a
+		army_experience = 25
+	}
+}
+
+country_event = { # Bypass fails, there is no way around.
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.27" }
+	id = nf_event_ach.27
+	title = nf_event_ach.27.t
+	desc = nf_event_ach.27.d
+	is_triggered_only = yes
+	picture = GFX_event_ach_hood_entrance
+
+
+	option = {
+		name = nf_event_ach.27.a
+	}
+}
+
+country_event = { # Turrets
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.28" }
+	id = nf_event_ach.28
+	title = nf_event_ach.28.t
+	desc = nf_event_ach.28.d
+	is_triggered_only = yes
+	picture = GFX_event_ach_hood_turrets
+
+
+	option = { # Brute Force
+		name = nf_event_ach.28.a
+		custom_effect_tooltip = nf_event_ach_28_a_tt
+		Hidden_effect = {
+			if = {
+				limit = {
+					check_variable = {
+						var = ACH_fort_hood_readiness_troopers
+						value = 200
+						compare = greater_than_or_equals
+					}
+				}
+				country_event = nf_event_ach.29
+				add_to_variable = {
+					var = ACH_fort_hood_readiness_troopers
+					value = -50
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							var = ACH_fort_hood_readiness_troopers
+							value = 100
+							compare = greater_than_or_equals
+						}
+					}
+					country_event = nf_event_ach.29
+					add_to_variable = {
+						var = ACH_fort_hood_readiness_troopers
+						value = -75
+					}
+				}
+				else = {
+					country_event = nf_event_ach.30
+					set_variable = {
+						var = ACH_fort_hood_readiness_troopers
+						value = 0
+					}
+				}
+			}
+		}
+	}
+
+	option = { # attempt to hack
+		name = nf_event_ach.28.b
+		custom_effect_tooltip = nf_event_ach_28_b_tt
+		trigger = {
+			check_variable = {
+				var = ACH_fort_hood_readiness_codes
+				value = 3
+				compare = greater_than_or_equals
+			}
+		}
+		Hidden_effect = {
+			add_to_variable = {
+				var = ACH_fort_hood_readiness_codes
+				value = -3
+			}
+			if = {
+				limit = {
+					check_variable = {
+						var = ACH_fort_hood_readiness_troopers
+						value = 25
+						compare = greater_than_or_equals
+					}
+				}
+				country_event = nf_event_ach.25
+				add_to_variable = {
+					var = ACH_fort_hood_readiness_troopers
+					value = -25
+				}
+				else = {
+					set_variable = {
+						var = ACH_fort_hood_readiness_troopers
+						value = 0
+					}
+				}
+			}
+			country_event = nf_event_ach.29
+		}
+	}
+
+	option = { # attempt to superior hack
+		name = nf_event_ach.28.c
+		custom_effect_tooltip = nf_event_ach_28_c_tt
+		trigger = {
+			check_variable = {
+				var = ACH_fort_hood_readiness_codes
+				value = 5
+				compare = greater_than_or_equals
+			}
+		}
+		Hidden_effect = {
+			add_to_variable = {
+				var = ACH_fort_hood_readiness_codes
+				value = -5
+			}
+			country_event = nf_event_ach.29
+		}
+	}
+
+	option = { # retreat
+		name = nf_event_ach.24.e
+		custom_effect_tooltip = nf_event_ach_24_e_tt
+	}
+}
+
+country_event = { # Turret Success
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.29" }
+	id = nf_event_ach.29
+	title = nf_event_ach.29.t
+	desc = nf_event_ach.29.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_ach_hood_progress
+
+
+	option = {
+		name = nf_event_ach.29.a
+		908 = {
+			if = {
+				limit = {
+					is_valid_state_for_2_arms_factories = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		set_variable = {
+			var = ACH_fort_hood_progress
+			value = 20
+		}
+	}
+}
+
+country_event = { # turret failure
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.30" }
+	id = nf_event_ach.30
+	title = nf_event_ach.30.t
+	desc = nf_event_ach.30.d
+	is_triggered_only = yes
+	picture = GFX_event_sub_generic_war_room
+
+
+	option = {
+		name = nf_event_ach.30.a
+		army_experience = 25
+	}
+}
+
+
+country_event = { # Security Fields
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.31" }
+	id = nf_event_ach.31
+	title = nf_event_ach.31.t
+	desc = nf_event_ach.31.d
+	is_triggered_only = yes
+	picture = GFX_event_ach_hood_security_fields
+
+
+	option = { # Brute Force
+		name = nf_event_ach.31.a
+		custom_effect_tooltip = nf_event_ach_31_a_tt
+		trigger = {
+			check_variable = {
+				var = ACH_fort_hood_readiness_troopers
+				value = 50
+				compare = greater_than_or_equals
+			}
+		}
+		hidden_effect = {
+			country_event = nf_event_ach.33
+		}
+		add_to_variable = {
+			var = ACH_fort_hood_readiness_troopers
+			value = -50
+		}
+	}
+
+	option = { # attempt to hack
+		name = nf_event_ach.31.b
+		custom_effect_tooltip = nf_event_ach_31_b_tt
+		trigger = {
+			check_variable = {
+				var = ACH_fort_hood_readiness_codes
+				value = 5
+				compare = greater_than_or_equals
+			}
+		}
+		Hidden_effect = {
+			add_to_variable = {
+				var = ACH_fort_hood_readiness_codes
+				value = -5
+			}
+			country_event = nf_event_ach.32
+		}
+	}
+
+	option = { # retreat
+		name = nf_event_ach.24.e
+		custom_effect_tooltip = nf_event_ach_24_e_tt
+	}
+}
+
+country_event = { # Fields success
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.32" }
+	id = nf_event_ach.32
+	title = nf_event_ach.32.t
+	desc = nf_event_ach.32.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_ach_hood_progress
+
+
+	option = {
+		name = nf_event_ach.29.a
+		908 = {
+			if = {
+				limit = {
+					is_valid_state_for_2_arms_factories = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		set_variable = {
+			var = ACH_fort_hood_progress
+			value = 24
+		}
+	}
+}
+
+country_event = { # security field failure
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.33" }
+	id = nf_event_ach.33
+	title = nf_event_ach.33.t
+	desc = nf_event_ach.33.d
+	is_triggered_only = yes
+	picture = GFX_event_sub_generic_war_room
+
+
+	option = {
+		name = nf_event_ach.33.a
+		army_experience = 25
+	}
+}
+
+country_event = { # Robot Corridor
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.34" }
+	id = nf_event_ach.34
+	title = nf_event_ach.34.t
+	desc = nf_event_ach.34.d
+	is_triggered_only = yes
+	picture = GFX_event_ach_hood_robot_corridor
+
+
+	option = { # Smash them
+		name = nf_event_ach.34.a
+		custom_effect_tooltip = nf_event_ach_34_a_tt
+		set_variable = {
+			var = ACH_fort_hood_progress
+			value = 28
+		}
+		add_resource = {
+			type = metal
+			amount = 25
+			state = 908
+		}
+	}
+
+	option = { # Attempt to use them
+		name = nf_event_ach.34.b
+		custom_effect_tooltip = nf_event_ach_34_b_tt
+		set_variable = {
+			var = ACH_fort_hood_progress
+			value = 28
+		}
+		Hidden_effect = {
+			if = {
+				limit = {
+					check_variable = {
+						var = ACH_fort_hood_readiness_codes
+						value = 4
+						compare = greater_than_or_equals
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_tech = robot_lifter_equipment_tech }
+					}
+					set_technology = {
+						robot_lifter_equipment_tech = 1
+						popup = no
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_tech = robot_automation_tech }
+					}
+					set_technology = {
+						robot_automation_tech = 1
+						popup = no
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_tech = robco_unlock_tech }
+					}
+					set_technology = {
+						robco_unlock_tech = 1
+						popup = no
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_tech = robot_makeshift_automatons_tech }
+					}
+					set_technology = {
+						robot_makeshift_automatons_tech = 1
+						popup = no
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_tech = robot_fission_batteries_tech }
+					}
+					set_technology = {
+						robot_fission_batteries_tech = 1
+						popup = no
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_tech = robot_handy_equipment_tech_1 }
+					}
+					set_technology = {
+						robot_handy_equipment_tech_1 = 1
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_tech = robot_armour_hardening_tech }
+					}
+					set_technology = {
+						robot_armour_hardening_tech = 1
+					}
+				}
+				add_to_variable = {
+					var = ACH_fort_hood_readiness_codes
+					value = -4
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						var = ACH_fort_hood_readiness_codes
+						value = 4
+						compare = less_than
+					}
+				}
+				set_variable = {
+					var = ACH_fort_hood_readiness_troopers
+					value = 0
+				}
+			}
+		}
+	}
+
+	option = { # retreat
+		name = nf_event_ach.24.e
+		custom_effect_tooltip = nf_event_ach_24_e_tt
+	}
+}
+
+
+country_event = { # Success Sentinel Reward
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.40" }
+	id = nf_event_ach.40
+	title = nf_event_ach.40.t
+	desc = nf_event_ach.40.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_ach_hood_final_success
+
+
+	option = {
+		name = nf_event_ach.40.a
+		ACH = {
+			set_technology = {
+				sentinel_unit_tech = 1
+			}
+			add_equipment_to_stockpile = {
+				type = sentinel_command_slave_equipment_1
+				amount = 200
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = power_armor_equipment_4
+				amount = 200
+				producer = USA
+			}
+			set_country_flag = fort_hood_exploited
+		}
+	}
+}
+
+country_event = { # Back into the fold, rejoin Tex
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.41" }
+	id = nf_event_ach.41
+	title = nf_event_ach.41.t
+	desc = nf_event_ach.41.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_BOS_desert_patrol
+
+	immediate = {
+		TBH = { change_tag_from = ROOT }
+	}
+
+	option = {
+		name = nf_event_ach.41.a
+		every_country = {
+			limit = {
+				has_war_with = ACH
+			}
+			TBH = {
+				add_to_war = {
+					targeted_alliance = ACH
+					enemy = PREV
+				}
+			}
+		}
+		TBH = {
+			annex_country = {
+				target = ACH
+				transfer_troops = yes
+			}
+		}
+	}
+}
+
+country_event = { # Asking to reintegrate into Texas
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.43" }
+	id = nf_event_ach.45
+	title = nf_event_ach.45.t
+	desc = nf_event_ach.45.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_BOS_desert_patrol
+
+	option = { # Texas Accepts
+		name = nf_event_ach.45.a
+		ACH = { country_event = { id = nf_event_ach.41 } }
+		ai_chance = {
+			base = 8
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+	}
+	option = { # Texas refuses
+		name = nf_event_ach.45.b
+		ACH = { country_event = { id = nf_event_ach.46 } }
+		ai_chance = {
+			base = 2
+		}
+	}
+}
+
+country_event = { # Texas refuses reintegrating
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.43" }
+	id = nf_event_ach.46
+	title = nf_event_ach.46.t
+	desc = nf_event_ach.46.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_BOS_desert_patrol
+
+	option = {
+		name = nf_event_ach.46.a
+	}
+}
+
+
+
+country_event = { # midwest aid
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.42" }
+	id = nf_event_ach.42
+	title = nf_event_ach.42.t
+	desc = nf_event_ach.42.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_ach_hood_final_success
+
+
+	option = {
+		name = nf_event_ach.42.a
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_tech = anti_tank_equipment_tech_1 } }
+				set_technology = {
+					anti_tank_equipment_tech_1 = 1
+					popup = no
+				}
+			}
+			if = {
+				limit = { NOT = { has_tech = demolitions_weaponry_tech } }
+				set_technology = {
+					demolitions_weaponry_tech = 1
+					popup = no
+				}
+			}
+			if = {
+				limit = { NOT = { has_tech = fireteam_weaponry_tech } }
+				set_technology = {
+					fireteam_weaponry_tech = 1
+					popup = no
+				}
+			}
+		}
+		add_manpower = 400
+		set_technology = {
+			midwest_pa_unlock_tech = 1
+		}
+		hidden_effect = {
+			load_oob = ach_helpers_from_afar
+		}
+		add_equipment_to_stockpile = {
+			type = power_armor_equipment_midwest
+			amount = 400
+			producer = USA
+		}
+		add_equipment_to_stockpile = {
+			type = energy_equipment_3
+			amount = 300
+			producer = USA
+		}
+		add_equipment_to_stockpile = {
+			type = anti_tank_equipment_2
+			amount = 250
+			producer = USA
+		}
+		add_equipment_to_stockpile = {
+			type = flamer_demolitions_equipment_3
+			amount = 250
+			producer = USA
+		}
+		add_equipment_to_stockpile = {
+			type = ballistic_fireteam_equipment_3
+			amount = 250
+			producer = USA
+		}
+	}
+}
+
+country_event = { # ach Demands Houston access
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.100" }
+	id = nf_event_ach.100
+	title = nf_event_ach.100.t
+	desc = nf_event_ach.100.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_fortress
+
+
+	option = { # Accept give them access to the facility, and some control over the resources present
+		name = nf_event_ach.100.a
+		give_military_access = ACH
+		diplomatic_relation = {
+			country = ACH
+			relation = non_aggression_pact
+		}
+		add_resource = {
+			type = advanced
+			amount = -6
+			state = 880
+		}
+		add_resource = {
+			type = circuitry
+			amount = -6
+			state = 880
+		}
+		add_resource = {
+			type = advanced
+			amount = 6
+			state = 908
+		}
+		add_resource = {
+			type = circuitry
+			amount = 6
+			state = 908
+		}
+		ai_chance = {
+			base = 95
+		}
+	}
+
+	option = { # Refuse and prepare to face the consequences.
+		name = nf_event_ach.100.b
+		ACH = {
+			add_state_claim = 880
+			create_wargoal = {
+				type = annex_everything
+				target = HRO
+			}
+		}
+		ai_chance = {
+			base = 5
+		}
+	}
+}
+
+
+news_event = { # RRG Says Yes
+	id = nf_event_ach.43
+	title = nf_event_ach.43.t
+	desc = nf_event_ach.43.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_tunnel
+
+
+	option = {
+		name = nf_event_ach.43.a
+		add_to_variable = {
+			var = ACH_fort_hood_readiness_codes
+			value = 3
+		}
+		custom_effect_tooltip = nf_event_ach.43.a_tt
+		custom_effect_tooltip = ach_fort_hood_codes_added_3_tt
+	}
+}
+
+
+news_event = { # RRG Says no
+	id = nf_event_ach.44
+	title = nf_event_ach.44.t
+	desc = nf_event_ach.44.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_tunnel
+
+
+	option = {
+		name = nf_event_ach.44.a
+
+	}
+}
+
+country_event = { # Cross referencing reward
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.101" }
+	id = nf_event_ach.101
+	title = nf_event_ach.101.t
+	desc = nf_event_ach.101.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_BOS_our_founding
+
+
+	option = {
+		name = nf_event_ach.101.a
+
+		add_timed_idea = {
+			days = 60
+			idea = ach_nf_cross_references
+		}
+	}
+}
+
+country_event = { # Poseidon IFF
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.102" }
+	id = nf_event_ach.102
+	title = nf_event_ach.102.t
+	desc = nf_event_ach.102.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_ENC_soldiers
+
+
+	option = {
+		name = nf_event_ach.102.a
+
+		set_country_flag = poseidon_oil_iff
+	}
+}
+
+country_event = { # Nuke
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.103" }
+	id = nf_event_ach.103
+	title = nf_event_ach.103.t
+	desc = nf_event_ach.103.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_enc_the_silo
+
+
+	option = {
+		name = nf_event_ach.103.a
+
+		add_nuclear_bombs = 2
+		if = {
+			limit = {
+				has_dlc = "Gotterdammerung"
+			}
+			761 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = rocket_site
+					level = 1
+				}
+			}
+			hidden_effect = {
+				set_technology = {
+					nuclear_missile_unlock_tech = 1
+					popup = no
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = nuclear_missile_equipment_2
+				amount = 2
+				producer = USA
+			}
+		}
+	}
+}
+
+country_event = { # Tlaloc
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.104" }
+	id = nf_event_ach.104
+	title = nf_event_ach.104.t
+	desc = nf_event_ach.104.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_robots_3
+
+
+	option = {
+		name = nf_event_ach.104.a
+		if = {
+			limit = { has_tech = robotics_tech_level_settler }
+			set_technology = { robotics_tech_level_scientific = 1 }
+		}
+		else = {
+			# limit = { has_tech = robotics_tech_level_tribal }
+			set_technology = { robotics_tech_level_settler = 1 }
+		}
+	}
+}
+
+country_event = { # Texico Oil Rig
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.105" }
+	id = nf_event_ach.105
+	title = nf_event_ach.105.t
+	desc = nf_event_ach.105.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_dock
+
+
+	option = {
+		name = nf_event_ach.105.a
+		add_stability = 0.05
+		set_technology = {
+			vertibird_unlock_tech = 1
+		}
+	}
+}
+
+country_event = { # Send it west
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.106" }
+	id = nf_event_ach.106
+	title = nf_event_ach.106.t
+	desc = nf_event_ach.106.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_dock
+
+
+	option = {
+		name = nf_event_ach.106.a
+	}
+}
+
+country_event = { # Texas Submits
+	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_event_ach.107" }
+	id = nf_event_ach.107
+	title = nf_event_ach.107.t
+	desc = nf_event_ach.107.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_BOS_our_founding
+
+
+	option = {
+		name = nf_event_ach.107.a
+	}
+}

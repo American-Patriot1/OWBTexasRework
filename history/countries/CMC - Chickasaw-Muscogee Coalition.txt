@@ -1,0 +1,132 @@
+﻿capital = 883
+
+oob = "CMC_2275"
+
+set_technology = {
+	basic_supply_transport_tech = 1
+
+	tribal_tech_visibility_tech = 1
+
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	vehicles_tech_level_tribal = 1
+	vehicles_tech_level_settler = 1
+	robotics_tech_level_tribal = 1
+	air_tech_level_tribal = 1
+	air_tech_level_settler = 1
+	naval_tech_level_tribal = 1
+	naval_tech_level_settler = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+
+	tribal_civilization = 1
+	settled_civilization = 1
+	tool_engineering = 1
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	pre_construction_industry_tech = 1
+	pre_agriculture_industry_tech = 1
+	pre_recycling_industry_tech = 1
+	basic_industry_tech = 1
+	support_weaponry = 1
+	glider_tech = 1
+}
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		nautics_tech_1 = 1
+		light_navy_hull_tech_1 = 1
+	}
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		nautics_tech_non_mtg_1 = 1
+		light_navy_hull_tech_non_mtg_1 = 1
+	}
+}
+
+set_stability = 0.3
+set_war_support = 0.28
+set_research_slots = 3
+set_country_flag = is_texas_nation
+set_country_flag = grand_doctrine_ai
+set_country_flag = grand_infantry_doctrine_ai
+set_country_flag = cavalry_nation_ai
+
+set_politics = {
+	ruling_party = people
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 100
+	elites = 0
+	intellectuals = 0
+	ruler = 0
+}
+
+recruit_character = CMC_lushanya_harjo
+recruit_character = CMC_minco_warrior
+recruit_character = CMC_standhope_whitepath
+recruit_character = CMC_kowayhoommah_wildcat
+recruit_character = CMC_aspen
+recruit_character = CMC_aspen_queen
+recruit_character = CMC_pit_boss_liam
+recruit_character = CMC_police_chief_hudson_caldron
+recruit_character = CMC_ryan_entertainment
+recruit_character = CMC_lord_of_the_pitt
+
+random_character = {
+	limit = {
+		is_character = CMC_lord_of_the_pitt
+	}
+	save_global_event_target_as = CMC_lord_of_the_pitt_target
+}
+
+random_character = {
+	limit = {
+		is_character = CMC_lushanya_harjo
+	}
+	save_global_event_target_as = CMC_lushanya_harjo_target
+}
+
+set_country_flag = bans_drugs
+set_variable = { cmc_bad_event_chance = 10 }
+set_variable = { cmc_very_bad_event_chance = 5 }
+
+add_dynamic_modifier = { modifier = fp_support_dynamic }
+add_dynamic_modifier = { modifier = gpf_three_nations_trade }
+
+add_ideas = {
+	free_trade
+	mutant_law_ghoul
+	political_effort_press
+	cmc_bright_lights
+	CMC_oklahomas_strip
+	currencytexdollar
+}
+
+create_or_join_great_plains_federation = yes
+
+CHO = {
+	join_great_plains_federation = yes
+}
+
+CHR = {
+	join_great_plains_federation = yes
+}

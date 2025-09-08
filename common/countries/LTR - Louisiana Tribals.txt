@@ -1,0 +1,3 @@
+graphical_culture = tribal_gfx
+graphical_culture_2d = tribal_2d
+color = { 5 117 74 }

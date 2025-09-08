@@ -1,0 +1,151 @@
+﻿capital = 875
+
+oob = "TPM_2275"
+if = {
+	limit = {
+		has_dlc = "La Resistance"
+	}
+	create_intelligence_agency = {
+		name = "The Boys in Blue"
+		icon = "GFX_agency_logo_generic_6"
+	}
+upgrade_intelligence_agency = upgrade_economy_civilian
+upgrade_intelligence_agency = upgrade_passive_defense
+}
+set_political_power = 0
+set_technology = {
+	basic_supply_transport_tech = 1
+	tool_engineering = 1
+	standard_weaponry_tech = 1
+	ballistic_weaponry_tech_1 = 1
+	melee_weaponry_tech_1 = 1
+	pre_construction_industry_tech = 1
+	pre_agriculture_industry_tech = 1
+	pre_recycling_industry_tech = 1
+	basic_industry_tech = 1
+	support_weaponry = 1
+	nautics_tech_1 = 1
+	light_navy_hull_tech_1 = 1
+	fireteam_weaponry_tech = 1
+	unit_training_tech_1 = 1
+	bike_tech_1 = 1
+	motorisation_vehicle_tech = 1
+	light_motorized_equipment_vehicle_tech_1 = 1
+	mobile_weapons_vehicle_tech = 1
+	light_motorized_equipment_vehicle_tech_2 = 1
+	spec_ops_equipment_tech_1 = 1
+	#Police infantry
+	police_infantry_tech = 1
+	tbh_lawkeepers_tech_1 = 1
+	tbh_lawkeepers_tech_2 = 1
+	tbh_lawkeepers_tech_3 = 1
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	power_armour_tech_level_tribal = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	vehicles_tech_level_tribal = 1
+	vehicles_tech_level_settler = 1
+	robotics_tech_level_tribal = 1
+	air_tech_level_tribal = 1
+	naval_tech_level_tribal = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+}
+set_country_flag = is_settler_nation
+set_country_flag = is_texas_nation
+set_country_flag = grand_doctrine_ai
+set_country_flag = grand_infantry_doctrine_ai
+set_country_flag = dont_give_settler_generic_political_advisors
+set_country_flag = dont_give_settler_generic_high_command
+set_country_flag = dont_give_settler_generic_theorists
+set_country_flag = dont_give_settler_generic_chiefs
+set_country_flag = no_generic_chief
+set_country_flag = no_generic_political_advisors
+set_country_flag = no_generic_high_command
+set_country_flag = no_generic_theorist
+set_country_flag = no_generic_advisor
+set_stability = 0.20
+set_war_support = 0.25
+set_research_slots = 3
+
+set_politics = {
+	ruling_party = people
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 20
+	elites = 60
+	intellectuals = 15
+	ruler = 5
+}
+
+
+add_dynamic_modifier = { modifier = texas_rework_the_cannery }
+870 = { add_dynamic_modifier = { modifier = texas_rework_the_cannery_state } }
+
+add_ideas = {
+	TPM_legacy_of_enforcement
+	tpm_frequently_raided
+	tpm_no_generals_for_you_ed_boy
+	political_effort_press
+	mutant_law_ghoul
+	export_focus
+	training_law_wasteland
+	officer_law_local_legends
+	currencytexdollar
+}
+recruit_character = TPM_patrol_chief_callahan
+recruit_character = TPM_community_council
+recruit_character = TPM_steel_hat_callahan
+recruit_character = TPM_black_hat_callahan
+recruit_character = TPM_franklin
+recruit_character = TPM_lead_grant
+recruit_character = TPM_lead_george
+recruit_character = TPM_mac
+recruit_character = TPM_grenham
+recruit_character = TPM_andrews
+recruit_character = TPM_lead_gary
+recruit_character = TPM_rockwell
+recruit_character = TPM_lead_francis
+recruit_character = TPM_danny
+recruit_character = TPM_shank
+recruit_character = TPM_trevor
+recruit_character = TPM_mayor
+recruit_character = TPM_callahan_fake
+recruit_character = TPM_lead_coolant
+recruit_character = TPM_lead_marshall
+recruit_character = TPM_larry
+recruit_character = TPM_bob
+recruit_character = TPM_pulp
+recruit_character = TPM_cunningham
+
+add_equipment_to_stockpile = {
+	type = ballistic_equipment_1
+	amount = 100
+	producer = TPM
+}
+
+add_equipment_to_stockpile = {
+	type = motorized_equipment
+	amount = 100
+	producer = TPM
+}
+add_equipment_to_stockpile = {
+	type = spec_ops_equipment
+	amount = 50
+	producer = TPM
+}
+add_equipment_to_stockpile = {
+	type = convoy
+	amount = 150
+}

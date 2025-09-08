@@ -1,0 +1,113 @@
+﻿division_template = {
+	name = "Mixed Militia Force"
+	regiments = {
+		ghoul_infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	priority = 0
+}
+
+division_template = {
+	name = "Mixed Defence Force"
+	regiments = {
+		ghoul_infantry = { x = 0 y = 0 }
+		ghoul_infantry = { x = 0 y = 1 }
+		ghoul_infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Lone Star Expeditionaries"
+	regiments = {
+		spec_ops = { x = 0 y = 0 }
+		spec_ops = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+	}
+	support = {
+		recon_company = { x = 0 y = 0 }
+	}
+	is_locked = yes
+	priority = 2
+}
+units = {
+	# Mixed Militia
+	division = {
+		name = "Lubbock Volunteers"
+		location = 11713
+		division_template = "Mixed Militia Force"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Snyder Volunteers"
+		location = 11715
+		division_template = "Mixed Militia Force"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Clovis Volunteers"
+		location = 11715
+		division_template = "Mixed Militia Force"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	# Mixed Defence Force
+	division = {
+		name = "Los Joint Division"
+		location = 2790
+		division_template = "Mixed Defence Force"
+		start_experience_factor = 0.35
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Los Joint Division"
+		location = 2788
+		division_template = "Mixed Defence Force"
+		start_experience_factor = 0.35
+		start_equipment_factor = 1.0
+	}
+	# Lone Star Expeditionaries
+	division = {
+		name = "Lubbock Garrison"
+		location = 11713
+		division_template = "Lone Star Expeditionaries"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Los Observation Team"
+		location = 1844
+		division_template = "Lone Star Expeditionaries"
+		start_experience_factor = 0.45
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "I-20 Patrol"
+		location = 2852
+		division_template = "Lone Star Expeditionaries"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1.0
+	}
+}
+
+##### Starting Production #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "LUB"
+		}
+		requested_factories = 1
+		progress = 0.75
+		efficiency = 100
+	}
+}

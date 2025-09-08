@@ -1,0 +1,136 @@
+﻿capital = 546
+oob = "SUF_2275"
+
+set_technology = {
+	basic_supply_transport_tech = 1
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	#infantry_tech_level_scientific = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	#support_tech_level_scientific = 1
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	#special_forces_tech_level_scientific = 1
+	#power_armour_tech_level_settler = 1
+	#power_armour_tech_level_scientific = 1
+	vehicles_tech_level_tribal = 1
+	vehicles_tech_level_settler = 1
+	#vehicles_tech_level_scientific = 1
+	robotics_tech_level_tribal = 1
+	robotics_tech_level_settler = 1
+	#robotics_tech_level_scientific = 1
+	air_tech_level_tribal = 1
+	air_tech_level_settler = 1
+	#air_tech_level_scientific = 1
+	naval_tech_level_tribal = 1
+	naval_tech_level_settler = 1
+	#naval_tech_level_scientific = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	#tools_tech_level_scientific = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	#habitation_tech_level_scientific = 1
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	#exploitation_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+	#electronics_tech_level_scientific = 1
+	tool_engineering = 1
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	support_weaponry = 1
+	demolitions_weaponry_tech = 1
+	fireteam_weaponry_tech = 1
+	bike_tech_1 = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		nautics_tech_1 = 1
+		light_navy_hull_tech_1 = 1
+		#waterproof_sealing_tech = 1
+	}
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		nautics_tech_non_mtg_1 = 1
+		light_navy_hull_tech_non_mtg_1 = 1
+		waterproof_sealing_tech_non_mtg = 1
+	}
+}
+
+set_stability = 0.6
+set_war_support = 0.5
+set_convoys = 65
+set_research_slots = 4
+set_country_flag = is_settler_nation
+set_country_flag = grand_doctrine_ai
+set_country_flag = grand_infantry_doctrine_ai
+set_country_flag = is_colorado_newmexico_nation
+
+#Added instead in tree
+#set_variable = { suf_appeal = 0.05 }
+#add_dynamic_modifier = { modifier = suf_a_haven_for_the_helpless }
+#force_update_dynamic_modifier = yes
+
+add_opinion_modifier = {
+    target = MXC
+    modifier = suf_trade_partners
+}
+
+add_opinion_modifier = {
+    target = EXE
+    modifier = suf_historical_grudges
+}
+
+add_ideas = {
+	four_year_conscription
+	SUF_love_of_the_bomb
+}
+
+set_politics = {
+	ruling_party = people
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 25
+	elites = 20
+	intellectuals = 0
+	ruler = 55
+}
+
+recruit_character = SUF_ryleigh_morrison
+recruit_character = SUF_thomas_ewell
+recruit_character = SUF_wade_robertson
+recruit_character = SUF_henry_imboden
+recruit_character = SUF_old_man_summers
+
+add_ideas = {
+	currencytexdollar
+}
+add_timed_idea = {
+	idea = lac_legacy_of_pallus
+	days = 600
+}
+
+#Buffs LAC a smidge, since they have trouble getting this equipment through their equipment capture normally
+add_equipment_to_stockpile = {
+	type = fireteam_equipment_1
+	amount = 200
+	producer = SUF
+}
+add_equipment_to_stockpile = {
+	type = demolitions_equipment_1
+	amount = 200
+	producer = SUF
+}

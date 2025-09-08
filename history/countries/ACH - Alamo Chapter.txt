@@ -1,0 +1,168 @@
+﻿capital = 908
+
+set_technology = {
+	basic_supply_transport_tech = 1
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	power_armour_tech_level_tribal = 1
+	power_armour_tech_level_settler = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	vehicles_tech_level_tribal = 1
+	vehicles_tech_level_settler = 1
+	robotics_tech_level_tribal = 1
+	#robotics_tech_level_settler = 1
+	air_tech_level_tribal = 1
+	#air_tech_level_settler = 1
+	naval_tech_level_tribal = 1
+	naval_tech_level_settler = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+	tool_engineering = 1
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	pre_construction_industry_tech = 1
+	pre_agriculture_industry_tech = 1
+	pre_recycling_industry_tech = 1
+	basic_industry_tech = 1
+	support_weaponry = 1
+	nautics_tech_1 = 1
+	light_navy_hull_tech_1 = 1
+	naval_invasion_tech_1 = 1
+	police_infantry_tech = 1
+	spec_ops_equipment_tech_1 = 1
+	bike_tech_1 = 1
+	texas_brotherhood_pa_tech = 1
+	ballistic_weaponry_tech_1 = 1
+	military_heritage_unlock_tech = 1
+	demolitions_weaponry_tech = 1
+	robot_makeshift_automatons_tech = 1
+}
+
+set_stability = 0.55
+set_war_support = 0.25
+set_research_slots = 5
+
+
+set_country_flag = is_brotherhood_nation
+set_country_flag = is_brotherhood_nation_proper
+set_country_flag = is_followers_black_listed_nation
+set_country_flag = do_not_spread_followers_from_this_tag
+set_country_flag = do_not_spread_followers_to_this_tag
+set_country_flag = no_mutants_allowed
+set_country_flag = bans_drugs
+set_country_flag = has_unique_outsider_laws # This flag is currently disabled and has no effect to save on CPU costs @Tran
+set_country_flag = has_unique_trade_laws
+set_country_flag = has_unique_press_laws # This flag is currently disabled and has no effect to save on CPU costs @Tran
+set_country_flag = has_unique_economic_laws
+set_country_flag = manpower_laws_hidden
+set_country_flag = army_wages_disabled
+
+set_country_flag = no_generic_advisor
+set_country_flag = no_generic_chief
+set_country_flag = no_generic_political_advisors
+set_country_flag = no_generic_high_command
+set_country_flag = no_generic_theorists
+
+#set_country_flag = default_slave_laws_banned
+set_country_flag = elite_doctrine_ai
+set_country_flag = power_armor_doctrine_ai
+set_country_flag = infantry_energy_ai
+set_rule = { can_send_volunteers = no }
+set_variable = { never_return_stolen_territory = 1 }
+
+
+
+
+set_politics = {
+	ruling_party = intellectuals
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 11
+	elites = 7
+	intellectuals = 75
+	ruler = 7
+}
+
+add_dynamic_modifier = { modifier = texas_rework_the_alamo }
+908 = { add_dynamic_modifier = { modifier = texas_rework_the_alamo_state } }
+
+add_ideas = {
+	paladins
+	officer_law_military_academy
+	training_law_military_academy
+	#outsider_law_none
+	#partial_economic_mobilisation
+	bunkerblues
+
+	currencytexdollar
+	ach_hardliners
+	mutant_law_none
+	undesirables_law_none
+	selective_outsider_recruitment_law
+	gaben_economy_law
+	isolationist_trade_law
+	military_indoctrination_press
+}
+set_truce = {
+	target = SHA
+	days = 730
+}
+set_truce = {
+	target = IMO
+	days = 730
+}
+
+set_party_name = {
+		ideology = elites
+		long_name = ACH_elite_pt_long
+		name = ACH_elite_pt
+}
+set_party_name = {
+		ideology = ruler
+		long_name = ACH_ruler_pt_long
+		name = ACH_ruler_pt
+}
+set_party_name = {
+		ideology = intellectuals
+		long_name = ACH_int_pt_long
+		name = ACH_int_pt
+}
+set_party_name = {
+		ideology = people
+		long_name = ACH_people_pt_long
+		name = ACH_people_pt
+}
+recruit_character = ACH_tapani
+recruit_character = ACH_arwyn
+recruit_character = ACH_matias
+recruit_character = ACH_chief_sky
+recruit_character = ACH_specialist_morrigan
+recruit_character = ACH_specialist_mundo
+recruit_character = ACH_chief_morell
+recruit_character = ACH_defender_bryn
+recruit_character = ACH_defender_talfryn
+recruit_character = ACH_defender_cadwaladr
+recruit_character = ACH_defender_wynn
+recruit_character = ACH_paladin_mihangel
+recruit_character = ACH_paladin_ithel
+recruit_character = ACH_paladin_merfyn
+recruit_character = ACH_paladin_elliot
+recruit_character = ACH_kathrine_torni
+recruit_character = ACH_braxton_barkhauer
+recruit_character = ACH_peter_connor
+recruit_character = ACH_matthew_fry
+recruit_character = ACH_knight_hallows
+recruit_character = ACH_scribe_charlie
+recruit_character = ACH_paladin_cade
+

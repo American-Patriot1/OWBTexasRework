@@ -1,0 +1,178 @@
+idea_categories = {
+
+	hidden_ideas = {
+		hidden = yes
+
+		cost = 0
+		removal_cost = -1
+	}
+
+	country = {
+		type = national_spirit
+		cost = 0
+		removal_cost = -1
+	}
+
+	military_staff = {
+		character_slot = army_chief
+		character_slot = navy_chief
+		character_slot = air_chief
+		character_slot = high_command
+		character_slot = high_command
+		character_slot = theorist
+
+		ledger = invalid # must be overridden
+
+		cost = 100
+		removal_cost = 0
+	}
+
+	military_policies = {
+		slot = mobilization_laws
+		slot = outsider_recruitment_laws
+		slot = undesirables_recruitment_laws
+		slot = mutant_recruitment_laws
+		slot = officer_training_laws
+		slot = army_training_laws
+
+		ledger = civilian
+
+		cost = 100
+		removal_cost = 0
+	}
+
+	economic_policies = {
+		slot = economy
+		slot = trade_laws
+		slot = army_wages_laws
+		character_slot = economic_advisor
+		character_slot = economic_advisor
+		character_slot = economic_advisor
+
+		ledger = civilian
+
+		cost = 100
+		removal_cost = 0
+	}
+
+	cultural_policies = {
+		slot = centralization_laws
+		slot = drug_laws
+		slot = press_laws
+		character_slot = cultural_advisor
+		character_slot = cultural_advisor
+		character_slot = cultural_advisor
+
+		ledger = civilian
+
+		cost = 100
+		removal_cost = 0
+	}
+
+	production_policies = {
+		slot = engineering_firm
+		slot = construction_firm
+		slot = construction_firm
+		slot = vehicle_restoration_advisor
+		slot = navy_restoration_advisor
+		slot = aircraft_restoration_advisor
+
+		ledger = civilian
+
+		cost = 100
+		removal_cost = 0
+
+	}
+
+	academy_spirit = {
+		type = army_spirit
+
+		cost = 20
+		removal_cost = -1
+		politics_tab = no
+		ledger = hidden
+		slot = academy_spirit
+	}
+	army_spirit = {
+		type = army_spirit
+		cost = 35
+		removal_cost = -1
+		politics_tab = no
+		ledger = hidden
+		slot = army_spirit
+	}
+	division_command_spirit = {
+		type = army_spirit
+		cost = 50
+		removal_cost = -1
+		politics_tab = no
+		ledger = hidden
+		slot = division_command_spirit
+	}
+	naval_academy_spirit = {
+		type = navy_spirit
+		cost = 20
+		removal_cost = -1
+		politics_tab = no
+		ledger = hidden
+		slot = naval_academy_spirit
+	}
+	navy_spirit = {
+		type = navy_spirit
+		cost = 35
+		removal_cost = -1
+		politics_tab = no
+		ledger = hidden
+		slot = navy_spirit
+	}
+	naval_command_spirit = {
+		type = navy_spirit
+		cost = 50
+		removal_cost = -1
+		politics_tab = no
+		ledger = hidden
+		slot = naval_command_spirit
+	}
+	air_force_academy_spirit = {
+		type = air_spirit
+		cost = 50
+		removal_cost = -1
+		politics_tab = no
+		ledger = hidden
+		slot = air_force_academy_spirit
+	}
+	air_force_spirit = {
+		type = air_spirit
+		cost = 50
+		removal_cost = -1
+		politics_tab = no
+		ledger = hidden
+		slot = air_force_spirit
+	}
+	air_force_command_spirit = {
+		type = air_spirit
+		politics_tab = no
+		cost = 50
+		removal_cost = -1
+		ledger = hidden
+		slot = air_force_command_spirit
+	}
+}
+#
+#	Potential Setup for 3.0
+#
+#	production_policies = {
+#		slot = prewar_company
+#		slot = prewar_company
+#		slot = regional_company
+#		slot = regional_company
+#		slot = local_company
+#		slot = local_company
+#	}
+slot_ledgers = {
+	army_chief = army
+	navy_chief = navy
+	air_chief = air
+	theorist = army
+	high_command = army
+}

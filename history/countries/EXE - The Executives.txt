@@ -1,0 +1,168 @@
+﻿capital = 566
+oob = "EXE_2275"
+
+set_technology = {
+	basic_supply_transport_tech = 1
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	#infantry_tech_level_scientific = 1
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	#support_tech_level_scientific = 1
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	#special_forces_tech_level_scientific = 1
+	power_armour_tech_level_tribal = 1
+	power_armour_tech_level_settler = 1
+	#power_armour_tech_level_scientific = 1
+	vehicles_tech_level_tribal = 1
+	#vehicles_tech_level_settler = 1
+	#vehicles_tech_level_scientific = 1
+	robotics_tech_level_tribal = 1
+	robotics_tech_level_settler = 1
+	#robotics_tech_level_scientific = 1
+	air_tech_level_tribal = 1
+	#air_tech_level_settler = 1
+	#air_tech_level_scientific = 1
+	naval_tech_level_tribal = 1
+	#naval_tech_level_settler = 1
+	#naval_tech_level_scientific = 1
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	tools_tech_level_scientific = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	habitation_tech_level_scientific = 1
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	exploitation_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+	electronics_tech_level_scientific = 1
+
+	melee_weaponry_tech_1 = 1
+	standard_weaponry_tech = 1
+	ballistic_weaponry_tech_1 = 1
+	robot_automation_tech = 1
+	robot_makeshift_automatons_tech = 1
+	robot_fission_batteries_tech = 1
+	robot_protectron_equipment_tech_1 = 1
+	tribal_civilization = 1
+	settled_civilization = 1
+	scientific_civilization = 1
+	basic_industry_tech = 1
+	tool_engineering = 1
+	maketool_engineering_1 = 1
+	pre_construction_industry_tech = 1
+	construction_industry_tech_1 = 1
+	construction_industry_tech_2 = 1
+	extraction_industry_tech_1 = 1
+	habitation_industry_tech_1 = 1
+	extraction_industry_tech_2 = 1
+	habitation_industry_tech_2 = 1
+	resource_generator_tech = 1
+	resource_generator_water_tech_1 = 1
+	resource_generator_power_tech_1 = 1
+	resource_generator_metal_tech_1 = 1
+	vault_industry_tech = 1
+	texas_brotherhood_pa_tech = 1
+
+	support_weaponry = 1
+	demolitions_weaponry_tech = 1
+	fireteam_weaponry_tech = 1
+}
+
+set_stability = 0.3
+set_war_support = 0.45
+set_research_slots = 4
+set_country_flag = is_raider_nation
+set_country_flag = is_vault_tec_nation
+set_country_flag = elite_doctrine_ai
+set_country_flag = is_colorado_newmexico_nation
+
+set_politics = {
+	ruling_party = ruler
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 0
+	elites = 0
+	intellectuals = 40
+	ruler = 60
+}
+
+add_ideas = {
+	exe_vault_legacy_of_experimentation
+	exe_memories_of_fev
+	undesirables_law_raider
+	currencytexdollar
+}
+
+set_truce = {
+	target = SHA
+	days = 730
+}
+
+recruit_character = EXE_chief_executive_mckinley
+recruit_character = EXE_carter
+recruit_character = EXE_eric_smith
+recruit_character = EXE_peter_garnett
+recruit_character = EXE_richard_iverson
+recruit_character = EXE_felix_terrell
+recruit_character = EXE_miranda
+recruit_character = EXE_louis
+recruit_character = EXE_leslie
+recruit_character = EXE_angus
+recruit_character = EXE_gallo
+recruit_character = EXE_amelia
+recruit_character = EXE_natalie
+recruit_character = EXE_peggy
+##EXE_mr_buddy_beta
+
+
+add_timed_idea = {
+	idea = lac_legacy_of_pallus
+	days = 600
+}
+
+country_event = {
+	id = exe_vault.9
+	days = 244
+}
+
+set_party_name = {
+	ideology = elites
+	long_name = EXE_elites_party_long
+	name = EXE_elites_party_short
+}
+
+set_party_name = {
+	ideology = intellectuals
+	long_name = EXE_intellectuals_party_long
+	name = EXE_intellectuals_party_short
+}
+
+set_party_name = {
+	ideology = ruler
+	long_name = EXE_ruler_party_long
+	name = EXE_ruler_party_short
+}
+
+set_party_name = {
+	ideology = people
+	long_name = EXE_people_party_long
+	name = EXE_people_party_short
+}
+
+#Buffs LAC a smidge, since they have trouble getting this equipment through their equipment capture normally
+add_equipment_to_stockpile = {
+	type = fireteam_equipment_1
+	amount = 200
+	producer = EXE
+}
+add_equipment_to_stockpile = {
+	type = demolitions_equipment_1
+	amount = 200
+	producer = EXE
+}

@@ -1,0 +1,123 @@
+﻿capital = 890
+oob = "CHC_2275"
+
+set_technology = {
+	basic_supply_transport_tech = 1
+	infantry_tech_level_tribal = 1
+	infantry_tech_level_settler = 1
+	#infantry_tech_level_scientific = 1
+	support_tech_level_tribal = 1
+	#support_tech_level_settler = 1
+	#support_tech_level_scientific = 1
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	#special_forces_tech_level_scientific = 1
+	#power_armour_tech_level_settler = 1
+	#power_armour_tech_level_scientific = 1
+	vehicles_tech_level_tribal = 1
+	#vehicles_tech_level_settler = 1
+	#vehicles_tech_level_scientific = 1
+	#robotics_tech_level_tribal = 1
+	#robotics_tech_level_settler = 1
+	#robotics_tech_level_scientific = 1
+	air_tech_level_tribal = 1
+	air_tech_level_settler = 1
+	#air_tech_level_scientific = 1
+	naval_tech_level_tribal = 1
+	naval_tech_level_settler = 1
+	#naval_tech_level_scientific = 1
+	tools_tech_level_tribal = 1
+	#tools_tech_level_settler = 1
+	#tools_tech_level_scientific = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	#habitation_tech_level_scientific = 1
+	exploitation_tech_level_tribal = 1
+	#exploitation_tech_level_settler = 1
+	#exploitation_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+	#electronics_tech_level_scientific = 1
+	tribal_civilization = 1
+	tool_engineering = 1
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	pre_construction_industry_tech = 1
+	pre_agriculture_industry_tech = 1
+	pre_recycling_industry_tech = 1
+	basic_industry_tech = 1
+	support_weaponry = 1
+	nautics_tech_1 = 1
+	light_navy_hull_tech_1 = 1
+	naval_invasion_tech_1 = 1
+}
+
+set_stability = 0.4
+set_war_support = 0.35
+set_research_slots = 2
+set_country_flag = is_psyker_nation
+set_country_flag = is_texas_nation
+set_country_flag = no_generic_chief
+set_country_flag = no_generic_high_command
+set_country_flag = no_generic_advisor
+
+set_politics = {
+	ruling_party = elites
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 45
+	elites = 45
+	intellectuals = 0
+	ruler = 10
+}
+
+add_ideas = {
+	the_chained_choir
+	the_possessed_protect
+	currencytexdollar
+}
+
+recruit_character = CHC_v
+recruit_character = CHC_ambrose_armistead
+recruit_character = CHC_Mother
+recruit_character = CHC_dawn
+recruit_character = CHC_lysander
+recruit_character = CHC_morgana
+recruit_character = CHC_celestina
+recruit_character = CHC_omma
+recruit_character = CHC_bruiser
+recruit_character = CHC_the_nightcaller
+recruit_character = CHC_blaesus
+recruit_character = CHC_adira
+recruit_character = CHC_malvado
+recruit_character = CHC_incineratus
+recruit_character = CHC_deagle
+recruit_character = CHC_gulliver
+recruit_character = CHC_bahira
+recruit_character = CHC_connor
+recruit_character = CHC_hendrix
+recruit_character = CHC_kane
+recruit_character = CHC_jimmy
+recruit_character = CHC_bruce
+recruit_character = CHC_adelaide
+recruit_character = CHC_robert_hardy
+recruit_character = CHC_dawud
+recruit_character = CHC_carmen
+recruit_character = CHC_stella
+recruit_character = CHC_skye
+recruit_character = CHC_vika
+recruit_character = CHC_january
+recruit_character = CHC_engelbert
+recruit_character = CHC_oscar
+recruit_character = CHC_damian
+recruit_character = CHC_eustice
+recruit_character = CHC_bryce
+activate_advisor = CHC_v_army_chief
+activate_advisor = CHC_dawn_economic_advisor
+activate_advisor = CHC_lysander_economic_advisor
+activate_advisor = CHC_omma_high_command
+activate_advisor = CHC_celestina_cultural_advisor
+activate_advisor = CHC_morgana_cultural_advisor
+activate_advisor = CHC_ambrose_armistead_theorist

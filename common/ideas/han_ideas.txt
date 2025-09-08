@@ -1,0 +1,877 @@
+ideas = {
+
+	country = {
+
+		han_the_scrap_metropolis = {
+
+			removal_cost = -1
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = pre-war_industry
+
+			modifier = {
+				exodus_national_appeal = 0.20
+				conscription_factor = 0.1
+				exodus_nomadicity = -0.2
+				production_speed_arms_factory_factor = 0.1
+				industrial_capacity_factory = -0.3
+				caps_flat_income_modifier = 10
+				min_export = 0.3
+				consumer_goods_expected_value = 0.3
+				trade_opinion_factor = 0.15	# Intentionally not carried over to the buff below
+			}
+		}
+
+		han_the_scrap_empire = {
+
+			removal_cost = -1
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = pre-war_industry
+
+			modifier = {
+				exodus_national_appeal = 0.20
+				conscription_factor = 0.1
+				exodus_nomadicity = -0.2
+				production_speed_arms_factory_factor = 0.1
+				caps_flat_income_modifier = 10
+			}
+		}
+
+		dogsfordays = {
+
+			removal_cost = -1
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = shottol
+
+			modifier = {
+				army_core_attack_factor = 0.12
+			}
+		}
+
+		dogsdefense = {
+
+			removal_cost = -1
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = shottol
+
+			modifier = {
+				army_core_defence_factor = 0.12
+			}
+		}
+		hanbettergear = {
+
+			picture = generic_helm_security
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+		}
+		hanbettertrainers = {
+
+			picture = generic_helm_security
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				dogs_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+		}
+		hanoldwarwounds = {
+
+			picture = generic_production_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_org_factor = -0.05
+				research_speed_factor = -0.10
+			}
+		}
+		hannewworldhorrors = {
+
+			picture = generic_production_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_org_factor = -0.10
+				consumer_goods_expected_value = 0.10
+			}
+		}
+		hancultistsdefeated = {
+
+			picture = generic_production_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = 0.10
+				army_attack_factor = 0.05
+			}
+		}
+		nopeandnope = {
+
+			picture = generic_production_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.03
+				war_support_factor = 0.10
+				research_speed_factor = -0.15
+			}
+		}
+		boxopen = {
+
+			picture = generic_production_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = -0.03
+				war_support_factor = -0.10
+				research_speed_factor = 0.05
+				stability_factor = 0.20
+			}
+		}
+		hanremainsofthesalvagers_1 = {
+			picture = generic_scavenger
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_arms_factory_factor = -0.55
+				production_speed_industrial_complex_factor = -0.55
+			}
+		}
+		hanremainsofthesalvagers_2 = {
+			picture = generic_scavenger
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_arms_factory_factor = -0.44
+				production_speed_industrial_complex_factor = -0.44
+			}
+		}
+		hanremainsofthesalvagers_3 = {
+			picture = generic_scavenger
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_arms_factory_factor = -0.33
+				production_speed_industrial_complex_factor = -0.33
+			}
+		}
+		hanremainsofthesalvagers_4 = {
+			picture = generic_scavenger
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_arms_factory_factor = -0.22
+				production_speed_industrial_complex_factor = -0.22
+			}
+		}
+		hanremainsofthesalvagers_5 = {
+			picture = generic_scavenger
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_arms_factory_factor = -0.11
+				production_speed_industrial_complex_factor = -0.11
+			}
+		}
+		hanfortbuild = {
+			picture = generic_improv_barricade
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_bunker_factor = 0.05
+				production_speed_infrastructure_factor = 0.05
+				repair_speed_infrastructure_factor = 0.1
+			}
+		}
+		hanbiggerbite = {
+			picture = generic_tomahawk
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_attack_factor = 0.05
+			}
+		}
+		hanrootoutdissent_1 = {
+			picture = generic_control_robots
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				resistance_target = -0.05
+			}
+		}
+		hanrootoutdissent_2 = {
+			picture = generic_guard_post
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				resistance_target = -0.10
+			}
+		}
+		hansquashrebels_1 = {
+			picture = generic_officer_hat
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				compliance_gain = 0.03
+			}
+		}
+		hansquashrebels_2 = {
+			picture = generic_slave_collar
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				compliance_gain = 0.06
+			}
+		}
+		handemomen = {
+
+			picture = KHA_overwhelming_firepower
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_attack_factor = 0.075
+				modifier_army_sub_unit_demolitions_support_attack_factor = 0.05
+				modifier_army_sub_unit_demolitions_support_defence_factor = 0.05
+				modifier_army_sub_unit_demolitions_infantry_attack_factor = 0.05
+				modifier_army_sub_unit_demolitions_infantry_defence_factor = 0.05
+			}
+		}
+		hanmedicmen = {
+
+			picture = generic_aid_kit
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_org_factor = 0.05
+				experience_loss_factor = -0.05
+				conscription_factor = 0.1
+			}
+		}
+		hanbuildingmen = {
+
+			picture = generic_scrap_kit
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_buildings_factor = 0.10
+				production_factory_max_efficiency_factor = 0.03
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+		hantradefordays = {
+			picture = generic_gold_bars
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				caps_country_trade_modifier = 0.10
+				country_resource_water = 15
+				country_resource_metal = 15
+			}
+		}
+		hansbitingdown = {
+			picture = generic_helm_gladiator
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				core_creation_cost_factor = -0.1
+				compliance_growth = 0.1
+				resistance_target = -0.05
+			}
+		}
+		han_presidential_manufacturing_routines = {
+
+			removal_cost = -1
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = pre-war_industry
+
+			modifier = {
+				fuel_gain_factor = 0.15
+				industrial_capacity_factory = 0.075
+				production_factory_start_efficiency_factor = 0.075
+			}
+		}
+		han_demo_new_1 = {
+
+			picture = KHA_overwhelming_firepower
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				modifier_army_sub_unit_demolitions_support_attack_factor = 0.05
+				modifier_army_sub_unit_demolitions_support_defence_factor = 0.05
+				modifier_army_sub_unit_demolitions_infantry_attack_factor = 0.05
+				modifier_army_sub_unit_demolitions_infantry_defence_factor = 0.05
+			}
+		}
+		han_medic_new_1 = {
+
+			picture = generic_aid_kit
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription_factor = 0.05
+				experience_loss_factor = -0.05
+			}
+		}
+		han_building_new_1 = {
+
+			picture = generic_scrap_kit
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_factory_max_efficiency_factor = 0.03
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+		han_sharper_teeth_idea = {
+			picture = generic_legion
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				exodus_national_appeal = -0.10
+				exodus_nomadicity = 0.10
+				industrial_capacity_factory = 0.1
+				min_export = -0.1
+				consumer_goods_expected_value = -0.1
+			}
+		}
+		han_dog_scrap_weapons = {
+			picture = han_custom_guns
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+
+			}
+
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.15
+					reliability = -0.05
+				}
+			}
+		}
+		han_dog_scrap_trade = {
+			picture = han_everything_for_sale
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				trade_opinion_factor = 0.2
+				caps_country_trade_modifier = 0.1
+			}
+		}
+		han_dog_garrison_resistance = {
+			picture = han_riot_hounds
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				resistance_target = -0.05
+			}
+			equipment_bonus = {
+				dogs_equipment = {
+					suppression_factor = 0.1
+					build_cost_ic = -0.15
+				}
+			}
+		}
+		han_dog_roaming_packs = {
+			picture = han_scent_of_prey
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_gain = 0.1
+				justify_war_goal_time = -0.15
+			}
+		}
+		han_warden_robot_production = {
+			picture = han_bot_production_lines
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				country_resource_metal = -20
+			}
+			equipment_bonus = {
+				support_robot_equipment = {
+					build_cost_ic = -0.05
+					soft_attack = 0.05
+					instant = yes
+				}
+				combat_robot_equipment = {
+					build_cost_ic = -0.05
+					soft_attack = 0.05
+					instant = yes
+				}
+			}
+		}
+		han_warden_fuel_production = {
+			picture = han_refurbished_generators
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				country_resource_energy = 6
+				base_fuel_gain_factor = 0.1
+				max_fuel_factor = 0.1
+			}
+		}
+		han_warden_robot_detectives_a = {
+			picture = han_mr_beepskys
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				enemy_operative_detection_chance_factor = 0.15
+				root_out_resistance_effectiveness_factor = 0.1
+				operative_slot = 1
+			}
+				research_bonus = {
+					decryption_tech = 0.25
+			}
+				research_bonus = {
+					encryption_tech = 0.25
+			}
+		}
+		han_warden_robot_detectives_b = {
+			picture = han_mr_beepskys
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				decryption = 0.5
+				encryption = 0.5
+			}
+				research_bonus = {
+					decryption_tech = 0.25
+			}
+				research_bonus = {
+					encryption_tech = 0.25
+			}
+		}
+		han_warden_civilian_protection = {
+			picture = han_a_citizens_duty
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_max_efficiency_factor = 0.025
+				industrial_capacity_factory = 0.05
+			}
+		}
+		han_dog_denver_dogs = {
+			picture = han_hangdogs_ferocity
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_attack_factor = 0.05
+				army_speed_factor = 0.05
+				breakthrough_factor = 0.05
+				attrition = -0.075
+			}
+		}
+		han_warden_denver_defender = {
+			picture = han_wardens_shield
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_defence_factor = 0.1
+				army_fuel_consumption_factor = -0.075
+				army_morale_factor = 0.1
+			}
+		}
+		han_never_again_idea = {
+			picture = pantheon_lon
+			removal_cost = -1
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			targeted_modifier = {
+				tag = CES
+					defense_bonus_against = 0.05
+					attack_bonus_against = 0.05
+			}
+			equipment_bonus = {
+				chariot_equipment = {
+					build_cost_ic = -0.15
+					soft_attack = 0.15
+					instant = yes
+				}
+			}
+		}
+	}
+}

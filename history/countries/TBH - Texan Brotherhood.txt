@@ -1,0 +1,300 @@
+capital = 915
+
+oob = "TBH_2275"
+
+set_technology = {
+	basic_supply_transport_tech = 1
+	infantry_tech_level_tribal = 1
+	# infantry_tech_level_settler = 1
+	# infantry_tech_level_scientific = 1
+	special_forces_tech_level_tribal = 1
+	# special_forces_tech_level_settler = 1
+	power_armour_tech_level_tribal = 1
+	power_armour_tech_level_settler = 1
+	support_tech_level_tribal = 1
+	# support_tech_level_settler = 1
+	vehicles_tech_level_tribal = 1
+	# vehicles_tech_level_settler = 1
+	# vehicles_tech_level_scientific = 1
+	robotics_tech_level_tribal = 1
+	air_tech_level_tribal = 1
+	# air_tech_level_settler = 1
+	# air_tech_level_scientific = 1
+	naval_tech_level_tribal = 1
+	# naval_tech_level_settler = 1
+	# naval_tech_level_scientific = 1
+	tools_tech_level_tribal = 1
+	# tools_tech_level_settler = 1
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	habitation_tech_level_scientific = 1
+	exploitation_tech_level_tribal = 1
+	# exploitation_tech_level_settler = 1
+	# exploitation_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	# electronics_tech_level_settler = 1
+	# electronics_tech_level_scientific = 1
+
+	#industry
+	basic_industry_tech = 1
+	specialized_industry_tech_1 = 1
+
+	#tools
+	tool_engineering = 1
+	maketool_engineering_1 = 1
+
+	#construction
+	pre_construction_industry_tech = 1
+
+	#exploitation
+	pre_recycling_industry_tech = 1
+	recycling_industry_tech_1 = 1
+
+	#agriculture
+	pre_agriculture_industry_tech = 1
+	agriculture_industry_tech_1 = 1
+	agriculture_industry_tech_2 = 1
+	agriculture_industry_tech_3 = 1
+	agriculture_industry_tech_4 = 1
+	agriculture_industry_tech_5 = 1
+
+	#resources
+	resource_generator_tech = 1
+	resource_generator_metal_tech_1 = 1
+	resource_generator_water_tech_1 = 1
+	resource_generator_power_tech_1 = 1
+	resource_generator_power_tech_2 = 1
+	resource_generator_power_tech_3 = 1
+	resource_generator_circuitry_tech_1 = 1
+
+	#electronics
+	electronic_engineering = 1
+	communication_engineering = 1
+	communication_engineering_1 = 1
+	communication_engineering_2 = 1
+	communication_engineering_3 = 1
+	communication_engineering_4 = 1
+	radio_detection = 1
+	decimetric_radar = 1
+	improved_decimetric_radar = 1
+	centimetric_radar = 1
+	
+
+	#air
+	aerodynamics_tech_1 = 1
+	glider_tech = 1
+	payload_glider_tech = 1
+	air_chaff_tech = 1
+	fighter_tech_1 = 1
+	strat_bomber_tech_1 = 1
+	cas_bomber_tech_1=1
+
+	#naval
+	nautics_tech_1 = 1
+	light_navy_hull_tech_1 = 1
+	light_navy_hull_tech_2 = 1
+	light_navy_hull_tech_3 = 1
+	naval_invasion_tech_1 = 1
+
+	#naval support
+
+	#vehicals
+	bike_tech_1 = 1
+	motorisation_vehicle_tech = 1
+	mobile_medical_vehicle_tech = 1
+	mobile_recon_vehicle_tech = 1
+	mobile_maintenance_vehicle_tech = 1
+	heavy_motorized_equipment_vehicle_tech_1 = 1
+	mobile_weapons_vehicle_tech = 1
+	heavy_motorized_equipment_vehicle_tech_2 = 1
+	tracks_vehicle_tech_1 = 1
+	tank_equipment_vehicle_tech_1 = 1
+	tracks_vehicle_tech_2 = 1
+
+	#infantry
+	unit_training_tech_1 = 1
+	unit_training_tech_2 = 1
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	unit_training_tech_1 = 1
+	warrior_equipment = 1
+	heavy_infantry_tech_1 = 1
+	heavy_infantry_tech_2 = 1
+
+	#support
+	support_weaponry = 1
+	ballistic_weaponry_tech_1 = 1
+	anti_tank_equipment_tech_1 = 1
+	fireteam_weaponry_tech = 1
+	ballistic_fireteam_weaponry_tech_2 = 1
+	demolitions_weaponry_tech = 1
+	explosive_demolitions_weaponry_tech_2 = 1
+
+	#special forces
+	spec_ops_equipment_tech_1 = 1
+
+	#power armor
+	texas_brotherhood_pa_tech = 1
+	stripped_pa_tech = 1
+
+	#support companies
+	recon_company_tech_1 = 1
+	maintenance_company_tech_1 = 1
+	med_company_tech_1 = 1
+
+	#special
+	super_mutant_civilization = 1
+	super_mutant_aux_infantry_tech = 1
+	tbh_lawkeepers_tech_1 = 1
+	tbh_lawkeepers_tech_2 = 1
+	tbh_lawkeepers_tech_3 = 1
+	railway_gun_unlock_tech = 1
+
+	#land doctrine
+	grand_army = 1
+
+	#idk
+	police_infantry_tech = 1
+}
+
+set_stability = 0.25
+set_war_support = 0.30
+set_research_slots = 5
+set_politics = {
+	ruling_party = ruler
+	elections_allowed = no
+}
+set_rule = { can_send_volunteers = no }
+set_country_flag = is_brotherhood_nation
+
+set_country_flag = default_slave_laws_banned
+set_country_flag = has_unique_manpower_law
+
+set_country_flag = dont_give_settler_generic_political_advisors
+set_country_flag = dont_give_settler_generic_high_command
+set_country_flag = dont_give_settler_generic_theorists
+set_country_flag = dont_give_settler_generic_chiefs
+set_country_flag = no_generic_advisor
+set_country_flag = no_generic_chief
+set_country_flag = no_generic_political_advisors
+set_country_flag = no_generic_high_command
+set_country_flag = no_generic_theorists
+set_country_flag = is_texas_nation
+set_country_flag = grand_doctrine_ai
+set_country_flag = grand_infantry_doctrine_ai
+
+set_truce = {
+	target = SHA
+	days = 365
+}
+set_truce = {
+	target = ACH
+	days = 365
+}
+set_truce = {
+	target = IMO
+	days = 365
+}
+set_truce = {
+	target = EDN
+	days = 365
+}
+set_truce = {
+	target = CAR
+	days = 365
+}
+
+set_popularities = {
+	people = 50
+	elites = 25
+	intellectuals = 5
+	ruler = 20
+}
+set_country_flag = army_wages_disabled
+recruit_character = TBH_ledroc_walker
+recruit_character = TBH_edward_j_rusk
+recruit_character = TBH_charles_biggins
+recruit_character = TBH_tresh_mcoi
+recruit_character = TBH_steven_hunter
+recruit_character = TBH_benjamin_tyler
+recruit_character = TBH_abner_rodes
+recruit_character = TBH_TEX_congress
+recruit_character = TBH_TEX_cho_bang
+random_character = {
+	limit = {
+		is_character = TBH_edward_j_rusk
+	}
+	save_global_event_target_as = TBH_edward_j_rusk_target
+}
+
+create_or_join_texan_economic_union = yes
+LNS = { create_or_join_texan_economic_union = yes }
+
+add_dynamic_modifier = { modifier = texan_economic_union }
+add_dynamic_modifier = { modifier = texas_rework_city_of_unity }
+add_dynamic_modifier = { modifier = texas_rework_economic_hub_texas }
+add_dynamic_modifier = { modifier = texas_rework_industrial_center_texas_dallas }
+add_dynamic_modifier = { modifier = texas_rework_industrial_center_texas_fort_worth }
+add_dynamic_modifier = { modifier = texas_rework_communications_hub_texas }
+915 = { add_dynamic_modifier = { modifier = texas_rework_city_of_unity_state } }
+921 = { add_dynamic_modifier = { modifier = texas_rework_economic_hub_texas_state } }
+892 = { add_dynamic_modifier = { modifier = texas_rework_industrial_center_texas_dallas_state } }
+893 = { add_dynamic_modifier = { modifier = texas_rework_industrial_center_texas_fort_worth_state } }
+900 = { add_dynamic_modifier = { modifier = texas_rework_communications_hub_texas_state } }
+
+
+add_ideas = {
+	voluntairy_deputization
+	training_law_veterans
+	officer_law_local_legends
+	political_effort_press
+	free_trade
+	mutant_law_both
+	scavenging_law
+	currencytexdollar
+	tbh_torn_leadership
+	tbh_military_heritage
+	tbh_texas_rangers
+	tbh_victorious_heroes
+	LNS_idea_fatigued_lawmen
+	LNS_idea_controllers_of_the_I20
+}
+add_timed_idea = {
+	idea = TEX_unification_idea
+	days = 1440
+}
+# add_timed_idea = {
+# 	idea = TEX_unification_idea
+# 	days = 1440
+# }
+
+add_equipment_to_stockpile = {
+	type = infantry_equipment_1
+	amount = 500
+	producer = TBH
+}
+
+add_equipment_to_stockpile = {
+	type = ballistic_equipment_1
+	amount = 200
+	producer = TBH
+}
+
+add_equipment_to_stockpile = {
+	type = motorized_equipment
+	amount = 50
+	producer = TBH
+}
+
+add_equipment_to_stockpile = {
+	type = power_armor_equipment
+	amount = 150
+	producer = TBH
+}
+
+add_equipment_to_stockpile = {
+	type = spec_ops_equipment
+	amount = 250
+	producer = TBH
+}
+set_cosmetic_tag = TEX_provisional

@@ -1,0 +1,32 @@
+﻿division_template = {
+	name = "Alamo Volunteers"
+	is_locked = yes
+	regiments = {
+		alamo_defenders = { x = 0 y = 0 }
+		alamo_defenders = { x = 0 y = 1 }
+		alamo_defenders = { x = 1 y = 0 }
+		alamo_defenders = { x = 1 y = 1 }
+		alamo_defenders = { x = 2 y = 0 }
+		alamo_defenders = { x = 2 y = 1 }
+		alamo_defenders = { x = 3 y = 0 }
+		alamo_defenders = { x = 3 y = 1 }
+	}
+	support = {
+		scribe_support_unit = { x = 0 y = 0 }
+		knight_support_unit = { x = 1 y = 0 }
+		anti_tank_company = { x = 2 y = 0 }
+		demolitions_support = { x = 3 y = 0 }
+		fireteam_support = { x = 4 y = 0 }
+	}
+
+}
+
+units = {
+	division = {
+		name = "Travis Stalwart Defenders"
+		location = 11427
+		division_template = "Alamo Volunteers"
+		start_experience_factor = 1.0
+		start_equipment_factor = 2
+	}
+}

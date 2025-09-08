@@ -1,0 +1,101 @@
+﻿division_template = {
+	name = "Hand Gang Warband"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Legion Remnants"
+	regiments = {
+		spec_ops = { x = 0 y = 0 }
+		spec_ops = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+	}
+	support = {
+		recon_company = { x = 0 y = 0 }
+	}
+	priority = 2
+}
+
+units = {
+	# Hand Gand Warbands
+	division = {
+		name = "Hand's Own Warband"
+		location = 11683
+		division_template = "Hand Gang Warband"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Haskell Warband"
+		location = 11703
+		division_template = "Hand Gang Warband"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Lodge Warband"
+		location = 11707
+		division_template = "Hand Gang Warband"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Leetown Warband"
+		location = 11658
+		division_template = "Hand Gang Warband"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Lubbock Warband"
+		location = 11698
+		division_template = "Hand Gang Warband"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Outrunning Warband"
+		location = 11681
+		division_template = "Hand Gang Warband"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Outrunning Warband"
+		location = 11651
+		division_template = "Hand Gang Warband"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	# I-20 Patrolmen
+	division = {
+		name = "I-20 Patrolmen"
+		location = 11699
+		division_template = "Legion Remnants"
+		start_experience_factor = 0.45
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "I-20 Patrolmen"
+		location = 848
+		division_template = "Legion Remnants"
+		start_experience_factor = 0.45
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "I-20 Scavengers"
+		location = 3132
+		division_template = "Legion Remnants"
+		start_experience_factor = 0.45
+		start_equipment_factor = 1.0
+	}
+}

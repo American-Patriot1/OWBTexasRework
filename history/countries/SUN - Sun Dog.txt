@@ -1,0 +1,169 @@
+﻿capital = 233
+oob = "SUN_2275"
+
+set_technology = {
+	basic_supply_transport_tech = 1
+	infantry_tech_level_tribal = 1
+	#infantry_tech_level_settler = 1
+	#infantry_tech_level_scientific = 1
+	support_tech_level_tribal = 1
+	#support_tech_level_settler = 1
+	#support_tech_level_scientific = 1
+	special_forces_tech_level_tribal = 1
+	#special_forces_tech_level_settler = 1
+	#special_forces_tech_level_scientific = 1
+	#power_armour_tech_level_settler = 1
+	#power_armour_tech_level_scientific = 1
+	vehicles_tech_level_tribal = 1
+	#vehicles_tech_level_settler = 1
+	#vehicles_tech_level_scientific = 1
+	#robotics_tech_level_tribal = 1
+	#robotics_tech_level_settler = 1
+	#robotics_tech_level_scientific = 1
+	creatures_tech_level_tribal = 1
+	creatures_tech_level_settler = 1
+	#creatures_tech_level_scientific = 1
+	air_tech_level_tribal = 1
+	#air_tech_level_settler = 1
+	#air_tech_level_scientific = 1
+	naval_tech_level_tribal = 1
+	#naval_tech_level_settler = 1
+	#naval_tech_level_scientific = 1
+	tools_tech_level_tribal = 1
+	#tools_tech_level_settler = 1
+	#tools_tech_level_scientific = 1
+	habitation_tech_level_tribal = 1
+	#habitation_tech_level_settler = 1
+	#habitation_tech_level_scientific = 1
+	exploitation_tech_level_tribal = 1
+	#exploitation_tech_level_settler = 1
+	#exploitation_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	#electronics_tech_level_settler = 1
+	#electronics_tech_level_scientific = 1
+	tribal_tech_visibility_tech = 1
+	tribal_tech_access_tech = 1
+	tribal_civilization = 1
+	tool_engineering = 1
+	standard_weaponry_tech = 1
+	melee_weaponry_tech_1 = 1
+	pre_construction_industry_tech = 1
+	basic_industry_tech = 1
+
+	support_weaponry = 1
+	med_company_tech_1 = 1
+	dog_equipment_tech_1 = 1
+	demolitions_weaponry_tech = 1
+	spec_ops_equipment_tech_1 = 1
+	recon_company_tech_1 = 1
+	fireteam_weaponry_tech = 1
+	beast_tech_access_tech = 1
+	gecko_tech_access_tech = 1
+
+	#Woof
+	dog_infantry_tech = 1
+	dog_equipment_tech_1 = 1
+	dog_tech_1 = 1
+
+	#Legion goes BRRRRRRRRR
+	chariot_vehicle_tech  = 1
+
+
+}
+
+set_stability = 0.5
+set_war_support = 0.3
+set_research_slots = 3
+
+set_politics = {
+	ruling_party = ruler
+	elections_allowed = no
+}
+
+set_popularities = {
+	people = 0
+	elites = 0
+	intellectuals = 50
+	ruler = 50
+}
+set_party_name = { ideology = ruler long_name = SUN_ruler_party name = SUN_ruler_party_long }
+set_party_name = { ideology = intellectuals long_name = SUN_intellectuals_party name = SUN_intellectuals_party_long }
+add_opinion_modifier = {
+	target = LAC
+	modifier = hostile_status
+}
+add_opinion_modifier = {
+	target = CES
+	modifier = hostile_status
+}
+add_opinion_modifier = {
+	target = TWO
+	modifier = hostile_status
+}
+add_opinion_modifier = {
+	target = EXE
+	modifier = cow_slaver_scum
+}
+add_opinion_modifier = {
+	target = CMC
+	modifier = tca_twisted_legacy
+}
+add_opinion_modifier = {
+	target = CWB
+	modifier = pls_ungrateful_barbarians
+}
+add_opinion_modifier = {
+	target = SUF
+	modifier = sympathies
+}
+add_opinion_modifier = {
+	target = EDA
+	modifier = sympathies
+}
+add_opinion_modifier = {
+	target = MES
+	modifier = sympathies
+}
+add_opinion_modifier = {
+	target = ASF
+	modifier = sympathies
+}
+add_opinion_modifier = {
+	target = TTM
+	modifier = cmc_shared_bonds
+}
+
+
+add_ideas = {
+	veteran_pathfinders
+	sun_victors_against_pallus
+	sun_lupas_assistance
+	currencytexdollar
+}
+
+set_country_flag = is_tribal_nation
+set_country_flag = grand_doctrine_ai
+set_country_flag = grand_infantry_doctrine_ai
+set_country_flag = is_colorado_newmexico_nation
+
+recruit_character = SUN_goldhound
+recruit_character = SUN_samuel_appleton
+recruit_character = SUN_lupa_capitolina
+recruit_character = SUN_james_lyon
+
+#Buffs SUN a smidge, since they have trouble getting this equipment through their equipment capture normally
+add_equipment_to_stockpile = {
+	type = fireteam_equipment_1
+	amount = 300
+	producer = SUN
+}
+add_equipment_to_stockpile = {
+	type = demolitions_equipment_1
+	amount = 100
+	producer = SUN
+}
+add_equipment_to_stockpile = {
+    type = chariot_equipment
+    amount = 500
+    producer = SUN
+}

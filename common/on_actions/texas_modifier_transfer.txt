@@ -1,0 +1,191 @@
+on_actions = {
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					FROM.FROM = { state = 936 }
+				}
+				FROM = {
+					remove_dynamic_modifier = {
+						modifier = texas_rework_paradise
+					}
+				}
+				ROOT = {
+					add_dynamic_modifier = {
+						modifier = texas_rework_paradise
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					FROM.FROM = { state = 908 }
+				}
+				FROM = {
+					remove_dynamic_modifier = {
+						modifier = texas_rework_the_alamo
+					}
+				}
+				ROOT = {
+					add_dynamic_modifier = {
+						modifier = texas_rework_the_alamo
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					FROM.FROM = { state = 880 }
+				}
+				FROM = {
+					remove_dynamic_modifier = {
+						modifier = texas_rework_houston_concrete_city
+					}
+				}
+				ROOT = {
+					add_dynamic_modifier = {
+						modifier = texas_rework_houston_concrete_city
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					FROM.FROM = { state = 882 }
+				}
+				FROM = {
+					remove_dynamic_modifier = {
+						modifier = texas_rework_houston_concrete_city_lesser
+					}
+				}
+				ROOT = {
+					add_dynamic_modifier = {
+						modifier = texas_rework_houston_concrete_city_lesser
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					FROM.FROM = { state = 884 }
+				}
+				FROM = {
+					remove_dynamic_modifier = {
+						modifier = texas_rework_carthage_gas_fields
+					}
+				}
+				ROOT = {
+					add_dynamic_modifier = {
+						modifier = texas_rework_carthage_gas_fields
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					FROM.FROM = { state = 870 }
+				}
+				FROM = {
+					remove_dynamic_modifier = {
+						modifier = texas_rework_the_cannery
+					}
+				}
+				ROOT = {
+					add_dynamic_modifier = {
+						modifier = texas_rework_the_cannery
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					FROM.FROM = { state = 915 }
+				}
+				FROM = {
+					remove_dynamic_modifier = {
+						modifier = texas_rework_city_of_unity
+					}
+				}
+				ROOT = {
+					add_dynamic_modifier = {
+						modifier = texas_rework_city_of_unity
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					FROM.FROM = { state = 921 }
+				}
+				FROM = {
+					remove_dynamic_modifier = {
+						modifier = texas_rework_economic_hub_texas
+					}
+				}
+				ROOT = {
+					add_dynamic_modifier = {
+						modifier = texas_rework_economic_hub_texas
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					FROM.FROM = { state = 893 }
+				}
+				FROM = {
+					remove_dynamic_modifier = {
+						modifier = texas_rework_industrial_center_texas_fort_worth
+					}
+				}
+				ROOT = {
+					add_dynamic_modifier = {
+						modifier = texas_rework_industrial_center_texas_fort_worth
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					FROM.FROM = { state = 892 }
+				}
+				FROM = {
+					remove_dynamic_modifier = {
+						modifier = texas_rework_industrial_center_texas_dallas
+					}
+				}
+				ROOT = {
+					add_dynamic_modifier = {
+						modifier = texas_rework_industrial_center_texas_dallas
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					FROM.FROM = { state = 900 }
+				}
+				FROM = {
+					remove_dynamic_modifier = {
+						modifier = texas_rework_communications_hub_texas
+					}
+				}
+				ROOT = {
+					add_dynamic_modifier = {
+						modifier = texas_rework_communications_hub_texas
+					}
+				}
+			}
+		}
+	}
+}

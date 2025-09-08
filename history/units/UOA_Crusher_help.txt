@@ -1,0 +1,26 @@
+﻿division_template = {
+	name = "Nightkins"
+	template_counter= 52
+	regiments = {
+		super_mutant_nightkin_infantry = { x = 0 y = 0 }
+		super_mutant_nightkin_infantry = { x = 0 y = 1 }
+		super_mutant_nightkin_infantry = { x = 0 y = 2 }
+	}
+}
+
+units = {
+	division = {
+		name = "Odessa's Shadows"
+		location = 11584
+		division_template = "Nightkins"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Ozona's Ghosts"
+		location = 11584
+		division_template = "Nightkins"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1.0
+	}
+}
