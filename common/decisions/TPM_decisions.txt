@@ -1,0 +1,228 @@
+tpm_just_another_patrol_category = {
+	patrol_home_descision = {
+		icon = GFX_decision_revolver
+		visible = {
+			always = yes
+		}
+		available = {
+			command_power > 25
+			controls_state = 875
+		}
+		custom_cost_trigger = {
+			command_power > 25
+		}
+		custom_cost_text = command_power_more_than_25
+		days_remove = 30
+		days_re_enable = 90
+		complete_effect = {
+            hidden_effect = {
+                add_command_power = -25
+            }
+        }
+		modifier = {
+		army_core_defence_factor = 0.1
+		}
+		remove_effect = {
+			add_political_power = 25
+		}
+}
+	patrol_bayou_decision = {
+		icon = GFX_decision_pistol
+		visible = {
+			always = yes
+		}
+		available = {
+			command_power > 25
+			OR = {
+				controls_state = 870
+				any_allied_country = {
+					controls_state = 870
+					}
+				}
+		}
+		custom_cost_trigger = {
+			command_power > 25
+		}
+		custom_cost_text = command_power_more_than_25
+		days_remove = 30
+		complete_effect = {
+            hidden_effect = {
+                add_command_power = -25
+            }
+        }
+		days_re_enable = 90
+		modifier = {
+			dig_in_speed_factor = 0.1
+			max_dig_in = 5
+		}
+		remove_effect = {
+			navy_experience = 25
+		}
+	}
+
+	patrol_maw_decision = {
+		icon = GFX_decision_revolver
+		visible = {
+			always = yes
+		}
+		available = {
+			command_power > 25
+		OR = {
+			controls_state = 874
+			any_allied_country = {
+				controls_state = 874
+				}
+			}
+		}
+		custom_cost_trigger = {
+			command_power > 25
+		}
+		custom_cost_text = command_power_more_than_25
+		days_remove = 30
+		complete_effect = {
+            hidden_effect = {
+                add_command_power = -25
+            }
+        }
+		days_re_enable = 90
+		modifier = {
+			land_reinforce_rate = 0.05
+			army_speed_factor = 0.1
+		}
+		remove_effect = {
+			army_experience = 5
+		}
+	}
+	patrol_trade_rivers_decision = {
+		icon = GFX_decision_pistol
+		days_remove = 30
+		days_re_enable = 90
+		visible = {
+			always = yes
+		}
+		available = {
+			command_power > 25
+			OR = {
+				controls_state = 873
+				any_allied_country = {
+					controls_state = 873
+				}
+			}
+		}
+		custom_cost_trigger = {
+			command_power > 25
+		}
+		custom_cost_text = command_power_more_than_25
+		complete_effect = {
+            hidden_effect = {
+                add_command_power = -25
+            }
+        }
+		days_re_enable = 90
+		modifier = {
+			naval_speed_factor = 0.15
+			spotting_chance = 0.15
+		}
+		remove_effect = {
+		set_temp_variable = { caps_to_add = 25 }
+		add_caps = yes
+		}
+	}
+
+	hunt_bluff_bandits_decision = {
+		icon = GFX_decision_revolver
+		visible = {
+			always = yes
+		}
+		available = {
+			command_power > 25
+		}
+		custom_cost_trigger = {
+			command_power > 25
+		}
+		custom_cost_text = command_power_more_than_25
+		days_remove = 30
+		complete_effect = {
+            hidden_effect = {
+                add_command_power = -25
+            }
+        }
+		days_re_enable = 90
+		modifier = {
+			army_morale_factor = 0.1
+			army_attack_factor = 0.1
+		}
+		remove_effect = {
+			army_experience = 15
+			add_manpower = -30
+		}
+	}
+	patrol_overlord_territory = {
+		icon = GFX_decision_t51
+		visible = {
+			is_puppet = yes
+		}
+		available = {
+			command_power > 25
+		}
+		custom_cost_trigger = {
+			command_power > 25
+		}
+		custom_cost_text = command_power_more_than_25
+		days_remove = 30
+		complete_effect = {
+            hidden_effect = {
+                add_command_power = -25
+            }
+        }
+		days_re_enable = 180
+		modifier = {
+			weekly_manpower = -7
+		command_power_gain = -0.01
+		}
+		remove_effect = {
+		add_autonomy_ratio = {
+			value = 0.2
+			}
+		}
+	}
+	form_eleventh_patrol = {
+		icon = GFX_decision_t51
+		visible = {
+			always = yes
+			has_government = elites
+		}
+		available = {
+			people > 0.6
+		}
+		cost = 100
+		days_remove = 1
+		modifier = {
+		stability_weekly = -0.05
+		war_support_weekly = -0.05
+		}
+		complete_effect = {
+            hidden_effect = {
+                add_command_power = -25
+            }
+        }
+		remove_effect = {
+		add_stability = 0.1
+		add_political_power = 100
+		add_autonomy_ratio = {
+			value = 0.6
+			}
+			set_politics = {
+			ruling_party = people
+			}
+			set_cosmetic_tag = TPM_11th_patrol
+			hidden_effect = {
+				set_portraits = {
+					character = TPM_patrol_chief_callahan
+					army = { large ="GFX_leader_TPM_callahan_11th_patrol"  }
+					civilian = { large ="GFX_leader_TPM_callahan_11th_patrol" }
+				}
+			}
+		}
+	}
+}

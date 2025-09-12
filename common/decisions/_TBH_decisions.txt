@@ -1,0 +1,292 @@
+tbh_simulator_decisions = {
+	tbh_simulator_training_decision = {
+		icon = GFX_decision_terminal
+
+		available = {
+			NOT = { has_country_flag = simulator_training_underway }
+			command_power > 25
+			has_manpower > 250
+		}
+		custom_cost_trigger = {
+			command_power > 25
+		}
+		custom_cost_text = command_power_more_than_25
+		days_remove = 60
+		days_re_enable = 0
+		complete_effect = {
+			set_country_flag = simulator_training_underway
+			add_manpower = -250
+			hidden_effect = {
+				add_command_power = -25
+			}
+		}
+		remove_effect = {
+			add_manpower = 250
+			clr_country_flag = simulator_training_underway
+		}
+		modifier = {
+			experience_gain_army = 0.1
+			experience_gain_air = 0.1
+			experience_gain_navy = 0.1
+			fuel_gain_factor = -0.5
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	tbh_simulator_training_decision_ground = {
+		icon = GFX_decision_terminal
+
+		available = {
+			NOT = { has_country_flag = simulator_training_underway }
+			command_power > 25
+			has_manpower > 250
+		}
+		custom_cost_trigger = {
+			command_power > 25
+		}
+		custom_cost_text = command_power_more_than_25
+		days_remove = 60
+		days_re_enable = 0
+		complete_effect = {
+			set_country_flag = simulator_training_underway
+			add_manpower = -250
+			hidden_effect = {
+				add_command_power = -25
+			}
+		}
+		remove_effect = {
+			add_manpower = 250
+			clr_country_flag = simulator_training_underway
+		}
+		modifier = {
+			experience_gain_army = 0.2
+			fuel_gain_factor = -0.5
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				has_war = no
+				factor = 5
+			}
+			modifier = {
+				has_manpower < 1000
+				factor = 5
+			}
+		}
+	}
+	tbh_simulator_training_decision_naval = {
+		icon = GFX_decision_terminal
+
+		available = {
+			NOT = { has_country_flag = simulator_training_underway }
+			command_power > 25
+			has_manpower > 250
+		}
+		custom_cost_trigger = {
+			command_power > 25
+		}
+		custom_cost_text = command_power_more_than_25
+		days_remove = 60
+		days_re_enable = 0
+		complete_effect = {
+			set_country_flag = simulator_training_underway
+			add_manpower = -250
+			hidden_effect = {
+				add_command_power = -25
+			}
+		}
+		remove_effect = {
+			add_manpower = 250
+			clr_country_flag = simulator_training_underway
+		}
+		modifier = {
+			experience_gain_navy = 0.2
+			fuel_gain_factor = -0.5
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	tbh_simulator_training_decision_air = {
+		icon = GFX_decision_terminal
+
+		available = {
+			NOT = { has_country_flag = simulator_training_underway }
+			command_power > 25
+			has_manpower > 250
+		}
+		custom_cost_trigger = {
+			command_power > 25
+		}
+		custom_cost_text = command_power_more_than_25
+		days_remove = 60
+		days_re_enable = 0
+		complete_effect = {
+			set_country_flag = simulator_training_underway
+			add_manpower = -250
+			hidden_effect = {
+				add_command_power = -25
+			}
+		}
+		remove_effect = {
+			add_manpower = 250
+			clr_country_flag = simulator_training_underway
+		}
+		modifier = {
+			experience_gain_air = 0.2
+			fuel_gain_factor = -0.5
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}
+tbh_diplomacy_decisions = {
+	tbh_send_uoa_aid = {
+		icon = GFX_decision_pipegun_2
+
+		available = {
+			UOA = {
+				has_war = yes
+				is_in_faction_with = TBH
+			}
+			TBH = { has_war = no }
+		}
+		visible = {
+			UOA = {
+				has_war = yes
+				is_in_faction_with = TBH
+			}
+		}
+		custom_cost_trigger = {
+			has_equipment = {
+				infantry_equipment > 249
+			}
+			has_manpower > 249
+		}
+		custom_cost_text = 250_inf_250_MP
+		days_remove = 30
+		days_re_enable = 60
+		complete_effect = {
+			hidden_effect = { add_manpower = -250 }
+		}
+		remove_effect = {
+			army_experience = 25
+			send_equipment = {
+				equipment = infantry_equipment
+				amount = 250
+				target = UOA
+			}
+			UOA = {
+				add_manpower = 250
+				add_timed_idea = {
+					idea = tbh_brotherhood_aid
+					days = 30
+				}
+				add_opinion_modifier = {
+					target = TBH
+					modifier = aided_by_ally
+				}
+			}
+		}
+		modifier = {
+			mobilization_speed = -0.75
+		}
+		ai_will_do = {
+			factor = 50
+			modifier = {
+				has_war = yes
+				OR = {
+					check_variable = { num_equipment@infantry_equipment < 100 }
+					surrender_progress > 0.15
+				}
+				factor = 0
+			}
+			modifier = {
+				has_manpower < 1000
+				factor = 0
+			}
+		}
+	}
+	tbh_send_lns_aid = {
+		icon = GFX_decision_pipegun_2
+
+		available = {
+			has_manpower > 500
+			LNS = {
+				has_war = yes
+				is_in_faction_with = TBH
+			}
+			TBH = { has_war = no }
+		}
+		visible = {
+			LNS = {
+				has_war = yes
+				is_in_faction_with = TBH
+			}
+		}
+		custom_cost_trigger = {
+			has_equipment = {
+				infantry_equipment > 249
+			}
+			has_manpower > 249
+		}
+		custom_cost_text = 250_inf_250_MP
+		days_remove = 30
+		days_re_enable = 60
+		complete_effect = {
+			hidden_effect = {
+				add_manpower = -250
+			}
+		}
+		remove_effect = {
+			army_experience = 25
+			send_equipment = {
+				equipment = infantry_equipment
+				amount = 250
+				target = LNS
+			}
+			if = {
+				limit = {
+					LNS = {
+						has_government = people
+					}
+				}
+				LNS = {
+					add_manpower = 250
+					add_timed_idea = {
+						idea = tbh_brotherhood_aid
+						days = 30
+					}
+					add_opinion_modifier = {
+						target = TBH
+						modifier = aided_by_ally
+					}
+				}
+			}
+			else = {
+				custom_effect_tooltip = LNS_fallen
+			}
+		}
+		modifier = {
+			mobilization_speed = -0.75
+		}
+		ai_will_do = {
+			factor = 50
+			modifier = {
+				has_war = yes
+				OR = {
+					check_variable = { num_equipment@infantry_equipment < 100 }
+					surrender_progress > 0.15
+				}
+				factor = 0
+			}
+			modifier = {
+				has_manpower < 1000
+				factor = 0
+			}
+		}
+	}
+}

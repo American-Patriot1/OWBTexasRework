@@ -1,0 +1,104 @@
+add_namespace = texas_rework
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.1000" }
+	id = texas_rework.1000
+	title = texas_rework.1000.t
+	desc = texas_rework.1000.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_container_bazaar
+
+
+	option = { # industry
+		name = texas_rework.1000.a
+		TBH = {
+			add_to_variable = { const_production_speed = 0.1 }
+			add_to_variable = { const_factory_efficiency = 0.1 }
+			add_to_variable = { const_consumer_goods = -0.1 }
+			add_to_variable = { const_political_power_gain = 0.25 }
+			add_to_variable = { const_compliance_gain = 0.1 }
+			add_to_variable = { const_resitance_target = -0.1 }
+			add_to_variable = { stability_week = 0.001 }
+			add_to_variable = { out_of_supply = -0.2 }
+			add_to_variable = { const_mobilization_speed = 0.25 }
+			add_to_variable = { const_conscription = 0.25 }
+			add_to_variable = { populations_factor = 0.3 }
+			add_to_variable = { research_speed = 0.1 }
+			add_to_variable = { const_max_command_power_multi = 0.1 }
+			add_to_variable = { war_support_week = 0.002 }
+			add_to_variable = { xp_army_gain = 0.01 }
+			add_to_variable = { xp_navy_gain = 0.01 }
+			add_to_variable = { xp_air_gain = 0.01 }
+			add_to_variable = { army_morale_factor = 0.05 }
+			add_to_variable = { air_mission_efficiency = 0.05 }
+		}
+	}
+}
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.4" }
+	id = texas_rework.4
+	title = texas_rework.4.t
+	desc = texas_rework.4.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_container_bazaar
+
+
+	option = { # industry
+		name = texas_rework.4.a
+		TBH = {
+			add_to_variable = { const_production_speed = 0.1 }
+			add_to_variable = { const_factory_efficiency = 0.1 }
+			add_to_variable = { const_consumer_goods = -0.1 }
+		}
+		ai_chance = {
+			base = 20
+		}
+	}
+	option = { # political
+		name = texas_rework.4.b
+		TBH = {
+			add_to_variable = { const_political_power_gain = 0.25 }
+			add_to_variable = { const_compliance_gain = 0.1 }
+			add_to_variable = { const_resitance_target = -0.1 }
+			add_to_variable = { stability_week = 0.001 }
+			add_to_variable = { out_of_supply = -0.2 }
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = { # pop
+		name = texas_rework.4.c
+		TBH = {
+			every_owned_state = {
+				set_temp_variable = {
+					pop_add = 1000
+				}
+				add_state_population_no_state_name = yes
+			}
+			add_to_variable = { const_mobilization_speed = 0.25 }
+			add_to_variable = { const_conscription = 0.2 }
+			add_to_variable = { populations_factor = 0.3 }
+			add_to_variable = { research_speed = 0.1 }
+		}
+		ai_chance = {
+			base = 70
+		}
+	}
+	option = { # military
+		name = texas_rework.4.d
+		TBH = {
+			add_to_variable = { const_max_command_power_multi = 0.1 }
+			add_to_variable = { war_support_week = 0.002 }
+			add_to_variable = { xp_army_gain = 0.01 }
+			add_to_variable = { xp_navy_gain = 0.01 }
+			add_to_variable = { xp_air_gain = 0.01 }
+			add_to_variable = { army_morale_factor = 0.05 }
+			add_to_variable = { air_mission_efficiency = 0.05 }
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+}

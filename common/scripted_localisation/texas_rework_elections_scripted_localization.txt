@@ -1,0 +1,287 @@
+defined_text = {
+	# part of ncr_elections
+	# this defined text doesn't use localisation keys, because it is only used for inner meta-effect
+	name = GetNCRstateName
+
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { ncr_state_id = 1 }
+				check_variable = { v = 1 }
+			}
+		}
+		localization_key = "boneyard"
+	}
+
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { ncr_state_id = 2 }
+				check_variable = { v = 2 }
+			}
+		}
+		localization_key = "dayglow"
+	}
+
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { ncr_state_id = 3 }
+				check_variable = { v = 3 }
+			}
+		}
+		localization_key = "maxson"
+	}
+
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { ncr_state_id = 4 }
+				check_variable = { v = 4 }
+			}
+		}
+		localization_key = "redding"
+	}
+
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { ncr_state_id = 5 }
+				check_variable = { v = 5 }
+			}
+		}
+		localization_key = "shady_sands"
+	}
+}
+
+defined_text = {
+	name = GetNCRstateLocName
+
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { ncr_state_id = 1 }
+				check_variable = { v = 1 }
+			}
+		}
+		localization_key = "boneyard_name"
+	}
+
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { ncr_state_id = 2 }
+				check_variable = { v = 2 }
+			}
+		}
+		localization_key = "dayglow_name"
+	}
+
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { ncr_state_id = 3 }
+				check_variable = { v = 3 }
+			}
+		}
+		localization_key = "maxson_name"
+	}
+
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { ncr_state_id = 4 }
+				check_variable = { v = 4 }
+			}
+		}
+		localization_key = "redding_name"
+	}
+
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { ncr_state_id = 5 }
+				check_variable = { v = 5 }
+			}
+		}
+		localization_key = "shady_sands_name"
+	}
+}
+
+defined_text = {
+	name = GetNCRstateFirstCandidateSupport
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { ncr_state_id = 1 }
+				check_variable = { v = 1 }
+			}
+		}
+		localization_key = "boneyard_first_candidate_support"
+	}
+
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { ncr_state_id = 2 }
+				check_variable = { v = 2 }
+			}
+		}
+		localization_key = "dayglow_first_candidate_support"
+	}
+
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { ncr_state_id = 3 }
+				check_variable = { v = 3 }
+			}
+		}
+		localization_key = "maxson_first_candidate_support"
+	}
+
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { ncr_state_id = 4 }
+				check_variable = { v = 4 }
+			}
+		}
+		localization_key = "redding_first_candidate_support"
+	}
+
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { ncr_state_id = 5 }
+				check_variable = { v = 5 }
+			}
+		}
+		localization_key = "shady_sands_first_candidate_support"
+	}
+}
+
+defined_text = {
+	name = GetNCRstateSecondCandidateSupport
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { ncr_state_id = 1 }
+				check_variable = { v = 1 }
+			}
+		}
+		localization_key = "boneyard_second_candidate_support"
+	}
+
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { ncr_state_id = 2 }
+				check_variable = { v = 2 }
+			}
+		}
+		localization_key = "dayglow_second_candidate_support"
+	}
+
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { ncr_state_id = 3 }
+				check_variable = { v = 3 }
+			}
+		}
+		localization_key = "maxson_second_candidate_support"
+	}
+
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { ncr_state_id = 4 }
+				check_variable = { v = 4 }
+			}
+		}
+		localization_key = "redding_second_candidate_support"
+	}
+
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { ncr_state_id = 5 }
+				check_variable = { v = 5 }
+			}
+		}
+		localization_key = "shady_sands_second_candidate_support"
+	}
+}
+
+defined_text = {
+	name = GetNCRfirstCandidateName
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { global.first_candidate_id = 1 }
+			}
+		}
+		localization_key = "allgood_elections_name"
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { global.first_candidate_id = 2 }
+			}
+		}
+		localization_key = "kimball_elections_name"
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { global.first_candidate_id = 3 }
+			}
+		}
+		localization_key = "hayes_elections_name"
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { global.first_candidate_id = 4 }
+			}
+		}
+		localization_key = "secret_boi_elections_name"
+	}
+}
+
+defined_text = {
+	name = GetNCRsecondCandidateName
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { global.second_candidate_id = 1 }
+			}
+		}
+		localization_key = "allgood_elections_name"
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { global.second_candidate_id = 2 }
+			}
+		}
+		localization_key = "kimball_elections_name"
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { global.second_candidate_id = 3 }
+			}
+		}
+		localization_key = "hayes_elections_name"
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { global.second_candidate_id = 4}
+			}
+		}
+		localization_key = "secret_boi_elections_name"
+	}
+}

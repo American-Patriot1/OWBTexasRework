@@ -1,0 +1,194 @@
+operations = {
+	imo_raid_armageddon_station = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 80
+		cost = 50
+
+		ai_will_do = {
+			factor = 12
+		}
+
+		visible = {
+			has_completed_focus = imo_attack_rrg
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+                state = 748
+            }
+		}
+
+		allowed = {
+			original_tag = IMO
+		}
+
+		available = {
+			controls_state = 748
+		}
+
+		modifier = { consumer_goods_expected_value = 0.05 }
+
+		remove_effect = {
+			748 = {
+				damage_building = {
+					type = infrastructure
+					damage = 10
+				}
+			}
+			set_technology = { vehicles_tech_level_scientific = 1 }
+			if = {
+				limit = {
+					NOT = { has_country_flag = achievement_ironmongers_raid_armageddon }
+				}
+				set_country_flag = achievement_ironmongers_raid_armageddon
+			}
+		}
+	}
+}
+
+attis_army_taa_raids = {
+	attis_taa_border_war = {
+		icon = generic_independence
+		cost = 25
+		fire_only_once = no
+		ai_will_do = {
+			factor = 45
+			modifier = {
+				factor = 0
+				ai_has_other_wars_or_wargoals = yes
+			}
+		}
+		available = {
+			if = {
+				limit = {
+					original_tag = SHA
+				}
+				TAA = { owns_state = 797 }
+			}
+			else = {
+				TAA = {
+					OR = {
+						owns_state = 794
+						owns_state = 795
+					}
+				}
+			}
+			NOT = { has_border_war_with = TAA }
+		}
+		visible = {
+			if = {
+				limit = {
+					original_tag = SHA
+				}
+				TAA = { owns_state = 797 }
+			}
+			else = {
+				TAA = {
+					OR = {
+						owns_state = 794
+						owns_state = 795
+					}
+				}
+			}
+			OR = {
+				original_tag = SHA
+				original_tag = IMO
+			}
+		}
+		days_remove = 20
+		days_re_enable = 40
+		cost = 50
+		war_with_on_remove = TAA
+		remove_effect = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				fallout_border_war_menu_clear_variables = yes
+				fallout_border_war_menu_populate_owned_state_array_with_all_possible = yes
+				if = {
+					limit = {
+						original_tag = SHA
+					}
+					every_state = {
+						limit = {
+							is_owned_by = TAA
+							OR = {
+								state = 797
+							}
+						}
+						fallout_border_war_menu_limit_neighbor_states_to_this = yes
+					}
+				}
+				else = {
+					every_state = {
+						limit = {
+							is_owned_by = TAA
+							OR = {
+								state = 792
+								state = 794
+								state = 795
+							}
+						}
+						fallout_border_war_menu_limit_neighbor_states_to_this = yes
+					}
+				}
+
+
+				fallout_border_war_menu_populate_army_leader_array_with_all_possible = yes
+				fallout_border_war_menu_open_or_close_window = yes
+				custom_effect_tooltip = wht_begin_border_raid_tt
+			}
+			else = {
+				if = {
+					limit = {
+						original_tag = SHA
+					}
+					933 = {
+						SHA = {
+							set_variable = { selected_own_state_for_border_war = PREV.id }
+						}
+					}
+					797 = {
+						TAA = {
+							set_variable = { selected_enemy_state_for_border_war = PREV.id }
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						original_tag = IMO
+						owns_state = 794
+					}
+					794 = {
+						IMO = {
+							set_variable = { selected_own_state_for_border_war = PREV.id }
+						}
+					}
+					795 = {
+						TAA = {
+							set_variable = { selected_enemy_state_for_border_war = PREV.id }
+						}
+					}
+				}
+				else = {
+					907 = {
+						IMO = {
+							set_variable = { selected_own_state_for_border_war = PREV.id }
+						}
+					}
+					794 = {
+						TAA = {
+							set_variable = { selected_enemy_state_for_border_war = PREV.id }
+						}
+					}
+				}
+				fallout_border_war_ai_simple_meta_scripted_effect = yes
+			}
+		}
+	}
+}

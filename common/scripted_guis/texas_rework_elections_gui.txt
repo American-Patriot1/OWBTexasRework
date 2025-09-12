@@ -1,0 +1,150 @@
+# Scripted by @CGS
+
+scripted_gui = {
+	# Main election screen
+	ncr_elections_ui_window = {
+		context_type = player_context
+
+		window_name = "ncr_elections_ui_window"
+
+		visible = {
+			OR = {
+				tag = NCR
+				tag = EUR
+			}
+			# Check if country has access to GUI just in case
+			has_country_flag = ncr_elections_gui_allowed_flag
+
+			# Check if GUI is currently opened
+			has_country_flag = ncr_elections_gui_visible_flag
+
+			# technical triggers, used to set up inner temp variables/arrays
+			calculate_ncr_election_state_frames_trigger = yes
+			calculate_ncr_elections_progressbars_trigger = yes
+		}
+
+		effects = {
+			close_button_click = {
+				clr_country_flag = ncr_elections_gui_visible_flag
+			}
+		}
+
+		triggers = {
+			progressbar_blue_grey_visible = {
+				check_variable = { global.first_candidate_id = 1 }
+			}
+			progressbar_red_grey_visible = {
+				check_variable = { global.first_candidate_id = 2 }
+			}
+			progressbar_green_grey_visible = {
+				check_variable = { global.first_candidate_id = 3 }
+			}
+			progressbar_purple_grey_visible = {
+				check_variable = { global.first_candidate_id = 4 }
+			}
+
+			progressbar_grey_blue_visible = {
+				check_variable = { global.second_candidate_id = 1 }
+			}
+			progressbar_grey_red_visible = {
+				check_variable = { global.second_candidate_id = 2 }
+			}
+			progressbar_grey_green_visible = {
+				check_variable = { global.second_candidate_id = 3 }
+			}
+			progressbar_grey_purple_visible = {
+				check_variable = { global.second_candidate_id = 4 }
+			}
+		}
+
+		properties = {
+			first_candidate_portrait = {
+				frame = global.first_candidate_id
+			}
+			second_candidate_portrait = {
+				frame = global.second_candidate_id
+			}
+
+			# State colors
+			state_picture_boneyard = {
+				frame = state_frame_temp_array^1
+			}
+			state_picture_dayglow = {
+				frame = state_frame_temp_array^2
+			}
+			state_picture_maxson = {
+				frame = state_frame_temp_array^3
+			}
+			state_picture_redding = {
+				frame = state_frame_temp_array^4
+			}
+			state_picture_shady_sands = {
+				frame = state_frame_temp_array^5
+			}
+
+			# Progressbars for indivdual states
+			progressbar_blue_grey = {
+				frame = first_candidate_progress_frames_array^v
+			}
+			progressbar_red_grey = {
+				frame = first_candidate_progress_frames_array^v
+			}
+			progressbar_green_grey = {
+				frame = first_candidate_progress_frames_array^v
+			}
+			progressbar_purple_grey = {
+				frame = first_candidate_progress_frames_array^v
+			}
+
+			progressbar_grey_blue = {
+				frame = second_candidate_progress_frames_array^v
+			}
+			progressbar_grey_red = {
+				frame = second_candidate_progress_frames_array^v
+			}
+			progressbar_grey_green = {
+				frame = second_candidate_progress_frames_array^v
+			}
+			progressbar_grey_purple = {
+				frame = second_candidate_progress_frames_array^v
+			}
+		}
+
+		# List of states
+		dynamic_lists = {
+			state_data_gridbox = {
+				array = NCR.states_indexes_array
+				entry_container = "state_data_entry_container"
+			}
+		}
+	}
+
+
+	# Decision category button to open the GUI
+	ncr_elections_decision_category_button_gui = {
+		context_type = decision_category
+
+		window_name = "ncr_elections_decision_category_button_ui"
+
+		effects = {
+			open_button_click = {
+				set_country_flag = ncr_elections_gui_visible_flag
+			}
+		}
+
+		triggers = {
+			open_button_click_enabled = {
+				NOT = { has_country_flag = ncr_elections_gui_visible_flag }
+			}
+			open_button_text_visible = {
+				NOT = { has_country_flag = ncr_elections_gui_visible_flag }
+			}
+			open_button_overlay_visible = {
+				has_country_flag = ncr_elections_gui_visible_flag
+			}
+			open_button_text_blocked_visible = {
+				has_country_flag = ncr_elections_gui_visible_flag
+			}
+		}
+	}
+}

@@ -1,0 +1,349 @@
+#########################
+#  Lone Star Decisions  #
+#   Scripted by Happy   #
+#########################
+
+lns_marching_west_cat = {
+	lns_march_through_lubbock = {
+		#icon =
+		available = {
+			any_owned_state = {
+				any_neighbor_state = {
+					is_core_of = LUB
+					NOT = { is_owned_by = LAC }
+				}
+			}
+		}
+		visible = {
+			all_of_scopes = {
+				array = LUB.core_states
+				controller = {
+					NOT = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		fire_only_once = yes
+		cost = 10
+		days_remove = 40
+		war_with_on_remove = LUB
+		complete_effect = {
+			LUB = { ROOT = { claim_core_states_of_prev = yes } }
+		}
+		remove_effect = {
+			LUB = { ROOT = { grant_wargoals_on_core_states_of_prev = yes } }
+		}
+	}
+	lns_pacify_lubbock = {
+		#icon =
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = lns_owns_all_lub_states
+				all_of_scopes = {
+					array = LUB.core_states
+					controller = {
+						OR = {
+							tag = ROOT
+							is_subject_of = ROOT
+						}
+					}
+				}
+			}
+		}
+		fire_only_once = yes
+		cost = 20
+		days_remove = 80
+		complete_effect = {
+			every_state = {
+				limit = { is_core_of = LUB }
+				set_temp_variable = {
+					pop_add = -800
+				}
+				add_state_population_no_state_name = yes
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = lns_transfer_ownership_tt
+			hidden_effect = {
+				every_state = {
+					limit = {
+						is_core_of = LUB
+						NOT = { owner = { original_tag = LNS } }
+					}
+					set_state_flag = do_not_exodus
+					every_country = {
+						limit = {
+							original_tag = LNS
+						}
+						transfer_state = PREV
+					}
+					clr_state_flag = do_not_exodus
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = LUB
+				}
+				add_compliance = 20
+			}
+		}
+	}
+	lns_march_for_fort_summers = {
+		#icon =
+		available = {
+			any_owned_state = {
+				any_neighbor_state = {
+					is_core_of = SUF
+					NOT = { is_owned_by = LAC }
+				}
+			}
+		}
+		visible = {
+			all_of_scopes = {
+				array = SUF.core_states
+				controller = {
+					NOT = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		fire_only_once = yes
+		cost = 10
+		days_remove = 40
+		war_with_on_remove = SUF
+		complete_effect = {
+			SUF = { ROOT = { claim_core_states_of_prev = yes } }
+		}
+		remove_effect = {
+			SUF = { ROOT = { grant_wargoals_on_core_states_of_prev = yes } }
+		}
+	}
+	lns_fortify_fort_summers = {
+		#icon =
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = lns_owns_all_north_suf_states
+				546 = {
+					OR = {
+						controller = { original_tag = LNS }
+						controller = { is_subject_of = LNS }
+					}
+				}
+				225 = {
+					OR = {
+						controller = { original_tag = LNS }
+						controller = { is_subject_of = LNS }
+					}
+				}
+				331 = {
+					OR = {
+						controller = { original_tag = LNS }
+						controller = { is_subject_of = LNS }
+					}
+				}
+			}
+		}
+		fire_only_once = yes
+		cost = 20
+		days_remove = 70
+		remove_effect = {
+			if = {
+				limit = { NOT = { owns_state = 546 } }
+				transfer_state = 546
+			}
+			546 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					province = {
+						limit_to_victory_point = yes
+						all_provinces = yes
+					}
+				}
+				add_compliance = 30
+			}
+		}
+	}
+	lns_march_into_bernalillo = {
+		#icon =
+		available = {
+			has_completed_focus = lns_go_west
+			any_owned_state = {
+				any_neighbor_state = {
+					OR = {
+						state = 25
+						state = 410
+						state = 152
+						state = 189
+						state = 5
+					}
+					NOT = {
+						OWNER = {
+							original_tag = CES
+						}
+					}
+				}
+			}
+			LAC = { exists = no }
+		}
+		visible = {
+			OR = {
+				25 = {
+					controller = {
+						NOT = {
+							tag = ROOT
+							is_subject_of = ROOT
+						}
+					}
+				}
+				410 = {
+					controller = {
+						NOT = {
+							tag = ROOT
+							is_subject_of = ROOT
+						}
+					}
+				}
+				152 = {
+					controller = {
+						NOT = {
+							tag = ROOT
+							is_subject_of = ROOT
+						}
+					}
+				}
+				189 = {
+					controller = {
+						NOT = {
+							tag = ROOT
+							is_subject_of = ROOT
+						}
+					}
+				}
+				5 = {
+					controller = {
+						NOT = {
+							tag = ROOT
+							is_subject_of = ROOT
+						}
+					}
+				}
+			}
+		}
+		fire_only_once = yes
+		cost = 10
+		days_remove = 10
+		war_with_on_remove = SUF
+		complete_effect = {
+			add_state_claim = 25
+			add_state_claim = 410
+			add_state_claim = 152
+			add_state_claim = 189
+			add_state_claim = 5
+		}
+		remove_effect = {
+			every_country = {
+				limit = {
+					OR = {
+						owns_state = 25
+						owns_state = 410
+						owns_state = 152
+						owns_state = 189
+						owns_state = 5
+					}
+				}
+				LNS = {
+					create_wargoal = {
+						type = take_claimed_state
+						target = PREV
+					}
+				}
+			}
+		}
+	}
+	lns_enter_red_sun_city = {
+		#icon =
+		available = {
+			OR = {
+				5 = {
+					CONTROLLER = {
+						OR = {
+							original_tag = LNS
+							is_subject_of = LNS
+						}
+					}
+				}
+				5 = {
+					CONTROLLER = {
+						is_neighbor_of = LNS
+						OR = {
+							original_tag = LAC
+							is_subject_of = LAC
+						}
+						NOT = { has_global_flag = LAC_revolted_global_flag }
+					}
+				}
+				5 = {
+					CONTROLLER = {
+						is_neighbor_of = LNS
+						OR = {
+							original_tag = CES
+							is_subject_of = CES
+						}
+					}
+				}
+			}
+		}
+		visible = {
+			OR = {
+				has_country_flag = LNS_hand_chose_subject
+				has_country_flag = LNS_hand_chose_normal
+			}
+		}
+		fire_only_once = yes
+		cost = 10
+		days_remove = 10
+		remove_effect = {
+			if = {
+				limit = {
+					5 = {
+						OWNER = {
+							OR = {
+								original_tag = CES
+								original_tag = LAC
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_country_flag = LNS_hand_chose_subject }
+					}
+					5 = {
+						OWNER = {
+							custom_effect_tooltip = lns_legion_ces_tt
+							change_tag_from = ROOT
+							country_event = nf_lns.30
+							change_tag_from = LNS
+						}
+					}
+				}
+				else = {
+					5 = {
+						OWNER = {
+							custom_effect_tooltip = lns_legion_ces_alt_tt
+							country_event = nf_lns.30
+						}
+					}
+				}
+			}
+			else = {
+				country_event = nf_lns.31
+			}
+		}
+	}
+}

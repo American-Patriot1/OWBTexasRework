@@ -1,0 +1,209 @@
+national_achievements = {
+	sho_return_home = {
+		allowed = { original_tag = SHO }
+		available = {
+			352 = { is_fully_controlled_by = SHO }
+		}
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 352
+			}
+		}
+		ai_will_do = {
+			base = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = sho_outcasts_once_again
+				add_idea = sho_back_home
+			}
+			set_state_owner = 352
+			352 = {
+				add_core_of = SHO
+				set_state_name = STATE_352_SHO
+				set_temp_variable = { pop_add = 8500 }
+				add_state_population = yes
+				add_extra_state_shared_building_slots = 2
+				add_victory_points = {
+					province = 7441
+					value = 35
+				}
+			}
+			set_capital = { state = 352 }
+		}
+	}
+	che_our_survival_secured = {
+		allowed = { original_tag = CHE }
+		available = {
+			BDT = {
+				all_core_land_owned_by_prev_sphere = yes
+			}
+		}
+		ai_will_do = {
+			base = 100
+		}
+		fire_only_once = yes
+		complete_effect = {
+			BDT = {
+				ROOT = {
+					core_owned_states_of_prev = yes
+				}
+			}
+			add_stability = 0.1
+			add_war_support = 0.2
+			580 = {
+				set_temp_variable = { pop_add = 12000 }
+				add_state_population = yes
+				add_extra_state_shared_building_slots = 4
+				add_resource = {
+					type = metal
+					amount = 10
+				}
+				add_resource = {
+					type = circuitry
+					amount = 10
+				}
+				add_victory_points = {
+					province = 2215
+					value = 15
+				}
+			}
+		}
+	}
+	decision_longtree_effects = {
+		allowed = {
+			original_tag = LON
+		}
+		visible = {
+			wild_wasteland = no
+		}
+		available = {
+			controls_state = 222
+			controls_state = 197
+			controls_state = 138
+			controls_state = 484
+			controls_state = 551
+		}
+		fire_only_once = yes
+
+		ai_will_do = {
+			base = 200
+		}
+		complete_effect = {
+			add_stability = 0.2
+			every_owned_state = {
+				set_temp_variable = {
+					pop_add = 1000
+				}
+				add_state_population_no_state_name = yes
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			set_variable = { lonetreeStageComplete = 1 }
+		}
+	}
+	generic_unite_tri_cities = {
+		visible = {
+			owns_state = 65
+			owns_state = 314
+		}
+		available = {
+			owns_state = 65
+			owns_state = 314
+		}
+		fire_only_once = yes
+		cost = 10
+		ai_will_do = {
+			base = 100
+		}
+		complete_effect = {
+			set_victory_points = {
+				province = 1500
+				value = 0
+			}
+			set_victory_points = {
+				province = 4329
+				value = 0
+			}
+			set_victory_points = {
+				province = 4047
+				value = 20
+			}
+			314 = { add_manpower = -6000 }
+			65 = {
+				add_manpower = 6000
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_state_category = city
+				hidden_effect = { set_state_name = STATE_65_USA }
+			}
+			set_province_name = { id = 4047 name = VICTORY_POINTS_4047_USA }
+		}
+	}
+#	decision_expand_alliance_effects = {
+#
+#		set_variable = { ironAllianceStage = 0}
+#
+#		allowed = {
+#			original_tag = IRN
+#		}
+#		available = {
+#			if = {
+#				limit = {
+#					check_variable = { ironAllianceStage = 0}
+#				}
+#				controls_state = 256
+#				controls_state = 385
+#				controls_state = 453
+#				controls_state = 390
+#				controls_state = 510
+#			}
+#			else = {
+#				controls_state = 525
+#				controls_state = 524
+#			}
+#		}
+#		visible = {
+#			NOT = {
+#				check_variable = { ironAllianceStage = 2 }
+#			}
+#			wild_wasteland = no
+#		}
+#		ai_will_do = {
+#			base = 200
+#		}
+#		complete_effect = {
+#			set_temp_variable = { ironAllianceStageFactor = 0 }
+#			if = {
+#				limit = {
+#					check_variable = { ironAllianceStage = 0 }
+#				}
+#				add_ideas = irn_ironcrown
+#				add_to_temp_variable = { ironAllianceStageFactor = 1}
+#			}
+#			else = {
+#				add_ideas = irn_ironthrone
+#				add_to_temp_variable = { ironAllianceStageFactor = 1 }
+#			}
+#			add_stability = 0.1
+#			every_owned_state = {
+#				add_extra_state_shared_building_slots = 1
+#				add_building_construction = {
+#					type = infrastructure
+#					level = 1
+#					instant_build = yes
+#				}
+#			}
+#			add_to_variable = { ironAllianceStage = ironAllianceStageFactor }
+#		}
+#	}
+}

@@ -231,6 +231,7 @@ create_or_join_texan_economic_union = yes
 LNS = { create_or_join_texan_economic_union = yes }
 
 add_dynamic_modifier = { modifier = texan_economic_union }
+add_dynamic_modifier = { modifier = texas_constitution_modifier }
 add_dynamic_modifier = { modifier = texas_rework_city_of_unity }
 add_dynamic_modifier = { modifier = texas_rework_economic_hub_texas }
 add_dynamic_modifier = { modifier = texas_rework_industrial_center_texas_dallas }

@@ -14,24 +14,38 @@ focus_tree = {
 	default = no
 
 	focus = {
-		# Texas Budget
-		id = texas_budget
-		icon = GFX_goal_LNS_texan_dollar
+		id = texas_unification
+		icon = GFX_goal_uoa_texas
 		cost = 7
-		x = -2
-		y = 1
-		relative_position_id = texas_foundations_of_government
-		prerequisite = {
-			focus = texas_foundations_of_government
+		x = 12
+		y = 0
+		completion_reward = {
 		}
-		bypass = {
-			has_country_flag = constitution_signed
+	}
+	focus = {
+		id = texas_betrayal
+		icon = GFX_goal_TBH_two_coins
+		cost = 7
+		x = 0
+		y = 1
+		relative_position_id = texas_unification
+		prerequisite = {
+			focus = texas_unification
 		}
 		completion_reward = {
-			country_event = nf_texas.10
-			custom_effect_tooltip = texas_budget_tt
-			### Article 4
-
+		}
+	}
+	focus = {
+		id = texas_stability
+		icon = GFX_goal_RRG_Dante_Texas
+		cost = 7
+		x = 0
+		y = 1
+		relative_position_id = texas_betrayal
+		prerequisite = {
+			focus = texas_betrayal
+		}
+		completion_reward = {
 		}
 	}
 	## Development foci
@@ -447,7 +461,7 @@ focus_tree = {
 		icon = GFX_goal_generic_texas1
 		cost = 30
 		x = 0
-		y = 2
+		y = 6
 		relative_position_id = tex_proper_this_time
 		available = {
 			has_completed_focus = tex_proper_this_time
@@ -3794,447 +3808,21 @@ focus_tree = {
 		# 	country_event = nf_texas.___
 		# }
 	}
-	# Tex Debug
-	#focus = {
-	#	id = tex_debug_const_1
-	#	icon = GFX_goal_generic_scyscrapers_prewar
-	#	cost = 7
-	#	x = 4
-	#	y = 1
-	#	relative_position_id = tex_taking_stock
-	#	prerequisite = {
-	#		focus = tex_taking_stock
-	#	}
-	#	completion_reward = {
-	#		unlock_texas_constitution = yes
-	#		set_temp_variable = { temp_constitution_article = 1 }
-	#		add_constitution_article = yes
-	#		set_temp_variable = { article_to_add_to = 1 }
-	#		set_temp_variable = { temp_constitution_subsection = 21 }
-	#		unlock_subsection_article_choice = yes
-	#		set_temp_variable = { article_to_add_to = 1 }
-	#		set_temp_variable = { temp_constitution_subsection = 22 }
-	#		unlock_subsection_article_choice = yes
-	#		set_temp_variable = { article_to_add_to = 1 }
-	#		set_temp_variable = { temp_constitution_subsection = 23 }
-	#		unlock_subsection_article_choice = yes
-	#		set_temp_variable = { article_to_add_to = 1 }
-	#		set_temp_variable = { temp_constitution_subsection = 24 }
-	#		unlock_subsection_article_choice = yes
-	#		set_temp_variable = { article_to_add_to = 1 }
-	#		set_temp_variable = { temp_constitution_subsection = 25 }
-	#		unlock_subsection_article_choice = yes
-	#	}
-	#}
-	#focus = {
-	#	id = tex_debug_const_2
-	#	icon = GFX_goal_generic_scyscrapers_prewar
-	#	cost = 7
-	#	x = 0
-	#	y = 1
-	#	relative_position_id = tex_debug_const_1
-	#	prerequisite = {
-	#		focus = tex_debug_const_1
-	#	}
-	#	completion_reward = {
-	#		set_temp_variable = { temp_constitution_article = 1 }
-	#		add_constitution_article = yes
-	#		add_constitution_article = yes
-	#		set_temp_variable = { temp_constitution_article = 2 }
-	#		add_constitution_article = yes
-	#		set_temp_variable = { temp_constitution_article = 3 }
-	#		add_constitution_article = yes
-	#		set_temp_variable = { temp_constitution_article = 4 }
-	#		add_constitution_article = yes
-	#		set_temp_variable = { temp_constitution_article = 5 }
-	#		add_constitution_article = yes
-	#	}
-	#}
-	#### Wargoal Foci ####
 
 	### Constitution
 	focus = {
 		id = texas_constitution
 		icon = GFX_goal_constitution_focus
 		cost = 7
-		x = 12
-		y = 0
-		completion_reward = {
-			add_political_power = 25
-			set_country_flag = constitution_in_progress
-			unlock_texas_constitution = yes
-			country_event = nf_texas.51
-		}
-	}
-	### Government Foundations
-	focus = {
-		id = texas_foundations_of_government
-		icon = GFX_goal_RRG_radio_broadcast
-		cost = 7
-		x = -2
+		x = 0
 		y = 1
-		relative_position_id = texas_constitution
+		relative_position_id = texas_stability
 		prerequisite = {
-			focus = texas_constitution
-			focus = texas_bill_of_rights
-		}
-		available = {
-			has_completed_focus = texas_bill_of_rights
-
-		}
-		bypass = {
-			has_country_flag = constitution_signed
+			focus = texas_stability
 		}
 		completion_reward = {
 			add_political_power = 100
-			add_stability = -0.05
-			### Article 1
-			set_temp_variable = {
-				temp_constitution_article = 2
-			}
-			### Subsection 1
-			set_temp_variable = {
-				temp_constitution_subsection = 26
-			}
-			add_constitution_article = yes
-			set_temp_variable = { article_to_add_to = 2 }
-
-		}
-	}
-	focus = {
-		id = texas_legislature
-		icon = GFX_goal_generic_pet_rock
-		cost = 7
-		x = 0
-		y = 1
-		relative_position_id = texas_foundations_of_government
-		prerequisite = {
-			focus = texas_foundations_of_government
-		}
-		bypass = {
-			has_country_flag = constitution_signed
-		}
-		completion_reward = {
-			set_temp_variable = {
-				article_to_add_to = 2
-			}
-			set_temp_variable = {
-				temp_constitution_subsection = 27
-			}
-			unlock_subsection_article_choice = yes
-		}
-	}
-	focus = {
-		id = texas_judiciary
-		icon = GFX_goal_generic_new_sheriff_in_town
-		cost = 7
-		x = -2
-		y = 1
-		relative_position_id = texas_legislature
-		prerequisite = {
-			focus = texas_legislature
-		}
-		bypass = {
-			has_country_flag = constitution_signed
-		}
-		completion_reward = {
-			set_temp_variable = {
-				article_to_add_to = 2
-			}
-			set_temp_variable = {
-				temp_constitution_subsection = 29
-			}
-			unlock_subsection_article_choice = yes
-		}
-	}
-	focus = {
-		id = texas_execuative
-		icon = GFX_goal_generic_pet_rock
-		cost = 7
-		x = 0
-		y = 1
-		relative_position_id = texas_legislature
-		prerequisite = {
-			focus = texas_legislature
-		}
-		bypass = {
-			has_country_flag = constitution_signed
-		}
-		completion_reward = {
-			set_temp_variable = {
-				article_to_add_to = 2
-			}
-			set_temp_variable = {
-				temp_constitution_subsection = 28
-			}
-			unlock_subsection_article_choice = yes
-			set_temp_variable = { temp_constitution_subsection = 31 }
-			unlock_subsection_article_choice = yes
-		}
-	}
-	focus = {
-		id = texas_primary_powers
-		icon = GFX_goal_generic_pet_rock
-		cost = 7
-		x = -1
-		y = 1
-		relative_position_id = texas_execuative
-		prerequisite = {
-			focus = texas_execuative
-		}
-		prerequisite = {
-			focus = texas_judiciary
-		}
-		bypass = {
-			has_country_flag = constitution_signed
-		}
-		completion_reward = {
-			country_event = nf_texas.11
-			set_temp_variable = {
-				temp_constitution_article = 2
-			}
-			set_temp_variable = {
-				temp_constitution_subsection = 0
-			}
-			add_constitution_article = yes
-		}
-	}
-	### Bill of Rights
-	focus = {
-		id = texas_bill_of_rights
-		icon = GFX_goal_ATE_declaration
-		cost = 7
-		x = 2
-		y = 1
-		relative_position_id = texas_constitution
-		prerequisite = {
-			focus = texas_constitution
-		}
-		available = {
-			#has_completed_focus = texas_foundations_of_government
-		}
-		bypass = {
-			has_country_flag = constitution_signed
-		}
-		completion_reward = {
-			set_temp_variable = {
-				temp_constitution_article = 1
-			}
-			add_constitution_article = yes
-		}
-	}
-	focus = {
-		id = texas_freedom_of_speech
-		icon = GFX_goal_bobble_head_charisma
-		cost = 7
-		x = 0
-		y = 1
-		relative_position_id = texas_bill_of_rights
-		prerequisite = {
-			focus = texas_bill_of_rights
-		}
-		bypass = {
-			has_country_flag = constitution_signed
-		}
-		completion_reward = {
-			set_temp_variable = {
-				article_to_add_to = 1
-			}
-			set_temp_variable = {
-				temp_constitution_subsection = 21
-			}
-			unlock_subsection_article_choice = yes
-			set_temp_variable = {
-				temp_constitution_article = 1
-			}
-			add_constitution_article = yes
-		}
-	}
-	focus = {
-		id = texas_freedom_movement
-		icon = GFX_goal_generic_brahmin_trade
-		cost = 7
-		x = 0
-		y = 1
-		relative_position_id = texas_freedom_of_speech
-		prerequisite = {
-			focus = texas_freedom_of_speech
-		}
-		bypass = {
-			has_country_flag = constitution_signed
-		}
-		completion_reward = {
-			set_temp_variable = {
-				article_to_add_to = 1
-			}
-			set_temp_variable = {
-				temp_constitution_subsection = 24
-			}
-			unlock_subsection_article_choice = yes
-		}
-	}
-	focus = {
-		id = texas_freedom_of_religion
-		icon = GFX_goal_NCN_By_The_Sword_And_The_Cross
-		cost = 7
-		x = 2
-		y = 1
-		relative_position_id = texas_freedom_of_speech
-		prerequisite = {
-			focus = texas_freedom_of_speech
-		}
-		bypass = {
-			has_country_flag = constitution_signed
-		}
-		completion_reward = {
-			set_temp_variable = {
-				article_to_add_to = 1
-			}
-			set_temp_variable = {
-				temp_constitution_subsection = 25
-			}
-			unlock_subsection_article_choice = yes
-		}
-	}
-	focus = {
-		id = texas_ban_slavery
-		icon = GFX_goal_generic_slave_collars
-		cost = 7
-		x = 1
-		y = 1
-		relative_position_id = texas_freedom_movement
-		prerequisite = {
-			focus = texas_freedom_movement
-			focus = texas_freedom_of_religion
-		}
-		bypass = {
-			has_country_flag = constitution_signed
-		}
-		completion_reward = {
-			set_temp_variable = {
-				temp_constitution_article = 1
-			}
-			add_constitution_article = yes
-		}
-	}
-	focus = {
-		id = texas_freedom_guns
-		icon = GFX_goal_revolver
-		cost = 7
-		x = 2
-		y = 1
-		relative_position_id = texas_bill_of_rights
-		prerequisite = {
-			focus = texas_bill_of_rights
-		}
-		bypass = {
-			has_country_flag = constitution_signed
-		}
-		completion_reward = {
-			set_temp_variable = {
-				article_to_add_to = 1
-			}
-			set_temp_variable = {
-				temp_constitution_subsection = 22
-			}
-			unlock_subsection_article_choice = yes
-		}
-	}
-	### Deliberations
-	focus = {
-		id = texas_constitutional_convention
-		icon = GFX_goal_religion_flag
-		cost = 7
-		x = 0
-		y = 1
-		relative_position_id = texas_constitution
-		prerequisite = {
-			focus = texas_constitution
-		}
-		bypass = {
-			has_country_flag = constitution_signed
-		}
-		available = {
-			has_completed_focus = texas_foundations_of_government
-		}
-		completion_reward = {
-			set_temp_variable = {
-				temp_constitution_article = 1
-			}
-			add_constitution_article = yes
-			set_temp_variable = {
-				temp_constitution_article = 3
-			}
-			add_constitution_article = yes
-			hidden_effect = {
-				country_event = {
-					id = nf_texas.115
-					days = 10
-					random = 40
-				}
-			}
-		}
-	}
-	focus = {
-		id = texas_constitutional_convention_extentions
-		icon = GFX_goal_CAF_treaty
-		cost = 7
-		x = 0
-		y = 1
-		relative_position_id = texas_constitutional_convention
-		prerequisite = {
-			focus = texas_constitutional_convention
-		}
-		available = {
-			#has_completed_focus = texas_foundations_of_government
-		}
-		bypass = {
-			has_country_flag = constitution_signed
-		}
-		completion_reward = {
-			set_temp_variable = {
-				temp_constitution_article = 4
-			}
-			add_constitution_article = yes
-			set_temp_variable = {
-				temp_constitution_article = 4
-			}
-			add_constitution_article = yes
-			set_temp_variable = { article_to_add_to = 4 }
-			set_temp_variable = { temp_constitution_subsection = 36 }
-			unlock_subsection_article_choice = yes
-			set_temp_variable = { article_to_add_to = 4 }
-			set_temp_variable = { temp_constitution_subsection = 37 }
-			unlock_subsection_article_choice = yes
-			set_temp_variable = { article_to_add_to = 4 }
-			set_temp_variable = { temp_constitution_subsection = 38 }
-			unlock_subsection_article_choice = yes
-		}
-	}
-	focus = {
-		id = texas_elongated_deliberations
-		icon = GFX_goal_bobble_head_speech
-		cost = 7
-		x = 0
-		y = 2
-		relative_position_id = texas_constitutional_convention_extentions
-		prerequisite = {
-			focus = texas_constitutional_convention_extentions
-		}
-		bypass = {
-			has_country_flag = constitution_signed
-		}
-		completion_reward = {
-			set_temp_variable = {
-				temp_constitution_article = 5
-			}
-			add_constitution_article = yes
-			set_temp_variable = { article_to_add_to = 5 }
-			set_temp_variable = { temp_constitution_subsection = 39 }
-			unlock_subsection_article_choice = yes
-			set_temp_variable = { article_to_add_to = 5 }
-			set_temp_variable = { temp_constitution_subsection = 40 }
-			unlock_subsection_article_choice = yes
+			# country_event = nf_texas.51
 		}
 	}
 
@@ -4244,15 +3832,9 @@ focus_tree = {
 		cost = 15
 		x = 0
 		y = 1
-		relative_position_id = texas_elongated_deliberations
+		relative_position_id = texas_constitution
 		prerequisite = {
-			focus = texas_elongated_deliberations
-		}
-		prerequisite = {
-			focus = texas_ban_slavery
-		}
-		prerequisite = {
-			focus = texas_primary_powers
+			focus = texas_constitution
 		}
 		available = {
 			has_country_flag = constitution_signed

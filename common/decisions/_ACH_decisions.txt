@@ -1,0 +1,284 @@
+ach_fort_hood_decisions = {
+	ach_preparations = {
+		fire_only_once = no
+		# days_remove = 5
+		# days_re_enable = 5
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 5
+				check_variable = {
+					var = ACH_fort_hood_readiness_troopers
+					value = 2
+					compare = greater_than_or_equals
+				}
+			}
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		available = {
+			NOT = { has_country_flag = fort_hood_exploited }
+			has_equipment = {
+				demolitions_equipment > 9
+			}
+			has_equipment = {
+				power_armor_equipment > 24
+			}
+			has_equipment = {
+				infantry_equipment > 24
+			}
+			has_manpower > 24
+		}
+
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -25
+			}
+			add_equipment_to_stockpile = {
+				type = demolitions_equipment
+				amount = -10
+			}
+			add_equipment_to_stockpile = {
+				type = power_armor_equipment
+				amount = -25
+			}
+			add_manpower = -25
+		}
+
+		remove_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_preparations_equipment (decision) remove entered"
+			}
+			custom_effect_tooltip = ach_fort_hood_troops_muster_25_tt
+			add_to_variable = {
+				var = ACH_fort_hood_readiness_troopers
+				value = 25
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_preparations_equipment (decision) remove exited"
+			}
+		}
+	}
+
+	ach_recruit_rosado = {
+		fire_only_once = yes
+		days_remove = 5
+		days_re_enable = 5
+		ai_will_do = {
+			factor = 10
+		}
+
+		visible = {
+			OR = {
+				NOT = { has_country_flag = fort_hood_exploited }
+				RRG = {
+					NOT = {
+						has_government = Intellectuals
+					}
+				}
+			}
+		}
+
+		available = {
+			OR = {
+				NOT = { has_country_flag = fort_hood_exploited }
+				RRG = {
+					NOT = {
+						has_government = Intellectuals
+					}
+				}
+			}
+		}
+
+		remove_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_recruit_rosado (decision) remove entered"
+			}
+			custom_effect_tooltip = ach_fort_hood_rosado_recruitment_tt
+			RRG = { country_event = nf_event_ach.23 }
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_recruit_rosado (decision) remove exited"
+			}
+		}
+	}
+
+	ach_crack_codes = {
+		fire_only_once = no
+		days_remove = 30
+		days_re_enable = 5
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		available = {
+			NOT = { has_country_flag = fort_hood_exploited }
+			OR = {
+				has_tech = decryption_3
+				AND = {
+					has_tech = decryption_2
+					controls_state = 880 #houston
+				}
+			}
+		}
+
+		modifier = {
+			research_speed_factor = -0.03
+		}
+
+		remove_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_recruit_rosado (decision) remove entered"
+			}
+			custom_effect_tooltip = ach_fort_hood_codes_added_1_tt
+			add_to_variable = {
+				var = ACH_fort_hood_readiness_codes
+				value = 1
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_recruit_rosado (decision) remove exited"
+			}
+		}
+	}
+
+	ach_crack_codes_science = {
+		fire_only_once = no
+		days_remove = 30
+		days_re_enable = 5
+		ai_will_do = {
+			factor = 4
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+
+		available = {
+			NOT = { has_country_flag = fort_hood_exploited }
+			OR = {
+				has_tech = electronic_engineering_3
+				AND = {
+					has_tech = electronic_engineering_2
+					controls_state = 880 #houston
+				}
+			}
+		}
+
+		modifier = {
+			research_speed_factor = -0.1
+		}
+
+		remove_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_recruit_rosado (decision) remove entered"
+			}
+			custom_effect_tooltip = ach_fort_hood_codes_added_3_tt
+			add_to_variable = {
+				var = ACH_fort_hood_readiness_codes
+				value = 3
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_recruit_rosado (decision) remove exited"
+			}
+		}
+	}
+
+	ach_launch_expedition = {
+		fire_only_once = no
+		days_remove = 5
+		days_re_enable = 5
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 5
+				check_variable = {
+					var = ACH_fort_hood_readiness_troopers
+					value = 3
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = ACH_fort_hood_readiness_codes
+					value = 3
+					compare = greater_than_or_equals
+				}
+			}
+			modifier = {
+				add = -5
+				has_war = yes
+			}
+		}
+
+		available = {
+			NOT = { has_country_flag = fort_hood_exploited }
+			check_variable = {
+				var = ACH_fort_hood_readiness_troopers
+				value = 1
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = ACH_fort_hood_readiness_codes
+				value = 1
+				compare = greater_than_or_equals
+			}
+		}
+
+		complete_effect = {
+		}
+
+		remove_effect = {
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_launch_expedition (decision) remove entered"
+			}
+			if = { # Security Door
+				Limit = {
+					check_variable = { ACH_fort_hood_progress = 8 }
+				}
+				country_event = nf_event_ach.24
+			}
+			else_if = { # Turrets
+				Limit = {
+					check_variable = { ACH_fort_hood_progress = 14 }
+				}
+				country_event = nf_event_ach.28
+			}
+			else_if = { # Security Fields
+				Limit = {
+					check_variable = { ACH_fort_hood_progress = 20 }
+				}
+				country_event = nf_event_ach.31
+			}
+			else_if = { # Robot Corridor
+				Limit = {
+					check_variable = { ACH_fort_hood_progress = 24 }
+				}
+				country_event = nf_event_ach.34
+			}
+			else_if = { # Success
+				Limit = {
+					check_variable = { ACH_fort_hood_progress = 28 }
+				}
+				country_event = nf_event_ach.40
+			}
+			if = {
+				limit = { has_global_flag = debug_logs }
+				log = "[GetDateText]: [Root.GetName] ach_launch_expedition (decision) remove exited"
+			}
+		}
+	}
+}

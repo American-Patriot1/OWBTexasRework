@@ -1,0 +1,216 @@
+# Scripted by @CGS
+
+
+@support_to_add_mult = 0.25 # how much of exess support is added to main candidate
+@support_to_subtract_mult = 0.5 # how much of exess support is subtracted from other candidate
+# NOTE: support_to_subtract_mult MUST be bigger or equal than support_to_add_mult
+
+ncr_elections_add_support_effect = {
+	# To use this effect you need to set up state ID and candidate's ID and support to add, use temp vars
+	# state_id
+	# Boneyard -- 1
+	# Dayglow -- 2
+	# Maxson -- 3
+	# Redding -- 4
+	# Shady Sands -- 5
+
+	# candidate_id
+	# Allgood -- 1
+	# Kimbal -- 2
+	# Hayes -- 3
+	# Secret boi -- 4
+
+	# support_to_add
+
+	set_temp_variable = { ncr_state_id = state_id }
+	set_variable = { support_surplus = 100 } # how much people in a state are non-aligned
+
+	subtract_from_variable = { support_surplus = global.first_candidate_support_array^ncr_state_id }
+	subtract_from_variable = { support_surplus = global.second_candidate_support_array^ncr_state_id }
+
+	set_temp_variable = { first_candidate_support_temp = global.first_candidate_support_array^ncr_state_id }
+	set_temp_variable = { second_candidate_support_temp = global.second_candidate_support_array^ncr_state_id }
+
+	log = "[?state_id]"
+	if = {
+		limit = {
+			check_variable = { candidate_id = global.first_candidate_id }
+		}
+		set_temp_variable = { support_to_add_immediately = support_to_add }
+		clamp_temp_variable = {
+			var = support_to_add_immediately
+			min = 0
+			max = support_surplus
+		}
+		add_to_temp_variable = { first_candidate_support_temp = support_to_add_immediately }
+		subtract_from_temp_variable = { support_to_add = support_to_add_immediately } # how much support is left after we add immediate support
+		if = { # handling exess support
+			limit = { check_variable = { support_to_add > 0 } }
+
+			# Adding exess support to first candidate
+			set_temp_variable = { support_to_add_temp = support_to_add }
+			multiply_temp_variable = { support_to_add_temp = @support_to_subtract_mult }
+			set_temp_variable = { max_support_to_add_temp = 100 }
+			subtract_from_temp_variable = { max_support_to_add_temp = first_candidate_support_temp }
+			if = {
+				limit = {
+					check_variable = {
+						var = max_support_to_add_temp
+						value = 0
+						compare = less_than
+					}
+				}
+				set_temp_variable = { max_support_to_add_temp = 1 }
+			}
+			clamp_temp_variable = {
+				var = support_to_add_temp
+				min = 0
+				max = max_support_to_add_temp
+			}
+			add_to_temp_variable = { first_candidate_support_temp = support_to_add_temp }
+
+			# Subtracting exess support from second candidate
+			set_temp_variable = { support_to_subtract_temp = support_to_add }
+			multiply_temp_variable = { support_to_subtract_temp = @support_to_subtract_mult }
+			clamp_temp_variable = {
+				var = support_to_subtract_temp
+				max = second_candidate_support_temp
+			}
+			subtract_from_temp_variable = { second_candidate_support_temp = support_to_subtract_temp }
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = { candidate_id = global.second_candidate_id }
+		}
+		set_temp_variable = { support_to_add_immediately = support_to_add }
+		clamp_temp_variable = {
+			var = support_to_add_immediately
+			min = 0
+			max = support_surplus
+		}
+		add_to_temp_variable = { second_candidate_support_temp = support_to_add_immediately }
+		subtract_from_temp_variable = { support_to_add = support_to_add_immediately } # how much support is left after we add immediate support
+		if = { # handling exess support
+			limit = { check_variable = { support_to_add > 0 } }
+
+			# Adding exess support to first candidate
+			set_temp_variable = { support_to_add_temp = support_to_add }
+			multiply_temp_variable = { support_to_add_temp = @support_to_subtract_mult }
+			set_temp_variable = { max_support_to_add_temp = 100 }
+			subtract_from_temp_variable = { max_support_to_add_temp = second_candidate_support_temp }
+			if = {
+				limit = {
+					check_variable = {
+						var = max_support_to_add_temp
+						value = 0
+						compare = less_than
+					}
+				}
+				set_temp_variable = { max_support_to_add_temp = 1 }
+			}
+			clamp_temp_variable = {
+				var = support_to_add_temp
+				min = 0
+				max = max_support_to_add_temp
+			}
+			add_to_temp_variable = { second_candidate_support_temp = support_to_add_temp }
+
+			# Subtracting exess support from second candidate
+			set_temp_variable = { support_to_subtract_temp = support_to_add }
+			multiply_temp_variable = { support_to_subtract_temp = @support_to_subtract_mult }
+			clamp_temp_variable = {
+				var = support_to_subtract_temp
+				max = first_candidate_support_temp
+			}
+			subtract_from_temp_variable = { first_candidate_support_temp = support_to_subtract_temp }
+		}
+	}
+	else = {
+		log = "Error in ncr_elections_effects: candidate_id [?candidate_id] is not a valid ID."
+	}
+
+	round_temp_variable = first_candidate_support_temp
+	round_temp_variable = second_candidate_support_temp
+
+
+	# Returning results of calculations back into variables
+	log = "[?global.first_candidate_support_array^ncr_state_id]"
+	set_variable = { global.first_candidate_support_array^ncr_state_id = first_candidate_support_temp }
+	set_variable = { global.second_candidate_support_array^ncr_state_id = second_candidate_support_temp }
+	log = "[?global.first_candidate_support_array^ncr_state_id]"
+}
+
+ncr_elections_remove_support_both_effect = {
+	# removes support from both candidates, needs only state_id and support_to_remove vars
+
+	set_temp_variable = { candidate_id = global.first_candidate_id }
+	ncr_elections_remove_support_effect = yes
+
+	set_temp_variable = { candidate_id = global.second_candidate_id }
+	ncr_elections_remove_support_effect = yes
+}
+
+ncr_elections_remove_support_effect = {
+	# To use this effect you need to set up state ID and candidate's ID and support to add, use temp vars
+	# state_id
+	# Boneyard -- 1
+	# Dayglow -- 2
+	# Maxson -- 3
+	# Redding -- 4
+	# Shady Sands -- 5
+
+	# candidate_id
+	# Allgood -- 1
+	# Kimbal -- 2
+	# Hayes -- 3
+	# Secret boi -- 4
+
+	# support_to_remove
+
+	set_temp_variable = { ncr_state_id = state_id }
+
+	# Get values of support
+	set_temp_variable = { first_candidate_support_temp = global.first_candidate_support_array^ncr_state_id }
+	set_temp_variable = { second_candidate_support_temp = global.second_candidate_support_array^ncr_state_id }
+
+	if = {
+		limit = {
+			check_variable = { candidate_id = global.first_candidate_id }
+		}
+		subtract_from_variable = { first_candidate_support_temp = support_to_remove }
+		clamp_variable = {
+			var = first_candidate_support_temp
+			min = 0
+			max = 100
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = { candidate_id = global.second_candidate_id }
+		}
+		subtract_from_variable = { second_candidate_support_temp = support_to_remove }
+		clamp_variable = {
+			var = second_candidate_support_temp
+			min = 0
+			max = 100
+		}
+	}
+	else = {
+		log = "Error in ncr_elections_effects: candidate_id [?candidate_id] is not a valid ID."
+	}
+
+	# Returning results of calculations back into variables
+	set_variable = { global.first_candidate_support_array^ncr_state_id = first_candidate_support_temp }
+	set_variable = { global.second_candidate_support_array^ncr_state_id = second_candidate_support_temp }
+}
+
+calculate_ncr_elections_winner_effect = {
+	# Sets NCR elections winner to ncr_elections_winner_id variable
+	if = {
+		limit = {
+			calculate_ncr_election_winner_trigger = yes
+		}
+		set_variable = { NCR.ncr_elections_winner_id = ncr_elections_winner_id_temp }
+	}
+}

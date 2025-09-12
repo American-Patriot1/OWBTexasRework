@@ -1,0 +1,390 @@
+tex_constitution_category = {
+	constitution_mission_1 = {
+		allowed = {
+			always = no
+		}
+		is_good = no
+		days_mission_timeout = 365
+		available = {
+			set_temp_variable = { constitution_section_to_complete = 22 }
+			custom_trigger_tooltip = {
+				has_country_flag = constitution_signed
+				is_in_array = {
+					array = constitution_subsection_data_array
+					value = constitution_section_to_complete
+				}
+				tooltip = constitution_demand_tooltip
+			}
+		}
+		complete_effect = {
+			add_political_power = 50
+			every_owned_state = {
+				limit = {
+					NOT = { is_core_of = PREV }
+				}
+
+				add_compliance = -5
+			}
+		}
+		timeout_effect = {
+			every_owned_state = {
+				limit = {
+					NOT = { is_core_of = PREV }
+				}
+				add_resistance = 6
+			}
+			add_stability = -0.04
+			add_manpower = -150
+		}
+	}
+	constitution_mission_2 = {
+		allowed = {
+			always = no
+		}
+		is_good = no
+		days_mission_timeout = 365
+		available = {
+			set_temp_variable = { constitution_section_to_complete = 24 }
+			custom_trigger_tooltip = {
+				has_country_flag = constitution_signed
+				is_in_array = {
+					array = constitution_subsection_data_array
+					value = constitution_section_to_complete
+				}
+				tooltip = constitution_demand_tooltip
+			}
+		}
+		complete_effect = {
+			add_political_power = 50
+			every_owned_state = {
+				limit = {
+					NOT = { is_core_of = PREV }
+				}
+				set_temp_variable = {
+					pop_add = 240
+				}
+				add_state_population_no_state_name = yes
+			}
+			set_temp_variable = { caps_to_add = -40 }
+			add_caps = yes
+		}
+		timeout_effect = {
+			every_owned_state = {
+				limit = {
+					NOT = { is_core_of = PREV }
+				}
+				add_resistance = 14
+				set_temp_variable = {
+					pop_add = 100
+				}
+				add_state_population_no_state_name = yes
+			}
+		}
+	}
+	constitution_mission_3 = {
+		allowed = {
+			always = no
+		}
+		is_good = no
+		days_mission_timeout = 365
+		available = {
+			set_temp_variable = { constitution_section_to_complete = 41 }
+			custom_trigger_tooltip = {
+				has_country_flag = constitution_signed
+				is_in_array = {
+					array = constitution_subsection_data_array
+					value = constitution_section_to_complete
+				}
+				tooltip = constitution_demand_tooltip
+			}
+		}
+		complete_effect = {
+			add_political_power = 50
+		}
+		timeout_effect = {
+			every_owned_state = {
+				limit = {
+					OR = {
+						is_core_of = SHA
+						is_core_of = UOA
+						is_core_of = IMO
+					}
+				}
+				add_resistance = 13
+			}
+		}
+	}
+	constitution_mission_4 = {
+		allowed = {
+			always = no
+		}
+		is_good = no
+		days_mission_timeout = 365
+		available = {
+			set_temp_variable = { constitution_section_to_complete = 41 }
+			NOT = {
+				custom_trigger_tooltip = {
+					has_country_flag = constitution_signed
+					is_in_array = {
+						array = constitution_subsection_data_array
+						value = constitution_section_to_complete
+					}
+					tooltip = constitution_demand_tooltip
+				}
+			}
+		}
+		complete_effect = {
+			add_political_power = 50
+		}
+		timeout_effect = {
+			every_owned_state = {
+				limit = {
+					NOT = {
+						is_core_of = SHA
+						is_core_of = UOA
+						is_core_of = IMO
+					}
+				}
+				add_resistance = 5
+			}
+		}
+	}
+	constitution_mission_5 = {
+		allowed = {
+			always = no
+		}
+		is_good = no
+		days_mission_timeout = 365
+		available = {
+			set_temp_variable = { constitution_section_to_complete = 28 }
+			NOT = {
+				custom_trigger_tooltip = {
+					has_country_flag = constitution_signed
+					is_in_array = {
+						array = constitution_subsection_data_array
+						value = constitution_section_to_complete
+					}
+					tooltip = constitution_demand_tooltip
+				}
+			}
+		}
+		complete_effect = {
+			add_political_power = 50
+			add_stability = -0.02
+		}
+		timeout_effect = {
+			every_owned_state = {
+				limit = {
+					is_core_of = HRO
+				}
+				add_resistance = 5
+			}
+			add_stability = -0.05
+		}
+	}
+}
+tex_development_category = {
+	rebuild_gas_fields = {
+		allowed = {
+			OR = {
+				original_tag = LNS
+				original_tag = TBH
+			}
+		}
+		available = {
+			has_completed_focus = tex_rebuild_the_fields
+		}
+		visible = {
+			NOT = {
+				has_country_flag = tex_finished_rebuilding_the_fields
+			}
+			has_focus_tree = nf_texan_republic
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 200 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -200 }
+			add_caps = yes
+		}
+		modifier = {
+			consumer_goods_expected_value = 0.1
+			production_speed_buildings_factor = -0.2
+		}
+		days_remove = 180
+		remove_effect = {
+			add_ideas = tex_idea_carthage_gas
+			add_resource = {
+				type = energy
+				amount = 34
+				state = 884
+			}
+			add_resource = {
+				type = energy
+				amount = 40
+				state = 885
+			}
+			add_resource = {
+				type = energy
+				amount = 22
+				state = 897
+			}
+			set_country_flag = tex_finished_rebuilding_the_fields
+		}
+	}
+	refurbish_satellites = {
+		allowed = {
+			OR = {
+				original_tag = LNS
+				original_tag = TBH
+			}
+		}
+		available = {
+			has_completed_focus = tex_refurbish_satellites
+		}
+		visible = {
+			has_focus_tree = nf_texan_republic
+			NOT = {
+				has_idea = tex_idea_running_satellites
+			}
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 200 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -200 }
+			add_caps = yes
+		}
+		modifier = {
+			consumer_goods_expected_value = 0.1
+			production_speed_buildings_factor = -0.2
+		}
+		days_remove = 180
+		remove_effect = {
+			add_ideas = tex_idea_running_satellites
+		}
+	}
+	texan_shipping = {
+		allowed = {
+			OR = {
+				original_tag = LNS
+				original_tag = TBH
+			}
+		}
+		available = {
+			has_completed_focus = tex_begin_shipping_in_gulf
+		}
+		visible = {
+			has_focus_tree = nf_texan_republic
+			NOT = {
+				has_idea = tex_idea_gulf_shipping
+			}
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 200 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -200 }
+			add_caps = yes
+		}
+		modifier = {
+			consumer_goods_expected_value = 0.1
+			production_speed_buildings_factor = -0.2
+		}
+		days_remove = 180
+		remove_effect = {
+			add_ideas = tex_idea_gulf_shipping
+		}
+	}
+	texan_radios = {
+		allowed = {
+			OR = {
+				original_tag = LNS
+				original_tag = TBH
+			}
+		}
+		available = {
+			has_completed_focus = tex_texas_calling
+		}
+		visible = {
+			has_focus_tree = nf_texan_republic
+			NOT = {
+				has_idea = tex_idea_national_tv
+			}
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 200 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -200 }
+			add_caps = yes
+		}
+		modifier = {
+			consumer_goods_expected_value = 0.1
+			production_speed_buildings_factor = -0.2
+		}
+		days_remove = 180
+		remove_effect = {
+			add_ideas = tex_idea_national_tv
+		}
+	}
+	texan_railways = {
+		allowed = {
+			OR = {
+				original_tag = LNS
+				original_tag = TBH
+			}
+		}
+		available = {
+			has_completed_focus = tex_build_the_trans_texan_line
+		}
+		visible = {
+			has_focus_tree = nf_texan_republic
+			NOT = {
+				has_country_flag = tex_built_the_trans_texan_line
+			}
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 200 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -200 }
+			add_caps = yes
+		}
+		modifier = {
+			consumer_goods_expected_value = 0.1
+			production_speed_buildings_factor = -0.2
+		}
+		days_remove = 180
+		remove_effect = {
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 4
+					instant_build = yes
+				}
+			}
+			set_country_flag = tex_built_the_trans_texan_line
+		}
+	}
+}
