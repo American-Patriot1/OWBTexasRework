@@ -1,5 +1,7 @@
 ﻿capital = 908
 
+oob = "ACH_2275"
+
 set_technology = {
 	basic_supply_transport_tech = 1
 	infantry_tech_level_tribal = 1
@@ -79,21 +81,6 @@ set_country_flag = infantry_energy_ai
 set_rule = { can_send_volunteers = no }
 set_variable = { never_return_stolen_territory = 1 }
 
-
-
-
-set_politics = {
-	ruling_party = intellectuals
-	elections_allowed = no
-}
-
-set_popularities = {
-	people = 11
-	elites = 7
-	intellectuals = 75
-	ruler = 7
-}
-
 add_dynamic_modifier = { modifier = texas_rework_the_alamo }
 908 = { add_dynamic_modifier = { modifier = texas_rework_the_alamo_state } }
 
@@ -106,7 +93,6 @@ add_ideas = {
 	bunkerblues
 
 	currencytexdollar
-	ach_hardliners
 	mutant_law_none
 	undesirables_law_none
 	selective_outsider_recruitment_law
@@ -114,6 +100,7 @@ add_ideas = {
 	isolationist_trade_law
 	military_indoctrination_press
 }
+
 set_truce = {
 	target = SHA
 	days = 730
@@ -121,6 +108,28 @@ set_truce = {
 set_truce = {
 	target = IMO
 	days = 730
+}
+
+TBH = {
+	ACH = {
+		become_puppet_of_prev = yes
+	}
+	set_autonomy = {
+		target = ACH
+		autonomy_state = autonomy_texas_rework_free_state
+	}
+}
+
+set_popularities = {
+	people = 11
+	elites = 7
+	intellectuals = 75
+	ruler = 7
+}
+
+set_politics = {
+	ruling_party = intellectuals
+	elections_allowed = no
 }
 
 set_party_name = {
@@ -165,4 +174,6 @@ recruit_character = ACH_matthew_fry
 recruit_character = ACH_knight_hallows
 recruit_character = ACH_scribe_charlie
 recruit_character = ACH_paladin_cade
+
+set_cosmetic_tag = ACH_southern_territories
 

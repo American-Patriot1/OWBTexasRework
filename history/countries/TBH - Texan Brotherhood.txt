@@ -188,10 +188,6 @@ set_truce = {
 	days = 365
 }
 set_truce = {
-	target = ACH
-	days = 365
-}
-set_truce = {
 	target = IMO
 	days = 365
 }
@@ -229,6 +225,8 @@ random_character = {
 
 create_or_join_texan_economic_union = yes
 LNS = { create_or_join_texan_economic_union = yes }
+ACH = { create_or_join_texan_economic_union = yes }
+
 
 add_dynamic_modifier = { modifier = texan_economic_union }
 add_dynamic_modifier = { modifier = texas_constitution_modifier }
@@ -253,7 +251,6 @@ add_ideas = {
 	mutant_law_both
 	scavenging_law
 	currencytexdollar
-	tbh_torn_leadership
 	tbh_military_heritage
 	tbh_texas_rangers
 	tbh_victorious_heroes

@@ -1,0 +1,107 @@
+﻿l_english:
+
+ncr_puppet_event.1.t:0 "The Bear Victorious"
+ncr_puppet_event.1.d:0 "Despite a long and proud history of independence, our liberty has been taken from us. The N.C.R. has claimed our nation as the newest state in its republic. How did they bring us to our knees?"
+ncr_puppet_event.1.a:0 "They starved us out and forced us to submit."
+ncr_puppet_event.1.b:0 "They destroyed our livelihoods with their economic might."
+ncr_puppet_event.1.c:0 "They decieved us through political trickery."
+
+ncr_puppet_event.2.t:0 "The Siege of [Root.Capital.GetName]"
+ncr_puppet_event.2.d:0 "Our last stand took place on the outskirts of the capital, where we showed the N.C.R. what freedom truly means. What was our last great act of defiance?"
+ncr_puppet_event.2.a:0 "We fought till the last man, as one!"
+ncr_puppet_event.2.b:0 "We fought in burning rubble of our homes till we were finished."
+ncr_puppet_event.2.c:0 "Our leader fought their bravest men in single combat."
+
+ncr_puppet_event.3.t:0 "The N.C.R. Territorial Administration"
+ncr_puppet_event.3.d:0 "The N.C.R.T.A Has been given the task of rebuilding our nation, taking the scattered pieces of our lives, and creating a new, loyal people. To achieve this, the T.A. has declared that their first focus will be on..."
+ncr_puppet_event.3.a:0 "New industries and jobs for the people."
+ncr_puppet_event.3.b:0 "Better access to food and water for the impoverished"
+ncr_puppet_event.3.c:0 "Rebuilding the state administration."
+
+ces_puppet_event.1.t:0 "The Victorious Bull"
+ces_puppet_event.1.d:0 "The Bull annihilated our defenses, and slaughtered our population. Victorious, they will tear apart our history, our culture, our past, all for their despicable goals. How did it come to this?"
+ces_puppet_event.1.a:0 "Frumentarii infiltrated our lands, butchering soldiers and civilians."
+ces_puppet_event.1.b:0 "They murdered us... every single one of us..."
+ces_puppet_event.1.c:0 "They burnt the entire countryside, set it aflame with people inside."
+
+ces_puppet_event.2.t:0 "Our city... torn asunder..."
+ces_puppet_event.2.d:0 "Some of us still wake up, late at night, screaming and tearing at their face, clawing their skin off as they remember the horrible things the legion did. All of us remember what happened that faithful night. The sight, the sound, and the smell. By the gods, the horrible smell..."
+ces_puppet_event.2.a:0 "He set our city ablaze, i can still smell the cooking human flesh..."
+ces_puppet_event.2.b:0 "He looted our homes, killing or raping anyone he found."
+ces_puppet_event.2.c:0 "He razed it down, salted the fields with the blood of our loved ones."
+
+ces_puppet_event.3.t:0 "The New Administratio"
+ces_puppet_event.3.d:0 "Once Caesar was sure we were utterly broken, both in mind and body, he set his sight on his next target. Left behinds were only the sadistic soldiers, and the Administratio. They seek to make us slaves in the dark design of the legion. What do they seek here?"
+ces_puppet_event.3.a:0 "They want to plunder our lands dry."
+ces_puppet_event.3.b:0 "They seek to chain us to factory lines."
+ces_puppet_event.3.c:0 "They want to completely destroy our culture."
+
+bos_puppet_event.1.t:0 "Bound by Steel"
+bos_puppet_event.1.d:0 "The Brotherhood broke us. Their soldiers, towering monsters clad in steel, destroyed our armies and smashed through our defences. Was there anything we could have done? How did it come to this?"
+bos_puppet_event.1.a:0 "They broke us in weeks, in a flurry of laser fire."
+bos_puppet_event.1.b:0 "We didn't go down without a fight."
+bos_puppet_event.1.c:0 "We fought to the last, made them pay every inch in blood."
+
+bos_puppet_event.2.t:0 "The March On The Capital"
+bos_puppet_event.2.d:0 "They walked through our capital, looking at our fearful population from behind their armored visors, their auxiliaries securing the road ahead and questionning every suspicious citizen. When one of them spoke up, their voiced boomed, distorted and terrifying, from the speaker unit in his helmet. What did he seek to do with our city?"
+bos_puppet_event.2.a:0 "Administrate it, prepare it to fuel the chapter's ambitions."
+bos_puppet_event.2.b:0 "To clear the land, prepare it for a fortress."
+bos_puppet_event.2.c:0 "To occupy it with auxiliary militias."
+
+bos_puppet_event.3.t:0 "The Hall Of Initiates"
+bos_puppet_event.3.d:0 "New training centers have been constructed across our nations. They seek to gather initates to incorporate in the brotherhood. Already, propaganda is spread, but what is their exact goal?"
+bos_puppet_event.3.a:0 "Train them to defend the brotherhood."
+bos_puppet_event.3.b:0 "Make them into an effective army to use."
+bos_puppet_event.3.c:0 "Teach them the ways of the old world."
+
+vlt_puppet_event.1.t:0 "Vault-Tec Calling"
+vlt_puppet_event.1.d:0 "Welcome to civilisation, new citizens! As the newest members of the glorious greater Vault City, you are privileged to be at the forefront of a new chapter in humanity's history. But before we get started on your new indefinite employment to the service of mankind, let's look at what Vault City has been achieving in a tribal civilisation near you!"
+vlt_puppet_event.1.a:0 "Our Vault QoL Teams are hard at work to build a better world."
+vlt_puppet_event.1.b:0 "Our Reeducation Programs are 100% guaranteed to reform the disadvanteged members of society."
+vlt_puppet_event.1.c:0 "Our Pacification Course is capable of instilling docility in the most savage scourges of the wasteland."
+
+vlt_puppet_event.2.t:0 "The Incorporation of [Root.Capital.GetName]"
+vlt_puppet_event.2.d:0 "There are many centers of human habitation in the wasteland, but none quite like Vault City. As your former capital is re-designed for maximum efficiency by our occupational forces, The greatest minds of our city are hard at work to make your new home the best it can be."
+vlt_puppet_event.2.a:0 "[Root.Capital.GetName] will become a new center for economic growth and trade in the wasteland."
+vlt_puppet_event.2.b:0 "Industrial transformation will allow the citizens of [Root.Capital.GetName] to better provide for the needs of Vault City."
+vlt_puppet_event.2.c:0 "Reconstructing [Root.Capital.GetName]'s hierachy creates new opportunities for growth and exploration!"
+
+vlt_puppet_event.3.t:0 "The New Overseer"
+vlt_puppet_event.3.d:0 "We here at Vault City understand that this whole process can be a little overwhelming, but if you or any of our fellow new citizens have any questions regarding the incorporation of your nation, don't hesitate to contact your new Vault City-Appointed Overseer for information. Remember: The Overseer will guide you."
+vlt_puppet_event.3.a:0 "The Overseer will guide us."
+
+trl_puppet_event.1.t:0 "March of the Horde"
+trl_puppet_event.1.d:0 "Our resistance was futile. Hordes descended on us like vultures, tearing us apart. Our people are left forever scarred by the actions of the horde. Before we surrendered we..."
+trl_puppet_event.1.a:0 "Managed to evacuate some of our people."
+trl_puppet_event.1.b:0 "Fought to the last man."
+
+trl_puppet_event.2.t:0 "The Siege of [Root.Capital.GetName]"
+trl_puppet_event.2.d:0 "We made our last stand at [Root.Capital.GetName], in our desperation we..."
+trl_puppet_event.2.a:0 "Conscripted everyone regardless of training."
+trl_puppet_event.2.b:0 "Turned every building to a workshop."
+trl_puppet_event.2.c:0 "Fought a guerrilla war."
+
+trl_puppet_event.3.t:0 "the Will of the First"
+trl_puppet_event.3.d:0 "While the First leads the Warren, his generals are in charge of their 'human stock'. Our new master is..."
+trl_puppet_event.3.a:0 "Pittman"
+trl_puppet_event.3.b:0 "Bonesnarl"
+trl_puppet_event.3.c:0 "Beatrice"
+
+rrg_puppet_event.1.t:0 "Our War With The Republic"
+rrg_puppet_event.1.d:0 "Today, the flag of the Republic of Rio Grande flies over our land. While our people are not used to this situation, they came to accept the situation because of..."
+rrg_puppet_event.1.a:0 "Military Presence"
+rrg_puppet_event.1.b:0 "Promises of Peaceful Integration"
+
+rrg_puppet_event.2.t:0 "Treaty of [Root.Capital.GetName]"
+rrg_puppet_event.2.d:0 "They may have defeated us, but they know they can't defeat the will of the people. We will sign a treaty with them, formalising our status as a territory. This means..."
+rrg_puppet_event.2.a:0 "Right of Self Determination"
+rrg_puppet_event.2.b:0 "Right to Bear Arms"
+
+rrg_puppet_event.3.t:0 "War and Peace"
+rrg_puppet_event.3.d:0 "Some territories of the Republic act as frontiers, supplying the state. Some territories are the breadbaskets of the Republic. While our goal is not that clear, we will focus on..."
+rrg_puppet_event.3.a:0 "Ways of War"
+rrg_puppet_event.3.b:0 "Ways of Peace"
+
+
+
+

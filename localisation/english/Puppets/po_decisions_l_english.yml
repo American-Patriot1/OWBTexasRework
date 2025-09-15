@@ -1,0 +1,45 @@
+﻿l_english:
+  po_overlord_decisions:0 "Manage Our Subjects"
+  po_overlord_decisions_desc:0 ""
+
+  po_clamp_down_1:0 "Clamp Down on Autonomy"
+  po_clamp_down_2:0 "Clamp Down on Autonomy"
+  po_clamp_down_3:0 "Clamp Down on Autonomy"
+  po_clamp_down_4:0 "Clamp Down on Autonomy"
+
+  po_exploit_subjects:0 "Exploit [From.GetName]"
+
+
+  po_subject_decisions:0 "Earning our Freedom"
+  po_subject_decisions_desc:0 ""
+
+  po_night_meetings:0 "Night Meetings"
+
+  po_meet_needs:0 "Meeting Their Needs"
+
+  po_provide_conscripts:0 "Conscription Drives"
+  po_manpower_autonomy:0 "Provided Conscripts for Overlord"
+
+  po_fighting_for_freedom:0 "Fighting for our Freedom"
+
+  po_autonomy_modifier:0 "Subject Actions"
+
+  po_mmanpower_modifier:0 "Subject Conscripts"
+
+  po_exploit_running:0 "Already Exploiting A Subject"
+
+  po_fight_for_freedom:0 "Fight For Freedom"
+
+#NCR
+
+ncr_settler_arms_for_california:0 "Arms for California"
+ncr_settler_arms_for_california_desc:0 "Our beloved California needs guns to defend freedom and democracy, so let's help them."
+
+ncr_settler_men_for_california:0 "Men for California"
+ncr_settler_men_for_california_desc:0 "Our beloved California needs strong men to build and fight, we will do anything to help."
+
+ncr_settler_paying_our_debts:0 "Paying Our Debts"
+ncr_settler_paying_our_debts_desc:0 "The Californian government has given us weapons, infrastructure and above all, freedom. But all this comes at a price..."
+
+ncr_tribal_sending_our_strongest:0 "Sending Our Strongest"
+ncr_tribal_sending_our_strongest_desc:0 "Only the Strongest...shall rule."

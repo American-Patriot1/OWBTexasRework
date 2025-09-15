@@ -416,11 +416,12 @@ country_event = { # The Uprising Spreads!
 					}
 					news_event = { id = news_texas.1 hours = 6 random_hours = 3 }
 				}
+			TBH = {
+				end_puppet = LNS
+			}
 			LNS = {
 				transfer_state = 928
 				leave_current_faction = yes
-			}
-			LNS = {
 				start_civil_war = {
 					ideology = ruler
 					size = 0
@@ -549,12 +550,6 @@ country_event = { # The Uprising Spreads!
 		ai_chance = {
 			base = 1
 		}
-		TBH = {
-			country_event = {
-				id = nf_tbh.25
-				days = 2
-			}
-		}
 		remove_ideas = LNS_idea_caesars_hand
 	}
 
@@ -571,12 +566,6 @@ country_event = { # The Uprising Spreads!
 					NOT = { tag = LNS }
 				}
 				change_tag_from = LNS
-			}
-		}
-		TBH = {
-			country_event = {
-				id = nf_tbh.25
-				days = 2
 			}
 		}
 		remove_ideas = LNS_idea_caesars_hand

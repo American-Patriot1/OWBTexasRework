@@ -1,0 +1,201 @@
+spriteTypes = {
+	#Autonomy Stuff
+	spriteType = {
+		name = "GFX_autonomy_tributary_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_tributary_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_client_tribe_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_client_tribe_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_initiate_chapter_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_initiate_chapter_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_brotherhood_dependency_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_brotherhood_dependency_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_brotherhood_protectorate_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_brotherhood_protectorate_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_brotherhood_initiate_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_brotherhood_initiate_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_child_in_the_faith_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_child_in_the_faith_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_convert_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_convert_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_brother_in_the_faith_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_brother_in_the_faith_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_incorporated_territory_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_incorporated_territory_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_unincorporated_territory_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_unincorporated_territory_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_protected_state_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_protected_state_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_free_state_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_free_state_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomy_enclave_reservation_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_enclave_reservation_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomy_enclave_occupation_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_enclave_occupation_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomy_enclave_protectorate_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_enclave_protectorate_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_autonomy_enclave_state_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_enclave_state_icon.dds"
+	}
+
+###
+	spriteType = {
+		name = "GFX_autonomy_little_city_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_little_city_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_courtyard_state_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_courtyard_state_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_council_state_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_council_state_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_vault_territory_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_vault_territory_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_brotherhood_slave_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_brotherhood_slave_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_periphery_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_periphery_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_district_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_district_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_family_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_family_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_slave_den_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_slave_den_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_slave_warren_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_slave_warren_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_slave_port_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_slave_port_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_slave_raiders_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_slave_raiders_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_raider_city_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_raider_city_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_junior_deputy_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_junior_deputy_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_deputy_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_deputy_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_sheriff_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_sheriff_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_calpixqui_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_calpixqui_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_tlatoani_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_tlatoani_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_cuahtlatoani_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_cuahtlatoani_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_junior_executive_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_junior_executive_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_executive_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_executive_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_boardmember_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_board_member_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_arm_puppet_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_arm_puppet_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_sidekick_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_sidekick_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_rio_associated_state_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_rio_client_state_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_rio_client_state_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_rio_client_state_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_rio_unincorporated_territory_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_rio_unincorporated_territory_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_rio_protected_state_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_rio_protected_state_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_rio_free_state_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_rio_free_state_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_gorgon_county_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_gorgon_county_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_canyon_territory_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_canyon_territory_icon.dds"
+	}
+}

@@ -1,4 +1,6 @@
 add_namespace = texas_rework
+
+#DEBUG
 country_event = {
 	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.1000" }
 	id = texas_rework.1000
@@ -6,10 +8,10 @@ country_event = {
 	desc = texas_rework.1000.desc
 	is_triggered_only = yes
 	fire_only_once = yes
-	picture = GFX_event_sub_generic_container_bazaar
+	picture = GFX_Portrait_TEX_provisional_senate
 
 
-	option = { # industry
+	option = {
 		name = texas_rework.1000.a
 		TBH = {
 			add_to_variable = { const_production_speed = 0.1 }
@@ -34,6 +36,45 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.1001" }
+	id = texas_rework.1001
+	title = texas_rework.1001.t
+	desc = texas_rework.1001.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_Portrait_TEX_provisional_senate
+
+
+	option = {
+		name = texas_rework.1001.a
+		TBH = {
+			ACH = {
+				become_puppet_of_prev = yes
+			}
+			set_autonomy = {
+				target = ACH
+				autonomy_state = autonomy_texas_rework_free_state
+			}
+		}
+		ACH = {
+			set_popularities = {
+				people = 11
+				elites = 7
+				intellectuals = 75
+				ruler = 7
+			}
+
+			set_politics = {
+				ruling_party = intellectuals
+				elections_allowed = no
+			}
+		}
+	}
+}
+
+#Constitution
 country_event = {
 	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.4" }
 	id = texas_rework.4
@@ -99,6 +140,314 @@ country_event = {
 		}
 		ai_chance = {
 			base = 0
+		}
+	}
+}
+
+#country world events
+country_event = { #fall of Assassin city
+	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.901" }
+	id = texas_rework.901
+	title = texas_rework.901.t
+	desc = texas_rework.901.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_container_bazaar
+
+
+	option = {
+		name = texas_rework.901.a
+		every_state = {
+			limit = {
+				is_core_of = ASS
+			}
+			set_state_flag = do_not_exodus
+			remove_core_of = ASS
+			remove_claim_by = ASS
+		}
+		878 = {
+			add_core_of = TBH
+		}
+		881 = {
+			add_core_of = DSP
+			transfer_state_to = DSP
+		}
+		1525 = {
+			add_core_of = DSP
+			transfer_state_to = DSP
+		}
+		set_technology = { skater_tech = 1 }
+		ASS = {
+            every_unit_leader = {
+                set_nationality = TBH
+            }
+            every_navy_leader = {
+                set_nationality = TBH
+            }
+			transfer_navy = { target = TBH }
+				transfer_navy = { target = TEX }
+		}
+		annex_country = {
+			target = ASS
+			transfer_troops = yes
+		}
+		every_state = {
+			limit = {
+				is_core_of = TBH
+				has_state_flag = do_not_exodus
+			}
+			clr_state_flag = do_not_exodus
+		}
+		every_state = {
+			limit = {
+				is_core_of = DSP
+				has_state_flag = do_not_exodus
+			}
+			clr_state_flag = do_not_exodus
+		}
+	}
+}
+
+country_event = { #fall of the last lodge
+	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.902" }
+	id = texas_rework.902
+	title = texas_rework.902.t
+	desc = texas_rework.902.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_container_bazaar
+
+
+	option = {
+		name = texas_rework.902.a
+		every_state = {
+			limit = {
+				is_core_of = TLL
+			}
+			set_state_flag = do_not_exodus
+			remove_core_of = TLL
+			remove_claim_by = TLL
+		}
+		902 = {
+			add_core_of = TBH
+		}
+		898 = {
+			add_core_of = CWB
+			transfer_state_to = CWB
+		}
+		899 = {
+			add_core_of = CWB
+			transfer_state_to = CWB
+		}
+		TLL = {
+            every_unit_leader = {
+                set_nationality = TBH
+            }
+            every_navy_leader = {
+                set_nationality = TBH
+            }
+			transfer_navy = { target = TBH }
+				transfer_navy = { target = TEX }
+		}
+		annex_country = {
+			target = TLL
+			transfer_troops = yes
+		}
+		every_state = {
+			limit = {
+				is_core_of = TBH
+				has_state_flag = do_not_exodus
+			}
+			clr_state_flag = do_not_exodus
+		}
+		every_state = {
+			limit = {
+				is_core_of = CWB
+				has_state_flag = do_not_exodus
+			}
+			clr_state_flag = do_not_exodus
+		}
+	}
+}
+
+country_event = { #fall of Houston
+	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.903" }
+	id = texas_rework.903
+	title = texas_rework.903.t
+	desc = texas_rework.903.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_container_bazaar
+
+
+	option = {
+		name = texas_rework.903.a
+		879 = {
+			remove_core_of = HRO
+			remove_claim_by = HRO
+			add_core_of = CAR
+			transfer_state_to = CAR
+		}
+		every_state = {
+			limit = {
+				is_core_of = HRO
+			}
+			set_state_flag = do_not_exodus
+			add_core_of = TBH
+			remove_core_of = HRO
+			remove_claim_by = HRO
+		}
+		HRO = {
+            every_unit_leader = {
+                set_nationality = TBH
+            }
+            every_navy_leader = {
+                set_nationality = TBH
+            }
+			transfer_navy = { target = TBH }
+				transfer_navy = { target = TEX }
+		}
+		annex_country = {
+			target = HRO
+			transfer_troops = yes
+		}
+		every_state = {
+			limit = {
+				is_core_of = TBH
+				has_state_flag = do_not_exodus
+			}
+			clr_state_flag = do_not_exodus
+		}
+		every_state = {
+			limit = {
+				is_core_of = CAR
+				has_state_flag = do_not_exodus
+			}
+			clr_state_flag = do_not_exodus
+		}
+	}
+}
+
+country_event = { #Alamo Betrayal
+	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.904" }
+	id = texas_rework.904
+	title = nf_tbh.25.t
+	desc = nf_tbh.25.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_container_bazaar
+
+	immediate = {
+		hidden_effect = {
+			add_resource = {
+				type = composites
+				amount = -3
+				state = 892
+			}
+			add_resource = {
+				type = advanced
+				amount = -3
+				state = 892
+			}
+			add_resource = {
+				type = composites
+				amount = 3
+				state = 908
+			}
+			add_resource = {
+				type = advanced
+				amount = 3
+				state = 908
+			}
+			add_resource = {
+				type = metal
+				amount = 8
+				state = 908
+			}
+			add_resource = {
+				type = water
+				amount = 6
+				state = 908
+			}
+			add_resource = {
+				type = energy
+				amount = 2
+				state = 908
+			}
+			892 = {
+				remove_building = { type = arms_factory level = 2 }
+				remove_building = { type = industrial_complex level = 1 }
+				set_temp_variable = {
+					pop_add = -1500
+				}
+				add_state_population = yes
+			}
+			908 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			910 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			903 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			909 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			799 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			set_province_name = {
+				id = 11427
+				name = VICTORY_POINTS_11427_ACH
+			}
+			set_province_name = {
+				id = 11429
+				name = VICTORY_POINTS_11429_ACH
+			}
+			ACH = {
+				leave_current_faction = yes
+				drop_cosmetic_tag = YES
+				add_ideas = {
+					ach_hardliners
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nf_tbh.25.a
+		TBH = {
+			end_puppet = ACH
+			set_truce = {
+				target = ACH
+				days = 730
+			}
+			add_ideas = {
+				tbh_torn_leadership
+			}
+
 		}
 	}
 }

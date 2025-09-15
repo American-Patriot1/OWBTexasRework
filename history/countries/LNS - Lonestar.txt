@@ -84,18 +84,6 @@ reverse_add_opinion_modifier = {
 	modifier = lubbock_expedition
 }
 
-set_politics = {
-	ruling_party = people
-	elections_allowed = no
-}
-
-set_popularities = {
-	people = 20
-	elites = 7
-	intellectuals = 3
-	ruler = 70
-}
-
 add_ideas = {
 	# Ideas #
 	LNS_idea_hand_gang_resurgence
@@ -118,6 +106,28 @@ add_ideas = {
 
 add_dynamic_modifier = {
 	modifier = texan_economic_union
+}
+
+TBH = {
+	LNS = {
+		become_puppet_of_prev = yes
+	}
+	set_autonomy = {
+		target = LNS
+		autonomy_state = autonomy_texas_rework_free_state
+	}
+}
+
+set_popularities = {
+	people = 20
+	elites = 7
+	intellectuals = 3
+	ruler = 70
+}
+
+set_politics = {
+	ruling_party = people
+	elections_allowed = no
 }
 
 diplomatic_relation = {

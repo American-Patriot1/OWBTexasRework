@@ -33,9 +33,6 @@ country_event = { # ach intro 1, consolidation
 		# 	}
 		# }
 		custom_effect_tooltip = ACH_startup_oob_tt
-		hidden_effect = {
-			load_oob = "ACH_startup"
-		}
 	}
 }
 
