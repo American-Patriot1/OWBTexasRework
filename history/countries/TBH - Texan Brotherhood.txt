@@ -251,20 +251,8 @@ add_ideas = {
 	mutant_law_both
 	scavenging_law
 	currencytexdollar
-	tbh_military_heritage
-	tbh_texas_rangers
-	tbh_victorious_heroes
-	LNS_idea_fatigued_lawmen
-	LNS_idea_controllers_of_the_I20
+	texas_rework_rangers
 }
-add_timed_idea = {
-	idea = TEX_unification_idea
-	days = 1440
-}
-# add_timed_idea = {
-# 	idea = TEX_unification_idea
-# 	days = 1440
-# }
 
 add_equipment_to_stockpile = {
 	type = infantry_equipment_1

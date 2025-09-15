@@ -11,11 +11,36 @@ focus_tree = {
 	default = no
 
 	focus = {
+		id = ach_betrayal
+		icon = GFX_goal_TBH_two_coins
+		cost = 15
+		x = 14
+		y = 0
+
+		completion_reward = {
+			TBH = {
+				country_event = texas_rework.3
+				end_puppet = ACH
+				set_truce = {
+					target = ACH
+					days = 730
+				}
+			}
+		}
+	}
+
+	focus = {
 		id = ach_nf_consolidation
 		icon = GFX_goal_ACH_Insignia
 		cost = 7
-		x = 14
-		y = 0
+		x = 0
+		y = 1
+
+		relative_position_id = ach_betrayal
+
+		prerequisite = {
+			focus = ach_betrayal
+		}
 
 		completion_reward = {
 			if = {

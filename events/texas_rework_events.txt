@@ -74,19 +74,196 @@ country_event = {
 	}
 }
 
+#initial focuses
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.1" }
+	id = texas_rework.1
+	title = texas_rework.1.t
+	desc = texas_rework.1.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_container_bazaar
+
+
+	option = { 
+		name = texas_rework.1.a
+		TBH = {
+			add_ideas = {
+				history_of_economy
+			}
+		}
+		ai_chance = {
+			base = 20
+		}
+	}
+	option = { 
+		name = texas_rework.1.b
+		TBH = {
+			add_ideas = {
+				history_of_big_military_yehaw
+			}
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = { 
+		name = texas_rework.1.c
+		TBH = {
+			add_ideas = {
+				history_of_politics_lame
+			}
+		}
+		ai_chance = {
+			base = 70
+		}
+	}
+	option = { 
+		name = texas_rework.1.d
+		TBH = {
+			add_ideas = {
+				history_of_big_population
+			}
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+country_event = { #Alamo Betrayal
+	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.3" }
+	id = texas_rework.3
+	title = nf_tbh.25.t
+	desc = nf_tbh.25.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_container_bazaar
+
+	immediate = {
+		hidden_effect = {
+			add_resource = {
+				type = composites
+				amount = -3
+				state = 892
+			}
+			add_resource = {
+				type = advanced
+				amount = -3
+				state = 892
+			}
+			add_resource = {
+				type = composites
+				amount = 3
+				state = 908
+			}
+			add_resource = {
+				type = advanced
+				amount = 3
+				state = 908
+			}
+			add_resource = {
+				type = metal
+				amount = 8
+				state = 908
+			}
+			add_resource = {
+				type = water
+				amount = 6
+				state = 908
+			}
+			add_resource = {
+				type = energy
+				amount = 2
+				state = 908
+			}
+			892 = {
+				remove_building = { type = arms_factory level = 2 }
+				remove_building = { type = industrial_complex level = 1 }
+				set_temp_variable = {
+					pop_add = -1500
+				}
+				add_state_population = yes
+			}
+			908 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				if = {
+					limit = {
+						is_valid_state_for_civilian_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			910 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			903 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			909 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			799 = {
+				add_extra_state_shared_building_slots = 2
+			}
+			set_province_name = {
+				id = 11427
+				name = VICTORY_POINTS_11427_ACH
+			}
+			set_province_name = {
+				id = 11429
+				name = VICTORY_POINTS_11429_ACH
+			}
+			ACH = {
+				leave_current_faction = yes
+				drop_cosmetic_tag = YES
+				add_ideas = {
+					ach_hardliners
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nf_tbh.25.a
+		TBH = {
+			add_ideas = {
+				texas_rework_non_existent_army
+				texas_rework_no_research
+				texas_rework_broken_economy
+			}
+
+		}
+	}
+}
+
 #Constitution
 country_event = {
-	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.4" }
-	id = texas_rework.4
-	title = texas_rework.4.t
-	desc = texas_rework.4.desc
+	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.5" }
+	id = texas_rework.5
+	title = texas_rework.5.t
+	desc = texas_rework.5.desc
 	is_triggered_only = yes
 	fire_only_once = yes
 	picture = GFX_event_sub_generic_container_bazaar
 
 
 	option = { # industry
-		name = texas_rework.4.a
+		name = texas_rework.5.a
 		TBH = {
 			add_to_variable = { const_production_speed = 0.1 }
 			add_to_variable = { const_factory_efficiency = 0.1 }
@@ -97,7 +274,7 @@ country_event = {
 		}
 	}
 	option = { # political
-		name = texas_rework.4.b
+		name = texas_rework.5.b
 		TBH = {
 			add_to_variable = { const_political_power_gain = 0.25 }
 			add_to_variable = { const_compliance_gain = 0.1 }
@@ -110,7 +287,7 @@ country_event = {
 		}
 	}
 	option = { # pop
-		name = texas_rework.4.c
+		name = texas_rework.5.c
 		TBH = {
 			every_owned_state = {
 				set_temp_variable = {
@@ -128,7 +305,7 @@ country_event = {
 		}
 	}
 	option = { # military
-		name = texas_rework.4.d
+		name = texas_rework.5.d
 		TBH = {
 			add_to_variable = { const_max_command_power_multi = 0.1 }
 			add_to_variable = { war_support_week = 0.002 }
@@ -324,130 +501,6 @@ country_event = { #fall of Houston
 				has_state_flag = do_not_exodus
 			}
 			clr_state_flag = do_not_exodus
-		}
-	}
-}
-
-country_event = { #Alamo Betrayal
-	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.904" }
-	id = texas_rework.904
-	title = nf_tbh.25.t
-	desc = nf_tbh.25.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	picture = GFX_event_sub_generic_container_bazaar
-
-	immediate = {
-		hidden_effect = {
-			add_resource = {
-				type = composites
-				amount = -3
-				state = 892
-			}
-			add_resource = {
-				type = advanced
-				amount = -3
-				state = 892
-			}
-			add_resource = {
-				type = composites
-				amount = 3
-				state = 908
-			}
-			add_resource = {
-				type = advanced
-				amount = 3
-				state = 908
-			}
-			add_resource = {
-				type = metal
-				amount = 8
-				state = 908
-			}
-			add_resource = {
-				type = water
-				amount = 6
-				state = 908
-			}
-			add_resource = {
-				type = energy
-				amount = 2
-				state = 908
-			}
-			892 = {
-				remove_building = { type = arms_factory level = 2 }
-				remove_building = { type = industrial_complex level = 1 }
-				set_temp_variable = {
-					pop_add = -1500
-				}
-				add_state_population = yes
-			}
-			908 = {
-				if = {
-					limit = {
-						is_valid_state_for_arms_factory = yes
-					}
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = arms_factory
-						level = 2
-						instant_build = yes
-					}
-				}
-				if = {
-					limit = {
-						is_valid_state_for_civilian_factory = yes
-					}
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = industrial_complex
-						level = 1
-						instant_build = yes
-					}
-				}
-			}
-			910 = {
-				add_extra_state_shared_building_slots = 2
-			}
-			903 = {
-				add_extra_state_shared_building_slots = 2
-			}
-			909 = {
-				add_extra_state_shared_building_slots = 2
-			}
-			799 = {
-				add_extra_state_shared_building_slots = 2
-			}
-			set_province_name = {
-				id = 11427
-				name = VICTORY_POINTS_11427_ACH
-			}
-			set_province_name = {
-				id = 11429
-				name = VICTORY_POINTS_11429_ACH
-			}
-			ACH = {
-				leave_current_faction = yes
-				drop_cosmetic_tag = YES
-				add_ideas = {
-					ach_hardliners
-				}
-			}
-		}
-	}
-
-	option = {
-		name = nf_tbh.25.a
-		TBH = {
-			end_puppet = ACH
-			set_truce = {
-				target = ACH
-				days = 730
-			}
-			add_ideas = {
-				tbh_torn_leadership
-			}
-
 		}
 	}
 }

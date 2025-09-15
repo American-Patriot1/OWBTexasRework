@@ -1,23 +1,131 @@
-# ideas = {
-# 	country = {
-# 		houston_concrete_city = {
-# 			picture = GFX_idea_generic_religion
-# 			allowed = {
-# 				always = yes
-# 			}
-# 			allowed_civil_war = {
-# 				always = yes
-# 			}
-# 			removal_cost = -1
-# 			research_bonus = {
-# 				air_tech_category = 0.10
-# 			}
-# 			modifier = {
-# 				stability_factor = -0.10
-# 				caps_flat_income_modifier = -15
-# 				consumer_goods_expected_value = 0.15
-# 				monthly_population = 0.15
-# 			}
-# 		}
-# 	}
-# }
+ideas = {
+	country = {
+		texas_rework_rangers = {
+			picture = tbh_law_3
+			allowed = {
+				always = yes
+			}
+			modifier = {
+				stability_factor = 0.10
+				military_leader_cost_factor = -0.5
+				army_leader_start_level = 1
+				army_leader_start_logistics_level = 1
+				army_leader_start_defense_level = 1
+				resistance_target = -0.1
+				send_volunteer_size = 5
+				send_volunteers_tension = -0.4
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+		}
+		texas_rework_broken_economy = {
+			picture = tbh_provisions_for_protection
+			allowed = {
+				always = yes
+			}
+			modifier = {
+				stability_factor = -0.5
+				consumer_goods_expected_value = 1
+				industrial_capacity_dockyard = -0.5
+				production_speed_industrial_complex_factor = -0.75
+				production_speed_arms_factory_factor = -0.75
+				conversion_cost_civ_to_mil_factor = 0.5
+				conversion_cost_mil_to_civ_factor = 0.5
+				monthly_population = -0.25
+				mobilization_speed = -0.25
+				industry_repair_factor = -0.25
+				global_building_slots_factor = -0.25
+				justify_war_goal_time = 0.5
+                political_power_gain = -0.5
+				war_support_factor = -0.5
+			}
+		}
+		texas_rework_no_research = {
+			picture = cwb_luddite_crusade
+			allowed = {
+				always = yes
+			}
+			modifier = {
+				stability_factor = -0.25
+				industrial_capacity_factory = -0.5
+				production_factory_max_efficiency_factor = -0.5
+				monthly_population = -0.25
+				research_speed_factor = -2.5
+			}
+		}
+		texas_rework_non_existent_army = {
+			picture = tbh_ach_split
+			allowed = {
+				always = yes
+			}
+			modifier = {
+				military_leader_cost_factor = 2
+				army_org_factor = -0.75
+				stability_factor = -0.5
+				army_attack_factor = -0.5
+				army_defence_factor = -0.75
+				command_power_gain_mult = -0.75
+				experience_gain_army_factor = -1
+				naval_doctrine_cost_factor = 0.5
+				air_doctrine_cost_factor = 0.5
+				army_speed_factor = -0.5
+				planning_speed = -1.0
+				experience_gain_army = -0.25
+				max_command_power = -50
+				army_morale_factor = -0.25
+				war_support_factor = -0.5
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+		}
+		history_of_economy = {
+			picture = GFX_idea_generic_religion
+			modifier = {
+				consumer_goods_expected_value = -0.05
+				production_factory_max_efficiency_factor = 0.05
+				global_building_slots_factor = 0.1
+				local_resources_factor = 0.1
+				industrial_capacity_factory = 0.1
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_infrastructure_factor = 0.1
+			}
+		}
+		history_of_big_military_yehaw = {
+			picture = GFX_idea_generic_religion
+			modifier = {
+				army_attack_factor = 0.05
+				army_speed_factor = 0.2
+				planning_speed = 0.2
+				experience_gain_army = 0.1
+				army_org_Factor = 0.05
+				max_command_power = 25
+				command_power_gain_mult = 0.1
+				army_morale_factor = 0.1
+			}
+		}
+		history_of_politics_lame = {
+			picture = GFX_idea_generic_religion
+			research_bonus = {
+				air_tech_category = 0.1
+			}
+			modifier = {
+				research_speed_factor = 0.2
+                political_power_gain = 0.25
+			}
+		}
+		history_of_big_population = {
+			picture = GFX_idea_generic_religion
+			modifier = {
+				conscription = 0.025
+				weekly_manpower = 25
+				monthly_population = 0.15
+				compliance_gain = 0.05
+				mobilization_speed = 0.1
+			}
+		}
+	}
+}

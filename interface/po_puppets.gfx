@@ -198,4 +198,24 @@ spriteTypes = {
 		name = "GFX_autonomy_canyon_territory_icon"
 		textureFile = "gfx/interface/autonomy/autonomy_canyon_territory_icon.dds"
 	}
+
+###TEXAS REWORK
+		
+	spriteType = {
+		name = "GFX_autonomy_texas_rework_incorporated_territory_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_texas_rework_incorporated_territory_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_texas_rework_unincorporated_territory_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_texas_rework_unincorporated_territory_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_texas_rework_protected_state_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_texas_rework_protected_state_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_autonomy_texas_rework_free_state_icon"
+		textureFile = "gfx/interface/autonomy/autonomy_texas_rework_free_state_icon.dds"
+	}
+
 }

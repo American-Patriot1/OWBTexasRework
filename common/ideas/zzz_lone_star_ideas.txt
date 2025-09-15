@@ -34,8 +34,6 @@ ideas = {
 				army_attack_factor = -0.1
 				political_power_factor = -0.05
 				command_power_gain_mult = -0.4
-				cant_faction_call = 1
-				cant_faction_join = 1
 			}
 		}
 		LNS_idea_controllers_of_the_I20 = {

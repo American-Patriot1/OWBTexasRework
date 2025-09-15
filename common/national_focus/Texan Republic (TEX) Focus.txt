@@ -2,6 +2,10 @@
 #    Texan Republic Focus Tree    #
 # Scripted & Designed by HappyNTH #
 ###################################
+# 			 Revised by			  #
+# 	REAL!!!!!!! Murcan Patriot	  #
+###################################
+# i should be writing an essay but i think ill do this instead
 focus_tree = {
 	id = nf_texan_republic
 	country = {
@@ -14,25 +18,27 @@ focus_tree = {
 	default = no
 
 	focus = {
-		id = texas_unification
-		icon = GFX_goal_uoa_texas
+		id = texas_our_past
+		icon = GFX_goal_RRG_rio_bos
 		cost = 7
 		x = 12
 		y = 0
 		completion_reward = {
+			country_event = texas_rework.1
 		}
 	}
 	focus = {
-		id = texas_betrayal
-		icon = GFX_goal_TBH_two_coins
+		id = texas_unification
+		icon = GFX_goal_uoa_texas
 		cost = 7
 		x = 0
 		y = 1
-		relative_position_id = texas_unification
+		relative_position_id = texas_our_past
 		prerequisite = {
-			focus = texas_unification
+			focus = texas_our_past
 		}
 		completion_reward = {
+			# country_event = texas_rework.2
 		}
 	}
 	focus = {
@@ -41,14 +47,106 @@ focus_tree = {
 		cost = 7
 		x = 0
 		y = 1
-		relative_position_id = texas_betrayal
+		relative_position_id = texas_unification
 		prerequisite = {
-			focus = texas_betrayal
+			focus = texas_unification
 		}
 		completion_reward = {
+			# country_event = texas_rework.4
 		}
 	}
-	## Development foci
+	focus = {
+		id = texas_constitution
+		icon = GFX_goal_constitution_focus
+		cost = 7
+		x = 0
+		y = 1
+		relative_position_id = texas_stability
+		prerequisite = {
+			focus = texas_stability
+		}
+		completion_reward = {
+			add_political_power = 100
+			country_event = texas_rework.5
+		}
+	}
+	focus = {
+		id = texas_election_time
+		icon = GFX_goal_generic_texas2
+		cost = 15
+		x = 2
+		y = 4
+		# relative_position_id = texas_constitution
+		# prerequisite = {
+		# 	focus = texas_constitution
+		# }
+		available = {
+			has_country_flag = constitution_signed
+			is_ai = yes
+		}
+
+		completion_reward = {
+			clr_country_flag = constitution_in_progress
+			add_political_power = 100
+			add_to_variable = { coring_cost_country_factor = 0.1 }
+			custom_effect_tooltip = LNS_10_core_reduction_advisor_tt
+			add_ideas = TEX_texas_proper
+			if = {
+				limit = {
+					has_cosmetic_tag = TEX_chile
+				}
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TEX_proper_chile
+			}
+			else_if = {
+				limit = {
+					has_cosmetic_tag = TEX_LNS
+				}
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TEX_proper_LNS
+			}
+			else_if = {
+				limit = {
+					has_cosmetic_tag = TEX_provisional
+				}
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TEX_proper
+			}
+			else_if = {
+				limit = {
+					has_cosmetic_tag = TEX_stateflag
+				}
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TEX_proper_stateflag
+			}
+			else_if = {
+				limit = {
+					has_cosmetic_tag = TAA_Texas_Star
+				}
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TAA_Texas_Star_proper
+			}
+			else_if = {
+				limit = {
+					has_cosmetic_tag = TAA_Texas_Middle
+				}
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TAA_Texas_Middle_proper
+			}
+			else_if = {
+				limit = {
+					has_cosmetic_tag = TAA_Texas_Left
+				}
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = TAA_Texas_Left_proper
+			}
+			hidden_effect = {
+				play_song = owb_dev_team_yellow_rose_of_texas
+			}
+		}
+	}
+
+	## Development focuses
 	focus = {
 		id = tex_form_the_tbr
 		icon = GFX_goal_generic_workshop
@@ -3809,96 +3907,4 @@ focus_tree = {
 		# }
 	}
 
-	### Constitution
-	focus = {
-		id = texas_constitution
-		icon = GFX_goal_constitution_focus
-		cost = 7
-		x = 0
-		y = 1
-		relative_position_id = texas_stability
-		prerequisite = {
-			focus = texas_stability
-		}
-		completion_reward = {
-			add_political_power = 100
-			# country_event = nf_texas.51
-		}
-	}
-
-	focus = {
-		id = tex_proper_this_time
-		icon = GFX_goal_generic_texas2
-		cost = 15
-		x = 0
-		y = 1
-		relative_position_id = texas_constitution
-		prerequisite = {
-			focus = texas_constitution
-		}
-		available = {
-			has_country_flag = constitution_signed
-			is_ai = yes
-		}
-
-		completion_reward = {
-			clr_country_flag = constitution_in_progress
-			add_political_power = 100
-			add_to_variable = { coring_cost_country_factor = 0.1 }
-			custom_effect_tooltip = LNS_10_core_reduction_advisor_tt
-			add_ideas = TEX_texas_proper
-			if = {
-				limit = {
-					has_cosmetic_tag = TEX_chile
-				}
-				drop_cosmetic_tag = yes
-				set_cosmetic_tag = TEX_proper_chile
-			}
-			else_if = {
-				limit = {
-					has_cosmetic_tag = TEX_LNS
-				}
-				drop_cosmetic_tag = yes
-				set_cosmetic_tag = TEX_proper_LNS
-			}
-			else_if = {
-				limit = {
-					has_cosmetic_tag = TEX_provisional
-				}
-				drop_cosmetic_tag = yes
-				set_cosmetic_tag = TEX_proper
-			}
-			else_if = {
-				limit = {
-					has_cosmetic_tag = TEX_stateflag
-				}
-				drop_cosmetic_tag = yes
-				set_cosmetic_tag = TEX_proper_stateflag
-			}
-			else_if = {
-				limit = {
-					has_cosmetic_tag = TAA_Texas_Star
-				}
-				drop_cosmetic_tag = yes
-				set_cosmetic_tag = TAA_Texas_Star_proper
-			}
-			else_if = {
-				limit = {
-					has_cosmetic_tag = TAA_Texas_Middle
-				}
-				drop_cosmetic_tag = yes
-				set_cosmetic_tag = TAA_Texas_Middle_proper
-			}
-			else_if = {
-				limit = {
-					has_cosmetic_tag = TAA_Texas_Left
-				}
-				drop_cosmetic_tag = yes
-				set_cosmetic_tag = TAA_Texas_Left_proper
-			}
-			hidden_effect = {
-				play_song = owb_dev_team_yellow_rose_of_texas
-			}
-		}
-	}
 }
