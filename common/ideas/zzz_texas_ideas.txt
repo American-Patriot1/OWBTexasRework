@@ -55,6 +55,7 @@ ideas = {
 				research_speed_factor = -2.5
 			}
 		}
+		#stunted military
 		texas_rework_non_existent_army = {
 			picture = tbh_ach_split
 			allowed = {
@@ -127,26 +128,52 @@ ideas = {
 				mobilization_speed = 0.1
 			}
 		}
+		texas_rework_taa_reliance = {
+			picture = tbh_yellow_rose
+			modifier = {
+			}
+		}
+		texas_rework_taa_fallen = {
+			picture = construction_penalty
+			modifier = {
+			}
+		}
 
 
 		#intervention target ideas
 		texas_rework_intervention_target_east = {
-			picture = us_army_knowledge
+			picture = rrg_texas2
 			modifier = {
 			}
 		}
 		texas_rework_intervention_target_west = {
-			picture = us_army_knowledge
+			picture = rrg_texas2
 			modifier = {
 			}
 		}
 		texas_rework_intervention_target_north = {
-			picture = us_army_knowledge
+			picture = rrg_texas2
 			modifier = {
 			}
 		}
 		texas_rework_intervention_target_south = {
-			picture = us_army_knowledge
+			picture = rrg_texas2
+			modifier = {
+			}
+		}
+		# texas economic union stuff
+		texas_rework_texas_economic_union_investments = {
+			picture = generic_caps
+			modifier = {
+			}
+		}
+		texas_rework_texas_economic_union_ally = {
+			picture = MOJ_idea_aggressive_policy
+			modifier = {
+			}
+		}
+		texas_rework_texas_economic_union_taa = {
+			picture = VEG_Middle_Class_Clientele
 			modifier = {
 			}
 		}

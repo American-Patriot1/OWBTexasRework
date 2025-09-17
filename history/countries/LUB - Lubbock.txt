@@ -81,6 +81,7 @@ add_ideas = {
 	lub_ghoul_human_tensions
 	currencytexdollar
 	texas_rework_intervention_target_west
+	texas_rework_texas_economic_union_investments
 }
 
 give_military_access = LNS

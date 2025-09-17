@@ -60,6 +60,10 @@ add_ideas = {
 	undesirables_law_raider
 	currencytexdollar
 	texas_rework_intervention_target_east
+	texas_rework_texas_economic_union_ally
+}
+add_dynamic_modifier = {
+	modifier = texan_economic_union
 }
 
 recruit_character = ASS_tuffy

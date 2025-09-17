@@ -376,6 +376,7 @@ country_event = { #fall of Assassin city
 		}
 		set_technology = { skater_tech = 1 }
 		ASS = {
+			leave_current_faction = yes
             every_unit_leader = {
                 set_nationality = TBH
             }

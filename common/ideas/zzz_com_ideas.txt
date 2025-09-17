@@ -1,0 +1,1909 @@
+ideas = {
+	country = {
+		COM_army_nation = {
+			picture = idea_COM_army_nation
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				non_core_manpower = -0.025
+				stability_factor = -0.05
+			}
+		}
+		COM_rg_government = {
+			picture = idea_COM_rg_government
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -1.25
+				non_core_manpower = -0.07
+				stability_factor = -0.07
+				drift_defence_factor = -0.03
+			}
+		}
+		COM_og_government = {
+			picture = idea_COM_og_government
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -1.25
+				non_core_manpower = -0.07
+				stability_factor = -0.07
+				command_power_gain = 0.2
+			}
+		}
+		COM_lha_government = {
+			picture = idea_COM_lha_government
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -1.25
+				non_core_manpower = -0.07
+				stability_factor = -0.07
+				production_speed_buildings_factor = 0.025
+			}
+		}
+		COM_lha_influence = {
+			picture = idea_COM_lha_influence
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.1
+			}
+		}
+		COM_coia = {
+			picture = idea_COM_coia
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+
+			}
+		}
+		COM_coia_og = {
+			picture = idea_COM_coia_og
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				resistance_growth_on_our_occupied_states = -0.25
+				required_garrison_factor = -0.02
+			}
+		}
+		COM_coia_rg = {
+			picture = idea_COM_coia_rg
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.025
+				compliance_growth = 0.025
+			}
+		}
+		COM_coia_lha = {
+			picture = idea_COM_coia_lha
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = 0.025
+				industrial_capacity_factory = 0.025
+			}
+		}
+		COM_ida = {
+			picture = idea_COM_ida
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+
+			}
+		}
+		COM_ida_lha = {
+			picture = idea_COM_ida_lha
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.025
+				production_speed_buildings_factor = 0.025
+			}
+		}
+		COM_ida_og = {
+			picture = idea_COM_ida_og
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = -0.025
+				stability_factor = -0.025
+			}
+		}
+		COM_ida_rg = {
+			picture = idea_COM_ida_rg
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = 0.025
+				industry_repair_factor = 0.025
+			}
+		}
+		COM_mt = {
+			picture = idea_COM_mt
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+
+			}
+		}
+		COM_mt_1 = {
+			picture = idea_COM_mt_1
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				command_power_gain_mult = 0.1
+				experience_gain_army_factor = 0.005
+			}
+		}
+		COM_mt_2 = {
+			picture = idea_COM_mt_2
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.05
+			}
+		}
+		COM_mt_3 = {
+			picture = idea_COM_mt_3
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_leader_cost_factor = -0.005
+				army_leader_start_attack_level = 1
+				army_leader_start_defense_level = 1
+			}
+		}
+		COM_og_doc = {
+			picture = idea_COM_og_doc
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.025
+				army_defence_factor = 0.025
+			}
+		}
+		COM_rg_doc = {
+			picture = idea_COM_rg_doc
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.02
+				non_core_manpower = 0.02
+				war_support_factor = 0.03
+			}
+		}
+		COM_lha_doc = {
+			picture = idea_COM_lha_doc
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.025
+				acclimatization_hot_climate_gain_factor = 0.1
+				acclimatization_cold_climate_gain_factor = 0.1
+			}
+		}
+		COM_lha_doc_1 = {
+			picture = idea_COM_lha_doc_1
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.025
+				acclimatization_hot_climate_gain_factor = 0.15
+				acclimatization_cold_climate_gain_factor = 0.15
+				army_leader_cost_factor = -0.005
+				army_leader_start_attack_level = 1
+				army_leader_start_defense_level = 1
+			}
+		}
+		COM_lha_doc_2 = {
+			picture = idea_COM_lha_doc_2
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.025
+				acclimatization_hot_climate_gain_factor = 0.15
+				acclimatization_cold_climate_gain_factor = 0.15
+				conscription_factor = 0.05
+			}
+		}
+		COM_lha_doc_3 = {
+			picture = idea_COM_lha_doc_3
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.025
+				acclimatization_hot_climate_gain_factor = 0.15
+				acclimatization_cold_climate_gain_factor = 0.15
+				command_power_gain_mult = 0.2
+				experience_gain_army_factor = 0.005
+			}
+		}
+		COM_rg_doc_1 = {
+			picture = idea_COM_rg_doc_1
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.02
+				non_core_manpower = 0.02
+				war_support_factor = 0.03
+				army_leader_cost_factor = -0.005
+				army_leader_start_attack_level = 1
+				army_leader_start_defense_level = 1
+			}
+		}
+		COM_rg_doc_2 = {
+			picture = idea_COM_rg_doc_2
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.02
+				non_core_manpower = 0.02
+				war_support_factor = 0.03
+				weekly_manpower = 150
+			}
+		}
+		COM_rg_doc_3 = {
+			picture = idea_COM_rg_doc_3
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				weekly_manpower = 10
+				non_core_manpower = 0.025
+				war_support_factor = 0.05
+				command_power_gain_mult = 0.15
+				experience_gain_army_factor = 0.005
+			}
+		}
+		COM_og_doc_1 = {
+			picture = idea_COM_og_doc_1
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.025
+				army_defence_factor = 0.025
+				army_leader_cost_factor = -0.005
+				army_leader_start_attack_level = 1
+				army_leader_start_defense_level = 1
+			}
+		}
+		COM_og_doc_2 = {
+			picture = idea_COM_og_doc_2
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.030
+				army_defence_factor = 0.025
+				weekly_manpower = 150
+			}
+		}
+		COM_og_doc_3 = {
+			picture = idea_COM_og_doc_3
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.025
+				army_defence_factor = 0.025
+				command_power_gain_mult = 0.15
+				experience_gain_army_factor = 0.005
+			}
+		}
+		COM_investigation = {
+			picture = idea_COM_investigation
+			allowed = { always = no }
+
+			allowed_civil_war = { always = no }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.25
+			}
+		}
+		COM_ida_rg_2 = {
+			picture = idea_COM_ida_rg_2
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				industry_repair_factor = 0.05
+			}
+		}
+		COM_rg_alix_confederation = {
+			picture = idea_COM_rg_alix_confederation
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				non_core_manpower = -0.05
+				stability_factor = -0.05
+				drift_defence_factor = -0.0125
+			}
+		}
+		COM_rg_arcadian_support = {
+			picture = idea_COM_rg_arcadian_support
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				people_drift = 0.25
+			}
+		}
+		COM_rg_laissez_faire = {
+			picture = idea_COM_rg_laissez_faire
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = -0.025
+			}
+		}
+		COM_rg_local_court = {
+			picture = idea_COM_rg_local_court
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				compliance_growth = 0.05
+			}
+		}
+		COM_rg_red_deer_federation = {
+			picture = idea_COM_rg_red_deer_federation
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.25
+				non_core_manpower = -0.035
+				stability_factor = -0.035
+			}
+		}
+		COM_rg_united_people = {
+			picture = idea_COM_rg_united_people
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				people_drift = 0.15
+				surrender_limit = 0.05
+			}
+		}
+		COM_rg_federal_guidance = {
+			picture = idea_COM_rg_federal_guidance
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = -0.01
+				industrial_capacity_factory = 0.025
+				production_speed_buildings_factor = 0.025
+			}
+		}
+		COM_rg_federal_court = {
+			picture = idea_COM_rg_federal_court
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.06
+				compliance_growth = 0.04
+			}
+		}
+		COM_rg_og_revolt = {
+			picture = idea_COM_rg_og_revolt
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				command_power_gain_mult = -0.25
+				max_command_power_mult = -0.25
+				minimum_training_level = 0.25
+			}
+		}
+		COM_rg_og_sparrow = {
+			picture = idea_COM_rg_og_sparrow
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				command_power_gain_mult = -0.25
+				max_command_power_mult = -0.25
+				minimum_training_level = 0.25
+				army_attack_factor = -0.25
+				army_defence_factor = -0.25
+			}
+		}
+		COM_rg_og_sparrow_1 = {
+			picture = idea_COM_rg_og_sparrow_1
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				command_power_gain_mult = -0.25
+				max_command_power_mult = -0.25
+				minimum_training_level = 0.25
+				army_attack_factor = -0.125
+				army_defence_factor = -0.125
+			}
+		}
+		COM_rg_og_purged_officers = {
+			picture = idea_COM_rg_og_purged_officers
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				command_power_gain_mult = -0.25
+				max_command_power_mult = -0.25
+				minimum_training_level = 0.30
+			}
+		}
+		COM_rg_og_purged_officers_1 = {
+			picture = idea_COM_rg_og_purged_officers_1
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				command_power_gain_mult = -0.30
+				max_command_power_mult = -0.25
+				minimum_training_level = 0.25
+			}
+		}
+		COM_rg_lha_revolt = {
+			picture = idea_COM_rg_lha_revolt
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = -0.10
+			}
+		}
+			COM_rg_lha_revolt_1 = {
+			picture = idea_COM_rg_lha_revolt
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = -0.05
+				conscription_factor = -0.02
+			}
+		}
+			COM_rg_lha_revolt_2 = {
+			picture = idea_COM_rg_lha_revolt
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = -0.025
+			}
+		}
+			COM_rg_lha_revolt_3 = {
+			picture = idea_COM_rg_lha_revolt
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = -0.05
+				political_power_factor = -0.02
+			}
+		}
+		COM_rg_cpla_revolt = {
+			picture = idea_COM_rg_cpla_revolt
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_cost = 0.5
+				stability_weekly = -0.01
+			}
+		}
+		COM_rg_cpla_revolt_1 = {
+			picture = idea_COM_rg_cpla_revolt_1
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_cost = 0.25
+				stability_weekly = -0.005
+				weekly_manpower = -10
+			}
+		}
+		COM_rg_cpla_revolt_2 = {
+			picture = idea_COM_rg_cpla_revolt_2
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				weekly_manpower = -20
+			}
+		}
+		COM_rg_cpla_revolt_3 = {
+			picture = idea_COM_rg_cpla_revolt_3
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_cost = 0.25
+				stability_weekly = -0.005
+				political_power_factor = -0.02
+			}
+		}
+		COM_rg_joint_task_force = {
+			picture = idea_COM_rg_joint_task_force
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = -0.025
+				political_power_factor = -0.02
+			}
+		}
+		COM_rg_new_officers = {
+			picture = idea_COM_rg_new_officers
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				command_power_gain_mult = 0.05
+				max_command_power_mult = 0.05
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+			}
+		}
+		COM_rg_new_pilots = {
+			picture = idea_COM_rg_new_pilots
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				air_accidents_factor = 0.25
+				air_ace_generation_chance_factor = -0.25
+				air_agility_factor = -0.05
+				air_attack_factor = 0.05
+				air_defence_factor = 0.05
+			}
+		}
+		COM_rg_experienced_pilots = {
+			picture = idea_COM_rg_experienced_pilots
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				air_agility_factor = 0.05
+				air_attack_factor = 0.05
+				air_defence_factor = 0.05
+			}
+		}
+		COM_rg_colonial_industrial_development = {
+			picture = idea_COM_rg_colonial_industrial_development
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = 0.1
+			}
+		}
+		COM_rg_colonial_settlement = {
+			picture = idea_COM_rg_colonial_settlement
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				weekly_manpower = 50
+			}
+		}
+		COM_rg_red_occupation = {
+			picture = idea_COM_rg_red_occupation
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_cost = 0.05
+				stability_factor = -0.025
+			}
+		}
+		COM_rg_old_world_mentality = {
+			picture = idea_COM_rg_old_world_mentality
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.1
+				non_core_manpower = 0.05
+			}
+		}
+		COM_rg_federal_constitution = {
+			picture = idea_COM_rg_federal_constitution
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.25
+				non_core_manpower = 0.05
+				stability_factor = 0.05
+			}
+		}
+		COM_rg_confederal_constitution = {
+			picture = idea_COM_rg_confederal_constitution
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.5
+				non_core_manpower = 0.025
+				stability_factor = 0.025
+			}
+		}
+		COM_rg_the_frame = {
+			picture = idea_COM_rg_the_frame
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.05
+			}
+		}
+		COM_rg_red_coexist = {
+			picture = idea_COM_rg_red_coexist
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_cost = -0.05
+				political_power_gain = -0.15
+				stability_factor = 0.025
+				drift_defence_factor = -0.025
+			}
+		}
+		COM_rg_crackdown = {
+			picture = idea_COM_rg_crackdown
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_cost = 0.35
+				political_power_gain = 0.15
+				stability_factor = 0.015
+				drift_defence_factor = 0.025
+				non_core_manpower = -0.05
+			}
+		}
+		COM_rg_arcadian_church = {
+			picture = idea_COM_rg_arcadian_church
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				drift_defence_factor = -0.025
+				industrial_capacity_factory = 0.025
+				industry_repair_factor = 0.025
+				production_speed_buildings_factor = 0.025
+				non_core_manpower = 0.025
+			}
+		}
+		COM_rg_cascadian_army_training = {
+			picture = idea_COM_rg_cascadian_army_training
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				minimum_training_level = 0.05
+				attrition = -0.05
+				army_org_factor = 0.05
+			}
+		}
+		COM_rg_cascadian_profits = {
+			picture = idea_COM_rg_cascadian_profits
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = -0.05
+			}
+		}
+		COM_rg_cascadian_steel = {
+			picture = idea_COM_rg_cascadian_steel
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.1
+				army_defence_factor = 0.1
+				breakthrough_factor = 0.05
+			}
+		}
+		COM_rg_revolt = {
+			picture = idea_COM_rg_revolt
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = -0.05
+				conscription_factor = -0.05
+			}
+		}
+		COM_reformed_national_guard = {
+			picture = idea_COM_reformed_national_guard
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.05
+				required_garrison_factor = -0.05
+				resistance_growth_on_our_occupied_states = 0.05
+			}
+		}
+		COM_federalize_military_police = {
+			picture = idea_COM_federalize_military_police
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_core_defence_factor = 0.05
+				required_garrison_factor = -0.05
+				resistance_growth_on_our_occupied_states = 0.05
+			}
+		}
+		COM_og_doti = {
+			picture = idea_COM_og_doti
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = -0.05
+				industrial_capacity_factory = 0.025
+				stability_factor = -0.025
+			}
+		}
+		COM_og_an_american_army = {
+			picture = idea_COM_og_an_american_army
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.025
+				army_attack_speed_factor = 0.025
+			}
+		}
+		COM_og_american_autocracy = {
+			picture = idea_COM_og_american_autocracy
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.05
+				non_core_manpower = -0.025
+				stability_factor = -0.05
+				command_power_gain_mult = 0.25
+			}
+		}
+		COM_og_american_way = {
+			picture = idea_COM_og_american_way
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				ruler_drift = 0.025
+			}
+		}
+		COM_og_enclave_occupation_government = {
+			picture = idea_COM_og_enclave_occupation_government
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.1
+				non_core_manpower = -0.025
+				stability_factor = -0.05
+				command_power_gain_mult = 0.5
+			}
+		}
+		COM_three_tier_society = {
+			picture = idea_COM_three_tier_society
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				production_lack_of_resource_penalty_factor = 0.1
+				base_fuel_gain_factor = -0.10
+				attrition = 0.05
+				out_of_supply_factor = 0.1
+			}
+		}
+		COM_og_americanization_program = {
+			picture = idea_COM_og_americanization_program
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = -0.025
+				attrition = 0.05
+				out_of_supply_factor = 0.1
+				political_power_cost = 0.25
+				drift_defence_factor = -0.25
+			}
+		}
+		COM_og_sol_rebellion = {
+			picture = idea_COM_og_sol_rebellion
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = -0.10
+				conscription_factor = -0.10
+			}
+		}
+		COM_og_sol_second_government = {
+			picture = idea_COM_og_sol_second_government
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				resistance_growth_on_our_occupied_states = -0.025
+				required_garrison_factor = -0.02
+				compliance_growth = 0.025
+			}
+		}
+		COM_og_sol_army_ranger = {
+			picture = idea_COM_og_sol_army_ranger
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.05
+				army_attack_speed_factor = 0.05
+			}
+		}
+		COM_og_enclave_tactic = {
+			picture = idea_COM_og_enclave_tactic
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				planning_speed = 0.05
+				breakthrough_factor = 0.05
+				army_attack_factor = 0.025
+				army_attack_speed_factor = 0.025
+			}
+		}
+		COM_og_enclave_research = {
+			picture = idea_COM_og_enclave_research
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.1
+			}
+		}
+		COM_og_american_culture = {
+			picture = idea_COM_og_american_culture
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_cost = -0.25
+				stability_factor = 0.025
+				drift_defence_factor = 0.025
+			}
+		}
+		COM_og_radio_enclave = {
+			picture = idea_COM_og_radio_enclave
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				ruler_drift = 0.75
+			}
+		}
+		COM_og_reformed_army = {
+			picture = idea_COM_og_reformed_army
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				minimum_training_level = 0.03
+				training_time_factor = -0.025
+				conscription_factor = 0.05
+			}
+		}
+		COM_og_flight_school = {
+			picture = idea_COM_og_flight_school
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				air_accidents_factor = 0.05
+				air_attack_factor = 0.05
+				air_range_factor = 0.1
+				air_volunteer_cap = 25
+			}
+		}
+		COM_og_doca = {
+			picture = idea_COM_og_doca
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.50
+				non_core_manpower = 0.025
+				stability_factor = 0.025
+				command_power_gain_mult = 0.3
+			}
+		}
+		COM_og_uncle_sam_taxes = {
+			picture = idea_COM_og_uncle_sam_taxes
+			allowed = { always = no }
+			cancel = {
+				COM = { exists = no }
+			}
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				caps_flat_income_modifier = 1
+				country_resource_circuitry = 3
+				country_resource_advanced = 3
+			}
+		}
+		COM_og_mining_towns = {
+			picture = idea_COM_og_mining_towns
+			allowed = { always = no }
+			cancel = {
+				MCA = { exists = no }
+			}
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				country_resource_metal = 3
+				country_resource_composites = 3
+			}
+		}
+		COM_og_mining_towns_1 = {
+			picture = idea_COM_og_mining_towns_1
+			allowed = { always = no }
+			cancel = {
+				MCA = { exists = no }
+			}
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				caps_flat_income_modifier = 2
+				country_resource_metal = 5
+				country_resource_composites = 5
+			}
+		}
+		COM_og_power_grid = {
+			picture = idea_COM_og_power_grid
+			allowed = { always = no }
+			cancel = {
+				MCA = { exists = no }
+			}
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				country_resource_energy = 10
+			}
+		}
+		COM_og_industrial_investment = {
+			picture = idea_COM_og_industrial_investment
+			allowed = { always = no }
+			cancel = {
+				MCA = { exists = no }
+			}
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = -0.1
+			}
+		}
+		COM_og_colonial_congress = {
+			picture = idea_COM_og_colonial_congress
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = -0.075
+				industrial_capacity_factory = 0.05
+				stability_factor = 0.025
+			}
+		}
+        COM_as_freedom = {
+            picture = biohazard_deal
+            allowed = {
+                always = no
+            }
+            modifier = {
+                monthly_population = 0.075
+                exodus_national_appeal = 0.075
+            }
+        }
+		COM_og_bunker_blues = {
+			picture = vaulttec
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				fortification_damage = 0.10
+				army_defence_factor = 0.05
+			}
+		}
+		COM_og_sol_legislative = {
+			picture = idea_COM_og_sol_legislative
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.75
+				stability_factor = 0.01
+				resistance_growth_on_our_occupied_states = -0.075
+			}
+		}
+		COM_og_sol_doti = {
+			picture = idea_COM_og_sol_doti
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = -0.1
+				industrial_capacity_factory = 0.05
+				stability_factor = -0.005
+			}
+		}
+		COM_og_sol_federal_court = {
+			picture = idea_COM_og_sol_federal_court
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				compliance_growth = 0.12
+				required_garrison_factor = -0.12
+			}
+		}
+		COM_og_sol_national_bureau_defense = {
+			picture = idea_COM_og_sol_national_bureau_defense
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_cost = -0.25
+				drift_defence_factor = 0.025
+				war_support_factor = 0.025
+			}
+		}
+		COM_og_sol_presidency = {
+			picture = idea_COM_og_sol_presidency
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				people_drift = 0.25
+			}
+		}
+		COM_og_sol_governor_general = {
+			picture = idea_COM_og_sol_governor_general
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				non_core_manpower = 0.025
+				command_power_gain_mult = 0.3
+				political_power_gain = 0.35
+			}
+		}
+		COM_og_sol_army_of_liberty = {
+			picture = idea_COM_og_sol_army_of_liberty
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.075
+				army_attack_speed_factor = 0.075
+			}
+		}
+		COM_og_sol_veteran_training = {
+			picture = idea_COM_og_sol_veteran_training
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				minimum_training_level = 0.03
+				training_time_factor = -0.02
+				conscription_factor = 0.02
+			}
+		}
+        COM_sol_freedom = {
+            picture = generic_puppet_robots
+            allowed = {
+                always = no
+            }
+            modifier = {
+                monthly_population = 0.05
+                exodus_national_appeal = 0.05
+            }
+        }
+		COM_og_sol_yellow_jacket_ai = {
+			picture = generic_puppet_robots
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				resistance_activity = -0.05
+				resistance_decay_on_our_occupied_states = -0.05
+			}
+		}
+		COM_og_sol_boom_towns = {
+			picture = idea_COM_og_sol_boom_towns
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				caps_flat_income_modifier = 1
+				country_resource_metal = 3
+				country_resource_composites = 3
+				country_resource_water = 3
+			}
+		}
+		COM_og_sol_boom_towns_1 = {
+			picture = idea_COM_og_sol_boom_towns_1
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				caps_flat_income_modifier = 2
+				country_resource_metal = 3
+				country_resource_composites = 3
+				country_resource_water = 3
+				conscription_factor = 0.05
+			}
+		}
+		COM_og_sol_full_control = {
+			picture = idea_COM_og_sol_full_control
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.5
+				non_core_manpower = 0.05
+				command_power_gain_mult = 0.3
+				annex_cost_factor = -0.025
+			}
+		}
+		COM_og_sol_social_welfare = {
+			picture = idea_COM_og_sol_social_welfare
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = 0.025
+				non_core_manpower = 0.025
+			}
+		}
+		COM_sol_enclave_help = {
+			picture = idea_COM_sol_enclave_help
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.1
+				conscription_factor = 0.02
+				non_core_manpower = 0.02
+			}
+		}
+		COM_og_sol_legislative_1 = {
+			picture = idea_COM_og_sol_legislative_1
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.5
+				stability_factor = 0.025
+				resistance_growth_on_our_occupied_states = -0.025
+			}
+		}
+		COM_texas_civil_war = {
+			picture = idea_COM_texas_civil_war
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				cant_faction_call = 1
+			}
+		}
+		COM_rio_civil_war = {
+			picture = idea_COM_rio_civil_war
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				cant_faction_call = 1
+			}
+		}
+		COM_sonora_cartel_war = {
+			picture = idea_COM_sonora_cartel_war
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				cant_faction_call = 1
+			}
+		}
+		COM_og_sol_presidency_1 = {
+			picture = idea_COM_og_sol_presidency_1
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				people_drift = 0.35
+				political_power_gain = 0.35
+				non_core_manpower = 0.075
+				annex_cost_factor = -0.015
+			}
+		}
+		COM_og_sol_governor_generalship = {
+			picture = idea_COM_og_sol_governor_generalship
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				people_drift = 0.05
+				non_core_manpower = 0.05
+				command_power_gain_mult = 0.3
+				annex_cost_factor = -0.035
+				stability_factor = -0.075
+			}
+		}
+		COM_og_sol_doti_1 = {
+			picture = idea_COM_og_sol_doti_1
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = -0.15
+				industrial_capacity_factory = 0.075
+				stability_factor = -0.0075
+			}
+		}
+		COM_og_sol_religious_ban= {
+			picture = idea_COM_og_sol_religious_ban
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = -0.05
+			}
+		}
+		COM_northern_mountain_war = {
+			picture = idea_COM_northern_mountain_war
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				cant_faction_call = 1
+			}
+		}
+		COM_baron_uprising = {
+			picture = idea_COM_baron_revolt
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				cant_faction_call = 1
+			}
+		}
+		##Gallagher stuff
+		COM_decapitated_officer_corps = {
+			picture = generic_sea_cpt
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				experience_gain_army = -0.25
+				army_leader_cost_factor = 2
+				army_attack_factor = -0.25
+				army_defence_factor = -0.1
+			}
+		}
+		COM_striking_the_heart = {
+			picture = idea_COM_striking_the_heart
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.025
+				breakthrough_factor = 0.025
+			}
+		}
+		COM_reddeer_entrenchment = {
+			picture = idea_COM_reddeer_entrenchment
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_defence_factor = 0.04
+				dig_in_speed_factor = 0.15
+			}
+		}
+		COM_block_housing = {
+			picture = idea_COM_block_housing
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				global_building_slots_factor = 0.1
+				stability_factor = -0.05
+			}
+		}
+		COM_filled_barracks = {
+			picture = idea_COM_filled_barracks
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.10
+				stability_factor = -0.05
+			}
+		}
+		COM_redmond_draw = {
+			picture = idea_COM_redmond_draw
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.05
+				global_building_slots_factor = 0.05
+				stability_factor = -0.025
+			}
+		}
+		COM_booming_population = {
+			picture = idea_COM_booming_population
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.05
+				global_building_slots_factor = 0.03
+				stability_factor = 0.015
+			}
+		}
+		COM_failed_eastern_settlement = {
+			picture = idea_COM_failed_eastern_settlement
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_factor = -0.1
+				war_support_factor = -0.1
+				consumer_goods_expected_value = 0.08
+			}
+		}
+		COM_failed_eastern_settlement_1 = {
+			picture = idea_COM_failed_eastern_settlement_1
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_factor = -0.05
+				war_support_factor = -0.075
+				consumer_goods_expected_value = 0.06
+			}
+		}
+		COM_failed_eastern_settlement_2 = {
+			picture = idea_COM_failed_eastern_settlement_2
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_factor = -0.025
+				war_support_factor = -0.05
+				consumer_goods_expected_value = 0.04
+			}
+		}
+		COM_more_mouths_then_food = {
+			picture = idea_COM_more_mouths_then_food
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.08
+				industry_free_repair_factor = 0.15
+				caps_flat_income_modifier = -2
+			}
+		}
+		COM_more_mouths_then_food_1 = {
+			picture = idea_COM_more_mouths_then_food_1
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.14
+				industry_free_repair_factor = 0.25
+				caps_flat_income_modifier = -2.5
+			}
+		}
+		COM_more_mouths_then_food_2 = {
+			picture = idea_COM_more_mouths_then_food_2
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.05
+				industry_free_repair_factor = 0.05
+				caps_flat_income_modifier = -3
+			}
+		}
+		COM_enclave_work_camps = {
+			picture = idea_COM_enclave_work_camps
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.05
+				industry_free_repair_factor = 0.05
+				local_resources_factor = 0.05
+				production_lack_of_resource_penalty_factor = 0.05
+				caps_flat_income_modifier = -3
+			}
+		}
+		COM_war_rationing = {
+			picture = idea_COM_war_rationing
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				country_resource_metal = 3
+				country_resource_composites = 2
+				caps_flat_income_modifier = 0.5
+				conscription_factor = 0.05
+				stability_factor = -0.025
+			}
+		}
+		COM_sons_of_liberty_influence = {
+			picture = idea_COM_sons_of_liberty_influence
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				offensive_war_stability_factor = 0.05
+				people_drift = 0.05
+				stability_factor = -0.025
+			}
+		}
+		COM_yankee_influence = {
+			picture = idea_COM_yankee_influence
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				defensive_war_stability_factor = 0.05
+				ruler_drift = 0.05
+				political_power_factor = -0.075
+			}
+		}
+		COM_woods_loans = {
+			picture = idea_COM_woods_loans
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = -0.05
+				industrial_capacity_factory = 0.05
+				supply_node_range = 0.025
+			}
+		}
+		COM_better_mineshafts = {
+			picture = idea_COM_better_mineshafts
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				local_resources_factor = 0.05
+			}
+		}
+		COM_arcadian_dispersed_economy = {
+			picture = idea_COM_arcadian_dispersed_economy
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				global_building_slots_factor = 0.05
+				caps_flat_income_modifier = 2
+			}
+		}
+		COM_arcadian_people_support = {
+			picture = idea_COM_arcadian_people_support
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				people_drift = 0.25
+			}
+		}
+		COM_midwestern_prime_cuts = {
+			picture = idea_COM_midwestern_prime_cuts
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				trade_opinion_factor = 0.05
+				monthly_population = 0.025
+			}
+		}
+		COM_midwestern_scrap = {
+			picture = idea_COM_midwestern_scrap
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				min_export = -0.05
+				local_resources_factor = 0.05
+			}
+		}
+		COM_food_aid = {
+			picture = idea_COM_food_aid
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = 0.1
+				political_power_gain = 0.5
+			}
+		}
+		COM_ve_1 = {
+			picture = idea_COM_ve_1
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				army_morale_factor = 0.075
+			}
+		}
+		COM_ve_2 = {
+			picture = idea_COM_ve_2
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				winter_attrition_factor = -0.075
+				heat_attrition_factor = -0.07
+			}
+		}
+		COM_ve_3 = {
+			picture = idea_COM_ve_3
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				party_popularity_stability_factor = 0.05
+				offensive_war_stability_factor = 0.05
+			}
+		}
+		COM_farmer_bots_idea = {
+			picture = COM_farmer_bots
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.025
+				supply_factor = 0.025
+				research_speed_factor = 0.05
+			}
+		}
+		COM_enclave_war_goals = {
+			picture = generic_enclave_with_gun
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				justify_war_goal_time = -0.1
+			}
+		}
+		COM_og_enclave_military_government = {
+			picture = idea_COM_og_enclave_military_government
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.8
+				non_core_manpower = 0.05
+				stability_factor = -0.05
+				command_power_gain_mult = 0.5
+				offensive_war_stability_factor = 0.075
+			}
+		}
+		COM_og_reconstruction_governance = {
+			picture = on_fire_4
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = -0.085
+				industrial_capacity_factory = 0.045
+				stability_factor = 0.035
+				base_fuel_gain_factor = 0.05
+			}
+		}
+		COM_og_welfare_system = {
+			picture = on_fire_4
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				consumer_goods_expected_value = -0.065
+				industrial_capacity_factory = 0.065
+				stability_factor = 0.065
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+				production_lack_of_resource_penalty_factor = -0.05
+				army_fuel_consumption_factor = 0.05
+			}
+		}
+		COM_og_hometown_mining = {
+			picture = generic_pickaxe
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				caps_flat_income_modifier = 2
+				country_resource_circuitry = 3
+				country_resource_advanced = 3
+				country_resource_metal = 3
+				country_resource_composites = 3
+			}
+		}
+		COM_as_enclave_eggheads = {
+			picture = hin_science
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.075
+				ruler_drift = 0.05
+			}
+		}
+		COM_as_enclave_charter_of_rights = {
+			picture = ghoul_face
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.75
+				stability_factor = -0.075
+				drift_defence_factor = -0.03
+				compliance_growth = 0.075
+				ruler_drift = 0.05
+				surrender_limit = 0.05
+				consumer_goods_expected_value = 0.05
+			}
+		}
+		COM_as_split_society = {
+			picture = ghoul_face
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.75
+				stability_factor = 0.075
+				war_stability_factor = 0.075
+				drift_defence_factor = 0.03
+				compliance_growth = -0.075
+				intellectuals_drift = 0.05
+				surrender_limit = -0.05
+				consumer_goods_expected_value = -0.05
+			}
+		}
+		COM_og_enclave_pseudo_republic = {
+			picture = enclave_propaganda
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.5
+				non_core_manpower = 0.07
+				stability_factor = -0.05
+				command_power_gain_mult = 0.75
+				offensive_war_stability_factor = 0.1
+			}
+		}
+		COM_sol_dreams_of_union = {
+			picture = on_fire_4
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				diplomacy_distance_factor = 0.5
+			}
+		}
+		COM_sol_dreams_of_union_2 = {
+			name = COM_sol_dreams_of_union
+			picture = on_fire_4
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				diplomacy_distance = 400
+				diplomacy_distance_factor = 0.75
+			}
+		}
+		COM_sol_dreams_of_union_3 = {
+			name = COM_sol_dreams_of_union
+			picture = on_fire_4
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				diplomacy_distance = 600
+				diplomacy_distance_factor = 1.5
+			}
+		}
+		COM_sol_dreams_of_union_4 = {
+			name = COM_sol_dreams_of_union
+			picture = on_fire_4
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				diplomacy_distance = 800
+				diplomacy_distance_factor = 2.0
+			}
+		}
+	}
+}

@@ -106,4 +106,5 @@ add_ideas = {
 	EDN_unprepared
 	currencytexdollar
 	texas_rework_intervention_target_south
+	texas_rework_texas_economic_union_ally
 }

@@ -96,6 +96,7 @@ add_ideas = {
 	four_year_conscription
 	SUF_love_of_the_bomb
 	texas_rework_intervention_target_west
+	texas_rework_texas_economic_union_investments
 }
 
 set_politics = {

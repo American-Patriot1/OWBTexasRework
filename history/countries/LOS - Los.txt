@@ -101,6 +101,7 @@ add_ideas = {
 	los_the_church_of_the_lost
 	currencytexdollar
 	texas_rework_intervention_target_west
+	texas_rework_texas_economic_union_investments
 }
 
 recruit_character = LOS_high_priestess_sappho

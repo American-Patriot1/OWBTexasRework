@@ -104,6 +104,7 @@ add_ideas = {
 	officer_law_local_legends
 	currencytexdollar
 	texas_rework_intervention_target_east
+	texas_rework_texas_economic_union_ally
 }
 recruit_character = TPM_patrol_chief_callahan
 recruit_character = TPM_community_council

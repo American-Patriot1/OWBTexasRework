@@ -91,6 +91,7 @@ add_ideas = {
 	currencytexdollar
 	#hou_idea_broken_pipes
 	texas_rework_intervention_target_east
+	texas_rework_texas_economic_union_ally
 }
 
 

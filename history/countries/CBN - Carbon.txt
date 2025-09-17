@@ -104,4 +104,5 @@ add_ideas = {
 	cbn_best_little_whorehouse_in_texas
 	currencytexdollar
 	texas_rework_intervention_target_west
+	texas_rework_texas_economic_union_investments
 }
