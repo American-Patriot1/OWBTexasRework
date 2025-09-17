@@ -81,6 +81,7 @@ add_ideas = {
 	asf_the_memorabilia
 	asf_legacy_of_saint_leibowitz
 	currencytexdollar
+	texas_rework_intervention_target_west
 }
 
 add_timed_idea = {

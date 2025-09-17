@@ -1,5 +1,5 @@
-﻿capital = 931
-oob = "CBN_2275"
+﻿capital = 422
+oob = "SCO_2275"
 
 set_technology = {
 	basic_supply_transport_tech = 1
@@ -12,15 +12,17 @@ set_technology = {
 	special_forces_tech_level_tribal = 1
 	special_forces_tech_level_settler = 1
 	#special_forces_tech_level_scientific = 1
-	power_armour_tech_level_tribal = 1
-	power_armour_tech_level_settler = 1
+	#power_armour_tech_level_settler = 1
 	#power_armour_tech_level_scientific = 1
 	vehicles_tech_level_tribal = 1
-	#vehicles_tech_level_settler = 1
+	vehicles_tech_level_settler = 1
 	#vehicles_tech_level_scientific = 1
-	robotics_tech_level_tribal = 1
-	robotics_tech_level_settler = 1
+	#robotics_tech_level_tribal = 1
+	#robotics_tech_level_settler = 1
 	#robotics_tech_level_scientific = 1
+	creatures_tech_level_tribal = 1
+	creatures_tech_level_settler = 1
+	#creatures_tech_level_scientific = 1
 	air_tech_level_tribal = 1
 	air_tech_level_settler = 1
 	#air_tech_level_scientific = 1
@@ -48,6 +50,10 @@ set_technology = {
 	demolitions_weaponry_tech = 1
 	fireteam_weaponry_tech = 1
 	bike_tech_1 = 1
+	raider_reckless_aggression = 1
+	burrowing_beast_unlock_tech = 1
+	burrowing_tech_access_tech = 1
+	bb_chitin_plating = 1
 }
 
 if = {
@@ -58,6 +64,7 @@ if = {
 		nautics_tech_1 = 1
 		light_navy_hull_tech_1 = 1
 		#waterproof_sealing_tech = 1
+		naval_invasion_tech_1 = 1
 	}
 }
 if = {
@@ -68,40 +75,41 @@ if = {
 		nautics_tech_non_mtg_1 = 1
 		light_navy_hull_tech_non_mtg_1 = 1
 		waterproof_sealing_tech_non_mtg = 1
+		naval_invasion_tech_non_mtg_1 = 1
 	}
 }
 
-set_stability = 0.6
-set_war_support = 0.15
-set_convoys = 50
-set_research_slots = 4
-set_country_flag = is_settler_nation
-set_country_flag = is_texas_nation
+set_stability = 0.35
+set_war_support = 0.45
+
+set_convoys = 25
+set_research_slots = 3
+set_country_flag = is_raider_nation
+set_country_flag = is_colorado_newmexico_nation
 
 set_politics = {
-	ruling_party = people
+	ruling_party = ruler
 	elections_allowed = no
 }
 
 set_popularities = {
-	people = 60
-	elites = 5
-	intellectuals = 5
-	ruler = 30
+	people = 0
+	elites = 0
+	intellectuals = 0
+	ruler = 100
 }
 
-#Helps protect Los in the early game
-#Purposefully non-mutual
-give_guarantee = LOS
-
-recruit_character = CBN_mayor_jasmine
-recruit_character = CBN_the_raider_matron
-recruit_character = CBN_chester_chapman
-recruit_character = CBN_jesse_forsyth
-
 add_ideas = {
-	funded_militia_conscription
-	cbn_best_little_whorehouse_in_texas
+	low_economic_mobilisation
+	undesirables_law_raider
+	SCO_western_experience
+	SCO_scorpions_specialty
 	currencytexdollar
 	texas_rework_intervention_target_west
 }
+
+recruit_character = SCO_burk
+recruit_character = SCO_brute_amsden
+recruit_character = SCO_bo_the_weasel
+recruit_character = SCO_packard_the_jester
+recruit_character = SCO_sharon

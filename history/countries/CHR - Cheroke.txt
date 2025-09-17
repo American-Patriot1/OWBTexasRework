@@ -111,4 +111,5 @@ add_dynamic_modifier = { modifier = gpf_three_nations_trade }
 add_ideas = {
 	CHR_investigating_the_unknown
 	currencytexdollar
+	texas_rework_intervention_target_north
 }

@@ -119,6 +119,7 @@ add_ideas = {
 	mutant_wages_law
 	normies_law_none
 	currencytexdollar
+	texas_rework_intervention_target_south
 }
 
 set_truce = {

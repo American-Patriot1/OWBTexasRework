@@ -127,6 +127,7 @@ add_ideas = {
 	tot_economic_mobilisation
 	closed_economy
 	currencytexdollar
+	texas_rework_intervention_target_north
 }
 
 recruit_character = TLP_adjutant_general_christopher_harrison

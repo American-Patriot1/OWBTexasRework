@@ -96,4 +96,5 @@ add_ideas = {
 	per_stalking_man
 	undesirables_law_raider
 	currencytexdollar
+	texas_rework_intervention_target_south
 }

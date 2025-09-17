@@ -112,6 +112,7 @@ set_truce = {
 add_ideas = {
 	TAA_the_master_gunsmiths
 	currencytexdollar
+	texas_rework_intervention_target_south
 }
 
 set_popularities = {

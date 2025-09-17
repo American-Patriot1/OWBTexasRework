@@ -83,6 +83,7 @@ add_ideas = {
 	guerilla_legacy
 	wickiup_nomads
 	currencytexdollar
+	texas_rework_intervention_target_west
 }
 
 recruit_character = MES_lozen_coloradas

@@ -134,6 +134,8 @@ add_ideas = {
 	UOA_beacon_of_rights
 	officer_law_mutant_instinct
 	normies_law_allowed
+	currencytexdollar
+	texas_rework_intervention_target_south
 }
 add_dynamic_modifier = {
 	modifier = texan_economic_union

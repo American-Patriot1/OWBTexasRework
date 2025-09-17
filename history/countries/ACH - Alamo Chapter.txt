@@ -99,6 +99,7 @@ add_ideas = {
 	gaben_economy_law
 	isolationist_trade_law
 	military_indoctrination_press
+	texas_rework_intervention_target_south
 }
 
 set_truce = {

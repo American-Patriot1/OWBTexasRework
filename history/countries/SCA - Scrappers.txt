@@ -97,4 +97,5 @@ add_ideas = {
 	sca_ineffectual_government
 	sca_scrapyard_heritage
 	currencytexdollar
+	texas_rework_intervention_target_north
 }

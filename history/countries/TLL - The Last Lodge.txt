@@ -94,6 +94,7 @@ set_popularities = {
 add_ideas = {
 	tll_faded_rites
 	currencytexdollar
+	texas_rework_intervention_target_north
 }
 
 recruit_character = TLL_grandmatron_sofia_cortez

@@ -102,6 +102,7 @@ add_ideas = {
 	political_effort_press
 	chems_legalised
 	currencytexdollar
+	texas_rework_intervention_target_west
 }
 
 add_dynamic_modifier = {

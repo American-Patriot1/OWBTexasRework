@@ -102,6 +102,7 @@ add_ideas = {
 	ancestral_mesa_paintings
 	undesirables_law_raider
 	currencytexdollar
+	texas_rework_intervention_target_north
 }
 
 recruit_character = PAR_dyed_blood

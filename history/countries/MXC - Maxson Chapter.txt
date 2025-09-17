@@ -133,6 +133,7 @@ add_ideas = {
 	outsider_law_none
 	bizaare_market
 	currencytexdollar
+	texas_rework_intervention_target_west
 }
 
 add_opinion_modifier = {

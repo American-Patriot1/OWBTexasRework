@@ -1,0 +1,179 @@
+﻿capital = 554
+oob = "TTM_2275"
+
+set_technology = {
+	basic_supply_transport_tech = 1
+	infantry_tech_level_tribal = 1
+	#infantry_tech_level_settler = 1
+	#infantry_tech_level_scientific = 1
+
+	#power_armour_tech_level_settler = 1
+	#power_armour_tech_level_scientific = 1
+
+	special_forces_tech_level_tribal = 1
+	special_forces_tech_level_settler = 1
+	special_forces_tech_level_scientific = 1
+
+	support_tech_level_tribal = 1
+	support_tech_level_settler = 1
+	support_tech_level_scientific = 1
+
+	#vehicles_tech_level_scientific = 1
+	vehicles_tech_level_tribal = 1
+	#vehicles_tech_level_settler = 1
+
+	robotics_tech_level_tribal = 1
+	robotics_tech_level_settler = 1
+	robotics_tech_level_scientific = 1
+
+	air_tech_level_tribal = 1
+	#air_tech_level_settler = 1
+	#air_tech_level_scientific = 1
+
+	naval_tech_level_tribal = 1
+	#naval_tech_level_settler = 1
+	#naval_tech_level_scientific = 1
+
+	tools_tech_level_tribal = 1
+	tools_tech_level_settler = 1
+	tools_tech_level_scientific = 1
+
+	exploitation_tech_level_tribal = 1
+	exploitation_tech_level_settler = 1
+	exploitation_tech_level_scientific = 1
+
+	habitation_tech_level_tribal = 1
+	habitation_tech_level_settler = 1
+	habitation_tech_level_scientific = 1
+
+	electronics_tech_level_scientific = 1
+	electronics_tech_level_tribal = 1
+	electronics_tech_level_settler = 1
+
+	standard_weaponry_tech = 1
+
+	robot_automation_tech = 1
+	robot_makeshift_automatons_tech = 1
+	robot_fission_batteries_tech = 1
+	robot_handy_equipment_tech_1 = 1
+	robot_armour_hardening_tech = 1
+	robot_lifter_equipment_tech = 1
+
+	support_weaponry = 1
+	demolitions_weaponry_tech = 1
+	med_company_tech_1 = 1
+	recon_company_tech_1 = 1
+
+	basic_industry_tech = 1
+	tool_engineering = 1
+	maketool_engineering_1 = 1
+	pre_construction_industry_tech = 1
+	construction_industry_tech_1 = 1
+	construction_industry_tech_2 = 1
+	extraction_industry_tech_1 = 1
+	habitation_industry_tech_1 = 1
+	extraction_industry_tech_2 = 1
+	habitation_industry_tech_2 = 1
+	resource_generator_tech = 1
+	resource_generator_water_tech_1 = 1
+	resource_generator_power_tech_1 = 1
+	resource_generator_metal_tech_1 = 1
+
+	implant_tech_visibility_tech = 1
+
+	#They might be "Tribal", but the tribal tree is literally too strong for them.
+	#tribal_tech_visibility_tech = 1
+	#tribal_tech_access_tech = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		nautics_tech_1 = 1
+		light_navy_hull_tech_1 = 1
+		#waterproof_sealing_tech = 1
+		medium_navy_hull_tech_1 = 1
+		naval_invasion_tech_1 = 1
+	}
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		nautics_tech_non_mtg_1 = 1
+		light_navy_hull_tech_non_mtg_1 = 1
+		waterproof_sealing_tech_non_mtg = 1
+		medium_navy_hull_tech_non_mtg_1 = 1
+		naval_invasion_tech_non_mtg_1 = 1
+	}
+}
+
+set_stability = 0.55
+set_war_support = 0.2
+set_research_slots = 3 #They get 3 from their focus tree, should never be 7.
+set_convoys = 45
+set_country_flag = is_vault_tec_nation
+set_country_flag = is_settler_nation
+set_country_flag = has_unique_manpower_law
+set_country_flag = has_robot_generals
+set_country_flag = is_colorado_newmexico_nation
+
+#Lots of ways they could go - refined will generally be the best for a mixed army
+set_country_flag = elite_doctrine_ai
+
+#TTM would be giving up all of their land in this circumstance. They wouldn't do this narratively.
+set_variable = { dont_return_stolen_territory@TOB = 1 }
+
+set_politics = {
+	ruling_party = people
+	elections_allowed = no
+}
+
+recruit_character = TTM_diana
+recruit_character = TTM_akeisha_moon
+recruit_character = TTM_ruth
+recruit_character = TTM_helea
+recruit_character = TTM_zax_29
+recruit_character = TTM_trisha
+recruit_character = TTM_argos
+
+set_popularities = {
+	people = 70
+	elites = 0
+	intellectuals = 30
+	ruler = 0
+}
+
+add_dynamic_modifier = { modifier = ttm_control_facility_dynamic_modifier }
+set_variable = { ttm_computational_power = 18 }
+set_variable = { ttm_satellite_network = 12 }
+ttm_control_facility_calculation = yes
+
+set_country_flag = terraformer_coring
+set_country_flag = do_not_spread_followers_from_this_tag
+set_country_flag = do_not_spread_followers_to_this_tag
+
+country_event = nf_ttm.4
+country_event = {
+	id = nf_ttm.5
+	days = 7
+}
+
+add_ideas = {
+	undisturbed_isolation
+	ttm_the_nursery_idea
+	ttm_innocence_of_the_tribe
+	ttm_born_warriors
+	currencytexdollar
+	texas_rework_intervention_target_west
+}
+
+activate_advisor = TTM_trisha_high_command
+
+add_timed_idea = {
+	idea = ttm_old_robotics_stockpile
+	days = 600
+}

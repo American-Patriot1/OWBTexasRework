@@ -100,10 +100,10 @@ set_popularities = {
 add_ideas = {
 	los_the_church_of_the_lost
 	currencytexdollar
+	texas_rework_intervention_target_west
 }
 
 recruit_character = LOS_high_priestess_sappho
 recruit_character = LOS_benjamin_abercrombie
 recruit_character = LOS_jeffrey_carr
 recruit_character = LOS_eugene_ford
-}

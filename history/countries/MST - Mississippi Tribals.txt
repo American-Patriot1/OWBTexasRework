@@ -63,4 +63,5 @@ set_popularities = {
 
 add_ideas = {
 	currencytexdollar
+	texas_rework_intervention_target_east
 }

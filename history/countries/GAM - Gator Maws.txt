@@ -74,5 +74,6 @@ add_ideas = {
 	GAM_forgotten_children
 	undesirables_law_raider
 	raider_bands
+	texas_rework_intervention_target_east
 	currencytexdollar
 }

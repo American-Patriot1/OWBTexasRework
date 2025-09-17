@@ -105,6 +105,7 @@ add_ideas = {
 	EDA_secrets
 	EDA_federal_police
 	currencytexdollar
+	texas_rework_intervention_target_west
 }
 
 add_timed_idea = {

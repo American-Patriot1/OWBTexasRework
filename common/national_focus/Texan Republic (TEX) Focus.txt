@@ -16,10 +16,9 @@ focus_tree = {
 		}
 	}
 	default = no
-
 	focus = {
-		id = texas_our_past
-		icon = GFX_goal_RRG_rio_bos
+		id = texas_unification
+		icon = GFX_goal_uoa_texas
 		cost = 7
 		x = 12
 		y = 0
@@ -28,22 +27,8 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = texas_unification
-		icon = GFX_goal_uoa_texas
-		cost = 7
-		x = 0
-		y = 1
-		relative_position_id = texas_our_past
-		prerequisite = {
-			focus = texas_our_past
-		}
-		completion_reward = {
-			# country_event = texas_rework.2
-		}
-	}
-	focus = {
-		id = texas_stability
-		icon = GFX_goal_RRG_Dante_Texas
+		id = texas_constitution
+		icon = GFX_goal_constitution_focus
 		cost = 7
 		x = 0
 		y = 1
@@ -52,14 +37,30 @@ focus_tree = {
 			focus = texas_unification
 		}
 		completion_reward = {
-			# country_event = texas_rework.4
+			add_political_power = 100
+			country_event = texas_rework.5
 		}
 	}
 	focus = {
-		id = texas_constitution
-		icon = GFX_goal_constitution_focus
-		cost = 7
+		id = texas_stability
+		icon = GFX_goal_RRG_Dante_Texas
+		cost = 16
 		x = 0
+		y = 1
+		relative_position_id = texas_constitution
+		prerequisite = {
+			focus = texas_constitution
+		}
+		completion_reward = {
+			# country_event = texas_rework.4
+		}
+	}
+	##junta path
+	focus = {
+		id = texas_junta_stabilize
+		icon = GFX_goal_uoa_texas
+		cost = 10
+		x = -1
 		y = 1
 		relative_position_id = texas_stability
 		prerequisite = {
@@ -67,19 +68,63 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 100
-			country_event = texas_rework.5
 		}
 	}
+	focus = {
+		id = texas_junta_intervention
+		icon = GFX_goal_uoa_texas
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = texas_junta_stabilize
+		prerequisite = {
+			focus = texas_junta_stabilize
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	#constitutional path
+	focus = {
+		id = texas_constitutional_stabilize
+		icon = GFX_goal_uoa_texas
+		cost = 10
+		x = 1
+		y = 1
+		relative_position_id = texas_stability
+		prerequisite = {
+			focus = texas_stability
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	focus = {
+		id = texas_constitutional_intervention
+		icon = GFX_goal_uoa_texas
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = texas_constitutional_stabilize
+		prerequisite = {
+			focus = texas_constitutional_stabilize
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	#Election
 	focus = {
 		id = texas_election_time
 		icon = GFX_goal_generic_texas2
 		cost = 15
-		x = 2
-		y = 4
-		# relative_position_id = texas_constitution
-		# prerequisite = {
-		# 	focus = texas_constitution
-		# }
+		x = 1
+		y = 1
+		relative_position_id = texas_junta_intervention
+		prerequisite = {
+			focus = texas_junta_intervention
+			focus = texas_constitutional_intervention
+		}
 		available = {
 			has_country_flag = constitution_signed
 			is_ai = yes
@@ -93,56 +138,14 @@ focus_tree = {
 			add_ideas = TEX_texas_proper
 			if = {
 				limit = {
-					has_cosmetic_tag = TEX_chile
-				}
-				drop_cosmetic_tag = yes
-				set_cosmetic_tag = TEX_proper_chile
-			}
-			else_if = {
-				limit = {
-					has_cosmetic_tag = TEX_LNS
-				}
-				drop_cosmetic_tag = yes
-				set_cosmetic_tag = TEX_proper_LNS
-			}
-			else_if = {
-				limit = {
 					has_cosmetic_tag = TEX_provisional
 				}
 				drop_cosmetic_tag = yes
 				set_cosmetic_tag = TEX_proper
 			}
-			else_if = {
-				limit = {
-					has_cosmetic_tag = TEX_stateflag
-				}
-				drop_cosmetic_tag = yes
-				set_cosmetic_tag = TEX_proper_stateflag
-			}
-			else_if = {
-				limit = {
-					has_cosmetic_tag = TAA_Texas_Star
-				}
-				drop_cosmetic_tag = yes
-				set_cosmetic_tag = TAA_Texas_Star_proper
-			}
-			else_if = {
-				limit = {
-					has_cosmetic_tag = TAA_Texas_Middle
-				}
-				drop_cosmetic_tag = yes
-				set_cosmetic_tag = TAA_Texas_Middle_proper
-			}
-			else_if = {
-				limit = {
-					has_cosmetic_tag = TAA_Texas_Left
-				}
-				drop_cosmetic_tag = yes
-				set_cosmetic_tag = TAA_Texas_Left_proper
-			}
-			hidden_effect = {
-				play_song = owb_dev_team_yellow_rose_of_texas
-			}
+			# hidden_effect = {
+			# 	play_song = owb_dev_team_yellow_rose_of_texas
+			# }
 		}
 	}
 

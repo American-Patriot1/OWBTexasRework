@@ -93,6 +93,7 @@ add_ideas = {
 	pec_animal_husbandry
 	pec_rancher_culture
 	currencytexdollar
+	texas_rework_intervention_target_south
 }
 
 recruit_character = PEC_sheila_bowen

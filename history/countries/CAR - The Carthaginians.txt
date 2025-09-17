@@ -74,6 +74,7 @@ add_ideas = {
 	undesirables_law_raider
 	CAR_just_let_me_grill
 	currencytexdollar
+	texas_rework_intervention_target_east
 }
 
 recruit_character = CAR_the_chef

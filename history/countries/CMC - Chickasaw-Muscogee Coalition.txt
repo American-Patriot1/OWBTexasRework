@@ -119,6 +119,7 @@ add_ideas = {
 	cmc_bright_lights
 	CMC_oklahomas_strip
 	currencytexdollar
+	texas_rework_intervention_target_north
 }
 
 create_or_join_great_plains_federation = yes

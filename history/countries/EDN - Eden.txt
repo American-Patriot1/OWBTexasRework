@@ -105,4 +105,5 @@ add_ideas = {
 	EDN_brotherhood_knowledge
 	EDN_unprepared
 	currencytexdollar
+	texas_rework_intervention_target_south
 }

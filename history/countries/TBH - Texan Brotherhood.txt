@@ -160,10 +160,7 @@ set_technology = {
 set_stability = 0.25
 set_war_support = 0.30
 set_research_slots = 5
-set_politics = {
-	ruling_party = ruler
-	elections_allowed = no
-}
+
 set_rule = { can_send_volunteers = no }
 set_country_flag = is_brotherhood_nation
 
@@ -222,6 +219,18 @@ random_character = {
 	}
 	save_global_event_target_as = TBH_edward_j_rusk_target
 }
+
+add_country_leader_role = {
+	character = TBH_TEX_congress
+	promote_leader = yes
+	country_leader = {
+		desc = PROV_TEX_SENATE_DESC
+		ideology = town_hall_democracy
+		expire = "3000.01.01.01"
+		id = -1
+	}
+}
+set_politics = { ruling_party = people elections_allowed = no }
 
 create_or_join_texan_economic_union = yes
 LNS = { create_or_join_texan_economic_union = yes }

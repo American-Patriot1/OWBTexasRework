@@ -97,6 +97,7 @@ add_ideas = {
 	exe_memories_of_fev
 	undesirables_law_raider
 	currencytexdollar
+	texas_rework_intervention_target_west
 }
 
 set_truce = {

@@ -90,6 +90,7 @@ add_ideas = {
 	HRO_ussa_headquarters
 	currencytexdollar
 	#hou_idea_broken_pipes
+	texas_rework_intervention_target_east
 }
 
 

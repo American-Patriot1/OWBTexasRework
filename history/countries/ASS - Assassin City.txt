@@ -59,6 +59,7 @@ add_ideas = {
 	ASS_hit_and_runner_blades
 	undesirables_law_raider
 	currencytexdollar
+	texas_rework_intervention_target_east
 }
 
 recruit_character = ASS_tuffy

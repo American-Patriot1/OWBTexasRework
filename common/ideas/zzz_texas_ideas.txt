@@ -127,5 +127,28 @@ ideas = {
 				mobilization_speed = 0.1
 			}
 		}
+
+
+		#intervention target ideas
+		texas_rework_intervention_target_east = {
+			picture = us_army_knowledge
+			modifier = {
+			}
+		}
+		texas_rework_intervention_target_west = {
+			picture = us_army_knowledge
+			modifier = {
+			}
+		}
+		texas_rework_intervention_target_north = {
+			picture = us_army_knowledge
+			modifier = {
+			}
+		}
+		texas_rework_intervention_target_south = {
+			picture = us_army_knowledge
+			modifier = {
+			}
+		}
 	}
 }

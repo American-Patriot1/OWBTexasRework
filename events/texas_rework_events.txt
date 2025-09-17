@@ -130,6 +130,28 @@ country_event = {
 		}
 	}
 }
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.2" }
+	id = texas_rework.2
+	title = texas_rework.2.t
+	desc = texas_rework.2.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_container_bazaar
+
+
+	option = { 
+		name = texas_rework.2.a
+		TBH = {
+			add_ideas = {
+				
+			}
+		}
+		ai_chance = {
+			base = 20
+		}
+	}
+}
 country_event = { #Alamo Betrayal
 	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.3" }
 	id = texas_rework.3
@@ -250,7 +272,6 @@ country_event = { #Alamo Betrayal
 		}
 	}
 }
-
 #Constitution
 country_event = {
 	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.5" }
