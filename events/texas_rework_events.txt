@@ -526,3 +526,34 @@ country_event = { #fall of Houston
 		}
 	}
 }
+country_event = { #raider pact forms
+	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.904" }
+	id = texas_rework.904
+	title = texas_rework.904.t
+	desc = texas_rework.904.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_container_bazaar
+
+
+	option = {
+		name = texas_rework.904.a
+	}
+}
+
+
+# country_event = { #
+# 	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.90" }
+# 	id = texas_rework.90
+# 	title = texas_rework.90.t
+# 	desc = texas_rework.90.desc
+# 	is_triggered_only = yes
+# 	fire_only_once = yes
+# 	picture = GFX_event_sub_generic_container_bazaar
+
+
+# 	option = {
+# 		name = texas_rework.90.a
+# 	}
+# }
+

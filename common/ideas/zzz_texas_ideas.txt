@@ -86,46 +86,37 @@ ideas = {
 		history_of_economy = {
 			picture = GFX_idea_generic_religion
 			modifier = {
-				consumer_goods_expected_value = -0.05
-				production_factory_max_efficiency_factor = 0.05
+				consumer_goods_expected_value = 0.05
 				global_building_slots_factor = 0.1
 				local_resources_factor = 0.1
-				industrial_capacity_factory = 0.1
-				production_speed_industrial_complex_factor = 0.1
-				production_speed_infrastructure_factor = 0.1
 			}
 		}
 		history_of_big_military_yehaw = {
 			picture = GFX_idea_generic_religion
 			modifier = {
-				army_attack_factor = 0.05
-				army_speed_factor = 0.2
-				planning_speed = 0.2
-				experience_gain_army = 0.1
+				special_forces_cap = -0.05
+				experience_gain_army = 0.025
 				army_org_Factor = 0.05
-				max_command_power = 25
-				command_power_gain_mult = 0.1
-				army_morale_factor = 0.1
+				max_command_power = 50
+				army_morale_factor = 0.05
 			}
 		}
-		history_of_politics_lame = {
+		history_of_tech = {
 			picture = GFX_idea_generic_religion
-			research_bonus = {
-				air_tech_category = 0.1
-			}
 			modifier = {
-				research_speed_factor = 0.2
-                political_power_gain = 0.25
+				war_support_factor = -0.1
+				stability_factor = 0.05
+				research_speed_factor = 0.1
+                # political_power_gain = 0.2
 			}
 		}
 		history_of_big_population = {
 			picture = GFX_idea_generic_religion
 			modifier = {
-				conscription = 0.025
+				conscription = -0.01
 				weekly_manpower = 25
 				monthly_population = 0.15
 				compliance_gain = 0.05
-				mobilization_speed = 0.1
 			}
 		}
 		texas_rework_taa_reliance = {

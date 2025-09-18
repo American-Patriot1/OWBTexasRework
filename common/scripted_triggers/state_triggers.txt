@@ -1,0 +1,516 @@
+is_diablo_state = {
+	OR = {
+		state = 312
+		state = 606
+		state = 433
+		state = 558
+	}
+}
+
+is_expanded_san_francisco_state = {
+	OR = {
+		state = 163
+		state = 474
+		state = 511
+		state = 473
+		state = 104
+		state = 132
+	}
+}
+
+is_expanded_umbra_state = {
+	OR = {
+		state = 239
+		state = 353
+		state = 39
+		state = 340
+		state = 548
+		state = 216
+		state = 441
+		state = 56
+		state = 182
+	}
+}
+
+is_on_haida_gwaii = {
+	OR = {
+		state = 9
+		state = 398
+	}
+}
+
+is_on_vancouver_island = {
+	OR = {
+		state = 461
+		state = 370
+		state = 420
+		state = 738
+	}
+}
+
+is_on_mainland = {
+	is_on_haida_gwaii = no
+	is_on_vancouver_island = no
+}
+
+are_on_same_landmass = {
+	OR = {
+		AND = {
+			THIS = { is_on_haida_gwaii = yes }
+			PREV = { is_on_haida_gwaii = yes }
+		}
+		AND = {
+			THIS = { is_on_vancouver_island = yes }
+			PREV = { is_on_vancouver_island = yes }
+		}
+		AND = {
+			THIS = { is_on_mainland = yes }
+			PREV = { is_on_mainland = yes }
+		}
+	}
+}
+
+is_coastal_to_the_pacific_ocean = {
+	AND = {
+		is_coastal = yes
+		OR = {
+			region = 7
+			region = 8
+			region = 11
+			region = 13
+			region = 14
+			region = 16
+			region = 17
+			region = 37
+			region = 50
+			region = 51
+			region = 53
+			region = 60
+			region = 61
+			region = 91
+			region = 92
+			region = 116
+			region = 117
+			region = 118
+			region = 142
+		}
+		NOT = {
+			OR = { #Is not a river coastal state
+				state = 1
+				state = 7
+				state = 19
+				state = 23
+				state = 27
+				state = 56
+				state = 65
+				state = 66
+				state = 132
+				state = 177
+				state = 182
+				state = 205
+				state = 206
+				state = 227
+				state = 230
+				state = 251
+				state = 254
+				state = 272
+				state = 283
+				state = 288
+				state = 292
+				state = 297
+				state = 312
+				state = 338
+				state = 351
+				state = 357
+				state = 360
+				state = 387
+				state = 407
+				state = 432
+				state = 441
+				state = 451
+				state = 468
+				state = 471
+				state = 509
+				state = 511
+				state = 540
+				state = 555
+				state = 557
+				state = 564
+				state = 606
+				state = 682
+				state = 685
+				state = 740
+				state = 741
+				state = 767
+				state = 781
+				state = 785
+				state = 787
+				state = 802
+				state = 806
+				state = 812
+				state = 813
+				state = 814
+				state = 828
+			}
+		}
+	}
+}
+
+is_cascadia_coastal = {
+	AND = {
+		is_coastal_to_the_pacific_ocean = yes
+		OR = {
+			region = 61
+			region = 14
+			region = 60
+			region = 37
+			region = 11
+		}
+	}
+}
+
+is_california_coastal = {
+	is_coastal_to_the_pacific_ocean = yes
+	is_cascadia_coastal = no
+	OR = {
+		region = 53
+		region = 51
+		region = 7
+		region = 8
+		region = 13
+	}
+}
+
+is_mexico_pacific_coastal = {
+	is_coastal_to_the_pacific_ocean = yes
+	is_cascadia_coastal = no
+	is_california_coastal = no
+}
+
+is_texan_state = {
+	OR = {
+		region = 106 # brazos corridor
+		region = 107 # east texas
+		region = 105 # south texas
+		region = 49 # big bend
+		region = 6 # north texas
+	}
+}
+
+is_greater_texan_state = {
+	OR = {
+		is_texan_state = yes
+		region = 15 # Central New Mexico
+		region = 47 # East New Mexico
+		region = 45 # North New Mexico
+		state = 42
+		state = 233
+		state = 366
+		state = 422
+		state = 523
+		state = 123
+		state = 412
+		state = 208
+	}
+}
+
+is_oklahoma_state = {
+	OR = {
+		region = 111 # North Ok
+		region = 112 # South Ok
+	}
+}
+
+is_red_river_economic_zone = {
+	OR = {
+		# SCA
+		state = 886
+		state = 887
+		state = 888
+		# TTL
+		state = 898
+		state = 899
+		state = 902
+		#CWB
+		state = 108
+		state = 676
+		state = 937
+	}
+}
+
+is_taming_the_wilds_target = {
+	OR = {
+		#EAS
+		state = 367
+		state = 73
+		state = 567
+		state = 375
+		state = 406
+		#SLN
+		state = 598
+		#PAL
+		state = 223
+		state = 458
+		state = 273
+		#CYC
+		state = 100
+		state = 363
+		state = 612
+	}
+}
+
+is_war_against_crime_target = {
+	OR = {
+		#SLA
+		state = 382
+		state = 126
+		#MOD
+		state = 585
+		state = 118
+		#JAC
+		state = 475
+		#VIP
+		state = 284
+		state = 160
+		state = 327
+		state = 226
+		state = 947
+		state = 161
+		#TDN
+		state = 59
+		state = 57
+		#NEW
+		state = 184
+		state = 295
+		state = 159
+		state = 285
+		state = 614
+		#YKZ
+		state = 156
+		state = 171
+		state = 735
+	}
+}
+
+is_louisiana = {
+	OR = {
+		region = 145 # West Loui
+	}
+}
+
+is_coastal_to_the_gulf_of_mexico = {
+	AND = {
+		is_coastal = yes
+		OR = {
+			region = 122
+			region = 121
+			region = 97
+			region = 93
+			region = 95
+			region = 105
+			region = 107
+			region = 145
+		}
+		NOT = {
+			OR = { # River coastals
+				state = 825
+				state = 821
+				state = 817
+				state = 815
+				state = 776
+				state = 771
+				state = 764
+				state = 754
+				state = 906
+				state = 792
+				state = 793
+				state = 796
+				state = 797
+				state = 909
+				state = 916
+				state = 917
+				state = 912
+				state = 915
+				state = 894
+				state = 896
+				state = 893
+				state = 892
+				state = 895
+				state = 884
+				state = 885
+				state = 874
+				state = 873
+				state = 871
+				state = 872
+				state = 881
+				state = 878
+				state = 900
+				state = 901
+			}
+		}
+	}
+}
+
+is_central_mojave_state = {
+	OR = {
+		state = 77
+		state = 47
+		state = 67
+		state = 137
+		state = 417
+		state = 46
+		state = 552
+		state = 573
+		state = 380
+		state = 613
+		state = 252
+	}
+}
+
+is_new_mexico_state = {
+	OR = {
+		region = 15
+		region = 45
+		region = 46
+		region = 47
+	}
+}
+
+is_former_cpf_state = {
+	OR = {
+		region = 161
+		region = 162
+		region = 164
+		region = 158
+		region = 165
+		region = 163
+		region = 184
+		region = 186
+		region = 185
+		region = 167
+		region = 168
+		region = 169
+		AND = {
+			region = 166
+			NOT = {
+				state = 1383
+				state = 1293
+				state = 1294
+				state = 1292
+				state = 1299
+			}
+		}
+		AND = {
+			region = 170
+			NOT = {
+				state = 1300
+				state = 1296
+				state = 1298
+				state = 1297
+			}
+		}
+		AND = {
+			region = 171
+			NOT = {
+				state = 1301
+				state = 1312
+				state = 1304
+				state = 1247
+				state = 1248
+				state = 1246
+			}
+		}
+	}
+}
+
+is_original_black_canyon_state = {
+	state = 494
+	state = 191
+	state = 560
+	state = 504
+	state = 401
+	state = 259
+	state = 55
+	state = 115
+	state = 376
+	state = 572
+	state = 38
+	state = 646
+	state = 649
+	state = 121
+	state = 193
+}
+
+news_is_west_tag = {
+	capital_scope = {
+		OR = {
+			region = 52 #East California
+			region = 51 #Southwest California
+			region = 7 #South California
+			region = 32 #South Mojave
+			region = 3 #North Mojave
+			region = 8 #Baja California
+			region = 53 #Northwest California
+			region = 54 #Northeast California
+			region = 11 #West Oregon
+			region = 59 #South Oregon
+			region = 12 #West Nevada
+			region = 56 #South Nevada
+			region = 29 #West Arizona
+			region = 31 #South Arizona
+			region = 57 #East Nevada
+		}
+	}
+}
+
+news_is_texas_tag = {
+	capital_scope = {
+		OR = {
+			region = 107 #East Texas
+			region = 145 #West Louisiana
+			region = 105 #South Texas
+			region = 106 #Brazos Corridor
+			region = 6 #North Texas
+			region = 112 #South Oklahoma
+			region = 111 #North Oklahoma
+			region = 49 #Big Bend
+			region = 15 #Central New Mexico
+			region = 47 #East New Mexico
+			region = 45 #North New Mexico
+			region = 42 #South Colorado
+			region = 98 #South Coahulia
+		}
+	}
+}
+
+news_is_canada_tag = {
+	capital_scope = {
+		OR = {
+			region = 14 # Columbian Outlying Islands
+			region = 61 # Northwest Columbia
+			region = 89 # Northeast Columbia
+			region = 35 # Eastern Columbia
+			region = 60 # South Columbia
+			region = 84 # Canadian Rockies
+			region = 161 # Western Great White Wall
+			region = 162 # Northwest Alberta
+			region = 164 # Central Alberta
+			region = 158 # Southern Alberta
+			region = 184 # Haze Of American Hatred
+			region = 163 # Northeast Alberta
+			region = 165 # The Albertan 'Steppe'
+			region = 166 # Expanse Of The Unknown Border
+			region = 186 # Great Green Glow
+			region = 167 # The Katch
+			region = 185 # Eastern Great White Wall
+			region = 168 # Northern Manitoba
+			region = 169 # Western Manitoba
+			region = 170 # Monkatchewan Expanse
+			region = 171 # Central Manitoba
+			region = 182 # Poplar Riverlands
+			region = 183 # Gulliver's Run
+			region = 211 # Northern Wilds
+			region = 210 # Western Ontario
+		}
+	}
+}

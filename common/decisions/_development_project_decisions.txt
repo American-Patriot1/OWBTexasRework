@@ -1,0 +1,7288 @@
+@developmentafb = -200
+@developmentnpp = -350
+@developmentspp = -250
+@developmentfort = -250
+@developmentnavy = -150
+@developmentelec = -200
+@developmentmine = -150
+@developmentcircuitry = -200
+@developmentmetal = -150
+@developmentwater = -125
+@developmentcivilian = -275
+@developmentoffense = -300
+
+development_project_decisions_wtt = {
+
+	development_project_rancho_seco_npp_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 60
+			NOT = { has_global_flag = development_done_rancho_seco_npp }
+		}
+
+		available = {
+			owns_state = 60
+			has_manpower > 200
+			controls_state = 60
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_rancho_seco_npp }
+			set_temp_variable = {
+				caps_diff = @developmentnpp
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentnpp }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentnpp }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.1
+			}
+			add_resource = {
+				type = energy
+				amount = 50
+				state = 60
+			}
+			set_global_flag = development_done_rancho_seco_npp
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_storm_creek_national_military_museum_npp_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 452
+			NOT = { has_global_flag = development_done_storm_creek_national_military_museum_npp }
+		}
+
+		available = {
+			owns_state = 452
+			has_manpower > 200
+			controls_state = 452
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_storm_creek_national_military_museum_npp }
+			set_temp_variable = {
+				caps_diff = @developmentnpp
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentnpp }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentnpp }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			army_experience = 100
+			set_global_flag = development_done_storm_creek_national_military_museum_npp
+			if = {
+				limit = {
+					original_tag = ORO
+				}
+				custom_effect_tooltip = {
+					localization_key = UNLOCK_BALANCE_OF_POWER_DECISION
+					DECISION = ORO_museum_reward_lament_iceni
+				}
+				custom_effect_tooltip = {
+					localization_key = UNLOCK_BALANCE_OF_POWER_DECISION
+					DECISION = ORO_museum_reward_requiem_zhou
+				}
+			}
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_san_onofre_npp_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 63
+			NOT = { has_global_flag = development_done_san_onofre_npp }
+		}
+
+		available = {
+			owns_state = 63
+			has_manpower > 200
+			controls_state = 63
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_san_onofre_npp }
+			set_temp_variable = {
+				caps_diff = @developmentnpp
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentnpp }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentnpp }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.1
+			}
+			add_resource = {
+				type = energy
+				amount = 50
+				state = 63
+			}
+			set_global_flag = development_done_san_onofre_npp
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_diablo_canyon_npp_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 64
+			NOT = { has_global_flag = development_done_diablo_canyon_npp }
+		}
+
+		available = {
+			owns_state = 64
+			has_manpower > 200
+			controls_state = 64
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_diablo_canyon_npp }
+			set_temp_variable = {
+				caps_diff = @developmentnpp
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentnpp }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentnpp }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.1
+			}
+			add_resource = {
+				type = energy
+				amount = 50
+				state = 64
+			}
+			set_global_flag = development_done_diablo_canyon_npp
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_satsop_npp_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 556
+			NOT = { has_global_flag = development_done_satsop_npp }
+		}
+
+		available = {
+			owns_state = 556
+			has_manpower > 200
+			controls_state = 556
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_satsop_npp }
+			set_temp_variable = {
+				caps_diff = @developmentnpp
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentnpp }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentnpp }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.1
+			}
+			add_resource = {
+				type = energy
+				amount = 50
+				state = 556
+			}
+			set_global_flag = development_done_satsop_npp
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_palo_verde_npp_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 386
+			NOT = { has_global_flag = development_done_palo_verde_npp }
+		}
+
+		available = {
+			owns_state = 386
+			has_manpower > 200
+			controls_state = 386
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_palo_verde_npp }
+			set_temp_variable = {
+				caps_diff = @developmentnpp
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentnpp }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentnpp }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.1
+			}
+			add_resource = {
+				type = energy
+				amount = 50
+				state = 386
+			}
+			set_global_flag = development_done_palo_verde_npp
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_first_solar_spp_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 455
+			NOT = { has_global_flag = development_done_first_solar_spp }
+		}
+
+		available = {
+			owns_state = 455
+			has_manpower > 200
+			controls_state = 455
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_first_solar_spp }
+			set_temp_variable = {
+				caps_diff = @developmentspp
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentspp }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentspp }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.2
+			}
+			add_resource = {
+				type = energy
+				amount = 20
+				state = 455
+			}
+			set_global_flag = development_done_first_solar_spp
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_crecent_dunes_spp_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 165
+			NOT = { has_global_flag = development_done_crecent_dunes_spp }
+		}
+
+		available = {
+			owns_state = 165
+			has_manpower > 200
+			controls_state = 165
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_crecent_dunes_spp }
+			set_temp_variable = {
+				caps_diff = @developmentspp
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentspp }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentspp }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.2
+			}
+			add_resource = {
+				type = energy
+				amount = 20
+				state = 165
+			}
+			set_global_flag = development_done_crecent_dunes_spp
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_mountain_home_afb_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 172
+			NOT = { has_global_flag = development_done_mountain_home_afb }
+		}
+
+		available = {
+			owns_state = 172
+			has_manpower > 200
+			controls_state = 172
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_mountain_home_afb }
+			set_temp_variable = {
+				caps_diff = @developmentafb
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentafb }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentafb }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.3
+			}
+			172 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = air_tech_category
+			}
+			set_global_flag = development_done_mountain_home_afb
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_el_centro_afb_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 583
+			NOT = { has_global_flag = development_done_el_centro_afb }
+		}
+
+		available = {
+			owns_state = 583
+			has_manpower > 200
+			controls_state = 583
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_el_centro_afb }
+			set_temp_variable = {
+				caps_diff = @developmentafb
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentafb }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentafb }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.3
+			}
+			583 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = air_tech_category
+			}
+			set_global_flag = development_done_el_centro_afb
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_whidbey_island_afb_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 42
+			NOT = { has_global_flag = development_done_whidbey_island_afb }
+		}
+
+		available = {
+			owns_state = 42
+			has_manpower > 200
+			controls_state = 42
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_whidbey_island_afb }
+			set_temp_variable = {
+				caps_diff = @developmentafb
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentafb }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentafb }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.3
+			}
+			42 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = air_tech_category
+			}
+			set_global_flag = development_done_whidbey_island_afb
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_beale_afb_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 421
+			NOT = { has_global_flag = development_done_beale_afb }
+		}
+
+		available = {
+			owns_state = 421
+			has_manpower > 200
+			controls_state = 421
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_beale_afb }
+			set_temp_variable = {
+				caps_diff = @developmentafb
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentafb }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentafb }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.3
+			}
+			421 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = air_tech_category
+			}
+			set_global_flag = development_done_beale_afb
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_fairchild_afb_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 332
+			NOT = { has_global_flag = development_done_fairchild_afb }
+		}
+
+		available = {
+			owns_state = 332
+			has_manpower > 200
+			controls_state = 332
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_fairchild_afb }
+			set_temp_variable = {
+				caps_diff = @developmentafb
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentafb }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentafb }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.3
+			}
+			332 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = air_tech_category
+			}
+			set_global_flag = development_done_fairchild_afb
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_cfb_comox_afb_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 370
+			NOT = { has_global_flag = development_done_cfb_comox_afb }
+		}
+
+		available = {
+			owns_state = 370
+			has_manpower > 200
+			controls_state = 370
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_cfb_comox_afb }
+			set_temp_variable = {
+				caps_diff = @developmentafb
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentafb }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentafb }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.3
+			}
+			370 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = air_tech_category
+			}
+			set_global_flag = development_done_cfb_comox_afb
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_sierra_army_depot_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 159
+			NOT = { has_global_flag = development_done_sierra_army_depot }
+		}
+
+		available = {
+			owns_state = 159
+			has_manpower > 200
+			controls_state = 159
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_sierra_army_depot }
+			set_temp_variable = {
+				caps_diff = @developmentfort
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentfort }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentfort }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.4
+			}
+			159 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				if = {
+					limit = {
+						free_building_slots = {
+							building = radar_station
+							size > 0
+						}
+					}
+					add_building_construction = {
+						type = radar_station
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = infantry_tech_category
+			}
+			set_global_flag = development_done_sierra_army_depot
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_joint_base_lewis_mchord_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 556
+			NOT = { has_global_flag = development_done_joint_base_lewis_mchord }
+		}
+
+		available = {
+			owns_state = 556
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_joint_base_lewis_mchord }
+			set_temp_variable = {
+				caps_diff = @developmentfort
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentfort }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentfort }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.4
+			}
+			556 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = air_tech_category
+			}
+			set_global_flag = development_done_joint_base_lewis_mchord
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_fort_irwin_wtt = {
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 589
+			NOT = { has_global_flag = development_done_fort_irwin }
+		}
+
+		available = {
+			owns_state = 589
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_fort_irwin }
+			set_temp_variable = {
+				caps_diff = @developmentfort
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentfort }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentfort }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.4
+			}
+			589 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = support_medical_tech_category
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = cat_land_doctrine
+			}
+			set_global_flag = development_done_fort_irwin
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	# Colorado
+
+	development_project_fort_carson_wtt = {
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 460
+			NOT = { has_global_flag = development_done_fort_carson }
+		}
+
+		available = {
+			owns_state = 460
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_fort_carson }
+			set_temp_variable = {
+				caps_diff = @developmentfort
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentfort }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentfort }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.4
+			}
+			460 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = infantry_tech_category
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = cat_land_doctrine
+			}
+			set_global_flag = development_done_fort_carson
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_pueblo_chemical_depot_wtt = {
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 586
+			NOT = { has_global_flag = development_done_pueblo_chemical_depot }
+		}
+
+		available = {
+			owns_state = 586
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_pueblo_chemical_depot }
+			set_temp_variable = {
+				caps_diff = @developmentfort
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentfort }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentfort }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.4
+			}
+			586 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = support_medical_tech_category
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = agriculture_tech
+			}
+			set_global_flag = development_done_pueblo_chemical_depot
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_usafa_solar_plant_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 544
+			NOT = { has_global_flag = development_done_usafa_solar_plant }
+		}
+
+		available = {
+			owns_state = 544
+			has_manpower > 200
+			controls_state = 544
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_usafa_solar_plant }
+			set_temp_variable = {
+				caps_diff = @developmentspp
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentfort }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentspp }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			country_event = {
+				id = development_project_done_event.2
+			}
+			add_resource = {
+				type = energy
+				amount = 20
+				state = 544
+			}
+			set_global_flag = development_done_usafa_solar_plant
+			clr_country_flag = development_underway
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_aurora_armory_wtt = {
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 525
+			NOT = { has_global_flag = development_done_aurora_armory }
+		}
+
+		available = {
+			owns_state = 525
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_aurora_armory }
+			set_temp_variable = {
+				caps_diff = @developmentfort
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentfort }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentfort }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.4
+			}
+			525 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = infantry_weapons_tech_category
+			}
+			set_global_flag = development_done_aurora_armory
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	#Wyoming
+
+	development_project_fewarren_afb_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 129
+			NOT = { has_global_flag = development_fewarren_afb }
+		}
+
+		available = {
+			owns_state = 129
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 4
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_fewarren_afb }
+			set_temp_variable = {
+				caps_diff = @developmentafb
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentafb }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentafb }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.1
+			}
+			129 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = anti_air_building
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = infantry_weapons_tech_category
+			}
+			set_global_flag = development_done_fewarren_afb
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+						is_ai = no
+					}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_cleanup_uranium_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = resource_generator_water_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = habitation_industry_tech_4
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 1042
+			NOT = { has_global_flag = development_cleanup_uranium }
+		}
+
+		available = {
+			owns_state = 1042
+			has_tech = resource_generator_water_tech_3
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 4
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_cleanup_uranium }
+			set_temp_variable = {
+				caps_diff = @developmentwater
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentwater }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentwater }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.1
+			}
+			1042 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_resource = {
+					type = water
+					amount = 30
+					state = 1042
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = purification_station_tech_category
+			}
+			set_global_flag = development_done_cleanup_uranium
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	#Nebraska
+
+	development_project_underground_farm_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = agriculture_industry_tech_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 999
+			NOT = { has_global_flag = development_underground_farm }
+		}
+
+		available = {
+			owns_state = 999
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_underground_farm }
+			set_temp_variable = {
+				caps_diff = @developmentwater
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentwater }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentwater }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.2
+			}
+		999 = {
+			add_extra_state_shared_building_slots = 2
+			add_resource = {
+				type = water
+				amount = 30
+				state = 999
+			}
+		}
+		set_global_flag = development_done_underground_farm
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	#Dakotas
+
+	development_project_minot_silo_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_1
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = habitation_industry_tech_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 1302
+			NOT = { has_global_flag = development_done_minot_silo }
+		}
+
+		available = {
+			owns_state = 1302
+			has_tech = habitation_industry_tech_3
+			has_manpower > 200
+			controls_state = 1302
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_minot_silo }
+			set_temp_variable = {
+				caps_diff = @developmentfort
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentfort }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentfort }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.1
+			}
+			1302 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = bunker2
+					level = 1
+					instant_build = yes
+					province = 13220
+				}
+				add_building_construction = {
+					type = bunker2
+					level = 1
+					instant_build = yes
+					province = 13224
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = habitation_category
+			}
+			set_global_flag = development_done_minot_silo
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	##Maybe turn into rocket site later
+
+	development_project_minuteman_historic_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = aa_fireteam_tech
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = aa_fireteam_equipment_tech_2
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 448
+			NOT = { has_global_flag = development_done_minuteman_historic }
+		}
+
+		available = {
+			owns_state = 448
+			has_tech = aa_fireteam_equipment_tech
+			has_manpower > 200
+			controls_state = 448
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_minuteman_historic }
+			set_temp_variable = {
+				caps_diff = @developmentfort
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentoffense }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentoffense }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.1
+			}
+			448 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = support_anti_air_tech_category
+			}
+			set_global_flag = development_done_minuteman_historic
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	#Utah
+
+	development_project_katana_electronics_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 266
+			NOT = { has_global_flag = development_done_katana_electronics }
+		}
+
+		available = {
+			owns_state = 266
+			has_tech = maketool_engineering_3
+			has_manpower > 200
+			controls_state = 266
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_katana_electronics }
+			set_temp_variable = {
+				caps_diff = @developmentelec
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentelec }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentelec }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			add_resource = {
+				type = circuitry
+				amount = 15
+				state = 266
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = electronics
+			}
+			set_global_flag = development_done_katana_electronics
+			clr_country_flag = development_underway
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_blue_castle_npp_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 368
+			NOT = { has_global_flag = development_done_blue_castle_npp }
+		}
+
+		available = {
+			owns_state = 368
+			has_manpower > 200
+			controls_state = 368
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_blue_castle_npp }
+			set_temp_variable = {
+				caps_diff = @developmentnpp
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentnpp }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentnpp }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			country_event = {
+				id = development_project_done_event.1
+			}
+			add_resource = {
+				type = energy
+				amount = 50
+				state = 368
+			}
+			set_global_flag = development_done_blue_castle_npp
+			clr_country_flag = development_underway
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_tooele_army_depot_wtt = {
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 50
+			NOT = { has_global_flag = development_done_tooele_army_depot }
+		}
+
+		available = {
+			owns_state = 50
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_tooele_army_depot }
+			set_temp_variable = {
+				caps_diff = @developmentfort
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentfort }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentfort }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.4
+			}
+			50 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = infantry_weapons_tech_category
+			}
+			set_global_flag = development_done_tooele_army_depot
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_dugway_proving_ground_wtt = {
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 264
+			NOT = { has_global_flag = development_done_dugway_proving_ground }
+		}
+
+		available = {
+			owns_state = 264
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_dugway_proving_ground }
+			set_temp_variable = {
+				caps_diff = @developmentfort
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentfort }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentfort }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.4
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = infantry_weapons_tech_category
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = power_armor_tech_category
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = support_demolitions_tech_category
+			}
+			set_global_flag = development_done_dugway_proving_ground
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_spanish_fork_armory_wtt = {
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 378
+			NOT = { has_global_flag = development_done_spanish_fork_armory }
+		}
+
+		available = {
+			owns_state = 378
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_spanish_fork_armory }
+			set_temp_variable = {
+				caps_diff = @developmentfort
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentfort }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentfort }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.4
+			}
+			378 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = power_armor_tech_category
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = cat_land_doctrine
+			}
+			set_global_flag = development_done_spanish_fork_armory
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_fort_bliss_wtt = {
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 234
+			NOT = { has_global_flag = development_done_fort_bliss }
+		}
+
+		available = {
+			owns_state = 234
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_fort_bliss }
+			set_temp_variable = {
+				caps_diff = @developmentfort
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentfort }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentfort }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.4
+			}
+			234 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = support_demolitions_tech_category
+			}
+			set_global_flag = development_done_fort_bliss
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_fort_huachuca_wtt = {
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 50
+			NOT = { has_global_flag = development_done_fort_huachuca }
+		}
+
+		available = {
+			owns_state = 50
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_fort_huachuca }
+			set_temp_variable = {
+				caps_diff = @developmentfort
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentfort }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentfort }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.4
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = infantry_weapons_tech_category
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.3
+				uses = 1
+				category = caf_land_doctrine_xp
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = spec_force_equipment_tech_category
+			}
+			set_global_flag = development_done_fort_huachuca
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_yuma_proving_ground_wtt = {
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 381
+			NOT = { has_global_flag = development_done_yuma_proving_ground }
+		}
+
+		available = {
+			owns_state = 381
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_yuma_proving_ground }
+			set_temp_variable = {
+				caps_diff = @developmentfort
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentfort }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentfort }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.4
+			}
+			381 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = infantry_weapons_tech_category
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses =  1
+				category = support_demolitions_tech_category
+			}
+			set_global_flag = development_done_yuma_proving_ground
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_naval_air_station_fallon_wtt = {
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 284
+			NOT = { has_global_flag = development_done_naval_air_station_fallon }
+		}
+
+		available = {
+			owns_state = 284
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_naval_air_station_fallon }
+			set_temp_variable = {
+				caps_diff = @developmentafb
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentafb }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentafb }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.3
+			}
+			284 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = air_tech_category
+			}
+			set_global_flag = development_done_naval_air_station_fallon
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_naval_air_station_lemoore_wtt = {
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 529
+			NOT = { has_global_flag = development_done_naval_air_station_lemoore }
+		}
+
+		available = {
+			owns_state = 529
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_naval_air_station_lemoore }
+			set_temp_variable = {
+				caps_diff = @developmentafb
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentafb }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentafb }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.3
+			}
+			529 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = air_tech_category
+			}
+			set_global_flag = development_done_naval_air_station_lemoore
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_naval_air_weapon_station_china_lake_wtt = {
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 489
+			NOT = { has_global_flag = development_done_naval_air_weapon_station_china_lake }
+		}
+
+		available = {
+			owns_state = 489
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_naval_air_weapon_station_china_lake }
+			set_temp_variable = {
+				caps_diff = @developmentafb
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentafb }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentafb }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.3
+			}
+			489 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = air_tech_category
+			}
+			set_global_flag = development_done_naval_air_weapon_station_china_lake
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_naval_weapons_station_seal_beach_wtt = {
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 350
+			NOT = { has_global_flag = development_done_naval_weapons_station_seal_beach }
+		}
+
+		available = {
+			owns_state = 350
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_naval_weapons_station_seal_beach }
+			set_temp_variable = {
+				caps_diff = @developmentnavy
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentnavy }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentnavy }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.5
+			}
+			350 = {
+				add_extra_state_shared_building_slots = 3
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = naval_tech_category
+			}
+			set_global_flag = development_done_naval_weapons_station_seal_beach
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_naval_base_san_diego_wtt = {
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 63
+			NOT = { has_global_flag = development_done_naval_base_san_diego }
+		}
+
+		available = {
+			owns_state = 63
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_naval_base_san_diego }
+			set_temp_variable = {
+				caps_diff = @developmentnavy
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentnavy }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentnavy }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.5
+			}
+			63 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 4977
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = naval_tech_category
+			}
+			set_global_flag = development_done_naval_base_san_diego
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_naval_auxiliary_landing_field_san_clemente_island_wtt = {
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 736
+			NOT = { has_global_flag = development_done_naval_auxiliary_landing_field_san_clemente_island }
+		}
+
+		available = {
+			owns_state = 736
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_naval_auxiliary_landing_field_san_clemente_island }
+			set_temp_variable = {
+				caps_diff = @developmentnavy
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentnavy }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentnavy }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.5
+			}
+			736 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 9207
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = naval_tech_category
+			}
+			set_global_flag = development_done_naval_auxiliary_landing_field_san_clemente_island
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_naval_base_ventura_wtt = {
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 396
+			NOT = { has_global_flag = development_done_naval_base_ventura }
+		}
+
+		available = {
+			owns_state = 396
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_naval_base_ventura }
+			set_temp_variable = {
+				caps_diff = @developmentnavy
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentnavy }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentnavy }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.5
+			}
+			396 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 904
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = naval_tech_category
+			}
+			set_global_flag = development_done_naval_base_ventura
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_naval_base_kitsap_wtt = {
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 737
+			NOT = { has_global_flag = development_done_naval_base_kitsap }
+		}
+
+		available = {
+			owns_state = 737
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_naval_base_kitsap }
+			set_temp_variable = {
+				caps_diff = @developmentnavy
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentnavy }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentnavy }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.5
+			}
+			737 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 9237
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = naval_tech_category
+			}
+			set_global_flag = development_done_naval_base_kitsap
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_naval_magazine_indian_island_wtt = {
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 737
+			NOT = { has_global_flag = development_done_naval_magazine_indian_island }
+		}
+
+		available = {
+			owns_state = 737
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_naval_magazine_indian_island }
+			set_temp_variable = {
+				caps_diff = @developmentnavy
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentnavy }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentnavy }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.5
+			}
+			737 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = naval_tech_category
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.3
+				uses = 1
+				category = cat_naval_doctrine
+			}
+			set_global_flag = development_done_naval_magazine_indian_island
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_naval_station_everett_wtt = {
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 84
+			NOT = { has_global_flag = development_done_naval_station_everett }
+		}
+
+		available = {
+			owns_state = 84
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_naval_station_everett }
+			set_temp_variable = {
+				caps_diff = @developmentnavy
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentnavy }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentnavy }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.5
+			}
+			84 = {
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 9250
+				}
+				if = {
+					limit = {
+						is_valid_state_for_2_dockyards = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			set_global_flag = development_done_naval_station_everett
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_grand_coulee_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 179
+			NOT = { has_global_flag = development_done_grand_coulee }
+		}
+
+		available = {
+			owns_state = 179
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_grand_coulee }
+			set_temp_variable = {
+				caps_diff = @developmentelec
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentelec }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentelec }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.2
+			}
+		179 = {
+			add_extra_state_shared_building_slots = 2
+			add_resource = {
+				type = energy
+				amount = 40
+				state = 179
+			}
+		}
+		set_global_flag = development_done_grand_coulee
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_CFB_equimalt_wtt = {
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 420
+			NOT = { has_global_flag = development_done_CFB_equimalt }
+		}
+
+		available = {
+			owns_state = 420
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_CFB_equimalt }
+			set_temp_variable = {
+				caps_diff = @developmentnavy
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentnavy }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentnavy }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.5
+			}
+			420 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 2534
+				}
+				if = {
+					limit = {
+						is_valid_state_for_2_dockyards = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			set_global_flag = development_done_CFB_equimalt
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_stoon_cave_wtt = {
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = resource_generator_power_tech_3
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_4
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 1188
+			NOT = { has_global_flag = development_done_stoon_cave }
+			wild_wasteland = yes
+		}
+
+		available = {
+			owns_state = 1188
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 4
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_stoon_cave }
+			set_temp_variable = {
+				caps_diff = @developmentcivilian
+			}
+			caps_cost_trigger = yes
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentcivilian			}
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentcivilian	 }
+			add_caps = yes
+			hidden_effect = { scoped_sound_effect = "bad_karma" }
+			hidden_effect = { scoped_sound_effect = "wild_wasteland" }
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.1
+			}
+			1188 = {
+				add_extra_state_shared_building_slots = 6
+			}
+			add_tech_bonus = {
+				bonus = 0.4
+				uses = 1
+				category = habitation_category
+			}
+			set_global_flag = development_done_stoon_cave
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_vandenberg_afb_wtt = {
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 64
+			NOT = { has_global_flag = development_done_vandenberg_afb }
+		}
+
+		available = {
+			owns_state = 64
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_vandenberg_afb }
+			set_temp_variable = {
+				caps_diff = @developmentafb
+			}
+			caps_cost_trigger = yes
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentafb }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentafb }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.3
+			}
+			64 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = support_anti_tank_tech_category
+			}
+			set_global_flag = development_done_vandenberg_afb
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_castle_afb_wtt = {
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 605
+			NOT = { has_global_flag = development_done_castle_afb }
+		}
+
+		available = {
+			owns_state = 605
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_castle_afb }
+			set_temp_variable = {
+				caps_diff = @developmentafb
+			}
+			caps_cost_trigger = yes
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentafb }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentafb }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.3
+			}
+			605 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = support_anti_tank_tech_category
+			}
+			set_global_flag = development_done_castle_afb
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_norton_afb_wtt = {
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 591
+			NOT = { has_global_flag = development_done_norton_afb }
+		}
+
+		available = {
+			owns_state = 591
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_norton_afb }
+			set_temp_variable = {
+				caps_diff = @developmentafb
+			}
+			caps_cost_trigger = yes
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentafb }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentafb }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.3
+			}
+			591 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = support_anti_tank_tech_category
+			}
+			set_global_flag = development_done_norton_afb
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_george_afb_wtt = {
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 243
+			NOT = { has_global_flag = development_done_george_afb }
+		}
+
+		available = {
+			owns_state = 243
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_george_afb }
+			set_temp_variable = {
+				caps_diff = @developmentafb
+			}
+			caps_cost_trigger = yes
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentafb }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentafb }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.3
+			}
+			243 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = air_tech_category
+			}
+			set_global_flag = development_done_george_afb
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_hoover_western_boatlift_wtt = {
+		priority = 10
+		cost = 20
+		days_remove = 180
+		ai_will_do = {
+			base = 0
+			modifier = {
+				num_of_civilian_factories_available_for_projects > 4
+				add = 40
+			}
+		}
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 613
+			}
+		}
+		visible = {
+			613 = { is_controlled_by = ROOT }
+			NOT = { has_global_flag = hoover_western_boatlift_built }
+		}
+		available = {
+			613 = { is_controlled_by = ROOT }
+			has_manpower > 60
+			NOT = { has_country_flag = development_underway }
+			custom_trigger_tooltip = {
+				tooltip = hoover_western_boatlift_built_trig_tt
+				NOT = { has_global_flag = hoover_western_boatlift_built }
+			}
+			set_temp_variable = {
+				caps_diff = @developmentnavy
+			}
+			caps_cost_trigger = yes
+			num_of_civilian_factories_available_for_projects > 3
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentnavy }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		cancel_trigger = {
+			NOT = { 613 = { is_controlled_by = ROOT } }
+		}
+		cancel_effect = {
+			add_manpower = 60
+			clr_country_flag = development_underway
+		}
+		modifier = {
+			civilian_factory_use = 4
+		}
+		complete_effect = {
+			add_manpower = -60
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentnavy }
+			add_caps = yes
+		}
+		remove_effect = {
+			add_manpower = 60
+			clr_country_flag = development_underway
+			613 = { add_extra_state_shared_building_slots = 2 }
+			custom_effect_tooltip = hoover_western_boatlift_built_tt
+			set_global_flag = hoover_western_boatlift_built
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+	development_project_hoover_eastern_boatlift_wtt = {
+		priority = 10
+		cost = 20
+		days_remove = 180
+		ai_will_do = {
+			base = 0
+			modifier = {
+				num_of_civilian_factories_available_for_projects > 4
+				add = 40
+			}
+		}
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 438
+			}
+		}
+		visible = {
+			438 = { is_fully_controlled_by = ROOT }
+			NOT = { has_global_flag = hoover_eastern_boatlift_built }
+		}
+		available = {
+			438 = { is_fully_controlled_by = ROOT }
+			has_manpower > 60
+			NOT = { has_country_flag = development_underway }
+			custom_trigger_tooltip = {
+				tooltip = hoover_eastern_boatlift_built_trig_tt
+				NOT = { has_global_flag = hoover_eastern_boatlift_built }
+			}
+			set_temp_variable = {
+				caps_diff = @developmentnavy
+			}
+			caps_cost_trigger = yes
+			num_of_civilian_factories_available_for_projects > 3
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentnavy }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		cancel_trigger = {
+			NOT = { 438 = { is_fully_controlled_by = ROOT } }
+		}
+		cancel_effect = {
+			add_manpower = 60
+			clr_country_flag = development_underway
+		}
+		modifier = {
+			civilian_factory_use = 4
+		}
+		complete_effect = {
+			add_manpower = -60
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentnavy }
+			add_caps = yes
+		}
+		remove_effect = {
+			add_manpower = 60
+			clr_country_flag = development_underway
+			438 = { add_extra_state_shared_building_slots = 2 }
+			custom_effect_tooltip = hoover_eastern_boatlift_built_tt
+			set_global_flag = hoover_eastern_boatlift_built
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_sarsparilla_factory_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 380
+			NOT = { has_global_flag = development_sarsaparilla_factory }
+		}
+
+		available = {
+			owns_state = 380
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_sarsaparilla_factory }
+			set_temp_variable = {
+				caps_diff = @developmentcivilian
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentcivilian }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentcivilian }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.5
+			}
+		380 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		set_global_flag = development_done_sarsaparilla_factory
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_fort_ord_wtt = {
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 433
+			NOT = { has_global_flag = development_done_fort_ord }
+		}
+
+		available = {
+			owns_state = 433
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_fort_ord }
+			set_temp_variable = {
+				caps_diff = @developmentfort
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentfort }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentfort }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.4
+			}
+			433 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = support_medical_tech_category
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = cat_land_doctrine
+			}
+			set_global_flag = development_done_fort_ord
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_sunnyvale_afb_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 163
+			NOT = { has_global_flag = development_done_sunnyvale_afb }
+		}
+
+		available = {
+			owns_state = 163
+			has_manpower > 200
+			controls_state = 163
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_sunnyvale_afb }
+			set_temp_variable = {
+				caps_diff = @developmentafb
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentafb }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentafb }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.3
+			}
+			163 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = air_tech_category
+			}
+			set_global_flag = development_done_sunnyvale_afb
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_sacramento_army_depot_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 135
+			NOT = { has_global_flag = development_done_sacramento_army_depot }
+		}
+
+		available = {
+			owns_state = 135
+			has_manpower > 200
+			controls_state = 135
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_sacramento_army_depot }
+			set_temp_variable = {
+				caps_diff = @developmentfort
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentfort }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentfort }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.4
+			}
+			135 = {
+				if = {
+					limit = {
+						is_valid_state_for_arms_factory = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+				if = {
+					limit = {
+						free_building_slots = {
+							building = radar_station
+							size > 0
+						}
+					}
+					add_building_construction = {
+						type = radar_station
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = infantry_tech_category
+			}
+			set_global_flag = development_done_sacramento_army_depot
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+	#Texas
+	development_project_red_river_army_depot_wtt = {
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 878
+			NOT = { has_global_flag = development_done_red_river_army_depot }
+		}
+
+		available = {
+			owns_state = 878
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_red_river_army_depot }
+			set_temp_variable = {
+				caps_diff = @developmentfort
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentfort }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentfort }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.4
+			}
+			878 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_arms_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = infantry_weapons_tech_category
+			}
+			set_global_flag = development_done_red_river_army_depot
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+	development_project_sheppard_afb_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 902
+			NOT = { has_global_flag = development_done_sheppard_afb }
+		}
+
+		available = {
+			owns_state = 902
+			has_manpower > 200
+			controls_state = 902
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_sheppard_afb }
+			set_temp_variable = {
+				caps_diff = @developmentafb
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentafb }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentafb }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.3
+			}
+			902 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = air_tech_category
+			}
+			set_global_flag = development_done_sheppard_afb
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+	development_project_dyess_afb_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 921
+			NOT = { has_global_flag = development_done_dyess_afb }
+		}
+
+		available = {
+			owns_state = 921
+			has_manpower > 200
+			controls_state = 921
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_dyess_afb }
+			set_temp_variable = {
+				caps_diff = @developmentafb
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentafb }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentafb }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.3
+			}
+			921 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = air_tech_category
+			}
+			set_global_flag = development_done_dyess_afb
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_compensating_gun_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = aa_fireteam_tech
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = aa_fireteam_equipment_tech_2
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 448
+			NOT = { has_global_flag = development_done_compensating_gun }
+		}
+
+		available = {
+			owns_state = 448
+			has_tech = aa_fireteam_equipment_tech_2
+			has_manpower > 200
+			controls_state = 448
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_compensating_gun }
+			set_temp_variable = {
+				caps_diff = @developmentoffense
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentoffense }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentoffense }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.2
+			}
+			448 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = anti_air_building
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = support_anti_air_tech_category
+			}
+			set_global_flag = development_done_compensating_gun
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_car_crusher_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = resource_generator_metal_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 887
+			NOT = { has_global_flag = development_car_crusher }
+		}
+
+		available = {
+			owns_state = 887
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 4
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_car_crusher }
+			set_temp_variable = {
+				caps_diff = @developmentmetal
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentmetal }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentmetal }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.2
+			}
+			887 = {
+				add_extra_state_shared_building_slots = 2
+				add_resource = {
+					type = metal
+					amount = 40
+					state = 887
+				}
+			}
+			set_global_flag = development_done_car_crusher
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	#Montana
+
+	development_project_cabin_creek_spp_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 1065
+			NOT = { has_global_flag = development_done_cabin_creek_spp }
+		}
+
+		available = {
+			owns_state = 1065
+			has_manpower > 200
+			controls_state = 1065
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_cabin_creek_spp }
+			set_temp_variable = {
+				caps_diff = @developmentspp
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentspp }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentspp }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			country_event = {
+				id = development_project_done_event.2
+			}
+			add_resource = {
+				type = energy
+				amount = 20
+				state = 1065
+			}
+			set_global_flag = development_done_cabin_creek_spp
+			clr_country_flag = development_underway
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_giddyup_buttercup_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = resource_generator_metal_tech_2
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 1025
+			NOT = { has_global_flag = development_done_giddyup_buttercup }
+		}
+
+		available = {
+			owns_state = 1025
+			has_manpower > 200
+			controls_state = 1025
+			num_of_civilian_factories_available_for_projects > 4
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_giddyup_buttercup }
+			set_temp_variable = {
+				caps_diff = @developmentcivilian
+			}
+			caps_cost_trigger = yes
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentcivilian }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.2
+			}
+		1025 = {
+			add_extra_state_shared_building_slots = 2
+			if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			add_resource = {
+					type = metal
+					amount = 10
+					state = 1025
+				}
+		}
+		set_global_flag = development_done_giddyup_buttercup
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	# Mexico
+
+	development_project_del_norte_international_afb_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 753
+			NOT = { has_global_flag = development_done_del_norte_international_afb }
+		}
+
+		available = {
+			owns_state = 753
+			has_manpower > 200
+			controls_state = 753
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_del_norte_international_afb }
+			set_temp_variable = {
+				caps_diff = @developmentafb
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentafb }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentafb }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.3
+			}
+			753 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = air_tech_category
+			}
+			set_global_flag = development_done_del_norte_international_afb
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_villanueva_spp_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 750
+			NOT = { has_global_flag = development_done_villanueva_spp }
+		}
+
+		available = {
+			owns_state = 750
+			has_manpower > 200
+			controls_state = 750
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_villanueva_spp }
+			set_temp_variable = {
+				caps_diff = @developmentspp
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentspp }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentspp }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.2
+			}
+			add_resource = {
+				type = energy
+				amount = 20
+				state = 750
+			}
+			set_global_flag = development_done_villanueva_spp
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_puerto_libertad_spp_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = electronic_engineering_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = electronic_engineering_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 22
+			NOT = { has_global_flag = development_done_puerto_libertad_spp }
+		}
+
+		available = {
+			owns_state = 22
+			has_manpower > 200
+			controls_state = 22
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_puerto_libertad_spp }
+			set_temp_variable = {
+				caps_diff = @developmentspp
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentspp }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = { civilian_factory_use = 4 }
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentspp }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.2
+			}
+			add_resource = {
+				type = energy
+				amount = 20
+				state = 22
+			}
+			set_global_flag = development_done_puerto_libertad_spp
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+
+	development_project_chico_ac_wtt = {
+
+		fire_only_once = yes
+
+		fixed_random_seed = no
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_2
+				}
+			}
+			modifier = {
+				factor = 0.25
+				NOT = {
+					has_tech = habitation_industry_tech_3
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_tech = construction_industry_tech_3
+				}
+			}
+		}
+
+		visible = {
+			owns_state = 784
+			NOT = { has_global_flag = development_chico_ac }
+		}
+
+		available = {
+			owns_state = 784
+			has_tech = habitation_industry_tech_5
+			has_manpower > 200
+			num_of_civilian_factories_available_for_projects > 5
+			NOT = { has_country_flag = development_underway }
+			NOT = { has_global_flag = development_done_chico_ac }
+			set_temp_variable = {
+				caps_diff = @developmentcivilian
+			}
+			caps_cost_trigger = yes
+		}
+
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = @developmentcivilian }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		complete_effect = {
+			add_manpower = -200
+			set_country_flag = development_underway
+			set_temp_variable = { caps_to_add = @developmentcivilian }
+			add_caps = yes
+		}
+
+		remove_effect = {
+			add_manpower = 200
+			clr_country_flag = development_underway
+			country_event = {
+				id = development_project_done_event.2
+			}
+			784 = {
+				if = {
+					limit = {
+						is_valid_state_for_2_civilian_factories = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = habitation_category
+			}
+			set_global_flag = development_done_chico_ac
+			if = {
+				limit = {
+					game_rules_allow_achievements = yes
+					is_ai = no
+				}
+				add_to_variable = { global.development_projects_completed = 1 }
+				if = {
+					limit = { check_variable = { global.development_projects_completed > 14 } }
+					set_country_flag = achievement_development_project_flag
+				}
+			}
+		}
+	}
+}

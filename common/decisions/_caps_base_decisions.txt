@@ -1,0 +1,1941 @@
+### Minimum balance before using marketplace
+@AI_THRESHHOLD = 500
+@TRADE_VALUE_MULTI = 0.3
+caps_base_category = {
+	disable_node_debug = {
+		icon = GFX_decision_single_cap
+		state_target = yes
+		priority =  1
+		target_array = state_controlled_nodes
+		visible = {
+			has_global_flag = caps_debug_toggle
+		}
+		target_array = state_controlled_nodes
+		target_trigger = {
+			FROM = {
+			}
+		}
+		days_re_enable = 10
+		complete_effect = {
+			FROM = {
+				set_temp_variable = { duration_node_disabled = 30 }
+				disable_current_node_duration = yes
+
+			}
+		}
+	}
+	create_node_test_decision = {
+		icon = GFX_decision_single_cap
+		state_target = yes
+		target_trigger = {
+			FROM = {
+				state = 30
+			}
+		}
+		targets = { 30 }
+		custom_cost_trigger = {
+			set_temp_variable = {
+				temp_equipment_cost = 75
+			}
+			check_variable = {
+				caps_number_display > temp_equipment_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		target_root_trigger = {
+			has_global_flag = caps_debug_toggle
+		}
+		complete_effect = {
+			set_temp_variable = { new_node_target = FROM }
+			add_to_temp_array = {
+				array = new_node_trade_array
+				value = 1
+			}
+			add_to_temp_array = {
+				array = new_node_trade_array
+				value = 253
+			}
+			add_to_temp_array = {
+				array = new_node_trade_array
+				value = 921
+			}
+			set_temp_variable = { new_node_economic_development = 4 }
+			set_temp_variable = { set_main_node_flag = 1 }
+			set_temp_variable = { new_node_map_x = 2223 }
+			set_temp_variable = { new_node_map_y = 1075 }
+			### new_node_target = state to node
+			### new_node_trade_array = states to trade with
+			#### new_node_economic_development = starting economic economic_development_level
+			### set_main_node_flag = (1/0) is main node of country
+			### new_node_map_x = x coordinate
+			### new_node_map_y = y coordinate
+			create_map_node = yes
+		}
+	}
+	state_node_disabled_mission = {
+		icon = GFX_decision_single_cap
+		priority =  990
+		state_target = yes
+		target_array = state_controlled_nodes
+		activation = {
+			always = no
+		}
+		available = {
+			hidden_trigger = {
+				OR = {
+					has_country_flag = jump_start_nodes
+					NOT = {
+						controls_state = FROM
+					}
+				}
+			}
+		}
+		allowed = {
+			always = no
+		}
+		fire_only_once = yes
+		#days_re_enable = 5
+		#days_remove = 5
+		is_good = no
+		days_mission_timeout = duration_node_disabled
+		###Activated only via mission
+		timeout_effect = {
+			FROM = {
+				hidden_effect = {
+					restart_current_node = yes
+					clear_variable = duration_node_disabled
+					save_event_target_as = state_to_re_enable
+				}
+				custom_effect_tooltip = caps_reenabled_node_decision_tt
+			}
+			country_event = node_events.1
+		}
+		days_remove = 1
+	}
+	caps_development_decisions = {
+		icon = GFX_decision_single_cap
+		state_target = yes
+		priority = 60
+		target_array = state_controlled_nodes
+		target_trigger = {
+			FROM = {
+			}
+		}
+		target_root_trigger = {
+			has_variable = state_controlled_nodes^num
+		}
+		ai_will_do = {
+			base = -5
+			modifier = {
+				set_temp_variable = { temp_caps = caps_number_display }
+				divide_temp_variable = { temp_caps = 125 }
+				# multiply_temp_variable = { temp_caps = caps_daily_modified }
+				add = temp_caps
+			}
+		}
+		visible = {
+			FROM = {
+				AND = {
+					check_variable = { economic_development_level < 2 }
+				}
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				FROM = {
+					NOT = { has_state_flag = recently_developed_node }
+				}
+				tooltip = caps_development_node_tt
+			}
+			FROM = {
+				AND = {
+					check_variable = { economic_development_level < 2 }
+				}
+			}
+		}
+		custom_cost_trigger = {
+			# set_temp_variable = { additional_costs = ROOT.FROM.economic_development_level }
+			# multiply_temp_variable = { additional_costs = 100 }
+			# clamp_temp_variable = {
+			# 	var = additional_costs
+			# 	min = 0
+			# 	max = 900
+			# }
+			set_temp_variable = { temp_cap_cost = 200 }
+			# add_to_temp_variable = { temp_cap_cost = additional_costs }
+			check_variable = {
+				var = caps_number_display
+				value = temp_cap_cost
+				compare = greater_than_or_equals
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			# set_temp_variable = { temp_cap_cost = FROM.economic_development_level }
+			# multiply_temp_variable = { temp_cap_cost = 100 }
+			# clamp_temp_variable = {
+			# 	var = temp_cap_cost
+			# 	min = 0
+			# 	max = 900
+			# }
+			add_to_temp_variable = { temp_cap_cost = 200 }
+			multiply_temp_variable = { temp_cap_cost = -1 }
+			# set_temp_variable = { temp_neg_caps_cost = 0 }
+			# subtract_from_temp_variable = { temp_neg_caps_cost = temp_cap_cost }
+			set_temp_variable = { caps_to_add = temp_cap_cost }
+			add_caps = yes
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					FROM = {
+						check_variable = { economic_development_level < 2 }
+					}
+				}
+				# Refunds caps at the end of duration equal to 2 - economic_development_level (prior to decision reward) * 25
+				set_temp_variable = { caps_refund = 2 }
+				subtract_from_temp_variable = { caps_refund = FROM.economic_development_level }
+				multiply_temp_variable = { caps_refund = 50 }
+				clamp_temp_variable = {
+					var = caps_refund
+					min = 0
+					max = 100
+				}
+				set_temp_variable = { caps_to_add = caps_refund }
+				add_caps = yes
+			}
+			set_temp_variable = { development_to_add = 0.25 }
+			FROM = {
+				add_development_to_node = yes
+				set_state_flag = {
+					flag = recently_developed_node
+					days = 90
+					value = 1
+				}
+			}
+		}
+		days_remove = 90
+		days_re_enable = 90
+	}
+	caps_new_citizen_care_package = {
+		icon = GFX_decision_single_cap
+		visible = {
+			any_owned_state = {
+				NOT = { is_core_of = ROOT }
+				compliance < 90
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				any_owned_state = {
+					resistance > 25
+				}
+				add = 2
+			}
+		}
+		available = {
+			any_owned_state = {
+				compliance < 80
+			}
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 200 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -200 }
+			add_caps = yes
+		}
+		modifier = {
+			compliance_gain = 0.05
+			resistance_target = -0.05
+			resistance_decay = 0.05
+		}
+		days_remove = 160
+		days_re_enable = 120
+	}
+	caps_signing_bonus = {
+		icon = GFX_decision_single_cap
+		visible = {
+			has_manpower < 5000
+		}
+		available = {
+			has_manpower < 3000
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				check_variable = {
+					manpower < 1000
+				}
+				add = 1
+			}
+			modifier = {
+				check_variable = {
+					manpower < 3000
+				}
+				check_variable = {
+					caps_number_display > 1000
+				}
+				add = 1
+			}
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 150 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -150 }
+			add_caps = yes
+		}
+		modifier = {
+			mobilization_speed = 0.1
+			non_core_manpower = 0.05
+			weekly_manpower = 18
+			caps_flat_income_modifier = -3
+		}
+		days_remove = 270
+		days_re_enable = 90
+	}
+	caps_luxury_goods = {
+		icon = GFX_decision_single_cap
+		ai_will_do = {
+			base = 0
+			modifier = {
+				check_variable = { modifier@consumer_goods_expected_value > 0.10 }
+				num_of_available_civilian_factories > 5
+				add = 1
+			}
+		}
+		visible = {
+			always = yes
+		}
+		available = {
+			check_variable = { modifier@consumer_goods_expected_value > 0.05 }
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 150 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -150 }
+			add_caps = yes
+		}
+		modifier = {
+			production_speed_buildings_factor = 0.08
+			min_export = 0.08
+			caps_income_modifier = -0.15
+		}
+		days_remove = 360
+		days_re_enable = 90
+	}
+	caps_academy_investment = {
+		icon = GFX_decision_single_cap
+		visible = {
+			has_tech = unit_training_tech_4
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				check_variable = { caps_number_display > 800 }
+				add = 1
+			}
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 100 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -100 }
+			add_caps = yes
+		}
+		modifier = {
+			experience_gain_army_factor = 0.1
+			experience_gain_army = 0.15
+			training_time_army_factor = -0.1
+		}
+		days_remove = 90
+		days_re_enable = 90
+	}
+	caps_raise_wasteland_intelligence_budget = {
+		icon = GFX_decision_single_cap
+		allowed = {
+			has_dlc = "La Resistance"
+		}
+		fire_only_once = yes
+		visible = {
+			agency_upgrade_number > 3
+		}
+		available = {
+			OR = {
+				agency_upgrade_number > 9
+				AND = {
+					agency_upgrade_number > 4
+					custom_trigger_tooltip = {
+						tooltip = has_3_encryption_upgrades_tt
+						hidden_trigger = {
+							count_triggers = {
+								amount = 3
+								has_tech = encryption
+								has_tech = encryption_1
+								has_tech = encryption_2
+								has_tech = encryption_3
+								has_tech = encryption_4
+							}
+						}
+					}
+					custom_trigger_tooltip = {
+						tooltip = has_3_decryption_upgrades_tt
+						hidden_trigger = {
+							count_triggers = {
+								amount = 3
+								has_tech = decryption
+								has_tech = decryption_1
+								has_tech = decryption_2
+								has_tech = decryption_3
+								has_tech = decryption_4
+							}
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				check_variable = { caps_number_display > 900 }
+				add = 1
+			}
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 150 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			custom_effect_tooltip = caps_raise_wasteland_intelligence_budget_tt
+
+			set_temp_variable = { caps_to_add = -150 }
+			add_caps = yes
+		}
+		modifier = {
+			caps_income_modifier = -0.1
+			agency_upgrade_time = -0.33
+		}
+		remove_effect = {
+			custom_effect_tooltip = caps_add_operative_slot_tt
+			hidden_effect = {
+				add_ideas = caps_operative_slot_bonus # Hidden idea
+			}
+		}
+		days_remove = 180
+	}
+	caps_mining_subsidy = {
+		icon = GFX_decision_single_cap
+		visible = {
+			#always = yes
+			has_tech = resource_generator_metal_tech_4
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				check_variable = {
+					caps_number_display > 800
+				}
+				add = 2
+			}
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 250 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -250 }
+			add_caps = yes
+		}
+		modifier = {
+			local_resources_factor = 0.3
+		}
+		days_remove = 270
+		days_re_enable = 90
+	}
+	caps_industrial_subsidy = {
+		icon = GFX_decision_single_cap
+		visible = {
+			#always = yes
+			has_tech = maketool_engineering_3
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				check_variable = {
+					caps_number_display > 800
+				}
+				add = 2
+			}
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 50 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -50 }
+			add_caps = yes
+		}
+		modifier = {
+			production_factory_efficiency_gain_factor = 0.15
+			evolution_income_source_modifier_2 = -0.15
+		}
+		days_remove = 90
+		days_re_enable = 180
+	}
+	caps_dockyard_subsidy = {
+		icon = GFX_decision_single_cap
+		visible = {
+			has_tech = construction_industry_tech_3
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				check_variable = {
+					caps_number_display > 1000
+				}
+				add = 1
+			}
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 175 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -175 }
+			add_caps = yes
+		}
+		modifier = {
+			industrial_capacity_dockyard = 0.25
+		}
+		days_remove = 180
+		days_re_enable = 180
+	}
+	caps_factory_research_subsidy = {
+		icon = GFX_decision_single_cap
+		visible = {
+			has_tech = specialized_industry_tech_3
+		}
+		available = {
+			has_manpower > 1800
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				check_variable = {
+					caps_number_display > 800
+				}
+				has_manpower > 3000
+				add = 2
+			}
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 150 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -150 }
+			add_caps = yes
+		}
+		modifier = {
+			weekly_manpower = -30
+			evolution_income_source_modifier_2 = -0.2
+		}
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = {
+					is_valid_state_for_civilian_factory = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.3
+				uses = 1
+				category = tool_tech
+				category = industry_specialisation_category
+				category = construction_category
+			}
+		}
+		days_remove = 90
+		days_re_enable = 180
+	}
+	caps_sanitation_subsidy = {
+		icon = GFX_decision_single_cap
+		visible = {
+			has_tech = generalized_industry_tech_3
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 2
+			any_owned_state = {
+				custom_trigger_tooltip = {
+					tooltip = caps_sanitation_subsidy_valid_target_tt
+					OR = {
+						is_valid_state_for_3_arms_factories = yes
+						is_valid_state_for_3_civilian_factories = yes
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = caps_sanitation_subsidy_new_target_tt
+					NOT = {
+						has_state_flag = caps_sanitation_subsidy_received
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				check_variable = {
+					caps_number_display > 800
+				}
+				add = 2
+			}
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 175 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -175 }
+			add_caps = yes
+		}
+		modifier = {
+			civilian_factory_use = 3
+			caps_node_trade_modifier = 0.2
+		}
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = {
+					OR = {
+						is_valid_state_for_3_arms_factories = yes
+						is_valid_state_for_3_civilian_factories = yes
+					}
+					NOT = {
+						has_state_flag = caps_sanitation_subsidy_received
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_resource = {
+					type = water
+					amount = 5
+				}
+				set_state_flag = caps_sanitation_subsidy_received
+			}
+		}
+		days_remove = 90
+		days_re_enable = 90
+	}
+	caps_farming_subsidy = {
+		icon = GFX_decision_single_cap
+		visible = {
+			has_tech = agriculture_industry_tech_3
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				check_variable = {
+					caps_number_display > 800
+				}
+				add = 2
+			}
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 100 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -100 }
+			add_caps = yes
+		}
+		modifier = {
+			MONTHLY_POPULATION = 0.75
+			exodus_national_appeal = 0.05
+			caps_flat_income_modifier = -2.0
+			stability_factor = 0.05
+		}
+		days_remove = 360
+		days_re_enable = 90
+	}
+	caps_recycling_subsidy = {
+		icon = GFX_decision_single_cap
+		visible = {
+			has_tech = recycling_industry_tech_3
+		}
+		available = {
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				check_variable = {
+					caps_number_display > 800
+				}
+				add = 2
+			}
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 75 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -75 }
+			add_caps = yes
+		}
+		modifier = {
+			fuel_gain_factor = 0.05
+			army_fuel_consumption_factor = -0.15
+			air_fuel_consumption_factor = -0.15
+			navy_fuel_consumption_factor = -0.15
+			caps_flat_income_modifier = -3.0
+		}
+		days_remove = 180
+		days_re_enable = 90
+	}
+	caps_radio_subsidy = {
+		icon = GFX_decision_single_cap
+		visible = {
+			has_tech = decimetric_radar
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				check_variable = {
+					caps_number_display > 600
+				}
+				add = 2
+			}
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 200 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -200 }
+			add_caps = yes
+		}
+		modifier = {
+			diplomacy_distance_factor = 0.25
+			political_power_gain = 0.2
+			caps_income_modifier = 0.25
+		}
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = {
+					radar_station < 4
+				}
+				add_building_construction = {
+					type = radar_station
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		days_remove = 180
+		days_re_enable = 90
+	}
+	caps_war_bonds = {
+		icon = border_war
+		visible = {
+			has_war = yes
+		}
+		available = {
+			set_temp_variable = { caps_temp_income = caps_income }
+			add_to_temp_variable = { caps_temp_income = modifier@caps_flat_income_modifier }
+			if = {
+				limit = {
+					NOT = {
+						check_variable = { caps_expense = 0 }
+					}
+				}
+				divide_temp_variable = { caps_temp_income = caps_expense }
+			}
+			if = {
+				limit = {
+					check_variable = { caps_temp_income < 0 }
+				}
+				multiply_temp_variable = {
+					caps_temp_income = -1
+				}
+			}
+			custom_trigger_tooltip = {
+				check_variable = { caps_temp_income < 1.25 }
+				tooltip = caps_warbonds_available_tt
+			}
+		}
+		days_remove = 270
+		days_re_enable = 270
+		modifier = {
+			caps_flat_income_modifier = 30
+		}
+		remove_effect = {
+			add_timed_idea = {
+				idea = caps_war_bonds_idea
+				days = 300
+			}
+		}
+	}
+	cap_invest_in_small_business = {
+		icon = GFX_decision_hammer
+
+		visible = {
+			num_of_owned_factories < 30
+		}
+		ai_will_do = {
+			base = 50
+			modifier = {
+				factor = 0
+				num_of_owned_factories > 29
+			}
+		}
+		available = {
+			num_of_owned_factories < 25
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 20 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -20 }
+			add_caps = yes
+		}
+		modifier = {
+			industrial_capacity_factory = 0.15
+			production_speed_buildings_factor = 0.20
+			caps_flat_income_modifier = -8.0
+		}
+		days_re_enable = 90
+		days_remove = 270
+	}
+	caps_bribes = {
+		icon = GFX_decision_caf_trade_profits
+		visible = {
+			num_of_controlled_states < 25
+		}
+		available = {
+			num_of_controlled_states < 20
+		}
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 30 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -30 }
+			add_caps = yes
+		}
+		modifier = {
+			economy_cost_factor = -0.22
+			trade_laws_cost_factor = -0.17
+			army_wages_laws_cost_factor = -0.17
+			mobilization_laws_cost_factor = -0.20
+		}
+		days_re_enable = 90
+		days_remove = 180
+	}
+
+	organization_request_mission = {
+		days_re_enable = 300
+		fixed_random_seed = no
+		visible = {
+			check_variable = { country_organizations^num > 0 }
+		}
+		cost = 50
+		complete_effect = {
+
+			random_list = {
+				10 = {
+					hidden_effect = { country_event = caps_organization_events.1 }
+					custom_effect_tooltip = organization_request_mission_loan_request_tt
+				}
+				10 = {
+					hidden_effect = { country_event = caps_organization_events.13 }
+					custom_effect_tooltip = organization_request_mission_tariff_request_tt
+				}
+				10 = {
+					hidden_effect = { country_event = caps_organization_events.14 }
+					custom_effect_tooltip = organization_request_mission_bolster_production_tt
+				}
+				10 = {
+					hidden_effect = { country_event = caps_organization_events.2 }
+					custom_effect_tooltip = organization_request_mission_scavenging_mission_tt
+					modifier = {
+						add = -10
+						NOT = {
+							has_manpower > 250
+							has_equipment = {
+								infantry_equipment > 250
+							}
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				has_political_power > 300	# Usually no reason for AI to do these but if they've got a huge surplus of PP they can benefit occassionally from these
+			}
+		}
+	}
+}
+black_market_category = {
+	gun_runner_boost_production = {
+		days_remove = 75
+		days_re_enable = 90
+		visible = {
+			is_in_array = {
+				array = country_organizations
+				value = 1
+			}
+		}
+		available = {
+			set_temp_variable = { selected_market_organization = 1 }
+			set_temp_variable = { influence_to_have = 50 }
+			set_temp_variable = { influence_to_spend = 15 }
+			set_temp_variable = { org_selector = 1 }
+			get_minimum_organization_opinion = yes
+			custom_trigger_tooltip = {
+				check_variable = { current_minimum_organization_opinion > influence_to_have }
+				tooltip = has_organization_influence_tt
+			}
+			set_temp_variable = { current_spendable_influence = node_organizations_influence^org_selector }
+			custom_trigger_tooltip = {
+				check_variable = { current_spendable_influence > influence_to_spend }
+				tooltip = has_spendable_influence_tt
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 10 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		modifier = {
+			industrial_capacity_factory = 0.15
+		}
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -10 }
+			add_caps = yes
+			set_temp_variable = { org_selector = 1 }
+			set_temp_variable = { org_influence_amount = -15 }
+			organization_add_influence = yes
+		}
+	}
+	gun_runner_add_operative = {
+		allowed = {
+			has_dlc = "La Resistance"
+		}
+		visible = {
+			is_in_array = {
+				array = country_organizations
+				value = 1
+			}
+			has_intelligence_agency = yes
+		}
+		available = {
+			set_temp_variable = { selected_market_organization = 1 }
+			set_temp_variable = { influence_to_have = 75 }
+			set_temp_variable = { influence_to_spend = 30 }
+			set_temp_variable = { org_selector = 1 }
+			get_minimum_organization_opinion = yes
+			custom_trigger_tooltip = {
+				check_variable = { current_minimum_organization_opinion > influence_to_have }
+				tooltip = has_organization_influence_tt
+			}
+			set_temp_variable = { current_spendable_influence = node_organizations_influence^org_selector }
+			custom_trigger_tooltip = {
+				check_variable = { current_spendable_influence > influence_to_spend }
+				tooltip = has_spendable_influence_tt
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 10 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -10 }
+			add_caps = yes
+			set_temp_variable = { org_selector = 1 }
+			set_temp_variable = { org_influence_amount = -30 }
+			organization_add_influence = yes
+		}
+		days_remove = 40
+		remove_effect = {
+			create_operative_leader = {
+				bypass_recruitment = yes
+				traits = {
+					operative_barter
+					operative_lockpick
+				}
+				nationalities = {
+					NCR
+					THIS
+				}
+			}
+		}
+	}
+
+	energy_runner_electric_research = {
+		visible = {
+			is_in_array = {
+				array = country_organizations
+				value = 3
+			}
+		}
+		available = {
+			set_temp_variable = { selected_market_organization = 3 }
+			set_temp_variable = { influence_to_have = 50 }
+			set_temp_variable = { influence_to_spend = 20 }
+			set_temp_variable = { org_selector = 3 }
+			get_minimum_organization_opinion = yes
+			custom_trigger_tooltip = {
+				check_variable = { current_minimum_organization_opinion > influence_to_have }
+				tooltip = has_organization_influence_tt
+			}
+			set_temp_variable = { current_spendable_influence = node_organizations_influence^org_selector }
+			custom_trigger_tooltip = {
+				check_variable = { current_spendable_influence > influence_to_spend }
+				tooltip = has_spendable_influence_tt
+			}
+		}
+		complete_effect = {
+			set_temp_variable = { org_selector = 3 }
+			set_temp_variable = { org_influence_amount = -20 }
+			organization_add_influence = yes
+		}
+		days_remove = 120
+		days_re_enable = 300
+		remove_effect = {
+			add_tech_bonus = {
+				bonus = 0.40
+				uses = 1
+				category = energy_weaponry_tech_category
+			}
+		}
+	}
+	energy_runner_greedy_kingpins = {
+		visible = {
+			is_in_array = {
+				array = country_organizations
+				value = 3
+			}
+		}
+		available = {
+			set_temp_variable = { selected_market_organization = 3 }
+			set_temp_variable = { influence_to_have = 200 }
+			set_temp_variable = { influence_to_spend = 60 }
+			set_temp_variable = { org_selector = 3 }
+			get_minimum_organization_opinion = yes
+			custom_trigger_tooltip = {
+				check_variable = { current_minimum_organization_opinion > influence_to_have }
+				tooltip = has_organization_influence_tt
+			}
+			set_temp_variable = { current_spendable_influence = node_organizations_influence^org_selector }
+			custom_trigger_tooltip = {
+				check_variable = { current_spendable_influence > influence_to_spend }
+				tooltip = has_spendable_influence_tt
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 15 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -15 }
+			add_caps = yes
+			set_temp_variable = { org_selector = 3 }
+			set_temp_variable = { org_influence_amount = -60 }
+			organization_add_influence = yes
+		}
+		days_remove = 270
+		days_re_enable = 390
+		modifier = {
+			min_export = -0.15
+			production_speed_buildings_factor = 0.05
+		}
+	}
+	energy_runner_family_vaults = {
+		visible = {
+			is_in_array = {
+				array = country_organizations
+				value = 3
+			}
+		}
+		available = {
+			set_temp_variable = { selected_market_organization = 3 }
+			set_temp_variable = { influence_to_have = 120 }
+			set_temp_variable = { influence_to_spend = 35 }
+			set_temp_variable = { org_selector = 3 }
+			get_minimum_organization_opinion = yes
+			custom_trigger_tooltip = {
+				check_variable = { current_minimum_organization_opinion > influence_to_have }
+				tooltip = has_organization_influence_tt
+			}
+			set_temp_variable = { current_spendable_influence = node_organizations_influence^org_selector }
+			custom_trigger_tooltip = {
+				check_variable = { current_spendable_influence > influence_to_spend }
+				tooltip = has_spendable_influence_tt
+			}
+		}
+		complete_effect = {
+			set_temp_variable = { org_selector = 3 }
+			set_temp_variable = { org_influence_amount = -35 }
+			organization_add_influence = yes
+		}
+		days_remove = 180
+		days_re_enable = 200
+		modifier = {
+			production_speed_bunker_factor = 0.25
+			caps_raider_target_bonus = 0.25
+			caps_flat_income_modifier = 7
+		}
+	}
+
+	melee_runner_hunt_mirelurks = {
+		visible = {
+			is_in_array = {
+				array = country_organizations
+				value = 4
+			}
+		}
+		available = {
+			set_temp_variable = { selected_market_organization = 4 }
+			set_temp_variable = { influence_to_have = 35 }
+			set_temp_variable = { influence_to_spend = 10 }
+			set_temp_variable = { org_selector = 4 }
+			get_minimum_organization_opinion = yes
+			custom_trigger_tooltip = {
+				check_variable = { current_minimum_organization_opinion > influence_to_have }
+				tooltip = has_organization_influence_tt
+			}
+			set_temp_variable = { current_spendable_influence = node_organizations_influence^org_selector }
+			custom_trigger_tooltip = {
+				check_variable = { current_spendable_influence > influence_to_spend }
+				tooltip = has_spendable_influence_tt
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 10 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -10 }
+			add_caps = yes
+			set_temp_variable = { org_selector = 4 }
+			set_temp_variable = { org_influence_amount = -10 }
+			organization_add_influence = yes
+		}
+		days_remove = 100
+		days_re_enable = 120
+		modifier = {
+			army_org_factor = 0.1
+		}
+		targeted_modifier = {
+			tag = MLT
+			attack_bonus_against = 0.05
+		}
+		targeted_modifier = {
+			tag = DIS
+			attack_bonus_against = 0.05
+		}
+		targeted_modifier = {
+			tag = RRR
+			attack_bonus_against = 0.05
+		}
+	}
+	melee_runner_whetstones = {
+		visible = {
+			is_in_array = {
+				array = country_organizations
+				value = 4
+			}
+		}
+		available = {
+			set_temp_variable = { selected_market_organization = 4 }
+			set_temp_variable = { influence_to_have = 70 }
+			set_temp_variable = { influence_to_spend = 30 }
+			set_temp_variable = { org_selector = 4 }
+			get_minimum_organization_opinion = yes
+			custom_trigger_tooltip = {
+				check_variable = { current_minimum_organization_opinion > influence_to_have }
+				tooltip = has_organization_influence_tt
+			}
+			set_temp_variable = { current_spendable_influence = node_organizations_influence^org_selector }
+			custom_trigger_tooltip = {
+				check_variable = { current_spendable_influence > influence_to_spend }
+				tooltip = has_spendable_influence_tt
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 20 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -20 }
+			add_caps = yes
+			set_temp_variable = { org_selector = 4 }
+			set_temp_variable = { org_influence_amount = -30 }
+			organization_add_influence = yes
+		}
+		days_remove = 75
+		days_re_enable = 200
+		modifier = {
+			army_attack_factor = 0.05
+		}
+	}
+	melee_runner_faee_cocktail = {
+		visible = {
+			is_in_array = {
+				array = country_organizations
+				value = 4
+			}
+		}
+		available = {
+			set_temp_variable = { selected_market_organization = 4 }
+			set_temp_variable = { influence_to_have = 135 }
+			set_temp_variable = { influence_to_spend = 20 }
+			set_temp_variable = { org_selector = 4 }
+			get_minimum_organization_opinion = yes
+			custom_trigger_tooltip = {
+				check_variable = { current_minimum_organization_opinion > influence_to_have }
+				tooltip = has_organization_influence_tt
+			}
+			set_temp_variable = { current_spendable_influence = node_organizations_influence^org_selector }
+			custom_trigger_tooltip = {
+				check_variable = { current_spendable_influence > influence_to_spend }
+				tooltip = has_spendable_influence_tt
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 30 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -30 }
+			add_caps = yes
+			set_temp_variable = { org_selector = 4 }
+			set_temp_variable = { org_influence_amount = -20 }
+			organization_add_influence = yes
+		}
+		days_remove = 90
+		days_re_enable = 160
+		modifier = {
+			dig_in_speed_factor = 0.2
+			max_planning = 0.2
+			planning_speed = -0.1
+			attrition = 0.1
+		}
+	}
+	melee_runner_half_bar = {
+		visible = {
+			is_in_array = {
+				array = country_organizations
+				value = 4
+			}
+		}
+		available = {
+			set_temp_variable = { selected_market_organization = 4 }
+			set_temp_variable = { influence_to_have = 100 }
+			set_temp_variable = { influence_to_spend = 20 }
+			set_temp_variable = { org_selector = 4 }
+			get_minimum_organization_opinion = yes
+			custom_trigger_tooltip = {
+				check_variable = { current_minimum_organization_opinion > influence_to_have }
+				tooltip = has_organization_influence_tt
+			}
+			set_temp_variable = { current_spendable_influence = node_organizations_influence^org_selector }
+			custom_trigger_tooltip = {
+				check_variable = { current_spendable_influence > influence_to_spend }
+				tooltip = has_spendable_influence_tt
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 30 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -30 }
+			add_caps = yes
+			set_temp_variable = { org_selector = 4 }
+			set_temp_variable = { org_influence_amount = -20 }
+			organization_add_influence = yes
+		}
+		days_remove = 180
+		days_re_enable = 270
+		modifier = {
+			supply_consumption_factor = -0.25
+			army_morale_factor = 0.05
+		}
+	}
+
+	motorized_runner_hola_girls = {
+		visible = {
+			is_in_array = {
+				array = country_organizations
+				value = 2
+			}
+		}
+		available = {
+			set_temp_variable = { selected_market_organization = 2}
+			set_temp_variable = { influence_to_have = 45 }
+			set_temp_variable = { influence_to_spend = 10 }
+			set_temp_variable = { org_selector = 2 }
+			get_minimum_organization_opinion = yes
+			custom_trigger_tooltip = {
+				check_variable = { current_minimum_organization_opinion > influence_to_have }
+				tooltip = has_organization_influence_tt
+			}
+			set_temp_variable = { current_spendable_influence = node_organizations_influence^org_selector }
+			custom_trigger_tooltip = {
+				check_variable = { current_spendable_influence > influence_to_spend }
+				tooltip = has_spendable_influence_tt
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 20 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -20 }
+			add_caps = yes
+			set_temp_variable = { org_selector = 2 }
+			set_temp_variable = { org_influence_amount = -10 }
+			organization_add_influence = yes
+		}
+		days_remove = 125
+		days_re_enable = 90
+		modifier = {
+			modifier_army_sub_unit_motorized_speed_factor = 0.1
+		}
+	}
+
+	motorized_runner_anti_muffler = {
+		visible = {
+			is_in_array = {
+				array = country_organizations
+				value = 2
+			}
+		}
+		available = {
+			set_temp_variable = { selected_market_organization = 2}
+			set_temp_variable = { influence_to_have = 110 }
+			set_temp_variable = { influence_to_spend = 30 }
+			set_temp_variable = { org_selector = 2 }
+			get_minimum_organization_opinion = yes
+			custom_trigger_tooltip = {
+				check_variable = { current_minimum_organization_opinion > influence_to_have }
+				tooltip = has_organization_influence_tt
+			}
+			set_temp_variable = { current_spendable_influence = node_organizations_influence^org_selector }
+			custom_trigger_tooltip = {
+				check_variable = { current_spendable_influence > influence_to_spend }
+				tooltip = has_spendable_influence_tt
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 70 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -70 }
+			add_caps = yes
+			set_temp_variable = { org_selector = 2 }
+			set_temp_variable = { org_influence_amount = -30 }
+			organization_add_influence = yes
+		}
+		days_remove = 200
+		days_re_enable = 200
+		modifier = {
+			production_speed_buildings_factor = 0.2
+		}
+	}
+
+	motorized_runner_fuzzy_dice = {
+		visible = {
+			is_in_array = {
+				array = country_organizations
+				value = 2
+			}
+		}
+		available = {
+			set_temp_variable = { selected_market_organization = 2}
+			set_temp_variable = { influence_to_have = 75 }
+			set_temp_variable = { influence_to_spend = 15 }
+			set_temp_variable = { org_selector = 2 }
+			get_minimum_organization_opinion = yes
+			custom_trigger_tooltip = {
+				check_variable = { current_minimum_organization_opinion > influence_to_have }
+				tooltip = has_organization_influence_tt
+			}
+			set_temp_variable = { current_spendable_influence = node_organizations_influence^org_selector }
+			custom_trigger_tooltip = {
+				check_variable = { current_spendable_influence > influence_to_spend }
+				tooltip = has_spendable_influence_tt
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 40 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -40 }
+			add_caps = yes
+			set_temp_variable = { org_selector = 2 }
+			set_temp_variable = { org_influence_amount = -15 }
+			organization_add_influence = yes
+		}
+		days_remove = 150
+		days_re_enable = 200
+		modifier = {
+			attrition = -0.25
+		}
+	}
+
+	motorized_runner_door_shotguns = {
+		visible = {
+			is_in_array = {
+				array = country_organizations
+				value = 2
+			}
+		}
+		available = {
+			set_temp_variable = { selected_market_organization = 2}
+			set_temp_variable = { influence_to_have = 130 }
+			set_temp_variable = { influence_to_spend = 25 }
+			set_temp_variable = { org_selector = 2 }
+			get_minimum_organization_opinion = yes
+			custom_trigger_tooltip = {
+				check_variable = { current_minimum_organization_opinion > influence_to_have }
+				tooltip = has_organization_influence_tt
+			}
+			set_temp_variable = { current_spendable_influence = node_organizations_influence^org_selector }
+			custom_trigger_tooltip = {
+				check_variable = { current_spendable_influence > influence_to_spend }
+				tooltip = has_spendable_influence_tt
+			}
+		}
+		custom_cost_text = "caps_decisions_cost_text"
+		custom_cost_trigger = {
+			set_temp_variable = { temp_cap_cost = 50 }
+			check_variable = {
+				caps_number_display > temp_cap_cost
+			}
+		}
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -50 }
+			add_caps = yes
+			set_temp_variable = { org_selector = 2 }
+			set_temp_variable = { org_influence_amount = -25 }
+			organization_add_influence = yes
+		}
+		days_remove = 100
+		days_re_enable = 200
+		modifier = {
+			modifier_army_sub_unit_motorized_attack_factor = 0.05
+			breakthrough_factor = 0.05
+		}
+	}
+
+	gun_runner_entice = {
+		visible = {
+			NOT = { has_country_flag = enticed_org_1 }
+			check_variable = { state_controlled_nodes^num > 0 }
+			NOT = {
+				is_in_array = {
+					array = country_organizations
+					value = 1
+				}
+			}
+			any_neighbor_country = {
+				check_variable = { state_controlled_nodes^num > 0 }
+				any_of_scopes = {
+					array = state_controlled_nodes
+					is_in_array = {
+						array = node_organizations
+						value = 1
+					}
+				}
+			}
+		}
+		available = {
+			set_temp_variable = { caps_diff = -300 }
+			caps_cost_trigger = yes
+		}
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -300 }
+			transaction_caps = yes
+		}
+		days_remove = 90
+		remove_effect = {
+			random_owned_state = {
+				limit = {
+					is_in_array = {
+						array = ROOT.state_controlled_nodes
+						value = THIS
+					}
+				}
+				set_temp_variable = { org_selector = 1 }
+				organization_add_to_node = yes
+				set_temp_variable = { org_selector = 1 }
+				set_temp_variable = { org_influence_amount = 15 }
+				organization_add_influence = yes
+			}
+			set_country_flag = enticed_org_1
+		}
+	}
+	motorized_runner_entice = {
+		visible = {
+			NOT = { has_country_flag = enticed_org_2 }
+			check_variable = { state_controlled_nodes^num > 0 }
+			NOT = {
+				is_in_array = {
+					array = country_organizations
+					value = 2
+				}
+			}
+			any_neighbor_country = {
+				check_variable = { state_controlled_nodes^num > 0 }
+				any_of_scopes = {
+					array = state_controlled_nodes
+					is_in_array = {
+						array = node_organizations
+						value = 2
+					}
+				}
+			}
+		}
+		available = {
+			set_temp_variable = { caps_diff = -300 }
+			caps_cost_trigger = yes
+		}
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -300 }
+			transaction_caps = yes
+		}
+		days_remove = 90
+		remove_effect = {
+			random_owned_state = {
+				limit = {
+					is_in_array = {
+						array = ROOT.state_controlled_nodes
+						value = THIS
+					}
+				}
+				set_temp_variable = { org_selector = 2 }
+				organization_add_to_node = yes
+				set_temp_variable = { org_selector = 2 }
+				set_temp_variable = { org_influence_amount = 15 }
+				organization_add_influence = yes
+			}
+			set_country_flag = enticed_org_2
+		}
+	}
+	energy_runner_entice = {
+		visible = {
+			NOT = { has_country_flag = enticed_org_3 }
+			check_variable = { state_controlled_nodes^num > 0 }
+			NOT = {
+				is_in_array = {
+					array = country_organizations
+					value = 3
+				}
+			}
+			any_neighbor_country = {
+				check_variable = { state_controlled_nodes^num > 0 }
+				any_of_scopes = {
+					array = state_controlled_nodes
+					is_in_array = {
+						array = node_organizations
+						value = 3
+					}
+				}
+			}
+		}
+		available = {
+			set_temp_variable = { caps_diff = -300 }
+			caps_cost_trigger = yes
+		}
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -300 }
+			transaction_caps = yes
+		}
+		days_remove = 90
+		remove_effect = {
+			random_owned_state = {
+				limit = {
+					is_in_array = {
+						array = ROOT.state_controlled_nodes
+						value = THIS
+					}
+				}
+				set_temp_variable = { org_selector = 3 }
+				organization_add_to_node = yes
+				set_temp_variable = { org_selector = 3 }
+				set_temp_variable = { org_influence_amount = 15 }
+				organization_add_influence = yes
+			}
+			set_country_flag = enticed_org_3
+		}
+	}
+	melee_runner_entice = {
+		visible = {
+			NOT = { has_country_flag = enticed_org_4 }
+			check_variable = { state_controlled_nodes^num > 0 }
+			NOT = {
+				is_in_array = {
+					array = country_organizations
+					value = 4
+				}
+			}
+			any_neighbor_country = {
+				check_variable = { state_controlled_nodes^num > 0 }
+				any_of_scopes = {
+					array = state_controlled_nodes
+					is_in_array = {
+						array = node_organizations
+						value = 4
+					}
+				}
+			}
+		}
+		available = {
+			set_temp_variable = { caps_diff = -300 }
+			caps_cost_trigger = yes
+		}
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -300 }
+			transaction_caps = yes
+		}
+		days_remove = 90
+		remove_effect = {
+			random_owned_state = {
+				limit = {
+					is_in_array = {
+						array = ROOT.state_controlled_nodes
+						value = THIS
+					}
+				}
+				set_temp_variable = { org_selector = 4 }
+				organization_add_to_node = yes
+				set_temp_variable = { org_selector = 4 }
+				set_temp_variable = { org_influence_amount = 15 }
+				organization_add_influence = yes
+			}
+			set_country_flag = enticed_org_4
+		}
+	}
+	advanced_runner_entice = {
+		visible = {
+			NOT = { has_country_flag = enticed_org_5 }
+			check_variable = { state_controlled_nodes^num > 0 }
+			NOT = {
+				is_in_array = {
+					array = country_organizations
+					value = 5
+				}
+			}
+			any_neighbor_country = {
+				check_variable = { state_controlled_nodes^num > 0 }
+				any_of_scopes = {
+					array = state_controlled_nodes
+					is_in_array = {
+						array = node_organizations
+						value = 5
+					}
+				}
+			}
+		}
+		available = {
+			set_temp_variable = { caps_diff = -300 }
+			caps_cost_trigger = yes
+		}
+		complete_effect = {
+			set_temp_variable = { caps_to_add = -300 }
+			transaction_caps = yes
+		}
+		days_remove = 90
+		remove_effect = {
+			random_owned_state = {
+				limit = {
+					is_in_array = {
+						array = ROOT.state_controlled_nodes
+						value = THIS
+					}
+				}
+				set_temp_variable = { org_selector = 5 }
+				organization_add_to_node = yes
+				set_temp_variable = { org_selector = 5 }
+				set_temp_variable = { org_influence_amount = 15 }
+				organization_add_influence = yes
+			}
+			set_country_flag = enticed_org_5
+		}
+	}
+
+	gun_runner_spawn_unit = {
+		visible = {
+			#has_war = yes
+			is_in_array = {
+				array = country_organizations
+				value = 1
+			}
+		}
+		available = {
+			set_temp_variable = { selected_market_organization = 1 }
+			set_temp_variable = { influence_to_have = 150 }
+			set_temp_variable = { influence_to_spend = 50 }
+			set_temp_variable = { org_selector = 1 }
+			get_minimum_organization_opinion = yes
+			custom_trigger_tooltip = {
+				check_variable = { current_minimum_organization_opinion > influence_to_have }
+				tooltip = has_organization_influence_tt
+			}
+			set_temp_variable = { current_spendable_influence = node_organizations_influence^org_selector }
+			custom_trigger_tooltip = {
+				check_variable = { current_spendable_influence > influence_to_spend }
+				tooltip = has_spendable_influence_tt
+			}
+		}
+		allowed = {
+			always = no
+		}
+		complete_effect = {
+			set_temp_variable = { org_selector = 1 }
+			set_temp_variable = { org_influence_amount = -50 }
+			organization_add_influence = yes
+		}
+		remove_effect = {
+			division_template = {
+				name = "Gun Runner Detachment"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+
+					infantry = { x = 2 y = 0 }
+					fireteam_infantry = { x = 2 y = 1 }
+					fireteam_infantry = { x = 2 y = 2 }
+					infantry = { x = 3 y = 0 }
+				}
+				support = {
+					fireteam_support = { x = 0 y = 0 }
+					recon_company = { x = 0 y = 1 }
+				}
+			}
+			set_division_template_lock = {
+				division_template = "Gun Runner Detachment"
+				is_locked = yes
+			}
+			random_owned_state = {
+				create_unit = {
+					division = "name = \"Continuity Security\" division_template = \"Gun Runner Detachment\" start_experience_factor = 0.75 start_equipment_factor = 1.0 force_equipment_variants = { ballistic_equipment_3 = { owner = \"USA\" } ballistic_fireteam_equipment_3 = { owner = \"USA\" } }"
+					owner = NCR
+					allow_spawning_on_enemy_provs = yes
+					count = 2
+					id = 1034
+				}
+			}
+			#country_event = {
+			#	id = caps_organization_events.301
+			#	days = 250
+			#}
+		}
+		days_remove = 45
+		days_re_enable = 450
+	}
+	### Event Missions
+	bolster_production_event_mission = {
+		icon = GFX_decision_single_cap
+		### Never "complete" success
+		priority = 1000
+		available = {
+			custom_trigger_tooltip = {
+				check_variable = {
+					var = num_of_military_factories
+					value = bolster_production_event_target
+					compare = greater_than_or_equals
+				}
+				tooltip = bolster_production_event_mission_goal_tt
+			}
+		}
+		fixed_random_seed = no
+		is_good = no
+		days_mission_timeout = 180
+		###Activated only via mission
+		activation = {
+			always = no
+		}
+		allowed = {
+			always = no
+		}
+		###Add caps to actual number
+		timeout_effect = {
+			set_temp_variable = { org_influence_amount = -15 }
+			for_each_loop = {
+				array = country_organizations
+				set_temp_variable = { org_selector = v }
+				organization_add_influence = yes
+			}
+			custom_effect_tooltip = bolster_production_event_org_tt
+		}
+		complete_effect = {
+			set_temp_variable = { org_influence_amount = 20 }
+			for_each_loop = {
+				array = country_organizations
+				set_temp_variable = { org_selector = v }
+				organization_add_influence = yes
+			}
+			custom_effect_tooltip = bolster_production_event_org_tt
+			set_temp_variable = { caps_to_add = 100 }
+			add_caps = yes
+		}
+		modifier = {
+			production_speed_arms_factory_factor = 0.20
+		}
+		days_re_enable = 1
+		days_remove = 30
+	}
+	maven_create_spy_agency = {
+		icon = GFX_decision_single_cap
+		priority = 1000
+		## Goal
+		available = {
+			has_intelligence_agency = yes
+		}
+		fixed_random_seed = no
+		is_good = no
+		days_mission_timeout = 300
+		###Activated only via event
+		activation = {
+			always = no
+		}
+		allowed = {
+			always = no
+		}
+		###Add caps to actual number
+		timeout_effect = {
+			set_temp_variable = { org_influence_amount = -15 }
+			set_temp_variable = { org_selector = 5 }
+			organization_add_influence = yes
+		}
+		complete_effect = {
+			set_temp_variable = { org_influence_amount = 5 }
+			set_temp_variable = { org_selector = 5 }
+			organization_add_influence = yes
+
+			set_temp_variable = { caps_to_add = 30 }
+			add_caps = yes
+			swap_ideas = {
+				remove_idea = organization_5_setup_idea
+				add_idea = organization_5_spy_complete_idea
+			}
+		}
+		modifier = {
+			intel_network_gain_factor = 0.15
+		}
+		days_re_enable = 1
+		days_remove = 190
+	}
+}
+
+
+
+caps_debug_category = {
+	### Disabled because of income structure changes
+}
