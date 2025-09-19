@@ -111,7 +111,7 @@ country_event = {
 		name = texas_rework.1.c
 		TBH = {
 			add_ideas = {
-				history_of_politics_lame
+				history_of_tech
 			}
 		}
 		ai_chance = {
@@ -343,7 +343,7 @@ country_event = {
 }
 
 #country world events
-country_event = { #fall of Assassin city
+country_event = { #DSP invasion of ASS
 	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.901" }
 	id = texas_rework.901
 	title = texas_rework.901.t
@@ -355,6 +355,26 @@ country_event = { #fall of Assassin city
 
 	option = {
 		name = texas_rework.901.a
+		DSP = {
+			declare_war_on = {
+				target = ASS
+			}
+		}
+	}
+}
+
+country_event = { #fall of Assassin city
+	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.9011" }
+	id = texas_rework.9011
+	title = texas_rework.9011.t
+	desc = texas_rework.9011.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_container_bazaar
+
+
+	option = {
+		name = texas_rework.9011.a
 		every_state = {
 			limit = {
 				is_core_of = ASS
@@ -384,7 +404,7 @@ country_event = { #fall of Assassin city
                 set_nationality = TBH
             }
 			transfer_navy = { target = TBH }
-				transfer_navy = { target = TEX }
+				transfer_navy = { target = TBH }
 		}
 		annex_country = {
 			target = ASS
@@ -407,7 +427,7 @@ country_event = { #fall of Assassin city
 	}
 }
 
-country_event = { #fall of the last lodge
+country_event = { #CWB invasion of TLL
 	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.902" }
 	id = texas_rework.902
 	title = texas_rework.902.t
@@ -419,6 +439,26 @@ country_event = { #fall of the last lodge
 
 	option = {
 		name = texas_rework.902.a
+		CWB = {
+			declare_war_on = {
+				target = TLL
+			}
+		}
+	}
+}
+
+country_event = { #fall of the last lodge
+	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.9022" }
+	id = texas_rework.9022
+	title = texas_rework.9022.t
+	desc = texas_rework.9022.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_container_bazaar
+
+
+	option = {
+		name = texas_rework.9022.a
 		every_state = {
 			limit = {
 				is_core_of = TLL
@@ -446,7 +486,7 @@ country_event = { #fall of the last lodge
                 set_nationality = TBH
             }
 			transfer_navy = { target = TBH }
-				transfer_navy = { target = TEX }
+				transfer_navy = { target = TBH }
 		}
 		annex_country = {
 			target = TLL
@@ -469,7 +509,7 @@ country_event = { #fall of the last lodge
 	}
 }
 
-country_event = { #fall of Houston
+country_event = { #CAR invasion of HRO
 	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.903" }
 	id = texas_rework.903
 	title = texas_rework.903.t
@@ -481,6 +521,26 @@ country_event = { #fall of Houston
 
 	option = {
 		name = texas_rework.903.a
+		CAR = {
+			declare_war_on = {
+				target = HRO
+			}
+		}
+	}
+}
+
+country_event = { #fall of Houston
+	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.9033" }
+	id = texas_rework.9033
+	title = texas_rework.9033.t
+	desc = texas_rework.9033.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_container_bazaar
+
+
+	option = {
+		name = texas_rework.9033.a
 		879 = {
 			remove_core_of = HRO
 			remove_claim_by = HRO
@@ -504,7 +564,7 @@ country_event = { #fall of Houston
                 set_nationality = TBH
             }
 			transfer_navy = { target = TBH }
-				transfer_navy = { target = TEX }
+				transfer_navy = { target = TBH }
 		}
 		annex_country = {
 			target = HRO
@@ -538,8 +598,138 @@ country_event = { #raider pact forms
 
 	option = {
 		name = texas_rework.904.a
+		CAR = {
+			create_faction = "Raider Pact"
+			add_to_faction = DSP
+			add_opinion_modifier = {
+				target = GAM
+				modifier = texas_rework_raider_pact_opinion_modifier
+			}
+			add_opinion_modifier = {
+				target = DSP
+				modifier = texas_rework_raider_pact_opinion_modifier
+			}
+		}
+		GAM = {
+			add_opinion_modifier = {
+				target = DSP
+				modifier = texas_rework_raider_pact_opinion_modifier
+			}
+			add_opinion_modifier = {
+				target = CAR
+				modifier = texas_rework_raider_pact_opinion_modifier
+			}
+			add_ideas = {
+				texas_rework_raider_pact_support
+			}
+		}
+		DSP = {
+			add_opinion_modifier = {
+				target = GAM
+				modifier = texas_rework_raider_pact_opinion_modifier
+			}
+			add_opinion_modifier = {
+				target = CAR
+				modifier = texas_rework_raider_pact_opinion_modifier
+			}
+		}
 	}
 }
+country_event = { #The Patrolmen flee east
+	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.905" }
+	id = texas_rework.905
+	title = texas_rework.905.t
+	desc = texas_rework.905.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_container_bazaar
+
+
+	option = {
+		name = texas_rework.905.a
+		TPM = {
+			white_peace = GAM
+			every_state = {
+				limit = {
+					is_core_of = LTR
+				}
+				set_state_flag = do_not_exodus
+				add_core_of = TPM
+				remove_core_of = LTR
+				remove_claim_by = LTR
+			}
+			annex_country = {
+				target = LTR
+			}
+			every_state = {
+				limit = {
+					is_core_of = TPM
+					has_state_flag = do_not_exodus
+				}
+				clr_state_flag = do_not_exodus
+			}
+		}
+		CAR = {
+			add_to_faction = GAM
+			add_opinion_modifier = {
+				target = ORR
+				modifier = texas_rework_raider_pact_opinion_modifier
+			}
+		}
+		GAM = {
+			add_opinion_modifier = {
+				target = ORR
+				modifier = texas_rework_raider_pact_opinion_modifier
+			}
+			remove_ideas = {
+				texas_rework_raider_pact_support
+			}
+		}
+		DSP = {
+			add_opinion_modifier = {
+				target = ORR
+				modifier = texas_rework_raider_pact_opinion_modifier
+			}
+		}
+		ORR = {
+			add_opinion_modifier = {
+				target = GAM
+				modifier = texas_rework_raider_pact_opinion_modifier
+			}
+			add_opinion_modifier = {
+				target = CAR
+				modifier = texas_rework_raider_pact_opinion_modifier
+			}
+			add_opinion_modifier = {
+				target = DSP
+				modifier = texas_rework_raider_pact_opinion_modifier
+			}
+			add_ideas = {
+				texas_rework_raider_pact_support
+			}
+		}
+	}
+}
+country_event = { #Patrolmen victory!!!
+	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.906" }
+	id = texas_rework.906
+	title = texas_rework.906.t
+	desc = texas_rework.906.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_container_bazaar
+
+
+	option = {
+		name = texas_rework.906.a
+		TBH = {
+			add_to_faction = TPM
+		}
+	}
+}
+
+
+
 
 
 # country_event = { #

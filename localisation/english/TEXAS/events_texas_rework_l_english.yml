@@ -4,9 +4,39 @@
   texas_rework.1000.a: "debug"
 
 
+  texas_rework.1.t: "unification"
+  texas_rework.1.desc: "blah blah blah"
+  texas_rework.1.a: "economy"
+  texas_rework.1.b: "military"
+  texas_rework.1.c: "tech"
+  texas_rework.1.d: "population"
+
   texas_rework.4.t: "The Constitution"
   texas_rework.4.desc: "blah blah blah"
   texas_rework.4.a: "industry"
   texas_rework.4.b: "political"
   texas_rework.4.c: "population"
   texas_rework.4.d: "military"
+
+  texas_rework.901.t: "The Desperados invade Assassin City!"
+  texas_rework.901.desc: "blah blah blah"
+  texas_rework.901.a: "Horrable"
+  texas_rework.9011.t: "Fall of Assassin City"
+  texas_rework.9011.desc: "Assassin City has petitioned for us to intervene"
+  texas_rework.9011.a: "send some troops to help them"
+
+  texas_rework.902.t: "The Desperados invade Assassin City!"
+  texas_rework.902.desc: "blah blah blah"
+  texas_rework.902.a: "Horrable"
+  texas_rework.9022.t: "Fall of Assassin City"
+  texas_rework.9022.desc: "Assassin City has petitioned for us to intervene"
+  texas_rework.9022.a: "send some troops to help them"
+
+  texas_rework.903.t: "Carthage invades the Houston Rockets"
+  texas_rework.903.desc: "blah blah blah"
+  texas_rework.903.a: "Horrable"
+  texas_rework.9033.t: "a petition"
+  texas_rework.9033.desc: "with the recent invasion of houston by carthage, the houston city council has requested integration into the republic of texas"
+  texas_rework.9033.a: "i thought we were going to have to counquer them"
+
+  

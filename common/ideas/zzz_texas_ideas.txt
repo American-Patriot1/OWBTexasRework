@@ -55,7 +55,7 @@ ideas = {
 				research_speed_factor = -2.5
 			}
 		}
-		#stunted military
+	#stunted military
 		texas_rework_non_existent_army = {
 			picture = tbh_ach_split
 			allowed = {
@@ -131,7 +131,7 @@ ideas = {
 		}
 
 
-		#intervention target ideas
+	#intervention target ideas
 		texas_rework_intervention_target_east = {
 			picture = rrg_texas2
 			modifier = {
@@ -152,7 +152,7 @@ ideas = {
 			modifier = {
 			}
 		}
-		# texas economic union stuff
+	# texas economic union stuff
 		texas_rework_texas_economic_union_investments = {
 			picture = generic_caps
 			modifier = {
@@ -167,6 +167,13 @@ ideas = {
 			picture = VEG_Middle_Class_Clientele
 			modifier = {
 			}
+		}
+	# Raider stuff
+		texas_rework_raider_pact_support = {
+			picture = generic_raider_1
+			modifier = {
+			}
+
 		}
 	}
 }
