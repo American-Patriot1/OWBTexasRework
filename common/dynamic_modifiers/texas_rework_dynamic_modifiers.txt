@@ -1,3 +1,16 @@
+
+texas_rework_texas_interventions = {
+	icon = rrg_texas2
+	exodus_assimilation_proportion = 0.25
+	exodus_national_appeal = 1
+	diplomacy_distance = 500
+	request_lease_tension = -1
+	send_volunteers_tension = -1
+	send_volunteer_size = texas_rework_intervention_volunteer_size
+	send_volunteer_divisions_required = -0.5
+	texas_rework_lend_lease_or_volunteer_intervention_support = 1
+}
+
 texas_rework_houston_concrete_city = {
     enable = { always = yes }
 	monthly_population = 0.10

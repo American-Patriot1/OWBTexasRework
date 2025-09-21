@@ -1,0 +1,163 @@
+on_actions = {
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_global_flag = gam_war_happened }
+					FROM.FROM = { state = 875 }
+					FROM = { tag = TPM }
+					ROOT = {
+						tag = GAM
+					}
+					TPM = { has_war_with = GAM }
+				}
+				TPM = {
+					news_event = texas_rework.905
+					set_global_flag = gam_war_happened
+					every_state = {
+						limit = {
+							is_core_of = LTR
+						}
+						set_state_flag = do_not_exodus
+						add_core_of = TPM
+					}
+					annex_country = {
+						target = LTR
+					}
+					every_state = {
+						limit = {
+							is_core_of = TPM
+							has_state_flag = do_not_exodus
+						}
+						clr_state_flag = do_not_exodus
+					}
+				}
+				TPM = {
+					every_state = {
+						limit = {
+							owner = {
+								OR = {
+									has_war_with = TPM
+									original_tag = TPM
+								}
+							}
+						}
+						teleport_armies = {
+							to_state = 1426
+						}
+					}
+					every_country = {
+						limit = {
+							has_war_with = TPM
+						}
+						white_peace = TPM
+					}
+					870 = {
+						transfer_state_to = GAM
+					}
+					875 = {
+						transfer_state_to = GAM
+					}
+					876 = {
+						transfer_state_to = GAM
+					}
+					every_country = {
+						limit = {
+							OR = {
+								tag = GAM
+								tag = CAR
+								tag = DSP
+							}
+						}
+						TPM = {
+							set_truce = {
+								target = PREV
+								days = 1250
+							}
+						}
+						set_truce = {
+							target = TPM
+							days = 1250
+						}
+					}
+					load_oob = "TPM_Refugees"
+					add_offsite_building = {
+						type = arms_factory
+						level = 3
+					}
+					add_offsite_building = {
+						type = industrial_complex
+						level = 5
+					}
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							OR = {
+								region = 106
+								region = 105
+								region = 145
+								region = 104
+								region = 6
+								region = 111
+								region = 74
+								region = 75
+								region = 77
+								region = 110
+								region = 144
+								region = 112
+								region = 108
+							}
+						}
+					}
+					news_event = texas_rework.905
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_global_flag = gam_war_happened }
+					FROM.FROM = { state = 873 }
+					FROM = { tag = GAM }
+					ROOT = {
+						tag = TPM
+					}
+					TPM = { has_war_with = GAM }
+				}
+				879 = {
+					remove_core_of = HRO
+					remove_claim_by = HRO
+					add_core_of = CAR
+					transfer_state_to = CAR
+				}
+				TPM = {
+					news_event = texas_rework.906
+					set_global_flag = gam_war_happened
+				}
+				every_country = {
+					limit = {
+						any_owned_state = {
+							OR = {
+								region = 106
+								region = 105
+								region = 145
+								region = 104
+								region = 6
+								region = 111
+								region = 74
+								region = 75
+								region = 77
+								region = 110
+								region = 144
+								region = 112
+								region = 108
+							}
+						}
+					}
+					news_event = texas_rework.906
+				}
+			}
+		}
+	}
+}

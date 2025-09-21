@@ -13,27 +13,27 @@ country_event = {
 
 	option = {
 		name = texas_rework.1000.a
-		TBH = {
-			add_to_variable = { const_production_speed = 0.1 }
-			add_to_variable = { const_factory_efficiency = 0.1 }
-			add_to_variable = { const_consumer_goods = -0.1 }
-			add_to_variable = { const_political_power_gain = 0.25 }
-			add_to_variable = { const_compliance_gain = 0.1 }
-			add_to_variable = { const_resitance_target = -0.1 }
-			add_to_variable = { stability_week = 0.001 }
-			add_to_variable = { out_of_supply = -0.2 }
-			add_to_variable = { const_mobilization_speed = 0.25 }
-			add_to_variable = { const_conscription = 0.25 }
-			add_to_variable = { populations_factor = 0.3 }
-			add_to_variable = { research_speed = 0.1 }
-			add_to_variable = { const_max_command_power_multi = 0.1 }
-			add_to_variable = { war_support_week = 0.002 }
-			add_to_variable = { xp_army_gain = 0.01 }
-			add_to_variable = { xp_navy_gain = 0.01 }
-			add_to_variable = { xp_air_gain = 0.01 }
-			add_to_variable = { army_morale_factor = 0.05 }
-			add_to_variable = { air_mission_efficiency = 0.05 }
-		}
+		# TBH = {
+		# 	add_to_variable = { const_production_speed = 0.1 }
+		# 	add_to_variable = { const_factory_efficiency = 0.1 }
+		# 	add_to_variable = { const_consumer_goods = -0.1 }
+		# 	add_to_variable = { const_political_power_gain = 0.25 }
+		# 	add_to_variable = { const_compliance_gain = 0.1 }
+		# 	add_to_variable = { const_resitance_target = -0.1 }
+		# 	add_to_variable = { stability_week = 0.001 }
+		# 	add_to_variable = { out_of_supply = -0.2 }
+		# 	add_to_variable = { const_mobilization_speed = 0.25 }
+		# 	add_to_variable = { const_conscription = 0.25 }
+		# 	add_to_variable = { populations_factor = 0.3 }
+		# 	add_to_variable = { research_speed = 0.1 }
+		# 	add_to_variable = { const_max_command_power_multi = 0.1 }
+		# 	add_to_variable = { war_support_week = 0.002 }
+		# 	add_to_variable = { xp_army_gain = 0.01 }
+		# 	add_to_variable = { xp_navy_gain = 0.01 }
+		# 	add_to_variable = { xp_air_gain = 0.01 }
+		# 	add_to_variable = { army_morale_factor = 0.05 }
+		# 	add_to_variable = { air_mission_efficiency = 0.05 }
+		# }
 	}
 }
 
@@ -49,33 +49,43 @@ country_event = {
 
 	option = {
 		name = texas_rework.1001.a
-		TBH = {
-			ACH = {
-				become_puppet_of_prev = yes
-			}
-			set_autonomy = {
-				target = ACH
-				autonomy_state = autonomy_texas_rework_free_state
-			}
-		}
-		ACH = {
-			set_popularities = {
-				people = 11
-				elites = 7
-				intellectuals = 75
-				ruler = 7
-			}
+		# TBH = {
+		# 	ACH = {
+		# 		become_puppet_of_prev = yes
+		# 	}
+		# 	set_autonomy = {
+		# 		target = ACH
+		# 		autonomy_state = autonomy_texas_rework_free_state
+		# 	}
+		# }
+		# ACH = {
+		# 	set_popularities = {
+		# 		people = 11
+		# 		elites = 7
+		# 		intellectuals = 75
+		# 		ruler = 7
+		# 	}
 
-			set_politics = {
-				ruling_party = intellectuals
-				elections_allowed = no
-			}
+		# 	set_politics = {
+		# 		ruling_party = intellectuals
+		# 		elections_allowed = no
+		# 	}
+		# }
+		clr_global_flag = gam_war_happened
+		879 = {
+			transfer_state_to = HRO
+		}
+		874 = {
+			transfer_state_to = GAM
+		}
+		873 = {
+			transfer_state_to = GAM
 		}
 	}
 }
 
 #initial focuses
-country_event = {
+country_event = { #unification
 	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.1" }
 	id = texas_rework.1
 	title = texas_rework.1.t
@@ -130,7 +140,8 @@ country_event = {
 		}
 	}
 }
-country_event = {
+
+country_event = { #junta or constitutional choice
 	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.2" }
 	id = texas_rework.2
 	title = texas_rework.2.t
@@ -151,10 +162,542 @@ country_event = {
 			base = 20
 		}
 	}
+	option = { 
+		name = texas_rework.2.b
+		TBH = {
+			add_ideas = {
+				
+			}
+		}
+		ai_chance = {
+			base = 20
+		}
+	}
 }
-country_event = { #Alamo Betrayal
+
+country_event = { #junta stabilize
 	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.3" }
 	id = texas_rework.3
+	title = texas_rework.3.t
+	desc = texas_rework.3.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_container_bazaar
+
+
+	option = { 
+		name = texas_rework.3.a
+		TBH = {
+			add_timed_idea = {
+				idea = texas_rework_junta_stability_research
+    			days = 365
+			}
+		}
+		ai_chance = {
+			base = 20
+		}
+	}
+	option = { 
+		name = texas_rework.3.b
+		TBH = {
+			add_timed_idea = {
+				idea = texas_rework_junta_stability_economy
+    			days = 365
+			}
+		}
+		ai_chance = {
+			base = 20
+		}
+	}
+	option = { 
+		name = texas_rework.3.c
+		TBH = {
+			add_timed_idea = {
+				idea = texas_rework_junta_stability_military
+    			days = 365
+			}
+		}
+		ai_chance = {
+			base = 20
+		}
+	}
+}
+
+country_event = { #constitutional stabilize
+	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.5" }
+	id = texas_rework.5
+	title = texas_rework.5.t
+	desc = texas_rework.5.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_container_bazaar
+
+
+	option = { 
+		name = texas_rework.5.a
+		TBH = {
+			add_ideas = {
+				
+			}
+		}
+		ai_chance = {
+			base = 20
+		}
+	}
+	option = { 
+		name = texas_rework.5.b
+		TBH = {
+			add_ideas = {
+				
+			}
+		}
+		ai_chance = {
+			base = 20
+		}
+	}
+	option = { 
+		name = texas_rework.5.c
+		TBH = {
+			add_ideas = {
+				
+			}
+		}
+		ai_chance = {
+			base = 20
+		}
+	}
+}
+
+country_event = { #junta intervention
+	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.4" }
+	id = texas_rework.4
+	title = texas_rework.4.t
+	desc = texas_rework.4.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_container_bazaar
+
+
+	option = { 
+		name = texas_rework.4.a
+		every_country = {
+			limit = {
+				has_idea = texas_rework_intervention_target_east
+				has_idea = texas_rework_texas_economic_union_ally
+			}
+			remove_ideas = {
+				texas_rework_intervention_target_east
+			}
+			add_ideas = {
+				texas_rework_intervention_target_support
+			}
+		}
+		every_country = {
+			limit = {
+				has_idea = texas_rework_intervention_target_east
+				has_idea = texas_rework_texas_economic_union_investments
+			}
+			remove_ideas = {
+				texas_rework_intervention_target_east
+			}
+			add_ideas = {
+				texas_rework_intervention_target_potential
+			}
+		}
+		every_country = {
+			limit = {
+				has_idea = texas_rework_intervention_target_east
+			}
+			remove_ideas = {
+				texas_rework_intervention_target_east
+			}
+			add_ideas = {
+				texas_rework_intervention_target_active
+			}
+		}
+		ai_chance = {
+			base = 25
+		}
+	}
+	option = { 
+		name = texas_rework.4.b
+		every_country = {
+			limit = {
+				has_idea = texas_rework_intervention_target_west
+				has_idea = texas_rework_texas_economic_union_ally
+			}
+			remove_ideas = {
+				texas_rework_intervention_target_west
+			}
+			add_ideas = {
+				texas_rework_intervention_target_support
+			}
+		}
+		every_country = {
+			limit = {
+				has_idea = texas_rework_intervention_target_west
+				has_idea = texas_rework_texas_economic_union_investments
+			}
+			remove_ideas = {
+				texas_rework_intervention_target_west
+			}
+			add_ideas = {
+				texas_rework_intervention_target_potential
+			}
+		}
+		every_country = {
+			limit = {
+				has_idea = texas_rework_intervention_target_west
+			}
+			remove_ideas = {
+				texas_rework_intervention_target_west
+			}
+			add_ideas = {
+				texas_rework_intervention_target_active
+			}
+		}
+		ai_chance = {
+			base = 25
+		}
+	}
+	option = { 
+		name = texas_rework.4.c
+		every_country = {
+			limit = {
+				has_idea = texas_rework_intervention_target_north
+				has_idea = texas_rework_texas_economic_union_ally
+			}
+			remove_ideas = {
+				texas_rework_intervention_target_north
+			}
+			add_ideas = {
+				texas_rework_intervention_target_support
+			}
+		}
+		every_country = {
+			limit = {
+				has_idea = texas_rework_intervention_target_north
+				has_idea = texas_rework_texas_economic_union_investments
+			}
+			remove_ideas = {
+				texas_rework_intervention_target_north
+			}
+			add_ideas = {
+				texas_rework_intervention_target_potential
+			}
+		}
+		every_country = {
+			limit = {
+				has_idea = texas_rework_intervention_target_north
+			}
+			remove_ideas = {
+				texas_rework_intervention_target_north
+			}
+			add_ideas = {
+				texas_rework_intervention_target_active
+			}
+		}
+		ai_chance = {
+			base = 25
+		}
+	}
+	option = { 
+		name = texas_rework.4.d
+		every_country = {
+			limit = {
+				has_idea = texas_rework_intervention_target_south
+				has_idea = texas_rework_texas_economic_union_ally
+			}
+			remove_ideas = {
+				texas_rework_intervention_target_south
+			}
+			add_ideas = {
+				texas_rework_intervention_target_support
+			}
+		}
+		every_country = {
+			limit = {
+				has_idea = texas_rework_intervention_target_south
+				has_idea = texas_rework_texas_economic_union_investments
+			}
+			remove_ideas = {
+				texas_rework_intervention_target_south
+			}
+			add_ideas = {
+				texas_rework_intervention_target_potential
+			}
+		}
+		every_country = {
+			limit = {
+				has_idea = texas_rework_intervention_target_south
+			}
+			remove_ideas = {
+				texas_rework_intervention_target_south
+			}
+			add_ideas = {
+				texas_rework_intervention_target_active
+			}
+		}
+		ai_chance = {
+			base = 25
+		}
+	}
+}
+
+country_event = { #constitutional intervention
+	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.6" }
+	id = texas_rework.6
+	title = texas_rework.6.t
+	desc = texas_rework.6.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_container_bazaar
+
+
+	option = { 
+		name = texas_rework.6.a
+		every_country = {
+			limit = {
+				has_idea = texas_rework_intervention_target_east
+				has_idea = texas_rework_texas_economic_union_ally
+			}
+			remove_ideas = {
+				texas_rework_intervention_target_east
+			}
+			add_ideas = {
+				texas_rework_intervention_target_support
+			}
+		}
+		every_country = {
+			limit = {
+				has_idea = texas_rework_intervention_target_east
+				has_idea = texas_rework_texas_economic_union_investments
+			}
+			remove_ideas = {
+				texas_rework_intervention_target_east
+			}
+			add_ideas = {
+				texas_rework_intervention_target_potential
+			}
+		}
+		every_country = {
+			limit = {
+				has_idea = texas_rework_intervention_target_east
+			}
+			remove_ideas = {
+				texas_rework_intervention_target_east
+			}
+			add_ideas = {
+				texas_rework_intervention_target_active
+			}
+		}
+		ai_chance = {
+			base = 25
+		}
+	}
+	option = { 
+		name = texas_rework.6.b
+		every_country = {
+			limit = {
+				has_idea = texas_rework_intervention_target_west
+				has_idea = texas_rework_texas_economic_union_ally
+			}
+			remove_ideas = {
+				texas_rework_intervention_target_west
+			}
+			add_ideas = {
+				texas_rework_intervention_target_support
+			}
+		}
+		every_country = {
+			limit = {
+				has_idea = texas_rework_intervention_target_west
+				has_idea = texas_rework_texas_economic_union_investments
+			}
+			remove_ideas = {
+				texas_rework_intervention_target_west
+			}
+			add_ideas = {
+				texas_rework_intervention_target_potential
+			}
+		}
+		every_country = {
+			limit = {
+				has_idea = texas_rework_intervention_target_west
+			}
+			remove_ideas = {
+				texas_rework_intervention_target_west
+			}
+			add_ideas = {
+				texas_rework_intervention_target_active
+			}
+		}
+		ai_chance = {
+			base = 25
+		}
+	}
+	option = { 
+		name = texas_rework.6.c
+		every_country = {
+			limit = {
+				has_idea = texas_rework_intervention_target_north
+				has_idea = texas_rework_texas_economic_union_ally
+			}
+			remove_ideas = {
+				texas_rework_intervention_target_north
+			}
+			add_ideas = {
+				texas_rework_intervention_target_support
+			}
+		}
+		every_country = {
+			limit = {
+				has_idea = texas_rework_intervention_target_north
+				has_idea = texas_rework_texas_economic_union_investments
+			}
+			remove_ideas = {
+				texas_rework_intervention_target_north
+			}
+			add_ideas = {
+				texas_rework_intervention_target_potential
+			}
+		}
+		every_country = {
+			limit = {
+				has_idea = texas_rework_intervention_target_north
+			}
+			remove_ideas = {
+				texas_rework_intervention_target_north
+			}
+			add_ideas = {
+				texas_rework_intervention_target_active
+			}
+		}
+		ai_chance = {
+			base = 25
+		}
+	}
+	option = { 
+		name = texas_rework.6.d
+		every_country = {
+			limit = {
+				has_idea = texas_rework_intervention_target_south
+				has_idea = texas_rework_texas_economic_union_ally
+			}
+			remove_ideas = {
+				texas_rework_intervention_target_south
+			}
+			add_ideas = {
+				texas_rework_intervention_target_support
+			}
+		}
+		every_country = {
+			limit = {
+				has_idea = texas_rework_intervention_target_south
+				has_idea = texas_rework_texas_economic_union_investments
+			}
+			remove_ideas = {
+				texas_rework_intervention_target_south
+			}
+			add_ideas = {
+				texas_rework_intervention_target_potential
+			}
+		}
+		every_country = {
+			limit = {
+				has_idea = texas_rework_intervention_target_south
+			}
+			remove_ideas = {
+				texas_rework_intervention_target_south
+			}
+			add_ideas = {
+				texas_rework_intervention_target_active
+			}
+		}
+		ai_chance = {
+			base = 25
+		}
+	}
+}
+
+
+
+
+
+#Constitution events
+country_event = {
+	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.100" }
+	id = texas_rework.100
+	title = texas_rework.100.t
+	desc = texas_rework.100.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_container_bazaar
+
+
+	option = { # industry
+		name = texas_rework.100.a
+		TBH = {
+			add_to_variable = { const_production_speed = 0.1 }
+			add_to_variable = { const_factory_efficiency = 0.1 }
+			add_to_variable = { const_consumer_goods = -0.1 }
+		}
+		ai_chance = {
+			base = 20
+		}
+	}
+	option = { # political
+		name = texas_rework.100.b
+		TBH = {
+			add_to_variable = { const_political_power_gain = 0.25 }
+			add_to_variable = { const_compliance_gain = 0.1 }
+			add_to_variable = { const_resitance_target = -0.1 }
+			add_to_variable = { stability_week = 0.001 }
+			add_to_variable = { out_of_supply = -0.2 }
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = { # pop
+		name = texas_rework.100.c
+		TBH = {
+			every_owned_state = {
+				set_temp_variable = {
+					pop_add = 1000
+				}
+				add_state_population_no_state_name = yes
+			}
+			add_to_variable = { const_mobilization_speed = 0.25 }
+			add_to_variable = { const_conscription = 0.2 }
+			add_to_variable = { populations_factor = 0.3 }
+			add_to_variable = { research_speed = 0.1 }
+		}
+		ai_chance = {
+			base = 70
+		}
+	}
+	option = { # military
+		name = texas_rework.100.d
+		TBH = {
+			add_to_variable = { const_max_command_power_multi = 0.1 }
+			add_to_variable = { war_support_week = 0.002 }
+			add_to_variable = { xp_army_gain = 0.01 }
+			add_to_variable = { xp_navy_gain = 0.01 }
+			add_to_variable = { xp_air_gain = 0.01 }
+			add_to_variable = { army_morale_factor = 0.05 }
+			add_to_variable = { air_mission_efficiency = 0.05 }
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+#country world events
+news_event = { #Alamo Betrayal
+	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.900" }
+	id = texas_rework.900
 	title = nf_tbh.25.t
 	desc = nf_tbh.25.d
 	is_triggered_only = yes
@@ -258,92 +801,22 @@ country_event = { #Alamo Betrayal
 				}
 			}
 		}
-	}
-
-	option = {
-		name = nf_tbh.25.a
 		TBH = {
 			add_ideas = {
 				texas_rework_non_existent_army
 				texas_rework_no_research
 				texas_rework_broken_economy
 			}
+			bos_remove_from_ledger = yes
+		}
+	}
 
-		}
-	}
-}
-#Constitution
-country_event = {
-	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.5" }
-	id = texas_rework.5
-	title = texas_rework.5.t
-	desc = texas_rework.5.desc
-	is_triggered_only = yes
-	fire_only_once = yes
-	picture = GFX_event_sub_generic_container_bazaar
-
-
-	option = { # industry
-		name = texas_rework.5.a
-		TBH = {
-			add_to_variable = { const_production_speed = 0.1 }
-			add_to_variable = { const_factory_efficiency = 0.1 }
-			add_to_variable = { const_consumer_goods = -0.1 }
-		}
-		ai_chance = {
-			base = 20
-		}
-	}
-	option = { # political
-		name = texas_rework.5.b
-		TBH = {
-			add_to_variable = { const_political_power_gain = 0.25 }
-			add_to_variable = { const_compliance_gain = 0.1 }
-			add_to_variable = { const_resitance_target = -0.1 }
-			add_to_variable = { stability_week = 0.001 }
-			add_to_variable = { out_of_supply = -0.2 }
-		}
-		ai_chance = {
-			base = 10
-		}
-	}
-	option = { # pop
-		name = texas_rework.5.c
-		TBH = {
-			every_owned_state = {
-				set_temp_variable = {
-					pop_add = 1000
-				}
-				add_state_population_no_state_name = yes
-			}
-			add_to_variable = { const_mobilization_speed = 0.25 }
-			add_to_variable = { const_conscription = 0.2 }
-			add_to_variable = { populations_factor = 0.3 }
-			add_to_variable = { research_speed = 0.1 }
-		}
-		ai_chance = {
-			base = 70
-		}
-	}
-	option = { # military
-		name = texas_rework.5.d
-		TBH = {
-			add_to_variable = { const_max_command_power_multi = 0.1 }
-			add_to_variable = { war_support_week = 0.002 }
-			add_to_variable = { xp_army_gain = 0.01 }
-			add_to_variable = { xp_navy_gain = 0.01 }
-			add_to_variable = { xp_air_gain = 0.01 }
-			add_to_variable = { army_morale_factor = 0.05 }
-			add_to_variable = { air_mission_efficiency = 0.05 }
-		}
-		ai_chance = {
-			base = 0
-		}
+	option = {
+		name = nf_tbh.25.a
 	}
 }
 
-#country world events
-country_event = { #DSP invasion of ASS
+news_event = { #DSP invasion of ASS
 	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.901" }
 	id = texas_rework.901
 	title = texas_rework.901.t
@@ -352,18 +825,21 @@ country_event = { #DSP invasion of ASS
 	fire_only_once = yes
 	picture = GFX_event_sub_generic_container_bazaar
 
-
-	option = {
-		name = texas_rework.901.a
+	immediate = {
 		DSP = {
 			declare_war_on = {
 				target = ASS
+				type = annex_everything
 			}
 		}
 	}
+
+	option = {
+		name = texas_rework.901.a
+	}
 }
 
-country_event = { #fall of Assassin city
+news_event = { #fall of Assassin city
 	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.9011" }
 	id = texas_rework.9011
 	title = texas_rework.9011.t
@@ -372,9 +848,7 @@ country_event = { #fall of Assassin city
 	fire_only_once = yes
 	picture = GFX_event_sub_generic_container_bazaar
 
-
-	option = {
-		name = texas_rework.9011.a
+	immediate = {
 		every_state = {
 			limit = {
 				is_core_of = ASS
@@ -394,7 +868,6 @@ country_event = { #fall of Assassin city
 			add_core_of = DSP
 			transfer_state_to = DSP
 		}
-		set_technology = { skater_tech = 1 }
 		ASS = {
 			leave_current_faction = yes
             every_unit_leader = {
@@ -406,9 +879,12 @@ country_event = { #fall of Assassin city
 			transfer_navy = { target = TBH }
 				transfer_navy = { target = TBH }
 		}
-		annex_country = {
-			target = ASS
-			transfer_troops = yes
+		TBH = {
+			set_technology = { skater_tech = 1 }
+			annex_country = {
+				target = ASS
+				transfer_troops = yes
+			}
 		}
 		every_state = {
 			limit = {
@@ -425,9 +901,13 @@ country_event = { #fall of Assassin city
 			clr_state_flag = do_not_exodus
 		}
 	}
+
+	option = {
+		name = texas_rework.9011.a
+	}
 }
 
-country_event = { #CWB invasion of TLL
+news_event = { #CWB invasion of TLL
 	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.902" }
 	id = texas_rework.902
 	title = texas_rework.902.t
@@ -436,18 +916,21 @@ country_event = { #CWB invasion of TLL
 	fire_only_once = yes
 	picture = GFX_event_sub_generic_container_bazaar
 
-
-	option = {
-		name = texas_rework.902.a
+	immediate = {
 		CWB = {
 			declare_war_on = {
 				target = TLL
+				type = annex_everything
 			}
 		}
 	}
+
+	option = {
+		name = texas_rework.902.a
+	}
 }
 
-country_event = { #fall of the last lodge
+news_event = { #fall of the last lodge
 	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.9022" }
 	id = texas_rework.9022
 	title = texas_rework.9022.t
@@ -456,9 +939,7 @@ country_event = { #fall of the last lodge
 	fire_only_once = yes
 	picture = GFX_event_sub_generic_container_bazaar
 
-
-	option = {
-		name = texas_rework.9022.a
+	immediate = {
 		every_state = {
 			limit = {
 				is_core_of = TLL
@@ -488,9 +969,11 @@ country_event = { #fall of the last lodge
 			transfer_navy = { target = TBH }
 				transfer_navy = { target = TBH }
 		}
-		annex_country = {
-			target = TLL
-			transfer_troops = yes
+		TBH = {
+			annex_country = {
+				target = TLL
+				transfer_troops = yes
+			}
 		}
 		every_state = {
 			limit = {
@@ -507,9 +990,13 @@ country_event = { #fall of the last lodge
 			clr_state_flag = do_not_exodus
 		}
 	}
+
+	option = {
+		name = texas_rework.9022.a
+	}
 }
 
-country_event = { #CAR invasion of HRO
+news_event = { #CAR invasion of HRO
 	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.903" }
 	id = texas_rework.903
 	title = texas_rework.903.t
@@ -518,18 +1005,21 @@ country_event = { #CAR invasion of HRO
 	fire_only_once = yes
 	picture = GFX_event_sub_generic_container_bazaar
 
-
-	option = {
-		name = texas_rework.903.a
+	immediate = {
 		CAR = {
 			declare_war_on = {
 				target = HRO
+				type = annex_everything
 			}
 		}
 	}
+
+	option = {
+		name = texas_rework.903.a
+	}
 }
 
-country_event = { #fall of Houston
+news_event = { #fall of Houston
 	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.9033" }
 	id = texas_rework.9033
 	title = texas_rework.9033.t
@@ -538,9 +1028,7 @@ country_event = { #fall of Houston
 	fire_only_once = yes
 	picture = GFX_event_sub_generic_container_bazaar
 
-
-	option = {
-		name = texas_rework.9033.a
+	immediate = {
 		879 = {
 			remove_core_of = HRO
 			remove_claim_by = HRO
@@ -566,9 +1054,11 @@ country_event = { #fall of Houston
 			transfer_navy = { target = TBH }
 				transfer_navy = { target = TBH }
 		}
-		annex_country = {
-			target = HRO
-			transfer_troops = yes
+		TBH = {
+			annex_country = {
+				target = HRO
+				transfer_troops = yes
+			}
 		}
 		every_state = {
 			limit = {
@@ -585,8 +1075,13 @@ country_event = { #fall of Houston
 			clr_state_flag = do_not_exodus
 		}
 	}
+
+	option = {
+		name = texas_rework.9033.a
+	}
 }
-country_event = { #raider pact forms
+
+news_event = { #raider pact forms
 	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.904" }
 	id = texas_rework.904
 	title = texas_rework.904.t
@@ -595,9 +1090,7 @@ country_event = { #raider pact forms
 	fire_only_once = yes
 	picture = GFX_event_sub_generic_container_bazaar
 
-
-	option = {
-		name = texas_rework.904.a
+	immediate = {
 		CAR = {
 			create_faction = "Raider Pact"
 			add_to_faction = DSP
@@ -634,41 +1127,22 @@ country_event = { #raider pact forms
 			}
 		}
 	}
+
+	option = {
+		name = texas_rework.904.a
+	}
 }
-country_event = { #The Patrolmen flee east
+
+news_event = { #The Patrolmen flee east
 	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.905" }
 	id = texas_rework.905
 	title = texas_rework.905.t
 	desc = texas_rework.905.desc
-	is_triggered_only = yes
-	fire_only_once = yes
+	# is_triggered_only = yes
+	# fire_only_once = yes
 	picture = GFX_event_sub_generic_container_bazaar
 
-
-	option = {
-		name = texas_rework.905.a
-		TPM = {
-			white_peace = GAM
-			every_state = {
-				limit = {
-					is_core_of = LTR
-				}
-				set_state_flag = do_not_exodus
-				add_core_of = TPM
-				remove_core_of = LTR
-				remove_claim_by = LTR
-			}
-			annex_country = {
-				target = LTR
-			}
-			every_state = {
-				limit = {
-					is_core_of = TPM
-					has_state_flag = do_not_exodus
-				}
-				clr_state_flag = do_not_exodus
-			}
-		}
+	immediate = {
 		CAR = {
 			add_to_faction = GAM
 			add_opinion_modifier = {
@@ -709,22 +1183,29 @@ country_event = { #The Patrolmen flee east
 			}
 		}
 	}
+
+	option = {
+		name = texas_rework.905.a
+	}
 }
-country_event = { #Patrolmen victory!!!
+
+news_event = { #Patrolmen victory
 	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.906" }
 	id = texas_rework.906
 	title = texas_rework.906.t
 	desc = texas_rework.906.desc
-	is_triggered_only = yes
-	fire_only_once = yes
+	# is_triggered_only = yes
+	# fire_only_once = yes
 	picture = GFX_event_sub_generic_container_bazaar
 
-
-	option = {
-		name = texas_rework.906.a
+	immediate = {
 		TBH = {
 			add_to_faction = TPM
 		}
+	}
+
+	option = {
+		name = texas_rework.906.a
 	}
 }
 

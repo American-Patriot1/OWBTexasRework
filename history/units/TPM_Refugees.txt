@@ -1,0 +1,88 @@
+﻿division_template = {
+	name = "Patrolmen Garrison"
+	division_names_group = _TPM_LAW_01
+	regiments = {
+		police_infantry = { x = 0 y = 0 }
+		police_infantry = { x = 0 y = 1 }
+		police_infantry = { x = 1 y = 0 }
+		police_infantry = { x = 1 y = 1 }
+		police_infantry = { x = 2 y = 0 }
+		police_infantry = { x = 2 y = 1 }
+	}
+}
+division_template = {
+	name = "Refugees"
+	template_counter= 117
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+		militia = { x = 1 y = 2 }
+		militia = { x = 2 y = 0 }
+		militia = { x = 2 y = 1 }
+		militia = { x = 2 y = 2 }
+		militia = { x = 3 y = 0 }
+		militia = { x = 3 y = 1 }
+		militia = { x = 3 y = 2 }
+	}
+}
+units = {
+	division = {
+		name = "Lake Charles Refugees"
+		location = 16746
+		division_template = "Refugees"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Opelousas Refugees"
+		location = 16746
+		division_template = "Refugees"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Lafayette Refugees"
+		location = 16746
+		division_template = "Refugees"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Cannery Refugees"
+		location = 8604
+		division_template = "Refugees"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Cypermort Refugees"
+		location = 8604
+		division_template = "Refugees"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Moss Bluff Garrison"
+		location = 16463
+		division_template = "Patrolmen Garrison"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Lafayette Garrison"
+		location = 16463
+		division_template = "Patrolmen Garrison"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Cannery Garrison"
+		location = 16463
+		division_template = "Patrolmen Garrison"
+		start_experience_factor = 1.0
+		start_equipment_factor = 1.0
+	}
+}

@@ -21,3 +21,7 @@
   texas_rework_industrial_center_texas_fort_worth_state: "$texas_rework_industrial_center_texas_fort_worth$"
   texas_rework_communications_hub_texas: "Texas Communications Hub"
   texas_rework_communications_hub_texas_state: "$texas_rework_communications_hub_texas$"
+
+
+  texas_rework_lend_lease_or_volunteer_intervention_support: "Can Only Lend Lease or Send Volunteers Supported Countries in Active Intevention Zones"
+  texas_rework_lend_lease_or_volunteer_intervention_support_tt: "§R$texas_rework_lend_lease_or_volunteer_intervention_support$§!"

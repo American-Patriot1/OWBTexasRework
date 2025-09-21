@@ -38,7 +38,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 100
-			country_event = texas_rework.5
+			country_event = texas_rework.100
 		}
 	}
 	focus = {
@@ -52,7 +52,7 @@ focus_tree = {
 			focus = texas_constitution
 		}
 		completion_reward = {
-			# country_event = texas_rework.4
+			country_event = texas_rework.2
 		}
 	}
 	##junta path
@@ -81,6 +81,14 @@ focus_tree = {
 			focus = texas_junta_stabilize
 		}
 		completion_reward = {
+			TAA = {
+				add_ideas = {
+					texas_rework_intervention_target_support
+				}
+			}
+			TBH = {
+				set_temp_variable = { texas_rework_intervention_volunteer_size = 6 }
+			}
 			add_political_power = 100
 		}
 	}
@@ -110,6 +118,14 @@ focus_tree = {
 			focus = texas_constitutional_stabilize
 		}
 		completion_reward = {
+			TAA = {
+				add_ideas = {
+					texas_rework_intervention_target_support
+				}
+			}
+			TBH = {
+				set_temp_variable = { texas_rework_intervention_volunteer_size = 3 }
+			}
 			add_political_power = 100
 		}
 	}

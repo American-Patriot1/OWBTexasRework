@@ -19,7 +19,7 @@ focus_tree = {
 
 		completion_reward = {
 			TBH = {
-				country_event = texas_rework.3
+				country_event = texas_rework.900
 				end_puppet = ACH
 				set_truce = {
 					target = ACH
