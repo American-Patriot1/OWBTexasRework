@@ -992,13 +992,10 @@ DIPLOMACY_LEND_LEASE_ENABLE_TRIGGER = {
 					compare = greater_than_or_equals
 				}
 				NOT = {
-					ROOT = {
-						has_idea = texas_rework_intervention_target_support
+					is_in_array = {
+						array = global.texas_rework_active_interventions
+						value = FROM.id
 					}
-					# is_in_array = {
-					# 	array = global.bos_ledger_members
-					# 	value = FROM.id
-					# }
 				}
 			}
 			custom_trigger_tooltip = {
@@ -1332,6 +1329,30 @@ DIPLOMACY_SEND_VOLUNTEERS_ENABLE_TRIGGER = {
 			}
 		}
 	}
+	else_if = { #TEXAS REWORK INTERVENTIONS
+		limit = {
+			check_variable = {
+				var = modifier@texas_rework_lend_lease_or_volunteer_intervention_support
+				value = 1
+				compare = greater_than_or_equals
+			}
+		}
+		if = {
+			limit = {
+				is_in_array = {
+					array = global.texas_rework_active_interventions
+					value = FROM.id
+				}
+			}
+			#No trigger = yes
+		}
+		else = {
+			custom_trigger_tooltip = {
+				tooltip = texas_rework_lend_lease_or_volunteer_intervention_support_tt
+				always = no
+			}
+		}
+	}
 	else_if = {
 		limit = {
 			original_tag = EUR
@@ -1381,29 +1402,6 @@ DIPLOMACY_SEND_VOLUNTEERS_ENABLE_TRIGGER = {
 			has_government = FROM
 		}
 		within_reachable_land_distance_of_from = yes
-	}
-	else_if = { #TEXAS REWORK INTERVENTIONS
-		limit = {
-			check_variable = {
-				var = modifier@texas_rework_lend_lease_or_volunteer_intervention_support
-				value = 1
-				compare = greater_than_or_equals
-			}
-		}
-		if = {
-			limit = {
-				ROOT = {
-					has_idea = texas_rework_intervention_target_support
-				}
-			}
-			#No trigger = yes
-		}
-		else = {
-			custom_trigger_tooltip = {
-				tooltip = texas_rework_lend_lease_or_volunteer_intervention_support_tt
-				always = no
-			}
-		}
 	}
 	else = {
 		custom_trigger_tooltip = {

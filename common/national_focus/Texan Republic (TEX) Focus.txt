@@ -52,6 +52,7 @@ focus_tree = {
 			focus = texas_constitution
 		}
 		completion_reward = {
+			add_stability = 0.1
 			country_event = texas_rework.2
 		}
 	}
@@ -66,8 +67,17 @@ focus_tree = {
 		prerequisite = {
 			focus = texas_stability
 		}
+		available = {
+			TBH = {
+				has_government = ruler
+			}
+		}
+		mutually_exclusive = {
+			focus = texas_constitutional_stabilize
+		}
 		completion_reward = {
 			add_political_power = 100
+			country_event = texas_rework.3
 		}
 	}
 	focus = {
@@ -87,9 +97,12 @@ focus_tree = {
 				}
 			}
 			TBH = {
-				set_temp_variable = { texas_rework_intervention_volunteer_size = 6 }
+				set_rule = { can_send_volunteers = yes }
 			}
+			set_temp_variable = { texas_rework_volunteers_to_add = 6 }
+			texas_rework_increase_volunteer_size = yes
 			add_political_power = 100
+			country_event = texas_rework.4
 		}
 	}
 	#constitutional path
@@ -103,8 +116,17 @@ focus_tree = {
 		prerequisite = {
 			focus = texas_stability
 		}
+		available = {
+			TBH = {
+				has_government = people
+			}
+		}
+		mutually_exclusive = {
+			focus = texas_junta_stabilize
+		}
 		completion_reward = {
 			add_political_power = 100
+			country_event = texas_rework.5
 		}
 	}
 	focus = {
@@ -124,8 +146,11 @@ focus_tree = {
 				}
 			}
 			TBH = {
-				set_temp_variable = { texas_rework_intervention_volunteer_size = 3 }
+				set_rule = { can_send_volunteers = yes }
 			}
+			set_temp_variable = { texas_rework_volunteers_to_add = 3 }
+			texas_rework_increase_volunteer_size = yes
+			country_event = texas_rework.6
 			add_political_power = 100
 		}
 	}

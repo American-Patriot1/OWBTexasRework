@@ -7,7 +7,7 @@ country_event = {
 	title = texas_rework.1000.t
 	desc = texas_rework.1000.desc
 	is_triggered_only = yes
-	fire_only_once = yes
+	# fire_only_once = yes
 	picture = GFX_Portrait_TEX_provisional_senate
 
 
@@ -34,6 +34,19 @@ country_event = {
 		# 	add_to_variable = { army_morale_factor = 0.05 }
 		# 	add_to_variable = { air_mission_efficiency = 0.05 }
 		# }
+		set_temp_variable = { caps_to_add = 1000 }
+		add_caps = yes
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_1
+			amount = 1000
+			producer = USA
+		}
+				TBH = {
+					add_opinion_modifier = {
+						target = TAA
+						modifier = taa_equipment
+					}
+				}
 	}
 }
 
@@ -49,37 +62,10 @@ country_event = {
 
 	option = {
 		name = texas_rework.1001.a
-		# TBH = {
-		# 	ACH = {
-		# 		become_puppet_of_prev = yes
-		# 	}
-		# 	set_autonomy = {
-		# 		target = ACH
-		# 		autonomy_state = autonomy_texas_rework_free_state
-		# 	}
-		# }
-		# ACH = {
-		# 	set_popularities = {
-		# 		people = 11
-		# 		elites = 7
-		# 		intellectuals = 75
-		# 		ruler = 7
-		# 	}
-
-		# 	set_politics = {
-		# 		ruling_party = intellectuals
-		# 		elections_allowed = no
-		# 	}
-		# }
-		clr_global_flag = gam_war_happened
-		879 = {
-			transfer_state_to = HRO
-		}
-		874 = {
-			transfer_state_to = GAM
-		}
-		873 = {
-			transfer_state_to = GAM
+		TBH = {
+			remove_ideas = texas_rework_non_existent_army
+			remove_ideas = texas_rework_no_research
+			remove_ideas = texas_rework_broken_economy
 		}
 	}
 }
@@ -151,26 +137,23 @@ country_event = { #junta or constitutional choice
 	picture = GFX_event_sub_generic_container_bazaar
 
 
-	option = { 
+	option = { #junta
 		name = texas_rework.2.a
 		TBH = {
+			set_politics = { ruling_party = ruler elections_allowed = no }
+			add_stability = -0.1
 			add_ideas = {
-				
+				texas_rework_junta_stability
 			}
 		}
 		ai_chance = {
-			base = 20
+			base = 70
 		}
 	}
-	option = { 
+	option = { #constitution
 		name = texas_rework.2.b
-		TBH = {
-			add_ideas = {
-				
-			}
-		}
 		ai_chance = {
-			base = 20
+			base = 30
 		}
 	}
 }
@@ -291,7 +274,9 @@ country_event = { #junta intervention
 			add_ideas = {
 				texas_rework_intervention_target_support
 			}
+			add_to_array = { global.texas_rework_active_interventions = THIS.id }
 		}
+		
 		every_country = {
 			limit = {
 				has_idea = texas_rework_intervention_target_east
@@ -303,6 +288,7 @@ country_event = { #junta intervention
 			add_ideas = {
 				texas_rework_intervention_target_potential
 			}
+			add_to_array = { global.texas_rework_active_interventions = THIS.id }
 		}
 		every_country = {
 			limit = {
@@ -314,6 +300,7 @@ country_event = { #junta intervention
 			add_ideas = {
 				texas_rework_intervention_target_active
 			}
+			add_to_array = { global.texas_rework_active_interventions = THIS.id }
 		}
 		ai_chance = {
 			base = 25
@@ -332,6 +319,7 @@ country_event = { #junta intervention
 			add_ideas = {
 				texas_rework_intervention_target_support
 			}
+			add_to_array = { global.texas_rework_active_interventions = THIS.id }
 		}
 		every_country = {
 			limit = {
@@ -344,6 +332,7 @@ country_event = { #junta intervention
 			add_ideas = {
 				texas_rework_intervention_target_potential
 			}
+			add_to_array = { global.texas_rework_active_interventions = THIS.id }
 		}
 		every_country = {
 			limit = {
@@ -355,6 +344,7 @@ country_event = { #junta intervention
 			add_ideas = {
 				texas_rework_intervention_target_active
 			}
+			add_to_array = { global.texas_rework_active_interventions = THIS.id }
 		}
 		ai_chance = {
 			base = 25
@@ -373,6 +363,7 @@ country_event = { #junta intervention
 			add_ideas = {
 				texas_rework_intervention_target_support
 			}
+			add_to_array = { global.texas_rework_active_interventions = THIS.id }
 		}
 		every_country = {
 			limit = {
@@ -385,6 +376,7 @@ country_event = { #junta intervention
 			add_ideas = {
 				texas_rework_intervention_target_potential
 			}
+			add_to_array = { global.texas_rework_active_interventions = THIS.id }
 		}
 		every_country = {
 			limit = {
@@ -396,6 +388,7 @@ country_event = { #junta intervention
 			add_ideas = {
 				texas_rework_intervention_target_active
 			}
+			add_to_array = { global.texas_rework_active_interventions = THIS.id }
 		}
 		ai_chance = {
 			base = 25
@@ -414,6 +407,7 @@ country_event = { #junta intervention
 			add_ideas = {
 				texas_rework_intervention_target_support
 			}
+			add_to_array = { global.texas_rework_active_interventions = THIS.id }
 		}
 		every_country = {
 			limit = {
@@ -426,6 +420,7 @@ country_event = { #junta intervention
 			add_ideas = {
 				texas_rework_intervention_target_potential
 			}
+			add_to_array = { global.texas_rework_active_interventions = THIS.id }
 		}
 		every_country = {
 			limit = {
@@ -437,6 +432,7 @@ country_event = { #junta intervention
 			add_ideas = {
 				texas_rework_intervention_target_active
 			}
+			add_to_array = { global.texas_rework_active_interventions = THIS.id }
 		}
 		ai_chance = {
 			base = 25
@@ -467,6 +463,7 @@ country_event = { #constitutional intervention
 			add_ideas = {
 				texas_rework_intervention_target_support
 			}
+			add_to_array = { global.texas_rework_active_interventions = THIS.id }
 		}
 		every_country = {
 			limit = {
@@ -479,6 +476,7 @@ country_event = { #constitutional intervention
 			add_ideas = {
 				texas_rework_intervention_target_potential
 			}
+			add_to_array = { global.texas_rework_active_interventions = THIS.id }
 		}
 		every_country = {
 			limit = {
@@ -490,6 +488,7 @@ country_event = { #constitutional intervention
 			add_ideas = {
 				texas_rework_intervention_target_active
 			}
+			add_to_array = { global.texas_rework_active_interventions = THIS.id }
 		}
 		ai_chance = {
 			base = 25
@@ -508,6 +507,7 @@ country_event = { #constitutional intervention
 			add_ideas = {
 				texas_rework_intervention_target_support
 			}
+			add_to_array = { global.texas_rework_active_interventions = THIS.id }
 		}
 		every_country = {
 			limit = {
@@ -520,6 +520,7 @@ country_event = { #constitutional intervention
 			add_ideas = {
 				texas_rework_intervention_target_potential
 			}
+			add_to_array = { global.texas_rework_active_interventions = THIS.id }
 		}
 		every_country = {
 			limit = {
@@ -531,6 +532,7 @@ country_event = { #constitutional intervention
 			add_ideas = {
 				texas_rework_intervention_target_active
 			}
+			add_to_array = { global.texas_rework_active_interventions = THIS.id }
 		}
 		ai_chance = {
 			base = 25
@@ -549,6 +551,7 @@ country_event = { #constitutional intervention
 			add_ideas = {
 				texas_rework_intervention_target_support
 			}
+			add_to_array = { global.texas_rework_active_interventions = THIS.id }
 		}
 		every_country = {
 			limit = {
@@ -561,6 +564,7 @@ country_event = { #constitutional intervention
 			add_ideas = {
 				texas_rework_intervention_target_potential
 			}
+			add_to_array = { global.texas_rework_active_interventions = THIS.id }
 		}
 		every_country = {
 			limit = {
@@ -572,6 +576,7 @@ country_event = { #constitutional intervention
 			add_ideas = {
 				texas_rework_intervention_target_active
 			}
+			add_to_array = { global.texas_rework_active_interventions = THIS.id }
 		}
 		ai_chance = {
 			base = 25
@@ -590,6 +595,7 @@ country_event = { #constitutional intervention
 			add_ideas = {
 				texas_rework_intervention_target_support
 			}
+			add_to_array = { global.texas_rework_active_interventions = THIS.id }
 		}
 		every_country = {
 			limit = {
@@ -602,6 +608,7 @@ country_event = { #constitutional intervention
 			add_ideas = {
 				texas_rework_intervention_target_potential
 			}
+			add_to_array = { global.texas_rework_active_interventions = THIS.id }
 		}
 		every_country = {
 			limit = {
@@ -613,6 +620,7 @@ country_event = { #constitutional intervention
 			add_ideas = {
 				texas_rework_intervention_target_active
 			}
+			add_to_array = { global.texas_rework_active_interventions = THIS.id }
 		}
 		ai_chance = {
 			base = 25
@@ -808,6 +816,7 @@ news_event = { #Alamo Betrayal
 				texas_rework_broken_economy
 			}
 			bos_remove_from_ledger = yes
+			add_stability = -1
 		}
 	}
 

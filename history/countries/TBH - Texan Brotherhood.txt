@@ -1,3 +1,10 @@
+
+#Starting texas Workshops
+@TBH_STARTING_WORKSHOPS = 0
+
+#Starting texas volunteers
+@TBH_STARTING_VOLUNTEERS = 0
+
 capital = 915
 
 oob = "TBH_2275"
@@ -180,6 +187,18 @@ set_country_flag = is_texas_nation
 set_country_flag = grand_doctrine_ai
 set_country_flag = grand_infantry_doctrine_ai
 
+add_to_array = { global.texas_rework_active_interventions = TBH }
+add_to_array = { global.texas_rework_active_interventions = TAA }
+
+set_variable = { texas_rework_workshops_tbh = @TBH_STARTING_WORKSHOPS }
+set_variable = { texas_rework_intervention_volunteer_size = @TBH_STARTING_VOLUNTEERS }
+
+set_temp_variable = { TBH_workshops_to_add = @TBH_STARTING_WORKSHOPS }
+texas_rework_change_workshops = yes
+
+set_temp_variable = { texas_rework_volunteers_to_add = @TBH_STARTING_VOLUNTEERS }
+texas_rework_increase_volunteer_size = yes
+
 set_truce = {
 	target = SHA
 	days = 365
@@ -236,12 +255,11 @@ create_or_join_texan_economic_union = yes
 LNS = { create_or_join_texan_economic_union = yes }
 ACH = { create_or_join_texan_economic_union = yes }
 
-
 add_dynamic_modifier = { modifier = texan_economic_union }
-add_dynamic_modifier = { modifier = texas_rework_texas_interventions }
-set_temp_variable = { texas_rework_intervention_volunteer_size = 0 }
-
 add_dynamic_modifier = { modifier = texas_constitution_modifier }
+add_dynamic_modifier = { modifier = texas_rework_texas_interventions }
+add_dynamic_modifier = { modifier = texas_rework_factories_not_workshops_tbh }
+
 add_dynamic_modifier = { modifier = texas_rework_city_of_unity }
 add_dynamic_modifier = { modifier = texas_rework_economic_hub_texas }
 add_dynamic_modifier = { modifier = texas_rework_industrial_center_texas_dallas }

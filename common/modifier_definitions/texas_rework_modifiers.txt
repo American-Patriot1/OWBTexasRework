@@ -1,7 +1,18 @@
-
 texas_rework_lend_lease_or_volunteer_intervention_support = {
 	color_type = bad
 	value_type = yes_no
-	precision = 1
+	precision = 0
+	category = country
+}
+workshops_storage_tbh = {
+	color_type = good
+	value_type = number
+	precision = 0
+	category = country
+}
+workshops_storage_taa = {
+	color_type = good
+	value_type = number
+	precision = 0
 	category = country
 }

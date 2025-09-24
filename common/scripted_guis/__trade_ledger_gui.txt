@@ -202,6 +202,41 @@ scripted_gui = {
 				round_temp_variable = temp_caps_spend
 				set_temp_variable = { org_influence_amount = temp_caps_spend }
 				organization_add_influence = yes
+				set_temp_variable = { org_selector = selected_market_organization }
+				if = {
+					limit = {
+						check_variable = {
+							selected_market_organization = 1
+						}
+						OR = {
+							has_idea = currencytexdollar
+							TAG = RRG
+						}
+					}
+					add_opinion_modifier = {
+						target = TAA
+						modifier = taa_equipment
+					}
+					TAA = {
+						add_opinion_modifier = {
+							target = PREV
+							modifier = taa_equipment
+						}
+						meta_effect = {
+							text = {
+								add_equipment_to_stockpile = {
+									type = [EQ_NAME][EQ_NAME2]
+									amount = -250
+								}
+							}
+							EQ_NAME = "[GetMarketEquipment]"
+							EQ_NAME2 = "[GetMarketEquipment2]"
+						}
+						set_temp_variable = { caps_to_add = v }
+						multiply_temp_variable = { caps_to_add = temp_org_discount }
+						add_caps = yes
+					}
+				}
 			}
 			### Sell Equipment
 			item_sell_cost_click = {
@@ -231,6 +266,7 @@ scripted_gui = {
 						set_temp_variable = { temp_caps_earned = caps_to_add }
 						multiply_temp_variable = { caps_to_add = 0.3 }
 						multiply_temp_variable = { caps_to_add = temp_org_bonus }
+						set_temp_variable = { caps_to_add_taa = caps_to_add }
 						meta_effect = {
 							text = {
 								set_temp_variable = {
@@ -280,6 +316,42 @@ scripted_gui = {
 				round_temp_variable = temp_caps_earned
 				set_temp_variable = { org_influence_amount = temp_caps_earned }
 				organization_add_influence = yes
+				if = {
+					limit = {
+						check_variable = {
+							selected_market_organization = 1
+						}
+						OR = {
+							has_idea = currencytexdollar
+							TAG = RRG
+						}
+					}
+					add_opinion_modifier = {
+						target = TAA
+						modifier = taa_equipment
+					}
+					TAA = {
+						add_opinion_modifier = {
+							target = PREV
+							modifier = taa_equipment
+						}
+						set_temp_variable = { org_selector = selected_market_organization }
+						meta_effect = {
+							text = {
+								add_equipment_to_stockpile = {
+									type = [EQ_NAME][EQ_NAME2]
+									amount = 250
+									producer = USA
+								}
+							}
+							EQ_NAME = "[GetMarketEquipment]"
+							EQ_NAME2 = "[GetMarketEquipment2]"
+						}
+						set_temp_variable = { caps_to_add = caps_to_add_taa }
+						multiply_temp_variable = { caps_to_add = -1 }
+						add_caps = yes
+					}
+				}
 			}
 		}
 		properties = {

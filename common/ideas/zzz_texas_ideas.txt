@@ -1,5 +1,13 @@
 ideas = {
 	#GFX_idea_apocalypse_now
+	#lake livingston - 10 energy 20 water - the mont
+	#highland dams - 100 energy 50 water - austin
+	#sam rayburn dam and toledo bend dam - 50 energy 100 water - jasper
+	#denson dam 75 energy 50 water - KXII station
+	#wright patman dam - 50 water - texarkana
+	#ferrells bridge dam - 25 water - shreveport
+	#Iron bridge, lake fork, and Jim Chapman lake dams - 35 water - suphertown
+	#ray roberts, lewisville, grapevine rockwell forney, lavon, joe pool lake dams - 30 energy 75 water - dallas 
 	country = {
 		texas_rework_rangers = {
 			picture = tbh_law_3
@@ -20,7 +28,7 @@ ideas = {
 			removal_cost = -1
 		}
 		texas_rework_broken_economy = {
-			picture = tbh_provisions_for_protection
+			picture = generic_fucked_economy
 			allowed = {
 				always = yes
 			}
@@ -42,7 +50,7 @@ ideas = {
 			}
 		}
 		texas_rework_no_research = {
-			picture = enslave_scientists
+			picture = cwb_luddite_crusade
 			allowed = {
 				always = yes
 			}
@@ -83,7 +91,7 @@ ideas = {
 			removal_cost = -1
 		}
 		history_of_economy = {
-			picture = GFX_idea_generic_religion
+			picture = cash
 			modifier = {
 				consumer_goods_expected_value = 0.05
 				global_building_slots_factor = 0.1
@@ -91,9 +99,9 @@ ideas = {
 			}
 		}
 		history_of_big_military_yehaw = {
-			picture = GFX_idea_generic_religion
+			picture = generic_badass
 			modifier = {
-				special_forces_cap = -0.05
+				special_forces_cap = -0.1
 				experience_gain_army = 0.025
 				army_org_Factor = 0.05
 				max_command_power = 50
@@ -101,7 +109,7 @@ ideas = {
 			}
 		}
 		history_of_tech = {
-			picture = GFX_idea_generic_religion
+			picture = generic_satellite
 			modifier = {
 				war_support_factor = -0.1
 				stability_factor = 0.05
@@ -110,7 +118,7 @@ ideas = {
 			}
 		}
 		history_of_big_population = {
-			picture = GFX_idea_generic_religion
+			picture = generic_food_good
 			modifier = {
 				conscription = -0.01
 				weekly_manpower = 25
@@ -119,7 +127,7 @@ ideas = {
 			}
 		}
 		texas_rework_taa_reliance = {
-			picture = tbh_yellow_rose
+			picture = texan_arms
 			modifier = {
 			}
 		}
@@ -129,6 +137,12 @@ ideas = {
 			}
 		}
 	#stabilize ideas just junta constitutional is added to the constitution
+		texas_rework_junta_stability = {
+			picture = tbh_universal_deputization
+			modifier = {
+				stability_factor = 0.5
+			}
+		}
 		texas_rework_junta_stability_research = {
 			picture = generic_research_boost
 			modifier = {
@@ -147,37 +161,37 @@ ideas = {
 
 	#intervention target ideas
 		texas_rework_intervention_target_east = {
-			picture = rrg_texas2
+			picture = generic_recon
 			modifier = {
 			}
 		}
 		texas_rework_intervention_target_west = {
-			picture = rrg_texas2
+			picture = generic_recon
 			modifier = {
 			}
 		}
 		texas_rework_intervention_target_north = {
-			picture = rrg_texas2
+			picture = generic_recon
 			modifier = {
 			}
 		}
 		texas_rework_intervention_target_south = {
-			picture = rrg_texas2
+			picture = generic_recon
 			modifier = {
 			}
 		}
 		texas_rework_intervention_target_active = {
-			picture = rrg_texas2
+			picture = idea_COM_texas_civil_war
 			modifier = {
 			}
 		}
 		texas_rework_intervention_target_potential = {
-			picture = rrg_texas2
+			picture = great_protectors
 			modifier = {
 			}
 		}
 		texas_rework_intervention_target_support = {
-			picture = GFX_idea_great_protectors
+			picture = rrg_texas2
 			modifier = {
 			}
 		}

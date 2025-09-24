@@ -187,5 +187,106 @@ on_actions = {
 				}
 			}
 		}
+		effect = {
+			if = {
+				limit = {
+				#FROM HAD THE STATE TAKEN
+				#ROOT TOOK THE STATE
+					NOT = {FROM = {TAG = TAA}}
+					ROOT = {TAG = TBH}
+				}
+				FROM.FROM = {
+					TBH = {
+						set_temp_variable = { TAA_workshops_to_add = 0 }
+						add_to_temp_variable = { TBH_workshops_to_add = PREV.industrial_complex_level }
+						add_to_temp_variable = { TBH_workshops_to_add = PREV.arms_factory_level }
+						add_to_temp_variable = { TBH_workshops_to_add = PREV.building_level@dockyard }
+						texas_rework_change_workshops = yes
+					}
+					remove_building = {
+						type = arms_factory
+						level = arms_factory_level
+					}
+					remove_building = {
+						type = industrial_complex
+						level = industrial_complex_level
+					}
+					remove_building = {
+						type = dockyard
+						level = building_level@dockyard
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				#FROM HAD THE STATE TAKEN
+				#ROOT TOOK THE STATE
+				limit = {
+					NOT = {FROM = {TAG = TBH}}
+					ROOT = {TAG = TAA}
+				}
+				FROM.FROM = {
+					TAA = {
+						set_temp_variable = { TAA_workshops_to_add = 0 }
+						add_to_temp_variable = { TAA_workshops_to_add = PREV.industrial_complex_level }
+						add_to_temp_variable = { TAA_workshops_to_add = PREV.arms_factory_level }
+						add_to_temp_variable = { TAA_workshops_to_add = PREV.building_level@dockyard }
+						texas_rework_change_workshops = yes
+					}
+					remove_building = {
+						type = arms_factory
+						level = arms_factory_level
+					}
+					remove_building = {
+						type = industrial_complex
+						level = industrial_complex_level
+					}
+					remove_building = {
+						type = dockyard
+						level = building_level@dockyard
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				#FROM HAD THE STATE TAKEN
+				#ROOT TOOK THE STATE
+				limit = {
+					ROOT = {NOT = {OR = {TAG = TBH	TAG = TAA}}}
+					FROM = {OR = {TAG = TBH	TAG = TAA}}
+				}
+				set_temp_variable = { arms_factory_count_workshop = 0 }
+				set_temp_variable = { civ_factory_count_workshop = 0 }
+				set_temp_variable = { dockyard_count_workshop = 0 }
+				FROM.FROM = {
+					add_to_temp_variable = { arms_factory_count_workshop = arms_factory_level }
+					add_to_temp_variable = { civ_factory_count_workshop = industrial_complex_level }
+					add_to_temp_variable = { dockyard_count_workshop = building_level@dockyard }
+					multiply_temp_variable = {
+						arms_factory_count_workshop = 4
+					}
+					multiply_temp_variable = {
+						civ_factory_count_workshop = 4
+					}
+					multiply_temp_variable = {
+						dockyard_count_workshop = 4
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = arms_factory_count_workshop
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = civ_factory_count_workshop
+					}
+					add_building_construction = {
+						type = dockyard
+						level = dockyard_count_workshop
+					}
+				}
+			}
+		}
 	}
 }

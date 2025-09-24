@@ -1675,6 +1675,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			NOT = {TAG = RRG}
 			OR = {
 				has_country_flag = is_north_mexican_nation
 				has_country_flag = is_south_mexican_nation
@@ -1684,9 +1685,12 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			has_idea = currencytexdollar
+			OR = {
+				has_idea = currencytexdollar
+				TAG = RRG
+			}
 		}
-		localization_key = org_taa_ballistic_name
+		localization_key = org_texas_ballistic_name
 	}
 	text = {
 		localization_key = org_gun_runners_name
@@ -1703,6 +1707,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			NOT = {TAG = RRG}
 			OR = {
 				has_country_flag = is_north_mexican_nation
 				has_country_flag = is_south_mexican_nation
@@ -1712,9 +1717,12 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			has_idea = currencytexdollar
+			OR = {
+				has_idea = currencytexdollar
+				TAG = RRG
+			}
 		}
-		localization_key = org_taa_vehical_name
+		localization_key = org_texas_vehical_name
 	}
 	text = {
 		localization_key = org_chop_shop_name
@@ -1731,6 +1739,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			NOT = {TAG = RRG}
 			OR = {
 				has_country_flag = is_north_mexican_nation
 				has_country_flag = is_south_mexican_nation
@@ -1740,9 +1749,12 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			has_idea = currencytexdollar
+			OR = {
+				has_idea = currencytexdollar
+				TAG = RRG
+			}
 		}
-		localization_key = org_taa_laser_name
+		localization_key = org_texas_laser_name
 	}
 	text = {
 		localization_key = org_van_graffs_name
@@ -1759,6 +1771,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			NOT = {TAG = RRG}
 			OR = {
 				has_country_flag = is_north_mexican_nation
 				has_country_flag = is_south_mexican_nation
@@ -1768,9 +1781,12 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			has_idea = currencytexdollar
+			OR = {
+				has_idea = currencytexdollar
+				TAG = RRG
+			}
 		}
-		localization_key = org_taa_melee_name
+		localization_key = org_texas_melee_name
 	}
 	text = {
 		localization_key = org_butcher_petes_name
@@ -1788,6 +1804,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			NOT = {TAG = RRG}
 			OR = {
 				has_country_flag = is_north_mexican_nation
 				has_country_flag = is_south_mexican_nation
@@ -1797,9 +1814,12 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			has_idea = currencytexdollar
+			OR = {
+				has_idea = currencytexdollar
+				TAG = RRG
+			}
 		}
-		localization_key = org_taa_advanced_name
+		localization_key = org_texas_advanced_name
 	}
 	text = {
 		localization_key = org_vancouver_mavens_name

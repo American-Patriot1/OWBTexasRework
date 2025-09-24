@@ -23,5 +23,14 @@
   texas_rework_communications_hub_texas_state: "$texas_rework_communications_hub_texas$"
 
 
-  texas_rework_lend_lease_or_volunteer_intervention_support: "Can Only Lend Lease or Send Volunteers Supported Countries in Active Intevention Zones"
-  texas_rework_lend_lease_or_volunteer_intervention_support_tt: "§R$texas_rework_lend_lease_or_volunteer_intervention_support$§!"
+  texas_rework_factories_not_workshops_tbh: "Factories not Workshops"
+  texas_rework_factories_not_workshops_taa: "$texas_rework_factories_not_workshops_tbh$"
+  texas_rework_change_workshops_tbh_tt: "Change Stored Workshops by [?TBH.TBH_workshops_to_add|G+]"
+  texas_rework_change_workshops_taa_tt: "Change Stored Workshops by [?TAA.TAA_workshops_to_add|G+]"
+  workshops_storage_tbh: "Stored Workshops"
+  workshops_storage_taa: "Stored Workshops"
+
+
+  texas_rework_lend_lease_or_volunteer_intervention_support: "Can Only Lend Lease or Send Volunteers to Supported Countries in Active Intevention Zones"
+  texas_rework_lend_lease_or_volunteer_intervention_support_tt: "$texas_rework_lend_lease_or_volunteer_intervention_support$"
+  texas_rework_intervention_volunteer_size_tt: "Change our max volunteer size by [?TBH.texas_rework_volunteers_to_add|G+] "

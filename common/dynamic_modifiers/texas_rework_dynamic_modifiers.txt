@@ -1,6 +1,10 @@
 
+#treasures_of_underworld
+#gov_idea_bawlsguarana
+#COM_american_industrial_might
+#COM_rg_colonial_industrial_development
 texas_rework_texas_interventions = {
-	icon = rrg_texas2
+	icon = GFX_idea_rrg_texas2
 	exodus_assimilation_proportion = 0.25
 	exodus_national_appeal = 1
 	diplomacy_distance = 500
@@ -9,6 +13,31 @@ texas_rework_texas_interventions = {
 	send_volunteer_size = texas_rework_intervention_volunteer_size
 	send_volunteer_divisions_required = -0.5
 	texas_rework_lend_lease_or_volunteer_intervention_support = 1
+}
+texas_rework_factories_not_workshops_tbh = {
+	icon = GFX_idea_COM_rg_colonial_industrial_development
+	production_speed_buildings_factor = texas_rework_building_speed_tbh
+	production_cost_infrastructure_factor = -0.25
+	production_cost_arms_factory_factor = 4
+	production_cost_industrial_complex_factor = 2.5
+	production_cost_dockyard_factor = 4
+	industry_repair_factor = -0.5
+	industrial_capacity_factory = 5
+	industrial_capacity_dockyard = 5
+	workshops_storage_tbh = texas_rework_workshops_tbh
+}
+
+texas_rework_factories_not_workshops_taa = {
+	icon = GFX_idea_COM_rg_colonial_industrial_development
+	production_speed_buildings_factor = texas_rework_building_speed_taa
+	production_cost_infrastructure_factor = -0.25
+	production_cost_arms_factory_factor = 4
+	production_cost_industrial_complex_factor = 2.5
+	production_cost_dockyard_factor = 4
+	industry_repair_factor = -0.5
+	industrial_capacity_factory = 5
+	industrial_capacity_dockyard = 5
+	workshops_storage_taa = texas_rework_workshops_taa
 }
 
 texas_rework_houston_concrete_city = {
@@ -89,10 +118,10 @@ texas_rework_carthage_gas_fields = {
 texas_rework_carthage_gas_fields_state = {
     icon = GFX_idea_TIM_patch_energy
     enable = { always = yes }
-	fuel_gain_factor = tep_fuel
-	max_fuel_factor = tep_fuel
-	production_oil_factor = tep_oil
-	local_resources_factor = tep_resources
+	fuel_gain_factor = temp_fuel
+	max_fuel_factor = temp_fuel
+	production_oil_factor = temp_oil
+	local_resources_factor = temp_resources
 }
 texas_rework_city_of_unity = {
     enable = { always = yes }

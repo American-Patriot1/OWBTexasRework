@@ -103,6 +103,7 @@ add_ideas = {
 	chems_legalised
 	currencytexdollar
 	texas_rework_intervention_target_west
+	texas_rework_texas_economic_union_ally
 }
 
 add_dynamic_modifier = {

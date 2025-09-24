@@ -230,15 +230,15 @@
 
   ###TEXAS REWORK
 
-  org_taa_ballistic_name:0 "TAA - Ballistics" #couldint it be BAWLStics
+  org_texas_ballistic_name:0 "T.A.A."
 
-  org_taa_vehical_name:0 "TAA - Motors"
+  org_texas_vehical_name:0 "Lone Star Caravans"
 
-  org_taa_laser_name:0 "TAA - Lasers"
+  org_texas_laser_name:0 "Texas Induction"
 
-  org_taa_melee_name:0 "TAA - Ironworks"
+  org_texas_melee_name:0 "Bayou Motors"
 
-  org_taa_advanced_name:0 "TAA - Cutting Edge"
+  org_texas_advanced_name:0 "P.I.T. Armaments"
 
 
 

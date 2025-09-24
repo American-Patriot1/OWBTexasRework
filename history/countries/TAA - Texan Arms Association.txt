@@ -1,4 +1,8 @@
-﻿capital = 796
+﻿
+#Starting TAA Workshops
+@TAA_STARTING_WORKSHOPS = 0
+
+capital = 796
 oob = "TAA_2275"
 
 set_technology = {
@@ -90,6 +94,7 @@ set_country_flag = grand_doctrine_ai
 set_country_flag = grand_infantry_doctrine_ai
 set_country_flag = infantry_ballistic_ai
 
+
 RRG = {
 	TAA = {
 		become_puppet_of_prev = yes
@@ -108,6 +113,14 @@ set_truce = {
 	target = IMO
 	days = 730
 }
+
+
+set_variable = { texas_rework_workshops_taa = @TAA_STARTING_WORKSHOPS }
+
+set_temp_variable = { TAA_workshops_to_add = @TAA_STARTING_WORKSHOPS }
+texas_rework_change_workshops = yes
+
+add_dynamic_modifier = { modifier = texas_rework_factories_not_workshops_taa }
 
 add_ideas = {
 	TAA_the_master_gunsmiths
