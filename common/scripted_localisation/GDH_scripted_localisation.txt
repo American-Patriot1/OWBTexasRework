@@ -1,0 +1,42 @@
+defined_text = {
+	name = generalissimostatus
+	text = {
+		localization_key = generalissimostatus_low
+		trigger = {
+			check_variable = { generalissimo_stress < 2 }
+		}
+	}
+	text = {
+		localization_key = generalissimostatus_medium
+		trigger = {
+			check_variable = { generalissimo_stress > 1 }
+			check_variable = { generalissimo_stress < 5 }
+		}
+	}
+	text = {
+		localization_key = generalissimostatus_high
+		trigger = {
+			check_variable = { generalissimo_stress > 4 }
+		}
+	}
+
+}
+defined_text = {
+	name = GetWeaponryRate
+	text = {
+		trigger = {
+			set_temp_variable = {
+				var = temp_equipment_to_add
+				value = gdh_base_factory_ratio
+			}
+			set_temp_variable = { bonus_production = modifier@gdh_equipment_production_bonus }
+			add_to_temp_variable = { bonus_production = 1 }
+			multiply_temp_variable = {
+				temp_equipment_to_add = bonus_production
+			}
+			multiply_temp_variable = { temp_equipment_to_add = arms_factory_sum }
+		}
+		localization_key = key_weaponry_price_tt
+	}
+
+}

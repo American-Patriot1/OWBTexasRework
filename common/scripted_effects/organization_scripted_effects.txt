@@ -2,6 +2,7 @@
 organization_initialize = {
 	###Market Initalize
 	set_variable = { global.gun_runner_inventory = 2100 }
+	set_variable = { global.taa_runner_inventory = 2100 }
 	set_variable = { global.motorized_runner_inventory = 2100 }
 	set_variable = { global.energy_runner_inventory = 2100 }
 	set_variable = { global.melee_runner_inventory = 2100 }

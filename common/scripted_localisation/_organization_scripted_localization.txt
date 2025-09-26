@@ -28,6 +28,22 @@ defined_text = {
 	text = {
 		trigger = {
 			check_variable = { selected_market_organization = 1 }
+			OR = {
+				has_idea = currencytexdollar
+				TAG = RRG
+			}
+		}
+		localization_key = "global.taa_runner_inventory"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 1 }
+			NOT = {
+				OR = {
+					has_idea = currencytexdollar
+					TAG = RRG
+				}
+			}
 		}
 		localization_key = "global.gun_runner_inventory"
 	}
@@ -454,6 +470,22 @@ defined_text = {
 	text = {
 		trigger = {
 			check_variable = { selected_market_organization = 1 }
+			OR = {
+				has_idea = currencytexdollar
+				TAG = RRG
+			}
+		}
+		localization_key = "taa_runner_amount_tt"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 1 }
+			NOT = {
+				OR = {
+					has_idea = currencytexdollar
+					TAG = RRG
+				}
+			}
 		}
 		localization_key = "gun_runner_amount_tt"
 	}
@@ -488,12 +520,27 @@ defined_text = {
 		localization_key = "followers_runner_amount_tt"
 	}
 }
-
 defined_text = {
 	name = "GetMarketAmountString"
 	text = {
 		trigger = {
 			check_variable = { selected_market_organization = 1 }
+			OR = {
+				has_idea = currencytexdollar
+				TAG = RRG
+			}
+		}
+		localization_key = "global.taa_runner_inventory"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_market_organization = 1 }
+			NOT = {
+				OR = {
+					has_idea = currencytexdollar
+					TAG = RRG
+				}
+			}
 		}
 		localization_key = "global.gun_runner_inventory"
 	}

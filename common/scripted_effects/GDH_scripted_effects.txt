@@ -1,0 +1,131 @@
+gdh_arms_production_boost = {
+	if = {
+		limit = {
+			has_idea = gdh_sell_equipment14
+		}
+		swap_ideas = {
+			remove_idea = gdh_sell_equipment14
+			add_idea = gdh_sell_equipment15
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = gdh_sell_equipment13
+		}
+		swap_ideas = {
+			remove_idea = gdh_sell_equipment13
+			add_idea = gdh_sell_equipment14
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = gdh_sell_equipment12
+		}
+		swap_ideas = {
+			remove_idea = gdh_sell_equipment12
+			add_idea = gdh_sell_equipment13
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = gdh_sell_equipment11
+		}
+		swap_ideas = {
+			remove_idea = gdh_sell_equipment11
+			add_idea = gdh_sell_equipment12
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = gdh_sell_equipment10
+		}
+		swap_ideas = {
+			remove_idea = gdh_sell_equipment10
+			add_idea = gdh_sell_equipment11
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = gdh_sell_equipment9
+		}
+		swap_ideas = {
+			remove_idea = gdh_sell_equipment9
+			add_idea = gdh_sell_equipment10
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = gdh_sell_equipment8
+		}
+		swap_ideas = {
+			remove_idea = gdh_sell_equipment8
+			add_idea = gdh_sell_equipment9
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = gdh_sell_equipment7
+		}
+		swap_ideas = {
+			remove_idea = gdh_sell_equipment7
+			add_idea = gdh_sell_equipment8
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = gdh_sell_equipment6
+		}
+		swap_ideas = {
+			remove_idea = gdh_sell_equipment6
+			add_idea = gdh_sell_equipment7
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = gdh_sell_equipment5
+		}
+		swap_ideas = {
+			remove_idea = gdh_sell_equipment5
+			add_idea = gdh_sell_equipment6
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = gdh_sell_equipment4
+		}
+		swap_ideas = {
+			remove_idea = gdh_sell_equipment4
+			add_idea = gdh_sell_equipment5
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = gdh_sell_equipment3
+		}
+		swap_ideas = {
+			remove_idea = gdh_sell_equipment3
+			add_idea = gdh_sell_equipment4
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = gdh_sell_equipment2
+		}
+		swap_ideas = {
+			remove_idea = gdh_sell_equipment2
+			add_idea = gdh_sell_equipment3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = gdh_sell_equipment1
+		}
+		swap_ideas = {
+			remove_idea = gdh_sell_equipment1
+			add_idea = gdh_sell_equipment2
+		}
+	}
+	else = {
+		add_ideas = gdh_sell_equipment1
+	}
+}

@@ -16,3 +16,9 @@ workshops_storage_taa = {
 	precision = 0
 	category = country
 }
+texas_rework_market_factory_num = {
+	color_type = good
+	value_type = number
+	precision = 0
+	category = country
+}

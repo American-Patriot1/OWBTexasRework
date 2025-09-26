@@ -1,0 +1,70 @@
+
+guiTypes = {
+	containerWindowType = { #Display GUI
+		name = "genete_market_decision_window"
+		position = { x = -50 y = -20 }
+		size = { width = 500 height = 520 }
+		#show_sound = menu_open_window
+		clipping = no
+		background = {
+			name = "background"
+			position = { x = 5 y = -20 }
+			alwaystransparent = yes
+			spriteType = "GFX_gente_market_background"
+			#scale = 0.5
+		}
+
+		instantTextBoxType = {
+			name ="stock_total"
+			position = { x= 20 y = 0 }
+			font = "hoi_18mbs"
+			text = "gdh_info_display_stock"
+			#format = center
+			#maxWidth = 80
+			#maxHeight = 24
+			#fixedsize = yes
+		}
+		instantTextBoxType = {
+			name ="factory_total"
+			position = { x= 20 y = 25 }
+			font = "hoi_18mbs"
+			text = "gdh_info_display_factories"
+			#format = center
+			#maxWidth = 80
+			#maxHeight = 24
+			#fixedsize = yes
+		}
+		instantTextBoxType = {
+			name ="production_total"
+			position = { x= 20 y = 55 }
+			font = "hoi_18mbs"
+			text = "gdh_info_display_production"
+			#format = center
+			#maxWidth = 80
+			#maxHeight = 24
+			#fixedsize = yes
+			pdx_tooltip = gdh_info_display_production_tt
+		}
+		instantTextBoxType = {
+			name ="sell_price"
+			position = { x= 300 y = 45 }
+			font = "hoi_18mbs"
+			text = "gdh_info_display_sell_price"
+			#format = center
+			#maxWidth = 80
+			#maxHeight = 24
+			#fixedsize = yes
+			pdx_tooltip = gdh_info_display_sell_price_tt
+		}
+		buttonType = {
+			name = "increase_price"
+			position = { x = 445 y = 30 }
+			spriteType = "GFX_arrow_up_small"
+		}
+		buttonType = {
+			name = "decrease_price"
+			position = { x = 445 y = 60 }
+			spriteType = "GFX_arrow_down_small"
+		}
+	}
+}

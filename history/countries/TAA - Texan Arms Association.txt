@@ -2,6 +2,11 @@
 #Starting TAA Workshops
 @TAA_STARTING_WORKSHOPS = 0
 
+#Starting market factories
+@TAA_STARTING_MARKET_FACTORIES = 1
+
+
+
 capital = 796
 oob = "TAA_2275"
 
@@ -114,6 +119,11 @@ set_truce = {
 	days = 730
 }
 
+
+set_variable = { texas_rework_market_factories_taa = @TAA_STARTING_MARKET_FACTORIES }
+
+set_temp_variable = { texas_rework_add_market_factories_taa = @TAA_STARTING_MARKET_FACTORIES }
+texas_rework_change_market_factories = yes
 
 set_variable = { texas_rework_workshops_taa = @TAA_STARTING_WORKSHOPS }
 

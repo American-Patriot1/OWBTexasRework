@@ -1,0 +1,18 @@
+GDH_villa_construction = {
+	allowed = { tag = GDH }
+	visible_when_empty = yes
+}
+GDH_market_decision_view = {
+	priority = 76
+	allowed = { tag = GDH }
+	visible_when_empty = yes
+	scripted_gui = gdh_market_decision_gui
+}
+GDH_market_consumer_view = {
+	allowed = { NOT = { tag = GDH } }
+	on_map_area = {
+		state = 471
+		name = GDH_gun_market_area
+		zoom = 250
+	}
+}

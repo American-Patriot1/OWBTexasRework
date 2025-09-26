@@ -1,0 +1,45 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			GDH = {
+				set_variable = {
+					gdh_base_factory_ratio = 10
+				}
+				every_owned_state = {
+					add_to_variable = {
+						PREV.arms_factory_sum = arms_factory_level
+					}
+				}
+				set_variable = { gdh_weaponry_sell_price = 5 }
+				set_country_flag = selling_standard_weaponry
+				add_to_variable = {
+					gdh_current_stock = 400
+				}
+			}
+		}
+	}
+	on_monthly_GDH = {
+		effect = {
+			set_temp_variable = {
+				var = temp_equipment_to_add
+				value = gdh_base_factory_ratio
+			}
+			clear_variable = arms_factory_sum
+			every_owned_state = {
+				add_to_variable = {
+					PREV.arms_factory_sum = arms_factory_level
+				}
+			}
+			set_temp_variable = { bonus_production = modifier@gdh_equipment_production_bonus }
+			add_to_temp_variable = { bonus_production = 1 }
+			multiply_temp_variable = {
+				temp_equipment_to_add = bonus_production
+			}
+			multiply_temp_variable = { temp_equipment_to_add = arms_factory_sum }
+			add_to_variable = {
+				gdh_current_stock = temp_equipment_to_add
+			}
+		}
+	}
+}
+# vim: set ft=pdx ts=2 :

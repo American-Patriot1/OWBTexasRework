@@ -1,0 +1,31 @@
+scripted_gui = {
+	gdh_market_decision_gui = {
+		context_type = decision_category
+		window_name = "genete_market_decision_window"
+
+		visible = {
+			has_global_flag = caps_enabled_global_flag
+		}
+		effects = {
+			increase_price_click = {
+				add_to_variable = {
+					var = gdh_weaponry_sell_price
+					value = 5
+				}
+			}
+			decrease_price_click = {
+				clamp_variable = {
+					var = gdh_weaponry_sell_price
+					min = 5
+				}
+				add_to_variable = {
+					var = gdh_weaponry_sell_price
+					value = -5
+				}
+			}
+		}
+		triggers = {
+		}
+
+	}
+}

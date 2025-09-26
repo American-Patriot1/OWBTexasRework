@@ -145,6 +145,7 @@
     gun_runner_equip_7:0 "LMG"
     gun_runner_equip_8:0 "Anti-Tank Rifles"
     gun_runner_amount_tt:0 "[?global.gun_runner_inventory]"
+    taa_runner_amount_tt:0 "[?global.taa_runner_inventory]"
     organization_floor_modifier_1:0 "Ballistic Organization Opinion"
   ###Motorized Runner Data
     buy_infantry_equipment:0 "Infantry Equipment Order"

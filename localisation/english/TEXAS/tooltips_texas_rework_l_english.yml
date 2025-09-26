@@ -30,6 +30,9 @@
   workshops_storage_tbh: "Stored Workshops"
   workshops_storage_taa: "Stored Workshops"
 
+  texas_rework_taa_arms_merchant: "Market Producer"
+  texas_rework_market_factory_num: "Market Factories"
+  texas_rework_change_market_factories: "Change Market Factories by [?TAA.texas_rework_add_market_factories_taa|G+]"
 
   texas_rework_lend_lease_or_volunteer_intervention_support: "Can Only Lend Lease or Send Volunteers to Supported Countries in Active Intevention Zones"
   texas_rework_lend_lease_or_volunteer_intervention_support_tt: "$texas_rework_lend_lease_or_volunteer_intervention_support$"
