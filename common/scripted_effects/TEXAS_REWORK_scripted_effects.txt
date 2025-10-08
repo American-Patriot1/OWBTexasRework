@@ -12,8 +12,8 @@ texas_rework_change_workshops = {
 }
 
 texas_rework_change_market_factories = {
-	custom_effect_tooltip = texas_rework_change_workshops_taa_tt
-	add_to_variable = { texas_rework_market_equipment_taa = texas_rework_add_market_factories_taa }
+	custom_effect_tooltip = texas_rework_change_market_factories
+	add_to_variable = { texas_rework_market_factories_taa = texas_rework_add_market_factories_taa }
 }
 
 texas_rework_increase_volunteer_size = {

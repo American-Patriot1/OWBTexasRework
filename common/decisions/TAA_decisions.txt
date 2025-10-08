@@ -1,81 +1,11 @@
 #needed road 9719 to 9725 and 11483 to 11490 to 11498 to 11502
-GDH_market_decision_view = {
-	GDH_upgrade_marketed_technology = {
-		icon = generic_ignite_civil_war
+TAA_market_decision_view = {
+	TAA_fullfill_contract = {
 		visible = {
 			always = yes
 		}
 		ai_will_do = {
-			factor = 45
-		}
-		available = {
-			custom_trigger_tooltip = {
-				if = {
-					limit = {
-						has_tech = ballistic_weaponry_tech_1
-					}
-					NOT = { has_country_flag = selling_ballistic_weaponry_1 }
-				}
-				else_if = {
-					limit = {
-						has_tech = ballistic_weaponry_tech_2
-					}
-					NOT = { has_country_flag = selling_ballistic_weaponry_2 }
-				}
-				else_if = {
-					limit = {
-						has_tech = ballistic_weaponry_tech_3
-					}
-					NOT = { has_country_flag = selling_ballistic_weaponry_3 }
-				}
-				else = {
-					always = no
-				}
-				tooltip = ghd_update_market_technology
-			}
-		}
-		custom_cost_trigger = {
-			set_temp_variable = {
-				temp_cap_cost = 150
-			}
-			custom_caps_cost_trigger = yes
-		}
-		custom_cost_text = "caps_decisions_cost_text"
-		complete_effect = {
-			set_temp_variable = { caps_to_add = -150 }
-			add_caps = yes
-			add_to_variable = {
-				gdh_base_factory_ratio = -10
-			}
-			clamp_variable = {
-				var = gdh_base_factory_ratio
-				min = 5
-			}
-			if = {
-				limit = {
-					GDH = {
-						has_country_flag = selling_ballistic_weaponry_2
-					}
-				}
-				set_country_flag = selling_ballistic_weaponry_3
-			}
-			else_if = {
-				limit = {
-					GDH = {
-						has_country_flag = selling_ballistic_weaponry_1
-					}
-				}
-				set_country_flag = selling_ballistic_weaponry_2
-			}
-			else_if = {
-				limit = {
-					GDH = {
-						has_country_flag = selling_standard_weaponry
-					}
-				}
-				set_country_flag = selling_ballistic_weaponry_1
-			}
-			custom_effect_tooltip = gdh_upgrade_equipment_tt
+			factor = 100
 		}
 	}
 }

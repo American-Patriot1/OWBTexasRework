@@ -1,0 +1,14 @@
+TAA_market_decision_view = {
+	priority = 76
+	allowed = { tag = TAA }
+	visible_when_empty = yes
+	scripted_gui = gdh_market_decision_gui
+}
+TAA_market_consumer_view = {
+	allowed = { NOT = { tag = TAA } }
+	on_map_area = {
+		state = 471
+		name = GDH_gun_market_area
+		zoom = 250
+	}
+}

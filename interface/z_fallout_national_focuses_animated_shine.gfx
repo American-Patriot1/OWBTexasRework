@@ -1,0 +1,50 @@
+spriteTypes = {
+	frameAnimatedSpriteType = {
+		name = "GFX_goal_animated_mojave_drive_inn_shine"
+		texturefile = "gfx/interface/goals/animated/animated_mojave_drive_inn.dds"
+		noOfFrames = 6
+		animation_rate_fps = 12
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_goal_animated_mtm_another_settlement_shine"
+		texturefile = "gfx/interface/goals/animated/animated_mtm_another_settlement.dds"
+		noOfFrames = 6
+		animation_rate_fps = 8
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_goal_animated_TPA_ManifestDestiny_shine"
+		texturefile = "gfx/interface/goals/animated/TPA_ManifestDestiny.dds"
+		noOfFrames = 20
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_goal_animated_TPA_ManifestLogo_shine"
+		texturefile = "gfx/interface/goals/animated/TPA_ManifestLogo.dds"
+		noOfFrames = 20
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_goal_clk_tick_shine"
+		texturefile = "gfx/interface/goals/unique/CLK/tick.dds"
+		noOfFrames = 6
+		animation_rate_fps = 15
+		looping = yes
+		play_on_show = yes
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_goal_BRA_greatest_day_shine"
+		texturefile = "gfx/interface/goals/animated/BRA_greatest_day.dds"
+		noOfFrames = 40
+		animation_rate_fps = 20
+		looping = yes
+		play_on_show = yes
+	}
+}

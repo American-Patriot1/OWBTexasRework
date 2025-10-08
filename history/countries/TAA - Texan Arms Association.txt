@@ -131,6 +131,8 @@ set_temp_variable = { TAA_workshops_to_add = @TAA_STARTING_WORKSHOPS }
 texas_rework_change_workshops = yes
 
 add_dynamic_modifier = { modifier = texas_rework_factories_not_workshops_taa }
+add_dynamic_modifier = { modifier = texas_rework_taa_arms_merchant }
+
 
 add_ideas = {
 	TAA_the_master_gunsmiths

@@ -30,6 +30,7 @@
   workshops_storage_tbh: "Stored Workshops"
   workshops_storage_taa: "Stored Workshops"
 
+  texas_rework_taa_arms_merchant: "Texas Arms Merchant"
   texas_rework_taa_arms_merchant: "Market Producer"
   texas_rework_market_factory_num: "Market Factories"
   texas_rework_change_market_factories: "Change Market Factories by [?TAA.texas_rework_add_market_factories_taa|G+]"
