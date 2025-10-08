@@ -282,6 +282,7 @@ add_ideas = {
 	scavenging_law
 	currencytexdollar
 	texas_rework_rangers
+	texas_rework_progress_act
 }
 
 add_equipment_to_stockpile = {

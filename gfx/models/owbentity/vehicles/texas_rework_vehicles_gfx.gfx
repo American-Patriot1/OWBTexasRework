@@ -1,0 +1,16 @@
+objectTypes = {
+	pdxmesh = {
+		name = "apc_5_mesh"
+		file = "gfx/models/owbentity/vehicles/air_transport_4/vertibirdtransport1.mesh"
+		animation = { id = "idle"			type = "vertibird_idle_animation2" }
+		animation = { id = "move"			type = "vertibird_idle_animation1" }
+		animation = { id = "attack"			type = "vertibird_idle_animation1" }
+		animation = { id = "defend"			type = "vertibird_idle_animation1" }
+
+		meshsettings = {
+			texture_diffuse = "vertibird_diffuse1.dds"
+			texture_normal = "vertibird_normal1.dds"
+			texture_specular = "vertibird_specular1.dds"
+		}
+	}
+}

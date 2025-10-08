@@ -1,5 +1,7 @@
 ﻿add_namespace = nf_tbh
 
+# https://hoi4.paradoxwikis.com/Effect 	<- (laugh all you want but this saves time)
+
 country_event = { # tbh intro Rhombus Chase
 	immediate = { log = "[GetDateText]: [Root.GetName]: event nf_tbh.1" }
 	id = nf_tbh.1

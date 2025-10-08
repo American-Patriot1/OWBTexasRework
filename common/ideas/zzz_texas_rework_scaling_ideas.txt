@@ -1,0 +1,14 @@
+#go here nerd https://hoi4.paradoxwikis.com/Modifiers
+ideas = {
+	country = {
+		texas_rework_progress_act = {
+			picture = generic_illiteracy
+			allowed = {
+				always = yes
+			}
+			modifier = {
+				research_speed_factor = -10
+			}
+		}
+	}
+}

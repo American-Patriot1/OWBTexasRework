@@ -1,0 +1,17 @@
+
+animation = {
+	name = "vertibird_idle_animation1"
+	file = "vehicles/air_transport_4/arggggg.anim"
+}
+animation = {
+	name = "vertibird_idle_animation2"
+	file = "vehicles/air_transport_4/still.anim"
+}
+# animation = {
+# 	name = "vertibird_idle_animation3"
+# 	file = "vehicles/air_transport_4/arggggg.anim"
+# }
+# animation = {
+# 	name = "vertibird_idle_animation4"
+# 	file = "vehicles/air_transport_4/training1.anim"
+# }
