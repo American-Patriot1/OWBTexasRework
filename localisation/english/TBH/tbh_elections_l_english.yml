@@ -1,0 +1,29 @@
+﻿l_english:
+  # GUI
+  # Defined Text
+  trinity_name: "Trinity"
+  colorado_name: "Colorado"
+  lone_star_name: "Lone Star"
+  rio_grande_name: "Rio Grande"
+  pecos_name: "Pecos"
+
+  keats_elections_name: "Keats"
+  cho_bang_elections_name: "Cho Bang"
+  rusk_elections_name: "Rusk"
+  secret_boi_elections_name: "Todd Howitzer"
+
+
+  trinity_first_candidate_support: "[?global.texas_rework_first_candidate_support_array^1]%"
+  colorado_first_candidate_support: "[?global.texas_rework_first_candidate_support_array^2]%"
+  lone_star_first_candidate_support: "[?global.texas_rework_first_candidate_support_array^3]%"
+  rio_grande_first_candidate_support: "[?global.texas_rework_first_candidate_support_array^4]%"
+  pecos_first_candidate_support: "[?global.texas_rework_first_candidate_support_array^5]%"
+
+  trinity_second_candidate_support: "[?global.texas_rework_first_candidate_support_array^1]%"
+  colorado_second_candidate_support: "[?global.texas_rework_first_candidate_support_array^2]%"
+  lone_star_second_candidate_support: "[?global.texas_rework_first_candidate_support_array^3]%"
+  rio_grande_second_candidate_support: "[?global.texas_rework_first_candidate_support_array^4]%"
+  pecos_second_candidate_support: "[?global.texas_rework_first_candidate_support_array^5]%"
+
+  texas_rework_ELECTIONS_BUTTON_OPEN_TEXT: "Map of Elections"
+  texas_rework_ELECTIONS_BUTTON_OPEN_TEXT_BLOCKED: "§gMap of Elections§!"

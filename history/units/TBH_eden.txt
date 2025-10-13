@@ -1,0 +1,58 @@
+﻿units = {
+	division = {
+		name = "Eden Rangers"
+		location = 11615
+		division_template = "Ranger Company"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Mountain Patrol"
+		location = 11492
+		division_template = "Patrol Company"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Kerville Patrol"
+		location = 11480
+		division_template = "Patrol Company"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Bradly Patrol"
+		location = 11578
+		division_template = "Patrol Company"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Jungle Patrol"
+		location = 2283
+		division_template = "Patrol Company"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Scorpion Patrol"
+		location = 2850
+		division_template = "Patrol Company"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Jhonson Patrol"
+		location = 11502
+		division_template = "Patrol Company"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "San Saba Patrol"
+		location = 11574
+		division_template = "Patrol Company"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+}

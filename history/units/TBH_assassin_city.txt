@@ -1,0 +1,9 @@
+﻿units = {
+	division = {
+		name = "Paris Patrol"
+		location = 12039
+		division_template = "Patrol Company"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+}

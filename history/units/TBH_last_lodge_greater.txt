@@ -1,0 +1,16 @@
+﻿units = {
+	division = {
+		name = "Lodge Rangers"
+		location = 12070
+		division_template = "Ranger Company"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Vernon Patrol"
+		location = 12032
+		division_template = "Patrol Company"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+}

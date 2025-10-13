@@ -1,4 +1,4 @@
-This is a document about handling NCR elections. It was scripted by @CGS, any questions/issues go to him
+This is a document about handling texas_rework elections. It was scripted by @CGS, any questions/issues go to him
 
 In elections each candidate and state gets an ID:
 States' IDs:
@@ -14,31 +14,31 @@ Candidates' IDs
 	Hayes -- 3
 	Secret boi -- 4
 
-To start elections you just need to set up variable `global.first_candidate_id` and `global.second_candidate_id`
+To start elections you just need to set up variable `global.texas_rework_first_candidate_id` and `global.texas_rework_second_candidate_id`
 
 Unlock elections window:
 	Still WIP, use debug decisions
 
-To add support use `ncr_elections_add_support_effect` effect:
+To add support use `texas_rework_elections_add_support_effect` effect:
 	To use this effect you need to set up state ID and candidate's ID and support to add, use the following temp vars: state_id, candidate_id, support_to_add (must be positive)
 	Take not of the constants on top of the file with this effect, they allow to adjust how elections will function
 
-ncr_elections_remove_support_both_effect removes support in state from both canidates
-ncr_elections_remove_support_effect removes support from one candidate
+texas_rework_elections_remove_support_both_effect removes support in state from both canidates
+texas_rework_elections_remove_support_effect removes support from one candidate
 
-To get the winner, run `calculate_ncr_election_winner_trigger` trigger, it will give result in ncr_elections_winner_id_temp variable:
+To get the winner, run `calculate_texas_rework_election_winner_trigger` trigger, it will give result in texas_rework_elections_winner_id_temp variable:
 	Example of usage:
 completion_effect = {
 	if = {
 		limit = {
-			calculate_ncr_election_winner_trigger = yes
-			check_variable = { calculate_ncr_election_winner_trigger = -1 }
+			calculate_texas_rework_election_winner_trigger = yes
+			check_variable = { calculate_texas_rework_election_winner_trigger = -1 }
 		}
 		civil_war_go_brrr_effect = yes
 	}
 }
 
-Alternatively, use `calculate_ncr_elections_winner_effect` effect, which sets constant variable ncr_elections_winner_id to the winner. -1, if there is no winner
+Alternatively, use `calculate_texas_rework_elections_winner_effect` effect, which sets constant variable texas_rework_elections_winner_id to the winner. -1, if there is no winner
 
 
-To make elections visible in dropdown, add `ncr_elections_gui_allowed_flag` flag to NCR. If you want to block access to the GUI, clear this flag.
+To make elections visible in dropdown, add `texas_rework_elections_gui_allowed_flag` flag to TBH. If you want to block access to the GUI, clear this flag.

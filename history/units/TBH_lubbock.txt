@@ -1,0 +1,23 @@
+﻿units = {
+	division = {
+		name = "Lubbock Rangers"
+		location = 11713
+		division_template = "Ranger Company"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Snyder Patrol"
+		location = 11683
+		division_template = "Patrol Company"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Muleshoe Patrol"
+		location = 2789
+		division_template = "Patrol Company"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+}

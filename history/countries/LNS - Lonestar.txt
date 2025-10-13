@@ -152,7 +152,6 @@ recruit_character = LNS_centurion_renatus
 recruit_character = LNS_cyamus_asina
 recruit_character = LNS_eastern_hodge
 recruit_character = LNS_faustus_of_amarillo
-recruit_character = LNS_ralph_murdok
 recruit_character = LNS_wound_breeder
 recruit_character = LNS_marcus_fletcher
 recruit_character = LNS_arnold_gore

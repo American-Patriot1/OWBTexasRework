@@ -1,0 +1,16 @@
+﻿units = {
+	division = {
+		name = "Paris Rangers"
+		location = 12039
+		division_template = "Ranger Company"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Sulphertown Patrol"
+		location = 11987
+		division_template = "Patrol Company"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+}

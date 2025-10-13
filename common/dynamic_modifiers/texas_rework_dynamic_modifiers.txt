@@ -47,6 +47,13 @@ texas_rework_taa_arms_merchant = {
 	}
 }
 
+texas_rework_party_popularity = {
+	icon = GFX_idea_VEG_Middle_Class_Clientele
+	modifier = {
+		texas_rework_market_factory_num = texas_rework_market_factories_taa
+	}
+}
+
 
 
 

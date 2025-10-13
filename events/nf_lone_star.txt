@@ -583,6 +583,14 @@ country_event = { # The Old Order Triumphant
 
 	option = {
 		name = nf_lns.11.a
+		every_state = {
+			limit = {
+				is_core_of = LNS
+			}
+			set_state_flag = do_not_exodus
+			remove_core_of = LNS
+			remove_claim_by = LNS
+		}
 		LUB = {
 			928 = {
 				remove_core_of = LNS
@@ -607,6 +615,9 @@ country_event = { # The Old Order Triumphant
 			every_unit_leader = {
 				set_nationality = TBH
 			}
+			delete_unit = {
+				disband = yes
+			}
 		}
 		LNS = {
 			every_state = {
@@ -616,9 +627,26 @@ country_event = { # The Old Order Triumphant
 				set_state_flag = do_not_exodus
 			}
 		}
-		annex_country = {
-			target = LNS
-			transfer_troops = yes
+		TBH = {
+			annex_country = {
+				target = LNS
+				transfer_troops = yes
+			}
+			load_oob = "TBH_i_20"
+		}
+		every_state = {
+			limit = {
+				is_core_of = LUB
+				has_state_flag = do_not_exodus
+			}
+			clr_state_flag = do_not_exodus
+		}
+		every_state = {
+			limit = {
+				is_core_of = TBH
+				has_state_flag = do_not_exodus
+			}
+			clr_state_flag = do_not_exodus
 		}
 	}
 }

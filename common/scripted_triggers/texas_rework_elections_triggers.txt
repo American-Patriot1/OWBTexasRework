@@ -1,14 +1,14 @@
 # Scripted by @CGS
 
-calculate_ncr_election_state_frames_trigger = {
+calculate_texas_rework_election_state_frames_trigger = {
 	# this trigger is used in elections GUI to set up colors of states on a big map
 
 	# Add dump value
 	add_to_temp_array = { state_frame_temp_array = 0 }
 
 	all_of = {
-		array = NCR.states_indexes_array
-		value = ncr_state_id
+		array = TBH.states_indexes_array
+		value = texas_rework_state_id
 
 		# global.first_candidate_support^value -- first candidate's support
 		# global.second_candidate_support^value -- second candidate's support
@@ -16,18 +16,18 @@ calculate_ncr_election_state_frames_trigger = {
 		if = {
 			# First candidate won
             limit = {
-                check_variable = { global.first_candidate_support_array^ncr_state_id > 40 }
-                check_variable = { global.first_candidate_support_array^ncr_state_id > global.second_candidate_support_array^ncr_state_id }
+                check_variable = { global.texas_rework_first_candidate_support_array^texas_rework_state_id > 40 }
+                check_variable = { global.texas_rework_first_candidate_support_array^texas_rework_state_id > global.texas_rework_first_candidate_support_array^texas_rework_state_id }
             }
-            add_to_temp_array = { state_frame_temp_array = global.first_candidate_id }
+            add_to_temp_array = { state_frame_temp_array = global.texas_rework_first_candidate_id }
         }
         else_if = {
 			# Second candidate won
             limit = {
-                check_variable = { global.second_candidate_support_array^ncr_state_id > 40 }
-                check_variable = { global.second_candidate_support_array^ncr_state_id > global.first_candidate_support_array^ncr_state_id }
+                check_variable = { global.texas_rework_first_candidate_support_array^texas_rework_state_id > 40 }
+                check_variable = { global.texas_rework_first_candidate_support_array^texas_rework_state_id > global.texas_rework_first_candidate_support_array^texas_rework_state_id }
             }
-            add_to_temp_array = { state_frame_temp_array = global.second_candidate_id }
+            add_to_temp_array = { state_frame_temp_array = global.texas_rework_second_candidate_id }
         }
         else = {
             # else state is neutral
@@ -36,7 +36,7 @@ calculate_ncr_election_state_frames_trigger = {
 	}
 }
 
-calculate_ncr_elections_progressbars_trigger = {
+calculate_texas_rework_elections_progressbars_trigger = {
 	# this trigger is used in elections GUI to set up arrays with values for frames of progressbars
 
 	# Add dump value
@@ -44,56 +44,56 @@ calculate_ncr_elections_progressbars_trigger = {
 	add_to_temp_array = { second_candidate_progress_frames_array = 0 }
 
 	all_of = {
-		array = NCR.states_indexes_array
-		value = ncr_state_id
+		array = TBH.states_indexes_array
+		value = texas_rework_state_id
 
-		# global.first_candidate_support_array^ncr_state_id -- first candidate's support
-		# global.second_candidate_support_array^ncr_state_id -- second candidate's support
+		# global.texas_rework_first_candidate_support_array^texas_rework_state_id -- first candidate's support
+		# global.texas_rework_first_candidate_support_array^texas_rework_state_id -- second candidate's support
 
-		add_to_temp_array = { first_candidate_progress_frames_array = global.first_candidate_support_array^ncr_state_id }
+		add_to_temp_array = { first_candidate_progress_frames_array = global.texas_rework_first_candidate_support_array^texas_rework_state_id }
 
 		set_temp_variable = { second_candidate_support_inverted = 100 }
-		subtract_from_temp_variable = { second_candidate_support_inverted = global.second_candidate_support_array^ncr_state_id }
+		subtract_from_temp_variable = { second_candidate_support_inverted = global.texas_rework_first_candidate_support_array^texas_rework_state_id }
 		add_to_temp_array = { second_candidate_progress_frames_array = second_candidate_support_inverted }
 
 		always = yes
 	}
 }
 
-calculate_ncr_election_winner_trigger = {
-	# this trigger searches for a winner of elections and returns his ID into ncr_elections_winner_id_temp variable. If no one won, it returns -1
+calculate_texas_rework_election_winner_trigger = {
+	# this trigger searches for a winner of elections and returns his ID into texas_rework_elections_winner_id_temp variable. If no one won, it returns -1
 	# Note that this trigger always returns YES
 
 	set_temp_variable = { first_candidate_states = 0 }
 	set_temp_variable = { second_candidate_states = 0 }
 
 	all_of = {
-		array = NCR.states_indexes_array
-		value = ncr_state_id
+		array = TBH.states_indexes_array
+		value = texas_rework_state_id
 
-		# global.first_candidate_support_array^ncr_state_id -- first candidate's support
-		# global.second_candidate_support_array^ncr_state_id -- second candidate's support
+		# global.texas_rework_first_candidate_support_array^texas_rework_state_id -- first candidate's support
+		# global.texas_rework_first_candidate_support_array^texas_rework_state_id -- second candidate's support
 
 		if = {
 			limit = {
-				check_variable = { global.first_candidate_support_array^ncr_state_id < 40 }
-				check_variable = { global.second_candidate_support_array^ncr_state_id < 40 }
+				check_variable = { global.texas_rework_first_candidate_support_array^texas_rework_state_id < 40 }
+				check_variable = { global.texas_rework_first_candidate_support_array^texas_rework_state_id < 40 }
 			}
 			# pass, no one gets anything
 		}
 		else_if = { # in case state is draw
-			limit = { check_variable = { global.first_candidate_support_array^ncr_state_id = global.second_candidate_support_array^ncr_state_id } }
+			limit = { check_variable = { global.texas_rework_first_candidate_support_array^texas_rework_state_id = global.texas_rework_first_candidate_support_array^texas_rework_state_id } }
 			# pass, no one gets anything
 		}
 		else_if = {
 			limit = {
-				check_variable = { global.first_candidate_support_array^ncr_state_id > global.second_candidate_support_array^ncr_state_id }
+				check_variable = { global.texas_rework_first_candidate_support_array^texas_rework_state_id > global.texas_rework_first_candidate_support_array^texas_rework_state_id }
 			}
 			add_to_temp_variable = { first_candidate_states = 1 }
 		}
 		else_if = {
 			limit = {
-				check_variable = { global.second_candidate_support_array^ncr_state_id > global.first_candidate_support_array^ncr_state_id }
+				check_variable = { global.texas_rework_first_candidate_support_array^texas_rework_state_id > global.texas_rework_first_candidate_support_array^texas_rework_state_id }
 			}
 			add_to_temp_variable = { second_candidate_states = 1 }
 		}
@@ -103,16 +103,16 @@ calculate_ncr_election_winner_trigger = {
 		limit = {
 			check_variable = { first_candidate_states > 2 }
 		}
-		set_temp_variable = { ncr_elections_winner_id_temp = global.first_candidate_id }
+		set_temp_variable = { texas_rework_elections_winner_id_temp = global.texas_rework_first_candidate_id }
 	}
 	else_if = {
 		limit = {
 			check_variable = { second_candidate_states > 2 }
 		}
-		set_temp_variable = { ncr_elections_winner_id_temp = global.second_candidate_id }
+		set_temp_variable = { texas_rework_elections_winner_id_temp = global.texas_rework_second_candidate_id }
 	}
 	else = {
-		set_temp_variable = { ncr_elections_winner_id_temp = -1 }
+		set_temp_variable = { texas_rework_elections_winner_id_temp = -1 }
 	}
 	always = yes
 }

@@ -1,0 +1,419 @@
+debug_decisions = {
+	turn_off_debug_mode = {
+		complete_effect = {
+			clr_global_flag = debug
+			clr_global_flag = debug_logs
+		}
+	}
+
+	update_distances = {
+		complete_effect = {
+			update_country_distances = yes
+		}
+	}
+
+	update_all_distances = {
+		complete_effect = {
+			random_country = {
+				#set_all_country_distances = yes
+			}
+		}
+	}
+
+	enable_debug_logging = {
+		visible = {
+			NOT = { has_global_flag = debug_logs }
+		}
+		complete_effect = {
+			set_global_flag = debug_logs
+		}
+	}
+
+	disable_debug_logging = {
+		visible = {
+			has_global_flag = debug_logs
+		}
+		complete_effect = {
+			clr_global_flag = debug_logs
+		}
+	}
+
+	kill_leader = {
+		complete_effect = {
+			kill_country_leader = yes
+		}
+	}
+
+	add_dynamic_idea = {
+		complete_effect = {
+			add_dynamic_modifier = { modifier = itz_idea_dynamic_harvest }
+		}
+	}
+
+	start_ncr_congress_crisis = {
+		visible = {
+			NOT = { has_global_flag = ncr_congress_dissolved }
+			country_exists = NCR
+			OR = {
+				tag = NCR
+				is_in_faction_with = NCR
+			}
+		}
+		available = {
+			ncr_congress_has_no_active_crisis = yes
+		}
+		complete_effect = {
+			set_temp_variable = { ncr_crisis_id = 1 }
+			ncr_congress_start_crisis = yes
+		}
+	}
+
+	end_ncr_congress_crisis = {
+		visible = {
+			NOT = { has_global_flag = ncr_congress_dissolved }
+			country_exists = NCR
+			OR = {
+				tag = NCR
+				is_in_faction_with = NCR
+			}
+		}
+		available = {
+			set_temp_variable = { ncr_crisis_id = 1 }
+			ncr_congress_has_current_crisis = yes
+		}
+		complete_effect = {
+			ncr_congress_end_current_crisis = yes
+		}
+	}
+
+	set_ncr_congress_random_slider_values = {
+		visible = {
+			NOT = { has_global_flag = ncr_congress_dissolved }
+			country_exists = NCR
+			OR = {
+				tag = NCR
+				is_in_faction_with = NCR
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = "You can't see it, but it does stuff :P"
+			hidden_effect = {
+				# NCR slider variables
+				set_variable_to_random = { var = global.ncr_congress_projected_candidate min = 1 max = 4 integer = yes }
+				set_variable_to_random = { var = global.ncr_congress_value_executive min = 0 max = 100 }
+				set_variable_to_random = { var = global.ncr_congress_value_war min = 0 max = 100 }
+				set_variable_to_random = { var = global.ncr_congress_value_corruption min = 0 max = 100 }
+				set_variable_to_random = { var = global.ncr_congress_value_equality min = 0 max = 100 }
+				set_variable_to_random = { var = global.ncr_congress_value_zeal min = 0 max = 100 }
+				every_country = {
+					limit = {
+						OR = {
+							tag = NCR
+							is_in_faction_with = NCR
+						}
+					}
+					# slider variables
+					set_variable_to_random = { var = ncr_congress_projected_candidate min = 1 max = 4 integer = yes }
+					set_variable_to_random = { var = ncr_congress_value_executive min = 0 max = 100 }
+					set_variable_to_random = { var = ncr_congress_value_war min = 0 max = 100 }
+					set_variable_to_random = { var = ncr_congress_value_corruption min = 0 max = 100 }
+					set_variable_to_random = { var = ncr_congress_value_equality min = 0 max = 100 }
+					set_variable_to_random = { var = ncr_congress_value_zeal min = 0 max = 100 }
+				}
+				if = {
+					limit = {
+						has_variable = show_ncr_congress_window
+					}
+					# update the sliders, in case window is opened
+					set_variable = { ncr_congress_slider_target = THIS.id }
+					set_ncr_congress_slider_values = yes
+				}
+			}
+		}
+	}
+
+	dissolve_ncr_congress = {
+		visible = {
+			NOT = { has_global_flag = ncr_congress_dissolved }
+			country_exists = NCR
+			OR = {
+				tag = NCR
+				is_in_faction_with = NCR
+			}
+		}
+		complete_effect = {
+			dissolve_ncr_congress = yes
+		}
+	}
+
+	allow_ncr_elections = {
+		allowed = {
+			OR = {
+				tag = NCR
+				tag = EUR
+			}
+		}
+		fire_only_once = no
+		days_re_enable = 1
+		complete_effect = {
+			set_country_flag = ncr_elections_gui_allowed_flag
+		}
+	}
+
+	set_ncr_elections = {
+		allowed = {
+			OR = {
+				tag = NCR
+				tag = EUR
+			}
+		}
+		complete_effect = {
+			set_variable = { global.first_candidate_id = 1 }
+			set_variable = { global.second_candidate_id = 2 }
+		}
+	}
+	add_support_first = {
+		allowed = {
+			OR = {
+				tag = NCR
+				tag = EUR
+			}
+		}
+		complete_effect = {
+			set_temp_variable = { state_id = 5 }
+			set_temp_variable = { candidate_id = global.first_candidate_id }
+			set_temp_variable = { support_to_add = 40 }
+			ncr_elections_add_support_effect = yes
+		}
+	}
+	add_support_second = {
+		allowed = {
+			OR = {
+				tag = NCR
+				tag = EUR
+			}
+		}
+		complete_effect = {
+			set_temp_variable = { state_id = 5 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			ncr_elections_add_support_effect = yes
+		}
+	}
+	start_ncr_civil_war = {
+		allowed = {
+			tag = NCR
+		}
+		fire_only_once = no
+		days_re_enable = 1
+		complete_effect = {
+			complete_national_focus = ncr_california_in_crisis
+		}
+	}
+
+	join_faction = {
+		complete_effect = {
+			create_or_join_nova_legion = yes
+		}
+	}
+
+	remove = {
+		complete_effect = {
+		}
+		available = {
+			has_war_with_major = yes
+		}
+		modifier = {
+		}
+		days_remove = 3
+	}
+
+	load_hidden_tree = {
+		allowed = {
+			tag = RES
+		}
+		available = {
+			NOT = { has_country_flag = res_green_flag }
+		}
+		fire_only_once = yes
+		complete_effect = {
+			set_variable = { res_progress = 100 }
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+
+	load_green_tree = {
+		allowed = {
+			tag = RES
+		}
+		fire_only_once = yes
+		complete_effect = {
+			country_event = nf_events_green_res.1
+		}
+	}
+
+	load_council_branches = {
+		allowed = {
+			tag = ARR
+		}
+		fire_only_once = yes
+		complete_effect = {
+			country_event = nf_arroyo.4
+		}
+	}
+
+	load_chosen_one_return_branches = {
+		allowed = {
+			tag = ARR
+		}
+		fire_only_once = yes
+		complete_effect = {
+			country_event = nf_arroyo.86
+		}
+	}
+
+	load_gordon_tree = {
+		allowed = {
+			tag = VLT
+		}
+		fire_only_once = yes
+		complete_effect = {
+			country_event = nf_vault_city.12
+		}
+	}
+
+	load_cult_of_renewal_tree = {
+		allowed = {
+			tag = VLT
+		}
+		fire_only_once = yes
+		complete_effect = {
+			country_event = nf_vault_city.84
+		}
+	}
+
+	trigger_tlaloc_demise = {
+		allowed = {
+			tag = TLA
+		}
+		fire_only_once = yes
+		complete_effect = {
+			country_event = nf_tlaloc.100
+		}
+	}
+
+	trigger_alamo_split_off = {
+		allowed = {
+			tag = TBH
+		}
+		fire_only_once = yes
+		complete_effect = {
+			country_event = nf_tbh.25
+		}
+	}
+
+	load_langenburg_sophie_death_branch = {
+		allowed = {
+			tag = DLN
+		}
+		fire_only_once = yes
+		complete_effect = {
+			set_country_flag = kill_sophie_debug_flag	# Bypasses the trigger that otherwise prevents this event from firing manually via this decision
+			country_event = nf_dln.6
+		}
+	}
+
+	reload_base_focus_tree = {
+		allowed = {
+			tag = EUR
+		}
+		fire_only_once = no
+		complete_effect = {
+			clr_country_flag = conquered_navarro
+			clr_country_flag = granite_plots
+			clr_country_flag = eur_hub_unlock_focuses
+			clr_country_flag = enclave_nation
+			load_focus_tree = eureka_nf
+		}
+	}
+	load_navarro_branch = {
+		allowed = {
+			tag = EUR
+		}
+		visible = {
+			has_focus_tree = eureka_nf
+		}
+		fire_only_once = no
+		complete_effect = {
+			set_country_flag = conquered_navarro
+			set_country_flag = granite_plots
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+	load_hubologist_branch = {
+		allowed = {
+			tag = EUR
+		}
+		visible = {
+			has_focus_tree = eureka_nf
+		}
+		fire_only_once = no
+		complete_effect = {
+			set_country_flag = conquered_navarro
+			set_country_flag = granite_plots
+			set_country_flag = eur_hub_unlock_focuses
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+	load_navarro_enclave_tree = {
+		allowed = {
+			tag = EUR
+		}
+		fire_only_once = no
+		complete_effect = {
+			set_country_flag = enclave_nation
+			load_focus_tree = navarro_enclave_focus
+		}
+	}
+	allow_texas_rework_elections = {
+		allowed = {
+			tag = TBH
+		}
+		fire_only_once = no
+		days_re_enable = 1
+		complete_effect = {
+			set_country_flag = texas_rework_elections_gui_allowed_flag
+		}
+	}
+	set_texas_rework_elections = {
+		allowed = {
+			tag = TBH
+		}
+		complete_effect = {
+			set_variable = { global.texas_rework_first_candidate_id = 1 }
+			set_variable = { global.texas_rework_second_candidate_id = 2 }
+		}
+	}
+	texas_rework_add_support_first = {
+		allowed = {
+			tag = TBH
+		}
+		complete_effect = {
+			set_temp_variable = { state_id = 5 }
+			set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+			set_temp_variable = { support_to_add = 40 }
+			texas_rework_elections_add_support_effect = yes
+		}
+	}
+	texas_rework_add_support_second = {
+		allowed = {
+			tag = TBH
+		}
+		complete_effect = {
+			set_temp_variable = { state_id = 5 }
+			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+		}
+	}
+}

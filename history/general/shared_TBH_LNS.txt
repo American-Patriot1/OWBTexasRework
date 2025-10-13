@@ -1,0 +1,1152 @@
+every_possible_country = {
+	limit = {
+		original_tag = TBH
+	}
+	generate_character = {
+		token_base = hayden_sky_army_chief
+		portraits = {
+			army = {
+				small = GFX_idea_BOS_generic5
+			}
+		}
+		name = hayden_sky
+		advisor = {
+			slot = army_chief
+			ledger = army
+			allowed = {
+				OR = {
+					original_tag = TBH
+					original_tag = ACH
+				}
+			}
+			visible = {
+				OR = {
+					original_tag = TBH
+					original_tag = ACH
+				}
+			}
+			available = {
+				OR = {
+					original_tag = ACH
+					NOT = {
+						country_exists = ACH
+					}
+				}
+			}
+			traits = {
+				hotblooded_commander
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 6
+				modifier = {
+					add = 6
+					has_war = yes
+				}
+			}
+		}
+	}
+	generate_character = {
+		token_base = lars_mundo_navy_chief
+		portraits = {
+			army = {
+				small = GFX_idea_BOS_generic6
+			}
+		}
+		name = lars_mundo
+		advisor = {
+			slot = navy_chief
+			ledger = navy
+			allowed = {
+				OR = {
+					original_tag = TBH
+					original_tag = ACH
+				}
+			}
+			visible = {
+				OR = {
+					original_tag = TBH
+					original_tag = ACH
+				}
+			}
+			available = {
+				OR = {
+					original_tag = ACH
+					NOT = {
+						country_exists = ACH
+					}
+				}
+			}
+			traits = {
+				naval_mastery
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 6
+				modifier = {
+					add = 6
+					has_war = yes
+				}
+			}
+		}
+	}
+	generate_character = {
+		token_base = arthur_morrigan_air_chief
+		portraits = {
+			army = {
+				small = GFX_idea_BOS_generic12
+			}
+		}
+		name = arthur_morrigan
+		advisor = {
+			slot = air_chief
+			ledger = air
+			allowed = {
+				OR = {
+					original_tag = TBH
+					original_tag = ACH
+				}
+			}
+			visible = {
+				OR = {
+					original_tag = TBH
+					original_tag = ACH
+				}
+			}
+			available = {
+				OR = {
+					original_tag = ACH
+					NOT = {
+						country_exists = ACH
+					}
+				}
+			}
+			traits = {
+				air_close_air_support_3
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 6
+				modifier = {
+					add = 6
+					has_war = yes
+				}
+			}
+		}
+	}
+	generate_character = {
+		token_base = markus_elliot_high_command
+		portraits = {
+			army = {
+				small = GFX_idea_mexico_advisor1
+			}
+		}
+		name = markus_elliot
+		advisor = {
+			slot = high_command
+			ledger = army
+			allowed = {
+				OR = {
+					original_tag = TBH
+					original_tag = ACH
+				}
+			}
+			visible = {
+				OR = {
+					original_tag = TBH
+					original_tag = ACH
+				}
+			}
+			available = {
+				OR = {
+					original_tag = ACH
+					NOT = {
+						country_exists = ACH
+					}
+				}
+			}
+			traits = {
+				elliot_high_command
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 6
+				modifier = {
+					add = 6
+					has_war = yes
+				}
+			}
+		}
+	}
+}
+
+every_possible_country = {
+	limit = {
+		original_tag = TBH
+	}
+	generate_character = {
+		token_base = ewan_wan_army_chief
+		portraits = {
+			army = {
+				small = GFX_idea_BOS_generic4
+			}
+		}
+		name = ewan_wan
+		advisor = {
+			slot = army_chief
+			ledger = army
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				balance_in_all_things
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 6
+				modifier = {
+					add = 6
+					has_war = yes
+				}
+			}
+		}
+	}
+	generate_character = {
+		token_base = edward_j_rusk_army_chief
+		portraits = {
+			army = {
+				small = GFX_idea_tbh_edward_j_rusk
+			}
+		}
+		name = edward_j_rusk
+		advisor = {
+			slot = army_chief
+			ledger = army
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				texas_veteran
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 6
+				modifier = {
+					add = 6
+					has_war = yes
+				}
+			}
+		}
+	}
+	generate_character = {
+		token_base = cho_bang_army_chief
+		portraits = {
+			army = {
+				small = GFX_idea_LNS_cho_bang
+			}
+		}
+		name = LNS_CHO_BANG_NAME
+		advisor = {
+			slot = army_chief
+			ledger = army
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				lns_quick_witted
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 6
+				modifier = {
+					add = 6
+					has_war = yes
+				}
+			}
+		}
+	}
+	generate_character = {
+		token_base = charles_sturgon_navy_chief
+		portraits = {
+			army = {
+				small = GFX_idea_BOS_generic9
+			}
+		}
+		name = charles_sturgon
+		advisor = {
+			slot = navy_chief
+			ledger = navy
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				navy_chief_reform_3
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 6
+				modifier = {
+					add = 6
+					has_war = yes
+				}
+			}
+		}
+	}
+	generate_character = {
+		token_base = emily_strong_air_chief
+		portraits = {
+			army = {
+				small = GFX_idea_generic_advisor1
+			}
+		}
+		name = emily_strong
+		advisor = {
+			slot = air_chief
+			ledger = air
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				air_air_superiority_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 6
+				modifier = {
+					add = 6
+					has_war = yes
+				}
+			}
+		}
+	}
+	generate_character = {
+		token_base = ledroc_walker_high_command
+		portraits = {
+			army = {
+				small = GFX_idea_runner_ghoul_ranger
+			}
+		}
+		name = ledroc_walker
+		advisor = {
+			slot = high_command
+			ledger = army
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				ghoul_ranger
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 6
+				modifier = {
+					add = 6
+					has_war = yes
+				}
+			}
+		}
+	}
+	generate_character = {
+		token_base = kathrine_torni_high_command
+		portraits = {
+			army = {
+				small = GFX_idea_torni_advisor
+			}
+		}
+		name = kathrine_torni
+		advisor = {
+			slot = high_command
+			ledger = army
+			allowed = {
+				OR = {
+					original_tag = TBH
+					original_tag = ACH
+				}
+			}
+			available = {
+				OR = {
+					original_tag = ACH
+					NOT = {
+						country_exists = ACH
+					}
+				}
+			}
+			visible = {
+				OR = {
+					original_tag = TBH
+					original_tag = ACH
+				}
+			}
+			traits = {
+				cos_agent
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 6
+				modifier = {
+					add = 6
+					has_war = yes
+				}
+				modifier = {
+					factor = 0
+					tag = TBH
+					NOT = { has_global_flag = ACH_split_from_TBH }	# We don't want AI TBH picking Kathrine if she's not left for Alamo, waste of early game political power
+				}
+			}
+		}
+	}
+	generate_character = {
+		token_base = steffan_keith_high_command
+		portraits = {
+			army = {
+				small = GFX_idea_BOS_generic1
+			}
+		}
+		name = steffan_keith
+		advisor = {
+			slot = high_command
+			ledger = army
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				army_chief_reform_3
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 6
+				modifier = {
+					add = 6
+					has_war = yes
+				}
+			}
+		}
+	}
+	generate_character = {
+		token_base = sebastian_keith_high_command
+		portraits = {
+			army = {
+				small = GFX_idea_BOS_generic3
+			}
+		}
+		name = sebastian_keith
+		advisor = {
+			slot = high_command
+			ledger = army
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				army_chief_drill_3
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 6
+				modifier = {
+					add = 6
+					has_war = yes
+				}
+			}
+		}
+	}
+	generate_character = {
+		token_base = sidney_mcdonald_theorist
+		portraits = {
+			army = {
+				small = GFX_idea_mexico_advisor14
+			}
+		}
+		name = sidney_mcdonald
+		advisor = {
+			slot = theorist
+			ledger = army
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				military_theorist
+			}
+			research_bonus = {
+				cat_land_doctrine = 0.1
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 6
+				modifier = {
+					add = 6
+					has_war = yes
+				}
+			}
+		}
+	}
+	generate_character = {
+		token_base = river_young_economic_advisor
+		portraits = {
+			army = {
+				small = GFX_idea_mexico_advisor13
+			}
+		}
+		name = river_young
+		advisor = {
+			slot = economic_advisor
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				urban_planner
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 4
+				modifier = {
+					add = 6
+					any_owned_state = {
+						is_valid_state_for_civilian_factory = yes
+					}
+				}
+			}
+		}
+	}
+	generate_character = {
+		token_base = knight_swallows_cultural_advisor
+		portraits = {
+			army = {
+				small = GFX_idea_BOS_generic7
+			}
+		}
+		name = knight_swallows
+		advisor = {
+			slot = cultural_advisor
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				political_mastermind
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	generate_character = {
+		token_base = scribe_hubertus_cultural_advisor
+		portraits = {
+			army = {
+				small = GFX_idea_BOS_generic10
+			}
+		}
+		name = scribe_hubertus
+		advisor = {
+			slot = cultural_advisor
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				brotherhood_scribe
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	generate_character = {
+		token_base = paladin_mcdert_cultural_advisor
+		portraits = {
+			army = {
+				small = GFX_idea_BOS_generic8
+			}
+		}
+		name = paladin_mcdert
+		advisor = {
+			slot = cultural_advisor
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				decorated_hero
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	generate_character = {
+		token_base = LNS_senior_army_chief
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor23
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor23
+			}
+		}
+		name = LNS_senior_name
+		advisor = {
+			slot = army_chief
+			ledger = army
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				lns_senior_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	generate_character = {
+		token_base = LNS_naval_navy_chief
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor30
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor30
+			}
+		}
+		name = LNS_naval_name
+		advisor = {
+			slot = navy_chief
+			ledger = navy
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				settler_navy_buff
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	generate_character = {
+		token_base = LNS_heritage_air_chief
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor34
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor34
+			}
+		}
+		name = LNS_heritage_name
+		advisor = {
+			slot = air_chief
+			ledger = air
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				lns_heritage_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	generate_character = {
+		token_base = LNS_paladin_hancock_high_command
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_BOS_generic6
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_BOS_generic6
+			}
+		}
+		name = LNS_paladin_hancock_name
+		advisor = {
+			slot = high_command
+			ledger = army
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				lns_respond_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 4
+				modifier = {
+					add = 6
+					has_defensive_war = yes
+				}
+			}
+		}
+	}
+	generate_character = {
+		token_base = LNS_scribe_duran_high_command
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_BOS_generic8
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_BOS_generic8
+			}
+		}
+		name = LNS_scribe_duran_name
+		advisor = {
+			slot = high_command
+			ledger = army
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				patient_teacher
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 5
+			}
+		}
+	}
+	generate_character = {
+		token_base = LNS_Generic_Research_theorist
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor45
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor45
+			}
+		}
+		name = LNS_Generic_Research_name
+		advisor = {
+			slot = theorist
+			ledger = army
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				military_theorist
+			}
+			research_bonus = {
+				cat_land_doctrine = 0.1
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 5
+			}
+		}
+	}
+	generate_character = {
+		token_base = LNS_Brotherhood_Research_theorist
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor37
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor37
+			}
+		}
+		name = LNS_Brotherhood_Research_name
+		advisor = {
+			slot = theorist
+			ledger = army
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				military_theorist
+			}
+			research_bonus = {
+				cat_elite_army = 0.15
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 5
+			}
+		}
+	}
+	generate_character = {
+		token_base = LNS_daisy_roth_economic_advisor
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor16
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor16
+			}
+		}
+		name = LNS_daisy_roth_name
+		advisor = {
+			slot = economic_advisor
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				captain_of_industry
+				war_industrialist
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 5
+			}
+		}
+	}
+	generate_character = {
+		token_base = LNS_trader_economic_advisor
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor14
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor14
+			}
+		}
+		name = LNS_trader_name
+		advisor = {
+			slot = economic_advisor
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				lns_trade_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 5
+			}
+		}
+	}
+	generate_character = {
+		token_base = LNS_expedition_economic_advisor
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor20
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor20
+			}
+		}
+		name = LNS_expedition_name
+		advisor = {
+			slot = economic_advisor
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				lns_expedition_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 5
+			}
+		}
+	}
+	generate_character = {
+		token_base = LNS_finance_economic_advisor
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_BOS_generic1
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_BOS_generic1
+			}
+		}
+		name = LNS_finance_name
+		advisor = {
+			slot = economic_advisor
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				lns_finance_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 5
+			}
+		}
+	}
+	generate_character = {
+		token_base = LNS_pride_cultural_advisor
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor5
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor5
+			}
+		}
+		name = LNS_pride_name
+		advisor = {
+			slot = cultural_advisor
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				lns_pride_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 5
+			}
+		}
+	}
+	generate_character = {
+		token_base = LNS_powerhouse_cultural_advisor
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor7
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor7
+			}
+		}
+		name = LNS_powerhouse_name
+		advisor = {
+			slot = cultural_advisor
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				lns_powerhouse_trait
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 5
+			}
+		}
+	}
+	generate_character = {
+		token_base = LNS_sufficient_cultural_advisor
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor8
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_generic_advisor8
+			}
+		}
+		name = LNS_sufficient_name
+		advisor = {
+			slot = cultural_advisor
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				lns_sufficient_trait
+			}
+			research_bonus = {
+				agriculture_tech = 0.12
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 5
+			}
+		}
+	}
+	generate_character = {
+		token_base = LNS_clouds_cultural_advisor
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_BOS_generic2
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_BOS_generic2
+			}
+		}
+		name = LNS_clouds_name
+		advisor = {
+			slot = cultural_advisor
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				lns_cloud_trait
+			}
+			research_bonus = {
+				air_tech_category = 0.1
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 5
+			}
+		}
+	}
+	generate_character = {
+		token_base = LNS_dustdevil_dan_air_chief
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_ghoul_generic13
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_ghoul_generic13
+			}
+		}
+		name = LNS_dustdevil_dan_name
+		advisor = {
+			slot = air_chief
+			desc = LNS_dustdevil_dan_air_chief_desc
+			ledger = air
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				lns_air_buff
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 4
+			}
+		}
+	}
+	generate_character = {
+		token_base = LNS_pete_economic_advisor
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_ghoul_generic10
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_ghoul_generic10
+			}
+		}
+		name = LNS_pete_name
+		advisor = {
+			slot = economic_advisor
+			desc = LNS_pete_economic_advisor_desc
+			allowed = {
+				original_tag = TBH
+			}
+			visible = {
+				original_tag = TBH
+			}
+			traits = {
+				lns_sly_merchant
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+}

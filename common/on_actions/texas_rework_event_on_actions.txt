@@ -1,4 +1,28 @@
 on_actions = {
+	on_startup = {
+		effect = {
+			TBH = {
+				delete_unit_template_and_units = {
+					division_template = "Tank Division"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Ghoul Division"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Supermutant Division"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Light Robot Division"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Rioters"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Militia"
+				}
+			}
+		}
+	}
 	on_state_control_changed = {
 		effect = {
 			if = {

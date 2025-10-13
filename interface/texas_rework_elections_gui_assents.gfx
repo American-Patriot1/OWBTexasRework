@@ -1,0 +1,120 @@
+spriteTypes = {
+	# texas_rework states frames, colored by their candidate, 4 candidates + 1 for undecided
+	spriteType = {
+		name = "GFX_texas_rework_elections_state_trinity"
+		texturefile = "gfx/interface/gui/texas_rework_elections_gui/state_trinity_frames.dds"
+		noOfFrames = 5
+	}
+	spriteType = {
+		name = "GFX_texas_rework_elections_state_colorado"
+		texturefile = "gfx/interface/gui/texas_rework_elections_gui/state_colorado_frames.dds"
+		noOfFrames = 5
+	}
+	spriteType = {
+		name = "GFX_texas_rework_elections_state_lone_star"
+		texturefile = "gfx/interface/gui/texas_rework_elections_gui/state_lone_star_frames.dds"
+		noOfFrames = 5
+	}
+	spriteType = {
+		name = "GFX_texas_rework_elections_state_rio_grande"
+		texturefile = "gfx/interface/gui/texas_rework_elections_gui/state_rio_grande_frames.dds"
+		noOfFrames = 5
+	}
+	spriteType = {
+		name = "GFX_texas_rework_elections_state_pecos"
+		texturefile = "gfx/interface/gui/texas_rework_elections_gui/state_pecos_frames.dds"
+		noOfFrames = 5
+	}
+
+	# Leader Portraits
+	spriteType = {
+		name = "GFX_texas_rework_elections_leaders"
+		texturefile = "gfx/interface/gui/texas_rework_elections_gui/texas_rework_election_leaders_frame.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_texas_rework_elections_background"
+		texturefile = "gfx/interface/gui/texas_rework_elections_gui/texas_rework_elections_background.dds"
+	}
+	spriteType = {
+		name = "GFX_texas_rework_elections_state_info_background"
+		texturefile = "gfx/interface/gui/texas_rework_elections_gui/state_info_container.dds"
+	}
+	spriteType = {
+		name = "GFX_texas_rework_elections_states_map_background"
+		texturefile = "gfx/interface/gui/texas_rework_elections_gui/texas_rework_elections_states_background.dds"
+	}
+
+	spriteType = {
+		name = "GFX_texas_rework_elections_grey_bar"
+		texturefile = "gfx/interface/gui/texas_rework_elections_gui/progressbar_grey.dds"
+	}
+
+	# Progressbars
+	progressbartype = {
+		name = "GFX_texas_rework_elections_blue_grey"
+		textureFile1 = "gfx/interface/gui/texas_rework_elections_gui/progressbar_blue.dds"
+		textureFile2 = "gfx/interface/gui/texas_rework_elections_gui/progressbar_transparent.dds"
+		size = { x = 255 y = 20 }
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = yes
+	}
+	progressbartype = {
+		name = "GFX_texas_rework_elections_red_grey"
+		textureFile1 = "gfx/interface/gui/texas_rework_elections_gui/progressbar_red.dds"
+		textureFile2 = "gfx/interface/gui/texas_rework_elections_gui/progressbar_transparent.dds"
+		size = { x = 255 y = 20 }
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = yes
+	}
+	progressbartype = {
+		name = "GFX_texas_rework_elections_green_grey"
+		textureFile1 = "gfx/interface/gui/texas_rework_elections_gui/progressbar_green.dds"
+		textureFile2 = "gfx/interface/gui/texas_rework_elections_gui/progressbar_transparent.dds"
+		size = { x = 255 y = 20 }
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = yes
+	}
+	progressbartype = {
+		name = "GFX_texas_rework_elections_purple_grey"
+		textureFile1 = "gfx/interface/gui/texas_rework_elections_gui/progressbar_purple.dds"
+		textureFile2 = "gfx/interface/gui/texas_rework_elections_gui/progressbar_transparent.dds"
+		size = { x = 255 y = 20 }
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = yes
+	}
+
+	progressbartype = {
+		name = "GFX_texas_rework_elections_grey_blue"
+		textureFile1 = "gfx/interface/gui/texas_rework_elections_gui/progressbar_transparent.dds"
+		textureFile2 = "gfx/interface/gui/texas_rework_elections_gui/progressbar_blue.dds"
+		size = { x = 255 y = 20 }
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = yes
+	}
+	progressbartype = {
+		name = "GFX_texas_rework_elections_grey_red"
+		textureFile1 = "gfx/interface/gui/texas_rework_elections_gui/progressbar_transparent.dds"
+		textureFile2 = "gfx/interface/gui/texas_rework_elections_gui/progressbar_red.dds"
+		size = { x = 255 y = 20 }
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = yes
+	}
+	progressbartype = {
+		name = "GFX_texas_rework_elections_grey_green"
+		textureFile1 = "gfx/interface/gui/texas_rework_elections_gui/progressbar_transparent.dds"
+		textureFile2 = "gfx/interface/gui/texas_rework_elections_gui/progressbar_green.dds"
+		size = { x = 255 y = 20 }
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = yes
+	}
+	progressbartype = {
+		name = "GFX_texas_rework_elections_grey_purple"
+		textureFile1 = "gfx/interface/gui/texas_rework_elections_gui/progressbar_transparent.dds"
+		textureFile2 = "gfx/interface/gui/texas_rework_elections_gui/progressbar_purple.dds"
+		size = { x = 255 y = 20 }
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = yes
+	}
+}

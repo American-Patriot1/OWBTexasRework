@@ -1,249 +1,249 @@
 defined_text = {
-	# part of ncr_elections
+	# part of texas_rework_elections
 	# this defined text doesn't use localisation keys, because it is only used for inner meta-effect
-	name = GetNCRstateName
+	name = Gettexas_reworkstateName
 
 	text = {
 		trigger = {
 			OR = {
-				check_variable = { ncr_state_id = 1 }
+				check_variable = { texas_rework_state_id = 1 }
 				check_variable = { v = 1 }
 			}
 		}
-		localization_key = "boneyard"
+		localization_key = "trinity"
 	}
 
 	text = {
 		trigger = {
 			OR = {
-				check_variable = { ncr_state_id = 2 }
+				check_variable = { texas_rework_state_id = 2 }
 				check_variable = { v = 2 }
 			}
 		}
-		localization_key = "dayglow"
+		localization_key = "colorado"
 	}
 
 	text = {
 		trigger = {
 			OR = {
-				check_variable = { ncr_state_id = 3 }
+				check_variable = { texas_rework_state_id = 3 }
 				check_variable = { v = 3 }
 			}
 		}
-		localization_key = "maxson"
+		localization_key = "lone_star"
 	}
 
 	text = {
 		trigger = {
 			OR = {
-				check_variable = { ncr_state_id = 4 }
+				check_variable = { texas_rework_state_id = 4 }
 				check_variable = { v = 4 }
 			}
 		}
-		localization_key = "redding"
+		localization_key = "rio_grande"
 	}
 
 	text = {
 		trigger = {
 			OR = {
-				check_variable = { ncr_state_id = 5 }
+				check_variable = { texas_rework_state_id = 5 }
 				check_variable = { v = 5 }
 			}
 		}
-		localization_key = "shady_sands"
+		localization_key = "pecos"
 	}
 }
 
 defined_text = {
-	name = GetNCRstateLocName
+	name = Gettexas_reworkstateLocName
 
 	text = {
 		trigger = {
 			OR = {
-				check_variable = { ncr_state_id = 1 }
+				check_variable = { texas_rework_state_id = 1 }
 				check_variable = { v = 1 }
 			}
 		}
-		localization_key = "boneyard_name"
+		localization_key = "trinity_name"
 	}
 
 	text = {
 		trigger = {
 			OR = {
-				check_variable = { ncr_state_id = 2 }
+				check_variable = { texas_rework_state_id = 2 }
 				check_variable = { v = 2 }
 			}
 		}
-		localization_key = "dayglow_name"
+		localization_key = "colorado_name"
 	}
 
 	text = {
 		trigger = {
 			OR = {
-				check_variable = { ncr_state_id = 3 }
+				check_variable = { texas_rework_state_id = 3 }
 				check_variable = { v = 3 }
 			}
 		}
-		localization_key = "maxson_name"
+		localization_key = "lone_star_name"
 	}
 
 	text = {
 		trigger = {
 			OR = {
-				check_variable = { ncr_state_id = 4 }
+				check_variable = { texas_rework_state_id = 4 }
 				check_variable = { v = 4 }
 			}
 		}
-		localization_key = "redding_name"
+		localization_key = "rio_grande_name"
 	}
 
 	text = {
 		trigger = {
 			OR = {
-				check_variable = { ncr_state_id = 5 }
+				check_variable = { texas_rework_state_id = 5 }
 				check_variable = { v = 5 }
 			}
 		}
-		localization_key = "shady_sands_name"
+		localization_key = "pecos_name"
 	}
 }
 
 defined_text = {
-	name = GetNCRstateFirstCandidateSupport
+	name = Gettexas_reworkstateFirstCandidateSupport
 	text = {
 		trigger = {
 			OR = {
-				check_variable = { ncr_state_id = 1 }
+				check_variable = { texas_rework_state_id = 1 }
 				check_variable = { v = 1 }
 			}
 		}
-		localization_key = "boneyard_first_candidate_support"
+		localization_key = "trinity_first_candidate_support"
 	}
 
 	text = {
 		trigger = {
 			OR = {
-				check_variable = { ncr_state_id = 2 }
+				check_variable = { texas_rework_state_id = 2 }
 				check_variable = { v = 2 }
 			}
 		}
-		localization_key = "dayglow_first_candidate_support"
+		localization_key = "colorado_first_candidate_support"
 	}
 
 	text = {
 		trigger = {
 			OR = {
-				check_variable = { ncr_state_id = 3 }
+				check_variable = { texas_rework_state_id = 3 }
 				check_variable = { v = 3 }
 			}
 		}
-		localization_key = "maxson_first_candidate_support"
+		localization_key = "lone_star_first_candidate_support"
 	}
 
 	text = {
 		trigger = {
 			OR = {
-				check_variable = { ncr_state_id = 4 }
+				check_variable = { texas_rework_state_id = 4 }
 				check_variable = { v = 4 }
 			}
 		}
-		localization_key = "redding_first_candidate_support"
+		localization_key = "rio_grande_first_candidate_support"
 	}
 
 	text = {
 		trigger = {
 			OR = {
-				check_variable = { ncr_state_id = 5 }
+				check_variable = { texas_rework_state_id = 5 }
 				check_variable = { v = 5 }
 			}
 		}
-		localization_key = "shady_sands_first_candidate_support"
+		localization_key = "pecos_first_candidate_support"
 	}
 }
 
 defined_text = {
-	name = GetNCRstateSecondCandidateSupport
+	name = Gettexas_reworkstateSecondCandidateSupport
 	text = {
 		trigger = {
 			OR = {
-				check_variable = { ncr_state_id = 1 }
+				check_variable = { texas_rework_state_id = 1 }
 				check_variable = { v = 1 }
 			}
 		}
-		localization_key = "boneyard_second_candidate_support"
+		localization_key = "trinity_second_candidate_support"
 	}
 
 	text = {
 		trigger = {
 			OR = {
-				check_variable = { ncr_state_id = 2 }
+				check_variable = { texas_rework_state_id = 2 }
 				check_variable = { v = 2 }
 			}
 		}
-		localization_key = "dayglow_second_candidate_support"
+		localization_key = "colorado_second_candidate_support"
 	}
 
 	text = {
 		trigger = {
 			OR = {
-				check_variable = { ncr_state_id = 3 }
+				check_variable = { texas_rework_state_id = 3 }
 				check_variable = { v = 3 }
 			}
 		}
-		localization_key = "maxson_second_candidate_support"
+		localization_key = "lone_star_second_candidate_support"
 	}
 
 	text = {
 		trigger = {
 			OR = {
-				check_variable = { ncr_state_id = 4 }
+				check_variable = { texas_rework_state_id = 4 }
 				check_variable = { v = 4 }
 			}
 		}
-		localization_key = "redding_second_candidate_support"
+		localization_key = "rio_grande_second_candidate_support"
 	}
 
 	text = {
 		trigger = {
 			OR = {
-				check_variable = { ncr_state_id = 5 }
+				check_variable = { texas_rework_state_id = 5 }
 				check_variable = { v = 5 }
 			}
 		}
-		localization_key = "shady_sands_second_candidate_support"
+		localization_key = "pecos_second_candidate_support"
 	}
 }
 
 defined_text = {
-	name = GetNCRfirstCandidateName
+	name = Gettexas_reworkfirstCandidateName
 	text = {
 		trigger = {
 			OR = {
-				check_variable = { global.first_candidate_id = 1 }
+				check_variable = { global.texas_rework_first_candidate_id = 1 }
 			}
 		}
-		localization_key = "allgood_elections_name"
+		localization_key = "keats_elections_name"
 	}
 	text = {
 		trigger = {
 			OR = {
-				check_variable = { global.first_candidate_id = 2 }
+				check_variable = { global.texas_rework_first_candidate_id = 2 }
 			}
 		}
-		localization_key = "kimball_elections_name"
+		localization_key = "cho_bang_elections_name"
 	}
 	text = {
 		trigger = {
 			OR = {
-				check_variable = { global.first_candidate_id = 3 }
+				check_variable = { global.texas_rework_first_candidate_id = 3 }
 			}
 		}
-		localization_key = "hayes_elections_name"
+		localization_key = "rusk_elections_name"
 	}
 	text = {
 		trigger = {
 			OR = {
-				check_variable = { global.first_candidate_id = 4 }
+				check_variable = { global.texas_rework_first_candidate_id = 4 }
 			}
 		}
 		localization_key = "secret_boi_elections_name"
@@ -251,35 +251,35 @@ defined_text = {
 }
 
 defined_text = {
-	name = GetNCRsecondCandidateName
+	name = Gettexas_reworksecondCandidateName
 	text = {
 		trigger = {
 			OR = {
-				check_variable = { global.second_candidate_id = 1 }
+				check_variable = { global.texas_rework_second_candidate_id = 1 }
 			}
 		}
-		localization_key = "allgood_elections_name"
+		localization_key = "keats_elections_name"
 	}
 	text = {
 		trigger = {
 			OR = {
-				check_variable = { global.second_candidate_id = 2 }
+				check_variable = { global.texas_rework_second_candidate_id = 2 }
 			}
 		}
-		localization_key = "kimball_elections_name"
+		localization_key = "cho_bang_elections_name"
 	}
 	text = {
 		trigger = {
 			OR = {
-				check_variable = { global.second_candidate_id = 3 }
+				check_variable = { global.texas_rework_second_candidate_id = 3 }
 			}
 		}
-		localization_key = "hayes_elections_name"
+		localization_key = "rusk_elections_name"
 	}
 	text = {
 		trigger = {
 			OR = {
-				check_variable = { global.second_candidate_id = 4}
+				check_variable = { global.texas_rework_second_candidate_id = 4}
 			}
 		}
 		localization_key = "secret_boi_elections_name"

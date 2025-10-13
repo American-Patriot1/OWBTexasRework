@@ -16,12 +16,13 @@ state={
 		buildings = {
 			infrastructure = 4
 			industrial_complex = 1
+			# arms_factory = 1
 			air_base = 4
 		}
 
 	}
 	provinces={
-		11556 11564 11566 11573 11581 11586 11589 11596 11600 11611 
+		840 11556 11564 11566 11573 11581 11586 11589 11596 11600 11611 
 	}
 	manpower=20000
 	buildings_max_level_factor=1.000

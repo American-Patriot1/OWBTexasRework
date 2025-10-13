@@ -11,13 +11,13 @@ state={
 			11955 20
 		}
 		buildings = {
-			infrastructure = 5
+			infrastructure = 6
 			arms_factory = 2
 			industrial_complex = 3
 		}
 	}
 	provinces={
-		1704 11937 11952 11955 11960 11962 11967 11985 12075 
+		1704 11952 11955 11960 11962 11967 11985 12075 
 	}
 	manpower=30000
 	buildings_max_level_factor=1.000

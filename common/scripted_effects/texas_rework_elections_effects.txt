@@ -5,7 +5,7 @@
 @support_to_subtract_mult = 0.5 # how much of exess support is subtracted from other candidate
 # NOTE: support_to_subtract_mult MUST be bigger or equal than support_to_add_mult
 
-ncr_elections_add_support_effect = {
+texas_rework_elections_add_support_effect = {
 	# To use this effect you need to set up state ID and candidate's ID and support to add, use temp vars
 	# state_id
 	# Boneyard -- 1
@@ -22,19 +22,19 @@ ncr_elections_add_support_effect = {
 
 	# support_to_add
 
-	set_temp_variable = { ncr_state_id = state_id }
+	set_temp_variable = { texas_rework_state_id = state_id }
 	set_variable = { support_surplus = 100 } # how much people in a state are non-aligned
 
-	subtract_from_variable = { support_surplus = global.first_candidate_support_array^ncr_state_id }
-	subtract_from_variable = { support_surplus = global.second_candidate_support_array^ncr_state_id }
+	subtract_from_variable = { support_surplus = global.texas_rework_first_candidate_support_array^texas_rework_state_id }
+	subtract_from_variable = { support_surplus = global.texas_rework_first_candidate_support_array^texas_rework_state_id }
 
-	set_temp_variable = { first_candidate_support_temp = global.first_candidate_support_array^ncr_state_id }
-	set_temp_variable = { second_candidate_support_temp = global.second_candidate_support_array^ncr_state_id }
+	set_temp_variable = { first_candidate_support_temp = global.texas_rework_first_candidate_support_array^texas_rework_state_id }
+	set_temp_variable = { second_candidate_support_temp = global.texas_rework_first_candidate_support_array^texas_rework_state_id }
 
 	log = "[?state_id]"
 	if = {
 		limit = {
-			check_variable = { candidate_id = global.first_candidate_id }
+			check_variable = { candidate_id = global.texas_rework_first_candidate_id }
 		}
 		set_temp_variable = { support_to_add_immediately = support_to_add }
 		clamp_temp_variable = {
@@ -81,7 +81,7 @@ ncr_elections_add_support_effect = {
 	}
 	else_if = {
 		limit = {
-			check_variable = { candidate_id = global.second_candidate_id }
+			check_variable = { candidate_id = global.texas_rework_second_candidate_id }
 		}
 		set_temp_variable = { support_to_add_immediately = support_to_add }
 		clamp_temp_variable = {
@@ -127,7 +127,7 @@ ncr_elections_add_support_effect = {
 		}
 	}
 	else = {
-		log = "Error in ncr_elections_effects: candidate_id [?candidate_id] is not a valid ID."
+		log = "Error in texas_rework_elections_effects: candidate_id [?candidate_id] is not a valid ID."
 	}
 
 	round_temp_variable = first_candidate_support_temp
@@ -135,23 +135,23 @@ ncr_elections_add_support_effect = {
 
 
 	# Returning results of calculations back into variables
-	log = "[?global.first_candidate_support_array^ncr_state_id]"
-	set_variable = { global.first_candidate_support_array^ncr_state_id = first_candidate_support_temp }
-	set_variable = { global.second_candidate_support_array^ncr_state_id = second_candidate_support_temp }
-	log = "[?global.first_candidate_support_array^ncr_state_id]"
+	log = "[?global.texas_rework_first_candidate_support_array^texas_rework_state_id]"
+	set_variable = { global.texas_rework_first_candidate_support_array^texas_rework_state_id = first_candidate_support_temp }
+	set_variable = { global.texas_rework_first_candidate_support_array^texas_rework_state_id = second_candidate_support_temp }
+	log = "[?global.texas_rework_first_candidate_support_array^texas_rework_state_id]"
 }
 
-ncr_elections_remove_support_both_effect = {
+texas_rework_elections_remove_support_both_effect = {
 	# removes support from both candidates, needs only state_id and support_to_remove vars
 
-	set_temp_variable = { candidate_id = global.first_candidate_id }
-	ncr_elections_remove_support_effect = yes
+	set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	texas_rework_elections_remove_support_effect = yes
 
-	set_temp_variable = { candidate_id = global.second_candidate_id }
-	ncr_elections_remove_support_effect = yes
+	set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+	texas_rework_elections_remove_support_effect = yes
 }
 
-ncr_elections_remove_support_effect = {
+texas_rework_elections_remove_support_effect = {
 	# To use this effect you need to set up state ID and candidate's ID and support to add, use temp vars
 	# state_id
 	# Boneyard -- 1
@@ -168,15 +168,15 @@ ncr_elections_remove_support_effect = {
 
 	# support_to_remove
 
-	set_temp_variable = { ncr_state_id = state_id }
+	set_temp_variable = { texas_rework_state_id = state_id }
 
 	# Get values of support
-	set_temp_variable = { first_candidate_support_temp = global.first_candidate_support_array^ncr_state_id }
-	set_temp_variable = { second_candidate_support_temp = global.second_candidate_support_array^ncr_state_id }
+	set_temp_variable = { first_candidate_support_temp = global.texas_rework_first_candidate_support_array^texas_rework_state_id }
+	set_temp_variable = { second_candidate_support_temp = global.texas_rework_first_candidate_support_array^texas_rework_state_id }
 
 	if = {
 		limit = {
-			check_variable = { candidate_id = global.first_candidate_id }
+			check_variable = { candidate_id = global.texas_rework_first_candidate_id }
 		}
 		subtract_from_variable = { first_candidate_support_temp = support_to_remove }
 		clamp_variable = {
@@ -187,7 +187,7 @@ ncr_elections_remove_support_effect = {
 	}
 	else_if = {
 		limit = {
-			check_variable = { candidate_id = global.second_candidate_id }
+			check_variable = { candidate_id = global.texas_rework_second_candidate_id }
 		}
 		subtract_from_variable = { second_candidate_support_temp = support_to_remove }
 		clamp_variable = {
@@ -197,20 +197,20 @@ ncr_elections_remove_support_effect = {
 		}
 	}
 	else = {
-		log = "Error in ncr_elections_effects: candidate_id [?candidate_id] is not a valid ID."
+		log = "Error in texas_rework_elections_effects: candidate_id [?candidate_id] is not a valid ID."
 	}
 
 	# Returning results of calculations back into variables
-	set_variable = { global.first_candidate_support_array^ncr_state_id = first_candidate_support_temp }
-	set_variable = { global.second_candidate_support_array^ncr_state_id = second_candidate_support_temp }
+	set_variable = { global.texas_rework_first_candidate_support_array^texas_rework_state_id = first_candidate_support_temp }
+	set_variable = { global.texas_rework_first_candidate_support_array^texas_rework_state_id = second_candidate_support_temp }
 }
 
-calculate_ncr_elections_winner_effect = {
-	# Sets NCR elections winner to ncr_elections_winner_id variable
+calculate_texas_rework_elections_winner_effect = {
+	# Sets texas_rework elections winner to texas_rework_elections_winner_id variable
 	if = {
 		limit = {
-			calculate_ncr_election_winner_trigger = yes
+			calculate_texas_rework_election_winner_trigger = yes
 		}
-		set_variable = { NCR.ncr_elections_winner_id = ncr_elections_winner_id_temp }
+		set_variable = { texas_rework.texas_rework_elections_winner_id = texas_rework_elections_winner_id_temp }
 	}
 }

@@ -71,6 +71,53 @@ country_event = {
 			set_temp_variable = { texas_rework_add_market_factories_taa = 10 }
 			texas_rework_change_market_factories = yes
 		}
+		# TBH = {
+		# 	load_oob = "TBH_houston_greater"
+		# 	load_oob = "TBH_assassin_city_greater"
+		# 	load_oob = "TBH_last_lodge_greater"
+		# 	load_oob = "TBH_i_20"
+		# 	load_oob = "TBH_eden"
+		# 	load_oob = "TBH_lincoln"
+		# 	load_oob = "TBH_lubbock"
+		# 	load_oob = "TBH_taa"
+		# 	load_oob = "TBH_patrolmen"
+		# }
+	}
+}
+
+#secret stuff
+country_event = { #delete starting templates
+	id = texas_rework.1100
+	title = texas_rework.1100.t
+	desc = texas_rework.1100.d
+	picture = GFX_event_sub_generic_airport_interior
+	hidden = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event texas_rework.1100"
+		hidden_effect = {
+			TBH = {
+				delete_unit_template_and_units = {
+					division_template = "Tank Division"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Ghoul Division"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Supermutant Division"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Light Robot Division"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Rioters"
+				}
+				delete_unit_template_and_units = {
+					division_template = "Militia"
+				}
+			}
+		}
 	}
 }
 
@@ -634,7 +681,783 @@ country_event = { #constitutional intervention
 
 
 
+#election
+add_namespace = texas_rework_election
+##
+country_event = {
+	id = texas_rework_election.1
+	title = texas_rework_election.1.t
+	desc = {
+		trigger = {
+			TBH = {
+				has_country_leader = {
+					character = TBH_aaron_kimball
+				}
+			}
+		}
+		text = texas_rework_election.1.d
+	}
+	desc = {
+		trigger = {
+			TBH = {
+				has_country_leader = {
+					character = TBH_allgood_murphy
+				}
+			}
+		}
+		text = texas_rework_election.1.d.2
+	}
+	desc = {
+		trigger = {
+			has_country_leader = {
+				character = TBH_allgood_murphy
+			}
+		}
+		text = texas_rework_election.1.d.3
+	}
+	desc = {
+		trigger = {
+			TBH = {
+				has_country_leader = {
+					character = TBH_aaron_kimball
+				}
+			}
+		}
+		text = texas_rework_election.1.d.4
+	}
+	is_triggered_only = yes
+	picture = GFX_event_NCR_congress
+	option = {
+		trigger = {
+			TBH = {
+				has_country_leader = {
+					character = TBH_aaron_kimball
+				}
+			}
+		}
+		name = texas_rework_election.1.a #Hayes and Kimball - Go with Kimball
+		set_country_flag = hayes_rallies_against_us
+		set_country_flag = kimball_for_president
+		set_variable = { global.texas_rework_first_candidate_id = 2 }
+		set_variable = { global.texas_rework_second_candidate_id = 3 }
+		if = {
+			limit = {
+				has_country_flag = hayes_election_dayglow_1
+			}
+			set_temp_variable = { state_id = 2 }
+			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+			set_temp_variable = { support_to_add = 51 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_dayglow_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_dayglow_2
+			}
+			set_temp_variable = { state_id = 2 }
+			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_dayglow_support_2
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_maxson_1
+			}
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_maxson_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_maxson_2
+			}
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_maxson_support_2
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_shady_sands_1
+			}
+			set_temp_variable = { state_id = 5 }
+			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_shady_sands_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_shady_sands_2
+			}
+			set_temp_variable = { state_id = 5 }
+			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_shady_sands_support_2
+		}
+		if = {
+			limit = {
+				has_country_flag = kimball_redding_1
+			}
+			set_temp_variable = { state_id = 4 }
+			set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+			set_temp_variable = { support_to_add = 51 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = kimball_redding_1_tt
+		}
+		if = {
+			limit = {
+				has_country_flag = kimball_shady_sands_businesses_happy
+			}
+			set_temp_variable = { state_id = 5 }
+			set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = kimball_shady_sands_businesses_happy_tt
+		}
+		if = {
+			limit = {
+				has_country_flag = kimball_brahmin_barons_happy
+			}
+			set_temp_variable = { state_id = 4 }
+			set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = kimball_barons_happy_tt
+		}
+		set_country_flag = texas_rework_elections_gui_allowed_flag
+		activate_mission = texas_rework_presidential_election_countdown
+		custom_effect_tooltip = texas_rework_election_tt
+		set_country_flag = texas_rework_election_happening
+	}
+	option = {
+		name = texas_rework_election.1.b # Hayes and Kimball - Go with Hayes
+		set_country_flag = kimball_rallies_against_us
+		custom_effect_tooltip = texas_rework_election_tt
+		set_country_flag = texas_rework_elections_gui_allowed_flag
+		activate_mission = texas_rework_presidential_election_countdown
+		set_country_flag = hayes_for_president
+		trigger = {
+			has_country_leader = {
+				character = TBH_aaron_kimball
+			}
+		}
+		set_variable = { global.texas_rework_first_candidate_id = 2 }
+		set_variable = { global.texas_rework_second_candidate_id = 3 }
+		if = {
+			limit = {
+				has_country_flag = hayes_election_dayglow_1
+			}
+			set_temp_variable = { state_id = 2 }
+			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_dayglow_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_dayglow_2
+			}
+			set_temp_variable = { state_id = 2 }
+			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_dayglow_support_2
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_maxson_1
+			}
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_maxson_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_maxson_2
+			}
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_maxson_support_2
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_shady_sands_1
+			}
+			set_temp_variable = { state_id = 5 }
+			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_shady_sands_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_shady_sands_2
+			}
+			set_temp_variable = { state_id = 5 }
+			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_shady_sands_support_2
+		}
+		if = {
+			limit = {
+				has_country_flag = kimball_redding_1
+			}
+			set_temp_variable = { state_id = 4 }
+			set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = kimball_redding_1_tt
+		}
+		if = {
+			limit = {
+				has_country_flag = kimball_shady_sands_businesses_happy
+			}
+			set_temp_variable = { state_id = 5 }
+			set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = kimball_shady_sands_businesses_happy_tt
+		}
+		if = {
+			limit = {
+				has_country_flag = kimball_brahmin_barons_happy
+			}
+			set_temp_variable = { state_id = 4 }
+			set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = kimball_barons_happy_tt
+		}
+	}
+	option = {
+		name = texas_rework_election.1.c # Hayes and Murphy - go with Murphy
+		trigger = {
+			has_country_leader = {
+				character = TBH_allgood_murphy
+			}
+		}
+		custom_effect_tooltip = texas_rework_election_tt
+		set_variable = { global.texas_rework_first_candidate_id = 1 }
+		set_variable = { global.texas_rework_second_candidate_id = 3 }
+		if = {
+			limit = {
+				has_country_flag = texas_rework_murphy_pleased_boneyard
+			}
+			set_temp_variable = { state_id = 1 }
+			set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = murphy_pleased_boneyard_1_tt
+		}
+		if = {
+			limit = {
+				has_country_flag = texas_rework_murphy_pleased_maxson
+			}
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = murphy_support_maxson_1_tt
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_dayglow_1
+			}
+			set_temp_variable = { state_id = 2 }
+			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_dayglow_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_dayglow_2
+			}
+			set_temp_variable = { state_id = 2 }
+			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_dayglow_support_2
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_maxson_1
+			}
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_maxson_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_maxson_2
+			}
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_maxson_support_2
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_shady_sands_1
+			}
+			set_temp_variable = { state_id = 5 }
+			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_shady_sands_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_shady_sands_2
+			}
+			set_temp_variable = { state_id = 5 }
+			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_shady_sands_support_2
+		}
+		set_country_flag = hayes_rallies_against_us
+		set_country_flag = murphy_for_president
+		set_country_flag = texas_rework_elections_gui_allowed_flag
+		activate_mission = texas_rework_presidential_election_countdown
+		set_country_flag = texas_rework_election_happening
+	}
+	option = {
+		name = texas_rework_election.1.e # Hayes and Murphy - go with Hayes
+		trigger = {
+			has_country_leader = {
+				character = TBH_allgood_murphy
+			}
+		}
+		custom_effect_tooltip = texas_rework_election_tt
+		set_variable = { global.texas_rework_first_candidate_id = 1 }
+		set_variable = { global.texas_rework_second_candidate_id = 3 }
+		set_country_flag = murphy_rallies_against_us
+		set_country_flag = hayes_for_president
+		set_country_flag = texas_rework_elections_gui_allowed_flag
+		activate_mission = texas_rework_presidential_election_countdown
+		if = {
+			limit = {
+				has_country_flag = texas_rework_murphy_pleased_boneyard
+			}
+			set_temp_variable = { state_id = 1 }
+			set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = murphy_pleased_boneyard_1_tt
+		}
+		if = {
+			limit = {
+				has_country_flag = texas_rework_murphy_pleased_maxson
+			}
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = murphy_support_maxson_1_tt
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_dayglow_1
+			}
+			set_temp_variable = { state_id = 2 }
+			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_dayglow_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_dayglow_2
+			}
+			set_temp_variable = { state_id = 2 }
+			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_dayglow_support_2
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_maxson_1
+			}
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_maxson_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_maxson_2
+			}
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_maxson_support_2
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_shady_sands_1
+			}
+			set_temp_variable = { state_id = 5 }
+			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_shady_sands_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_shady_sands_2
+			}
+			set_temp_variable = { state_id = 5 }
+			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_shady_sands_support_2
+		}
+		set_country_flag = texas_rework_election_happening
+	}
+	option = {
+		trigger = {
+			TBH = {
+				has_country_leader = {
+					character = TBH_aaron_kimball
+				}
+			}
+		}
+		name = texas_rework_election.1.f #Hayes and Granite - Go with Granite
+		set_country_flag = kimball_for_president
+		set_variable = { global.texas_rework_first_candidate_id = 2 }
+		set_variable = { global.texas_rework_second_candidate_id = 4 }
+		if = {
+			limit = {
+				has_country_flag = hayes_election_dayglow_1
+			}
+			set_temp_variable = { state_id = 2 }
+			set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+			set_temp_variable = { support_to_add = 15 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_dayglow_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_dayglow_2
+			}
+			set_temp_variable = { state_id = 2 }
+			set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_dayglow_support_2
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_maxson_1
+			}
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_maxson_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_maxson_2
+			}
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_maxson_support_2
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_shady_sands_1
+			}
+			set_temp_variable = { state_id = 5 }
+			set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_shady_sands_support_1
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_election_shady_sands_2
+			}
+			set_temp_variable = { state_id = 5 }
+			set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+			set_temp_variable = { support_to_add = 30 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = hayes_shady_sands_support_2
+		}
+		if = {
+			limit = {
+				has_country_flag = kimball_redding_1
+			}
+			set_temp_variable = { state_id = 4 }
+			set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+			set_temp_variable = { support_to_add = 51 }
+			texas_rework_elections_add_support_effect = yes
+			custom_effect_tooltip = kimball_redding_1_tt
+		}
+		TBH ={
+			set_country_flag = texas_rework_elections_gui_allowed_flag
+			activate_mission = texas_rework_presidential_election_countdown
+		}
+		custom_effect_tooltip = texas_rework_election_tt
+		set_country_flag = texas_rework_election_happening
+	}
+}
 
+country_event = {
+	id = texas_rework_election.2 #election stuff
+	title = texas_rework_election.2.t
+	desc = texas_rework_election.2.d
+	is_triggered_only = yes
+	picture = GFX_event_texas_rework_congress
+	option = {
+		name = texas_rework_election.2.a
+		trigger  = {
+			is_ai = no
+			check_variable = {
+				texas_rework_elections_winner_id = global.texas_rework_first_candidate_id ###
+			}
+			check_variable = {
+				global.texas_rework_first_candidate_id = 2  ## Kimball
+			}
+		}
+		complete_national_focus = texas_rework_kimball_address
+		every_country = {
+			news_event = texas_rework_election_results.3
+		}
+		clr_country_flag = kimball_rallies_against_us
+		clr_country_flag = kimball_for_president
+		clr_country_flag = texas_rework_elections_gui_allowed_flag
+		clr_country_flag = hayes_rallies_against_us
+		clr_country_flag = murphy_for_president
+		clr_country_flag = murphy_rallies_against_us
+		if = {
+			limit = {
+				has_country_flag = kimball_rallies_against_us
+			}
+			add_stability = -0.25
+			add_political_power = -250
+			custom_effect_tooltip = challenger_won_tt
+		}
+	}
+	option = {
+		name = texas_rework_election.2.b
+		trigger  = {
+			is_ai = no
+			check_variable = {
+				texas_rework_elections_winner_id = global.texas_rework_first_candidate_id ###
+			}
+			check_variable = {
+				global.texas_rework_first_candidate_id = 1  ## Murphy
+			}
+		}
+		complete_national_focus = texas_rework_allgood_address
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = 30
+			}
+		}
+		every_country = {
+			news_event = texas_rework_election_results.2
+		}
+		clr_country_flag = kimball_rallies_against_us
+		clr_country_flag = kimball_for_president
+		clr_country_flag = texas_rework_elections_gui_allowed_flag
+		clr_country_flag = hayes_rallies_against_us
+		clr_country_flag = murphy_for_president
+		clr_country_flag = murphy_rallies_against_us
+		if = {
+			limit = {
+				has_country_flag = murphy_rallies_against_us
+			}
+			add_stability = -0.25
+			add_political_power = -250
+			custom_effect_tooltip = challenger_won_tt
+		}
+	}
+	option = {
+		name = texas_rework_election.2.c
+		trigger  = {
+			is_ai = no
+			check_variable = {
+				texas_rework_elections_winner_id = global.texas_rework_second_candidate_id ###
+			}
+			check_variable = {
+				global.texas_rework_second_candidate_id = 3  ## Hayes
+			}
+		}
+		every_country = {
+			news_event = texas_rework_election_results.1
+		}
+		complete_national_focus = texas_rework_dreams_of_old
+		if = {
+			limit = {
+				has_country_leader = {	character = texas_rework_aaron_kimball }
+			}
+			retire_character = texas_rework_aaron_kimball
+		}
+		if = {
+			limit = {
+				has_country_leader = {	character = texas_rework_allgood_murphy }
+			}
+			retire_character = texas_rework_allgood_murphy
+		}
+		if = {
+			limit = {
+				has_country_flag = hayes_rallies_against_us
+			}
+			add_stability = -0.25
+			add_political_power = -250
+			custom_effect_tooltip = challenger_won_tt
+		}
+		set_politics = {
+			ruling_party = intellectuals
+			elections_allowed = no
+		}
+		add_popularity = {
+			ideology = intellectuals
+			popularity = 0.40
+		}
+		clr_country_flag = hayes_rallies_against_us
+		clr_country_flag = kimball_for_president
+		clr_country_flag = kimball_rallies_against_us
+		clr_country_flag = texas_rework_elections_gui_allowed_flag
+		clr_country_flag = hayes_rallies_against_us
+		clr_country_flag = murphy_for_president
+		clr_country_flag = murphy_rallies_against_us
+	}
+	option = {
+		name = texas_rework_election.2.e
+		trigger = {
+			is_ai = no
+		}
+		complete_national_focus = texas_rework_electoral_deadlock
+		every_country = {
+			news_event = texas_rework_election_results.4
+		}
+		clr_country_flag = hayes_rallies_against_us
+		clr_country_flag = kimball_for_president
+		clr_country_flag = kimball_rallies_against_us
+		clr_country_flag = texas_rework_elections_gui_allowed_flag
+		clr_country_flag = hayes_rallies_against_us
+		clr_country_flag = murphy_for_president
+		clr_country_flag = murphy_rallies_against_us
+	}
+	option = {
+		name = texas_rework_election.2.f
+		trigger = {
+			is_ai = yes
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = texas_rework_ai_behavior_electoral_deadlock_kimball
+					has_country_flag = texas_rework_ai_behavior_electoral_deadlock_allgood
+				}
+			}
+			complete_national_focus = texas_rework_electoral_deadlock
+			every_country = {
+				news_event = texas_rework_election_results.4
+			}
+			clr_country_flag = hayes_rallies_against_us
+			clr_country_flag = kimball_for_president
+			clr_country_flag = kimball_rallies_against_us
+			clr_country_flag = texas_rework_elections_gui_allowed_flag
+			clr_country_flag = hayes_rallies_against_us
+			clr_country_flag = murphy_for_president
+			clr_country_flag = murphy_rallies_against_us
+		}
+		else_if = {
+			limit = {
+				has_country_flag = texas_rework_ai_behavior_hayes
+			}
+			if = {
+				limit = {
+					has_country_leader = {	character = texas_rework_aaron_kimball }
+				}
+				retire_character = texas_rework_aaron_kimball
+			}
+			if = {
+				limit = {
+					has_country_leader = {	character = texas_rework_allgood_murphy }
+				}
+				retire_character = texas_rework_allgood_murphy
+			}
+			set_politics = {
+				ruling_party = intellectuals
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = intellectuals
+				popularity = 0.40
+			}
+			every_country = {
+				news_event = texas_rework_election_results.1
+			}
+			clr_country_flag = hayes_rallies_against_us
+			clr_country_flag = kimball_for_president
+			clr_country_flag = kimball_rallies_against_us
+			clr_country_flag = texas_rework_elections_gui_allowed_flag
+			clr_country_flag = hayes_rallies_against_us
+			clr_country_flag = murphy_for_president
+			clr_country_flag = murphy_rallies_against_us
+		}
+		else = {
+			if = {
+				limit = {
+					has_country_leader = {	character = texas_rework_aaron_kimball }
+				}
+				complete_national_focus = texas_rework_kimball_address
+				every_country = {
+					news_event = texas_rework_election_results.3
+				}
+				clr_country_flag = hayes_rallies_against_us
+				clr_country_flag = kimball_for_president
+				clr_country_flag = kimball_rallies_against_us
+				clr_country_flag = texas_rework_elections_gui_allowed_flag
+				clr_country_flag = hayes_rallies_against_us
+				clr_country_flag = murphy_for_president
+				clr_country_flag = murphy_rallies_against_us
+			}
+			if = {
+				limit = {
+					has_country_leader = {	character = texas_rework_allgood_murphy }
+				}
+				complete_national_focus = texas_rework_allgood_address
+				every_country = {
+					news_event = texas_rework_election_results.2
+				}
+				clr_country_flag = hayes_rallies_against_us
+				clr_country_flag = kimball_for_president
+				clr_country_flag = kimball_rallies_against_us
+				clr_country_flag = texas_rework_elections_gui_allowed_flag
+				clr_country_flag = hayes_rallies_against_us
+				clr_country_flag = murphy_for_president
+				clr_country_flag = murphy_rallies_against_us
+			}
+		}
+	}
+}
 
 #Constitution events
 country_event = {
@@ -852,7 +1675,7 @@ news_event = { #DSP invasion of ASS
 	}
 }
 
-news_event = { #fall of Assassin city
+news_event = { #annexation of Assassin city
 	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.9011" }
 	id = texas_rework.9011
 	title = texas_rework.9011.t
@@ -891,6 +1714,9 @@ news_event = { #fall of Assassin city
             }
 			transfer_navy = { target = TBH }
 				transfer_navy = { target = TBH }
+			delete_unit = {
+				disband = yes
+			}
 		}
 		TBH = {
 			set_technology = { skater_tech = 1 }
@@ -898,6 +1724,7 @@ news_event = { #fall of Assassin city
 				target = ASS
 				transfer_troops = yes
 			}
+			load_oob = "TBH_assassin_city"
 		}
 		every_state = {
 			limit = {
@@ -913,10 +1740,95 @@ news_event = { #fall of Assassin city
 			}
 			clr_state_flag = do_not_exodus
 		}
+		hidden_effect = {
+			TBH = {
+				delete_unit_template_and_units = {
+					division_template = "Skate Infantry"
+				}
+			}
+		}
 	}
 
 	option = {
 		name = texas_rework.9011.a
+	}
+}
+
+news_event = { #larger annexation of Assassin city
+	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.9012" }
+	id = texas_rework.9012
+	title = texas_rework.9012.t
+	desc = texas_rework.9012.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_container_bazaar
+
+	immediate = {
+		every_state = {
+			limit = {
+				is_core_of = ASS
+			}
+			set_state_flag = do_not_exodus
+			remove_core_of = ASS
+			remove_claim_by = ASS
+		}
+		878 = {
+			add_core_of = TBH
+		}
+		881 = {
+			add_core_of = TBH
+		}
+		1525 = {
+			add_core_of = DSP
+			transfer_state_to = DSP
+		}
+		ASS = {
+			leave_current_faction = yes
+            every_unit_leader = {
+                set_nationality = TBH
+            }
+            every_navy_leader = {
+                set_nationality = TBH
+            }
+			transfer_navy = { target = TBH }
+				transfer_navy = { target = TBH }
+			delete_unit = {
+				disband = yes
+			}
+		}
+		TBH = {
+			set_technology = { skater_tech = 1 }
+			annex_country = {
+				target = ASS
+				transfer_troops = yes
+			}
+			load_oob = "TBH_assassin_city_greater"
+		}
+		every_state = {
+			limit = {
+				is_core_of = TBH
+				has_state_flag = do_not_exodus
+			}
+			clr_state_flag = do_not_exodus
+		}
+		every_state = {
+			limit = {
+				is_core_of = DSP
+				has_state_flag = do_not_exodus
+			}
+			clr_state_flag = do_not_exodus
+		}
+		hidden_effect = {
+			TBH = {
+				delete_unit_template_and_units = {
+					division_template = "Skate Infantry"
+				}
+			}
+		}
+	}
+
+	option = {
+		name = texas_rework.9012.a
 	}
 }
 
@@ -943,11 +1855,11 @@ news_event = { #CWB invasion of TLL
 	}
 }
 
-news_event = { #fall of the last lodge
-	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.9022" }
-	id = texas_rework.9022
-	title = texas_rework.9022.t
-	desc = texas_rework.9022.desc
+news_event = { #annexation of the last lodge
+	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.9021" }
+	id = texas_rework.9021
+	title = texas_rework.9021.t
+	desc = texas_rework.9021.desc
 	is_triggered_only = yes
 	fire_only_once = yes
 	picture = GFX_event_sub_generic_container_bazaar
@@ -981,12 +1893,85 @@ news_event = { #fall of the last lodge
             }
 			transfer_navy = { target = TBH }
 				transfer_navy = { target = TBH }
+			delete_unit = {
+				disband = yes
+			}
 		}
 		TBH = {
 			annex_country = {
 				target = TLL
 				transfer_troops = yes
 			}
+			load_oob = "TBH_last_lodge"
+		}
+		every_state = {
+			limit = {
+				is_core_of = TBH
+				has_state_flag = do_not_exodus
+			}
+			clr_state_flag = do_not_exodus
+		}
+		every_state = {
+			limit = {
+				is_core_of = CWB
+				has_state_flag = do_not_exodus
+			}
+			clr_state_flag = do_not_exodus
+		}
+	}
+
+	option = {
+		name = texas_rework.9021.a
+	}
+}
+
+news_event = { #larger annexation of the last lodge
+	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.9022" }
+	id = texas_rework.9022
+	title = texas_rework.9022.t
+	desc = texas_rework.9022.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_container_bazaar
+
+	immediate = {
+		every_state = {
+			limit = {
+				is_core_of = TLL
+			}
+			set_state_flag = do_not_exodus
+			remove_core_of = TLL
+			remove_claim_by = TLL
+		}
+		902 = {
+			add_core_of = TBH
+		}
+		898 = {
+			add_core_of = TBH
+		}
+		899 = {
+			add_core_of = CWB
+			transfer_state_to = CWB
+		}
+		TLL = {
+            every_unit_leader = {
+                set_nationality = TBH
+            }
+            every_navy_leader = {
+                set_nationality = TBH
+            }
+			transfer_navy = { target = TBH }
+				transfer_navy = { target = TBH }
+			delete_unit = {
+				disband = yes
+			}
+		}
+		TBH = {
+			annex_country = {
+				target = TLL
+				transfer_troops = yes
+			}
+			load_oob = "TBH_last_lodge_greater"
 		}
 		every_state = {
 			limit = {
@@ -1032,30 +2017,37 @@ news_event = { #CAR invasion of HRO
 	}
 }
 
-news_event = { #fall of Houston
-	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.9033" }
-	id = texas_rework.9033
-	title = texas_rework.9033.t
-	desc = texas_rework.9033.desc
+news_event = { #annexation of houston
+	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.9031" }
+	id = texas_rework.9031
+	title = texas_rework.9031.t
+	desc = texas_rework.9031.desc
 	is_triggered_only = yes
 	fire_only_once = yes
 	picture = GFX_event_sub_generic_container_bazaar
 
 	immediate = {
-		879 = {
-			remove_core_of = HRO
-			remove_claim_by = HRO
-			add_core_of = CAR
-			transfer_state_to = CAR
-		}
 		every_state = {
 			limit = {
 				is_core_of = HRO
 			}
 			set_state_flag = do_not_exodus
-			add_core_of = TBH
 			remove_core_of = HRO
 			remove_claim_by = HRO
+		}
+		879 = {
+			add_core_of = CAR
+			transfer_state_to = CAR
+		}
+		882 = {
+			add_core_of = CAR
+			transfer_state_to = CAR
+		}
+		880 = {
+			add_core_of = TBH
+		}
+		904 = {
+			add_core_of = TBH
 		}
 		HRO = {
             every_unit_leader = {
@@ -1066,12 +2058,16 @@ news_event = { #fall of Houston
             }
 			transfer_navy = { target = TBH }
 				transfer_navy = { target = TBH }
+			delete_unit = {
+				disband = yes
+			}
 		}
 		TBH = {
 			annex_country = {
 				target = HRO
 				transfer_troops = yes
 			}
+			load_oob = "TBH_houston"
 		}
 		every_state = {
 			limit = {
@@ -1090,7 +2086,79 @@ news_event = { #fall of Houston
 	}
 
 	option = {
-		name = texas_rework.9033.a
+		name = texas_rework.9031.a
+	}
+}
+
+news_event = { #larger annexation of houston
+	immediate = { log = "[GetDateText]: [Root.GetName]: event texas_rework.9032" }
+	id = texas_rework.9032
+	title = texas_rework.9032.t
+	desc = texas_rework.9032.desc
+	is_triggered_only = yes
+	fire_only_once = yes
+	picture = GFX_event_sub_generic_container_bazaar
+
+	immediate = {
+		every_state = {
+			limit = {
+				is_core_of = HRO
+			}
+			set_state_flag = do_not_exodus
+			remove_core_of = HRO
+			remove_claim_by = HRO
+		}
+		879 = {
+			add_core_of = CAR
+			transfer_state_to = CAR
+		}
+		882 = {
+			add_core_of = TBH
+		}
+		880 = {
+			add_core_of = TBH
+		}
+		904 = {
+			add_core_of = TBH
+		}
+		HRO = {
+            every_unit_leader = {
+                set_nationality = TBH
+            }
+            every_navy_leader = {
+                set_nationality = TBH
+            }
+			transfer_navy = { target = TBH }
+				transfer_navy = { target = TBH }
+			delete_unit = {
+				disband = yes
+			}
+		}
+		TBH = {
+			annex_country = {
+				target = HRO
+				transfer_troops = yes
+			}
+			load_oob = "TBH_houston_greater"
+		}
+		every_state = {
+			limit = {
+				is_core_of = TBH
+				has_state_flag = do_not_exodus
+			}
+			clr_state_flag = do_not_exodus
+		}
+		every_state = {
+			limit = {
+				is_core_of = CAR
+				has_state_flag = do_not_exodus
+			}
+			clr_state_flag = do_not_exodus
+		}
+	}
+
+	option = {
+		name = texas_rework.9032.a
 	}
 }
 

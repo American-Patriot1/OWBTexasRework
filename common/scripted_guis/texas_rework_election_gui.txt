@@ -1,25 +1,25 @@
-scripted_gui = {
-	ncr_election_gui = {
-		context_type = decision_category
+# scripted_gui = {
+# 	ncr_election_gui = {
+# 		context_type = decision_category
 
-		window_name = "ncr_election_gui"
+# 		window_name = "ncr_election_gui"
 
-		triggers = {
-			progressbar_left_visible = {
-				check_variable = { ncr_vonc_kimball > 0 }
-			}
-			progressbar_right_visible = {
-				check_variable = { ncr_vonc_allgood > 0 }
-			}
-		}
+# 		triggers = {
+# 			progressbar_left_visible = {
+# 				check_variable = { ncr_vonc_kimball > 0 }
+# 			}
+# 			progressbar_right_visible = {
+# 				check_variable = { ncr_vonc_allgood > 0 }
+# 			}
+# 		}
 
-		properties = {
-			progressbar_left = {
-				frame = ncr_vonc_kimball
-			}
-			progressbar_right = {
-				frame = ncr_vonc_allgood
-			}
-		}
-	}
-}
+# 		properties = {
+# 			progressbar_left = {
+# 				frame = ncr_vonc_kimball
+# 			}
+# 			progressbar_right = {
+# 				frame = ncr_vonc_allgood
+# 			}
+# 		}
+# 	}
+# }

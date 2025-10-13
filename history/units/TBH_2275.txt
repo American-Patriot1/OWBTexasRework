@@ -1,59 +1,133 @@
-﻿division_template = {
-	name = "Light Patrol"
+﻿#50 fireteam, 50 demo, 50 anti tank, and 250 infanty equipment a month
+#custom_template_084 - ncr gun
+#custom_template_147
+division_template = {
+	name = "Garrison Company"
+	template_counter = 147
 	regiments = {
 		police_infantry = { x = 0 y = 0 }
 		police_infantry = { x = 0 y = 1 }
 		police_infantry = { x = 1 y = 0 }
 		police_infantry = { x = 1 y = 1 }
-		police_infantry = { x = 2 y = 0 }
-		police_infantry = { x = 2 y = 1 }
-		police_infantry = { x = 3 y = 0 }
-		police_infantry = { x = 3 y = 1 }
 	}
 	priority = 0
 }
-
 division_template = {
-	name = "Heavy Patrol"
+	name = "Patrol Company"
+	template_counter = 147
 	regiments = {
-		infantry = { x = 0 y = 0 }
-		infantry = { x = 0 y = 1 }
-		infantry = { x = 0 y = 2 }
-		infantry = { x = 1 y = 0 }
-		infantry = { x = 1 y = 1 }
-		infantry = { x = 1 y = 2 }
+		police_infantry = { x = 0 y = 0 }
+		police_infantry = { x = 0 y = 1 }
+		police_infantry = { x = 0 y = 2 }
+		police_infantry = { x = 1 y = 0 }
+		police_infantry = { x = 1 y = 1 }
+		police_infantry = { x = 1 y = 2 }
+		fireteam_infantry = { x = 2 y = 0 }
+	}
+	support = {
+		motorized_logistics_company = { x = 0 y = 0 }
+		motorized_medical_chem_company = { x = 1 y = 0 }
+		anti_tank_company = { x = 2 y = 0 }
+		fireteam_support = { x = 3 y = 0 }
+		demolitions_support = { x = 42 y = 0 }
+	}
+	priority = 0
+}
+#custom_template_096
+division_template = {
+	name = "Ranger Company"
+	template_counter = 96
+	regiments = {
+		police_infantry = { x = 0 y = 0 }
+		police_infantry = { x = 0 y = 1 }
+		police_infantry = { x = 0 y = 2 }
+		police_infantry = { x = 1 y = 0 }
+		police_infantry = { x = 1 y = 1 }
+		police_infantry = { x = 1 y = 2 }
+		police_infantry = { x = 2 y = 0 }
+		police_infantry = { x = 2 y = 1 }
+		police_infantry = { x = 2 y = 2 }
+		police_infantry = { x = 3 y = 0 }
+		demolitions_infantry = { x = 3 y = 1 }
+		demolitions_infantry = { x = 3 y = 2 }
+		fireteam_infantry = { x = 4 y = 0 }
+		fireteam_infantry = { x = 4 y = 1 }
+		fireteam_infantry = { x = 4 y = 2 }
+	}
+	support = {
+		motorized_logistics_company = { x = 0 y = 0 }
+		motorized_medical_chem_company = { x = 1 y = 0 }
+		anti_tank_company = { x = 2 y = 0 }
+		demolitions_support = { x = 3 y = 0 }
 	}
 }
-
+#custom_template_121
 division_template = {
-	name = "Rapid Response Group"
+	name = "Light Strike Team"
+	template_counter = 121
 	regiments = {
 		spec_ops = { x = 0 y = 0 }
 		spec_ops = { x = 0 y = 1 }
 		spec_ops = { x = 0 y = 2 }
 		spec_ops = { x = 1 y = 0 }
 		spec_ops = { x = 1 y = 1 }
-
+		spec_ops = { x = 1 y = 2 }
+		spec_ops = { x = 2 y = 0 }
+		spec_ops = { x = 2 y = 1 }
+		spec_ops = { x = 2 y = 2 }
+		spec_ops = { x = 3 y = 0 }
 	}
+	support = {
+		motorized_logistics_company = { x = 0 y = 0 }
+		motorized_medical_chem_company = { x = 1 y = 0 }
+		anti_tank_company = { x = 2 y = 0 }
+		fireteam_support = { x = 3 y = 0 }
+		demolitions_support = { x = 4 y = 0 }
+	}
+	priority = 2
 }
-
+#custom_template_136
 division_template = {
-	name = "Motorized Patrol"
+	name = "Rapid Strike Team"
+	template_counter = 136
 	regiments = {
 		motorized = { x = 0 y = 0 }
 		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
 		motorized = { x = 1 y = 0 }
 		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		motorized_demoteam = { x = 2 y = 2 }
+		motorized_fireteam = { x = 3 y = 0 }
 	}
+	support = {
+		motorized_logistics_company = { x = 0 y = 0 }
+		motorized_medical_chem_company = { x = 1 y = 0 }
+		motorized_maintenance_company = { x = 2 y = 0 }
+		anti_tank_company = { x = 3 y = 0 }
+	}
+	priority = 2
 }
-
+#custom_template_137
 division_template = {
-	name = "Riot Control"
+	name = "Heavy Strike Team"
+	template_counter = 137
 	regiments = {
 		power_armour = { x = 0 y = 0 }
 		power_armour = { x = 0 y = 1 }
+		power_armour = { x = 0 y = 2 }
 		power_armour = { x = 1 y = 0 }
 		power_armour = { x = 1 y = 1 }
+		power_armour = { x = 1 y = 2 }
+		power_armour_fireteam_infantry = { x = 2 y = 0 }
+		power_armour_demolitions_infantry = { x = 2 y = 1 }
+	}
+	support = {
+		motorized_logistics_company = { x = 0 y = 0 }
+		motorized_medical_chem_company = { x = 1 y = 0 }
+		anti_tank_company = { x = 2 y = 0 }
 	}
 	priority = 2
 }
@@ -61,121 +135,184 @@ division_template = {
 units = {
 	division = {
 		name = "Strike Team Alpha"
-		location = 11952
-		division_template = "Motorized Patrol"
+		location = 11960
+		division_template = "Rapid Strike Team"
 		start_experience_factor = 0.8
 		start_equipment_factor = 1.0
 	}
 	division = {
 		name = "Strike Team Beta"
-		location = 11952
-		division_template = "Rapid Response Group"
+		location = 11960
+		division_template = "Light Strike Team"
 		start_experience_factor = 0.8
 		start_equipment_factor = 1.0
 	}
 	division = {
 		name = "Strike Team Gamma"
-		location = 11564
-		division_template = "Rapid Response Group"
+		location = 11960
+		division_template = "Heavy Strike Team"
 		start_experience_factor = 0.8
 		start_equipment_factor = 1.0
 	}
 	division = {
 		name = "Strike Team Delta"
 		location = 11564
-		division_template = "Motorized Patrol"
+		division_template = "Light Strike Team"
 		start_experience_factor = 0.8
 		start_equipment_factor = 1.0
 	}
 	division = {
-		name = "Coleman Guard"
-		location = 1843
-		division_template = "Heavy Patrol"
-		start_experience_factor = 0.5
+		name = "Strike Team Epsilon"
+		location = 11564
+		division_template = "Rapid Strike Team"
+		start_experience_factor = 0.8
 		start_equipment_factor = 1.0
 	}
 	division = {
-		name = "Breckenridge Guard"
-		location = 11687
-		division_template = "Heavy Patrol"
-		start_experience_factor = 0.5
+		name = "Strike Team Zeta"
+		location = 11564
+		division_template = "Heavy Strike Team"
+		start_experience_factor = 0.8
 		start_equipment_factor = 1.0
 	}
 	division = {
-		name = "Brenham Guard"
-		location = 11475
-		division_template = "Heavy Patrol"
-		start_experience_factor = 0.5
-		start_equipment_factor = 1.0
-	}
-	division = {
-		name = "Lone Star Gaurds"
-		location = 11666
-		division_template = "Riot Control"
-		start_experience_factor = 0.75
-		start_equipment_factor = 1.0
-	}
-	division = {
-		name = "Austin Guards"
+		name = "Austin Rangers"
 		location = 11499
-		division_template = "Riot Control"
-		start_experience_factor = 0.8
+		division_template = "Ranger Company"
+		start_experience_factor = 0.6
 		start_equipment_factor = 1.0
 	}
 	division = {
-		name = "Wood Rangers"
-		location = 11605
-		division_template = "Light Patrol"
-		start_experience_factor = 1.0
+		name = "Lone Star Rangers"
+		location = 11666
+		division_template = "Ranger Company"
+		start_experience_factor = 0.6
 		start_equipment_factor = 1.0
 	}
 	division = {
-		name = "Hypaspistes"
-		location = 11943
-		division_template = "Light Patrol"
+		name = "Dallas Rangers"
+		location = 11964
+		division_template = "Ranger Company"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Worthy Rangers"
+		location = 11955
+		division_template = "Ranger Company"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "College Rangers"
+		location = 11840
+		division_template = "Ranger Company"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Temple Patrol"
+		location = 11556
+		division_template = "Patrol Company"
 		start_experience_factor = 0.3
 		start_equipment_factor = 1.0
 	}
 	division = {
-		name = "Rich Guard"
-		location = 12075
-		division_template = "Light Patrol"
+		name = "Brownwood Patrol"
+		location = 11620
+		division_template = "Patrol Company"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Athens Patrol"
+		location = 11943
+		division_template = "Patrol Company"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Granbury Patrol"
+		location = 11657
+		division_template = "Patrol Company"
 		start_experience_factor = 0.3
 		start_equipment_factor = 1.0
 	}
 	division = {
 		name = "Waco Patrol"
 		location = 11607
-		division_template = "Light Patrol"
+		division_template = "Patrol Company"
 		start_experience_factor = 0.3
 		start_equipment_factor = 1.0
 	}
 	division = {
-		name = "Steel Hunters"
+		name = "Hunter Patrol"
 		location = 11846
-		division_template = "Light Patrol"
+		division_template = "Patrol Company"
 		start_experience_factor = 0.3
 		start_equipment_factor = 1.0
 	}
 	division = {
 		name = "Tubeheads Patrol"
-		location = 12013
-		division_template = "Light Patrol"
+		location = 11994
+		division_template = "Patrol Company"
 		start_experience_factor = 0.3
 		start_equipment_factor = 1.0
 	}
 	division = {
 		name = "Hill Patrol"
 		location = 11898
-		division_template = "Light Patrol"
+		division_template = "Patrol Company"
 		start_experience_factor = 0.3
 		start_equipment_factor = 1.0
 	}
 	division = {
-		name = "Robin Hood"
-		location = 11564
-		division_template = "Light Patrol"
-		start_experience_factor = 0.6
+		name = "Brenham Patrol"
+		location = 11475
+		division_template = "Patrol Company"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Northern Patrol"
+		location = 12035
+		division_template = "Patrol Company"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Breckenridge Patrol"
+		location = 11687
+		division_template = "Patrol Company"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Coleman Patrol"
+		location = 1843
+		division_template = "Patrol Company"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Hillsboro Patrol"
+		location = 11544
+		division_template = "Patrol Company"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Lamenting Patrol"
+		location = 11548
+		division_template = "Patrol Company"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "Mckinny Patrol"
+		location = 11995
+		division_template = "Patrol Company"
+		start_experience_factor = 0.3
 		start_equipment_factor = 1.0
 	}
 }
@@ -187,8 +324,8 @@ instant_effect = {
 			type = ballistic_equipment_1
 			creator = "TBH"
 		}
-		requested_factories = 5
-		progress = 0.5
+		requested_factories = 2
+		progress = 0.6
 		efficiency = 40
 	}
 
@@ -197,8 +334,8 @@ instant_effect = {
 			type = bike_equipment_1
 			creator = "TBH"
 		}
-		requested_factories = 2
-		progress = 0.5
+		requested_factories = 1
+		progress = 0.6
 		efficiency = 25
 	}
 
@@ -207,8 +344,8 @@ instant_effect = {
 			type = spec_ops_equipment_1
 			creator = "TBH"
 		}
-		requested_factories = 2
-		progress = 0.5
+		requested_factories = 1
+		progress = 0.6
 		efficiency = 30
 	}
 
@@ -217,8 +354,8 @@ instant_effect = {
 			type = power_armor_equipment_tbh
 			creator = "TBH"
 		}
-		requested_factories = 2
-		progress = 0.5
+		requested_factories = 1
+		progress = 0.6
 		efficiency = 25
 	}
 }

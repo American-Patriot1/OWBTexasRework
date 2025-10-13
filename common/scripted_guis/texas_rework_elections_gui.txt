@@ -2,83 +2,80 @@
 
 scripted_gui = {
 	# Main election screen
-	ncr_elections_ui_window = {
+	texas_rework_elections_ui_window = {
 		context_type = player_context
 
-		window_name = "ncr_elections_ui_window"
+		window_name = "texas_rework_elections_ui_window"
 
 		visible = {
-			OR = {
-				tag = NCR
-				tag = EUR
-			}
+			tag = TBH
 			# Check if country has access to GUI just in case
-			has_country_flag = ncr_elections_gui_allowed_flag
+			has_country_flag = texas_rework_elections_gui_allowed_flag
 
 			# Check if GUI is currently opened
-			has_country_flag = ncr_elections_gui_visible_flag
+			has_country_flag = texas_rework_elections_gui_visible_flag
 
 			# technical triggers, used to set up inner temp variables/arrays
-			calculate_ncr_election_state_frames_trigger = yes
-			calculate_ncr_elections_progressbars_trigger = yes
+			calculate_texas_rework_election_state_frames_trigger = yes
+			calculate_texas_rework_elections_progressbars_trigger = yes
 		}
 
 		effects = {
 			close_button_click = {
-				clr_country_flag = ncr_elections_gui_visible_flag
+				clr_country_flag = texas_rework_elections_gui_visible_flag
 			}
 		}
 
 		triggers = {
 			progressbar_blue_grey_visible = {
-				check_variable = { global.first_candidate_id = 1 }
+				check_variable = { global.texas_rework_first_candidate_id = 1 }
 			}
 			progressbar_red_grey_visible = {
-				check_variable = { global.first_candidate_id = 2 }
+				check_variable = { global.texas_rework_first_candidate_id = 2 }
 			}
 			progressbar_green_grey_visible = {
-				check_variable = { global.first_candidate_id = 3 }
+				check_variable = { global.texas_rework_first_candidate_id = 3 }
 			}
 			progressbar_purple_grey_visible = {
-				check_variable = { global.first_candidate_id = 4 }
+				check_variable = { global.texas_rework_first_candidate_id = 4 }
 			}
 
 			progressbar_grey_blue_visible = {
-				check_variable = { global.second_candidate_id = 1 }
+				check_variable = { global.texas_rework_second_candidate_id = 1 }
 			}
 			progressbar_grey_red_visible = {
-				check_variable = { global.second_candidate_id = 2 }
+				check_variable = { global.texas_rework_second_candidate_id = 2 }
 			}
 			progressbar_grey_green_visible = {
-				check_variable = { global.second_candidate_id = 3 }
+				check_variable = { global.texas_rework_second_candidate_id = 3 }
 			}
 			progressbar_grey_purple_visible = {
-				check_variable = { global.second_candidate_id = 4 }
+				check_variable = { global.texas_rework_second_candidate_id = 4 }
 			}
 		}
 
 		properties = {
 			first_candidate_portrait = {
-				frame = global.first_candidate_id
+				frame = global.texas_rework_first_candidate_id
 			}
 			second_candidate_portrait = {
-				frame = global.second_candidate_id
+				frame = global.texas_rework_second_candidate_id
 			}
 
 			# State colors
-			state_picture_boneyard = {
+			state_picture_trinity = {
 				frame = state_frame_temp_array^1
 			}
-			state_picture_dayglow = {
+			state_picture_colorado = {
 				frame = state_frame_temp_array^2
 			}
-			state_picture_maxson = {
+			state_picture_lone_star = {
 				frame = state_frame_temp_array^3
 			}
-			state_picture_redding = {
+			state_picture_rio_grande = {
 				frame = state_frame_temp_array^4
 			}
-			state_picture_shady_sands = {
+			state_picture_pecos = {
 				frame = state_frame_temp_array^5
 			}
 
@@ -113,37 +110,37 @@ scripted_gui = {
 		# List of states
 		dynamic_lists = {
 			state_data_gridbox = {
-				array = NCR.states_indexes_array
-				entry_container = "state_data_entry_container"
+				array = TBH.states_indexes_array
+				entry_container = "texas_rework_state_data_entry_container"
 			}
 		}
 	}
 
 
 	# Decision category button to open the GUI
-	ncr_elections_decision_category_button_gui = {
+	texas_rework_elections_decision_category_button_gui = {
 		context_type = decision_category
 
-		window_name = "ncr_elections_decision_category_button_ui"
+		window_name = "texas_rework_elections_decision_category_button_ui"
 
 		effects = {
 			open_button_click = {
-				set_country_flag = ncr_elections_gui_visible_flag
+				set_country_flag = texas_rework_elections_gui_visible_flag
 			}
 		}
 
 		triggers = {
 			open_button_click_enabled = {
-				NOT = { has_country_flag = ncr_elections_gui_visible_flag }
+				NOT = { has_country_flag = texas_rework_elections_gui_visible_flag }
 			}
 			open_button_text_visible = {
-				NOT = { has_country_flag = ncr_elections_gui_visible_flag }
+				NOT = { has_country_flag = texas_rework_elections_gui_visible_flag }
 			}
 			open_button_overlay_visible = {
-				has_country_flag = ncr_elections_gui_visible_flag
+				has_country_flag = texas_rework_elections_gui_visible_flag
 			}
 			open_button_text_blocked_visible = {
-				has_country_flag = ncr_elections_gui_visible_flag
+				has_country_flag = texas_rework_elections_gui_visible_flag
 			}
 		}
 	}

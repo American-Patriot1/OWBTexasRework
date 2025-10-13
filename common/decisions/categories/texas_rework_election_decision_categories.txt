@@ -1,0 +1,13 @@
+texas_rework_presidential_election = {
+	allowed = {
+		original_tag = TBH
+	}
+	icon = GFX_decision_category_generic_crisis
+	visible_when_empty = yes
+	priority = 100
+	visible = {
+		has_country_flag = texas_rework_elections_gui_allowed_flag
+	}
+	# button to open election menu
+	scripted_gui = texas_rework_elections_decision_category_button_gui
+}

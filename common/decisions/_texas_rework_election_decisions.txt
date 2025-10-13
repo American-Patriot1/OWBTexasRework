@@ -1,0 +1,1025 @@
+texas_rework_presidential_election = {
+	texas_rework_presidential_election_countdown = {
+		allowed = { always = no } # Fired via event
+		available = { hidden_trigger = { always = no } }
+		days_mission_timeout = 200
+		is_good = yes
+		icon = generic_briefcase
+		timeout_effect = {
+			custom_effect_tooltip = presidential_election_victory_tt
+			calculate_texas_rework_elections_winner_effect = yes
+			country_event = texas_rework_election.2
+		}
+	}
+
+	# kimball_campaigns = { #ways for Kimball to get support
+	# 	allowed = { original_tag = NCR }
+	# 	visible = {
+	# 		has_country_flag = kimball_for_president
+	# 	}
+	# 	available = {
+	# 		original_tag = NCR
+	# 	}
+	# 	fire_only_once = no
+	# 	icon = generic_briefcase
+	# 	days_remove = 25
+	# 	complete_effect = {
+	# 	}
+	# 	fixed_random_seed = no
+	# 	cost = 15
+	# 	remove_effect = {
+
+	# 		random_list = {
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 2 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = kimball_campaigns_dayglow_tt
+	# 			}
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 1 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = kimball_campaigns_boneyard_tt
+	# 			}
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 3 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = kimball_campaigns_maxson_tt
+	# 			}
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 4 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = kimball_campaigns_redding_tt
+	# 			}
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 5 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = kimball_campaigns_shady_sands_tt
+	# 			}
+	# 		}
+	# 	}
+	# }
+	# kimball_funds_osi = { #Kimball woos Shady
+	# 	allowed = { original_tag = NCR }
+	# 	visible = {
+	# 		has_country_flag = kimball_for_president
+	# 	}
+	# 	available = {
+	# 		original_tag = NCR
+	# 	}
+	# 	fire_only_once = no
+	# 	cost = 25
+	# 	icon = generic_briefcase
+	# 	days_remove = 25
+	# 	complete_effect = {
+	# 	}
+	# 	remove_effect = {
+	# 		custom_effect_tooltip = kimball_gains_support_shady_sands_tt
+	# 		set_temp_variable = { state_id = 5 } #Shady Sands
+	# 		set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 		set_temp_variable = { support_to_add = 40 }
+	# 		ncr_elections_add_support_effect = yes
+	# 	}
+	# }
+	# kimball_promotes_ties_with_shi = { #Kimball talks to shi
+	# 	allowed = { original_tag = NCR }
+	# 	visible = {
+	# 		has_country_flag = kimball_for_president
+	# 	}
+	# 	available = {
+	# 		original_tag = NCR
+	# 	}
+	# 	fire_only_once = no
+	# 	icon = generic_briefcase
+	# 	days_remove = 25
+	# 	cost = 25
+	# 	complete_effect = {
+	# 	}
+	# 	remove_effect = {
+	# 		custom_effect_tooltip = kimball_support_maxson_tt
+	# 		set_temp_variable = { state_id = 3 } #Maxson
+	# 		set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 		set_temp_variable = { support_to_add = 40 }
+	# 		ncr_elections_add_support_effect = yes
+
+	# 	}
+	# }
+	# kimball_goes_to_reno = { #Kimball woos reno
+	# 	allowed = { original_tag = NCR }
+	# 	visible = {
+	# 		has_country_flag = kimball_for_president
+	# 	}
+	# 	available = {
+	# 		original_tag = NCR
+	# 	}
+	# 	fire_only_once = yes
+	# 	cost = 25
+	# 	icon = generic_briefcase
+	# 	days_remove = 25
+	# 	complete_effect = {
+	# 	}
+	# 	remove_effect = {
+	# 		custom_effect_tooltip = kimball_support_redding_tt
+	# 		set_temp_variable = { state_id = 4 } #Redding
+	# 		set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 		set_temp_variable = { support_to_add = 70 }
+	# 		ncr_elections_add_support_effect = yes
+	# 		NEW = { news_event = ncr_expansion.12 }
+	# 	}
+	# }
+	# kimball_boneyard = {
+	# 	allowed = { original_tag = NCR }
+	# 	visible = {
+	# 		has_country_flag = kimball_for_president
+	# 	}
+	# 	available = {
+	# 		original_tag = NCR
+	# 	}
+	# 	fire_only_once = yes
+	# 	icon = generic_briefcase
+	# 	days_remove = 25
+	# 	cost = 25
+	# 	complete_effect = {
+	# 	}
+	# 	remove_effect = {
+	# 		set_temp_variable = { state_id = 1 } #Boneyard
+	# 		set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 		set_temp_variable = { support_to_add = 40 }
+	# 		ncr_elections_add_support_effect = yes
+	# 	}
+	# }
+	# kimball_dayglow_visit = {
+	# 	allowed = { original_tag = NCR }
+	# 	visible = {
+	# 		has_country_flag = kimball_for_president
+	# 	}
+	# 	available = {
+	# 		original_tag = NCR
+	# 	}
+	# 	fire_only_once = yes
+	# 	icon = generic_briefcase
+	# 	days_remove = 25
+	# 	cost = 25
+	# 	complete_effect = {
+	# 	}
+	# 	remove_effect = {
+	# 		set_temp_variable = { state_id = 2 } #Dayglow
+	# 		set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 		set_temp_variable = { support_to_add = 40 }
+	# 		ncr_elections_add_support_effect = yes
+
+	# 	}
+	# }
+	# hayes_campaigns = {  #decision for Hayes to Campaign Against you
+	# 	allowed = { always = yes }
+	# 	available = { hidden_trigger = { always = no } }
+	# 	activation = {
+	# 		has_country_flag = hayes_rallies_against_us
+	# 	}
+	# 	days_mission_timeout = 50
+	# 	is_good = no
+	# 	fire_only_once = no
+	# 	icon = generic_briefcase
+	# 	fixed_random_seed = no
+	# 	timeout_effect = {
+	# 		random_list = {
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 2 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = hayes_campaigns_dayglow_tt
+	# 			}
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 1 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = hayes_campaigns_boneyard_tt
+	# 			}
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 3 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = hayes_campaigns_maxson_tt
+	# 			}
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 4 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = hayes_campaigns_redding_tt
+	# 			}
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 5 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = hayes_campaigns_shady_sands_tt
+	# 			}
+	# 		}
+	# 	}
+	# }
+	# hayes_promises_space_program = {  #Hayes against us
+	# 	allowed = { always = yes }
+	# 	available = { hidden_trigger = { always = no } }
+	# 	activation = {
+	# 		has_country_flag = hayes_rallies_against_us
+	# 	}
+	# 	days_mission_timeout = 100
+	# 	is_good = no
+	# 	fire_only_once = yes
+	# 	icon = generic_briefcase
+	# 	timeout_effect = {
+	# 		custom_effect_tooltip = hayes_promises_space_program_tt
+	# 		set_temp_variable = { state_id = 1 }
+	# 		set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+	# 		set_temp_variable = { support_to_add = 10 }
+	# 		ncr_elections_add_support_effect = yes
+	# 		set_temp_variable = { state_id = 2 }
+	# 		set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+	# 		set_temp_variable = { support_to_add = 10 }
+	# 		ncr_elections_add_support_effect = yes
+	# 		set_temp_variable = { state_id = 3 }
+	# 		set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+	# 		set_temp_variable = { support_to_add = 10 }
+	# 		ncr_elections_add_support_effect = yes
+	# 		set_temp_variable = { state_id = 4 }
+	# 		set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+	# 		set_temp_variable = { support_to_add = 10 }
+	# 		ncr_elections_add_support_effect = yes
+	# 		set_temp_variable = { state_id = 5 }
+	# 		set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+	# 		set_temp_variable = { support_to_add = 10 }
+	# 		ncr_elections_add_support_effect = yes
+	# 	}
+	# }
+	# hayes_woos_osi = { #Hayes Against Us
+	# 	allowed = { always = yes }
+	# 	available = { hidden_trigger = { always = no } }
+	# 	activation = {
+	# 		has_country_flag = hayes_rallies_against_us
+	# 	}
+	# 	days_mission_timeout = 170
+	# 	is_good = no
+	# 	fire_only_once = yes
+	# 	icon = generic_briefcase
+	# 	timeout_effect = {
+	# 		custom_effect_tooltip = hayes_woos_osi_tt
+	# 		set_temp_variable = { state_id = 5 }
+	# 		set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+	# 		set_temp_variable = { support_to_add = 40 }
+	# 		ncr_elections_add_support_effect = yes
+	# 	}
+	# }
+	# hayes_peace_brotherhood = { #Hayes Against Us
+	# 	allowed = { always = yes }
+	# 	available = { hidden_trigger = { always = no } }
+	# 	activation = {
+	# 		has_country_flag = hayes_rallies_against_us
+	# 	}
+	# 	days_mission_timeout = 80
+	# 	is_good = no
+	# 	fire_only_once = yes
+	# 	icon = generic_briefcase
+	# 	timeout_effect = {
+	# 		custom_effect_tooltip = hayes_peace_brotherhood_tt
+	# 		set_temp_variable = { state_id = 3 }
+	# 		set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+	# 		set_temp_variable = { support_to_add = 40 }
+	# 		ncr_elections_add_support_effect = yes
+	# 	}
+	# }
+	# hayes_boneyard_followers = {
+	# 	allowed = { always = yes } #Hayes Against US
+	# 	available = { hidden_trigger = { always = no } }
+	# 	activation = {
+	# 		has_country_flag = hayes_rallies_against_us
+	# 	}
+	# 	days_mission_timeout = 120
+	# 	is_good = no
+	# 	fire_only_once = yes
+	# 	icon = generic_briefcase
+	# 	timeout_effect = {
+	# 		custom_effect_tooltip = hayes_boneyard_followers_tt
+	# 		set_temp_variable = { state_id = 1 }
+	# 		set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+	# 		set_temp_variable = { support_to_add = 40 }
+	# 		ncr_elections_add_support_effect = yes
+	# 	}
+	# }
+	# kimball_campaigns_against_you = {  #decision for Kimball to Rally Aainst You  Kimball is first candidate id
+	# 	allowed = { always = yes }
+	# 	available = { hidden_trigger = { always = no } }
+	# 	activation = {
+	# 		has_country_flag = kimball_rallies_against_us
+	# 	}
+	# 	days_mission_timeout = 50
+	# 	is_good = no
+	# 	fire_only_once = no
+	# 	icon = generic_briefcase
+	# 	fixed_random_seed = no
+	# 	timeout_effect = {
+	# 		random_list = {
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 2 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = kimball_campaigns_dayglow_tt
+	# 			}
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 1 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = kimball_campaigns_boneyard_tt
+	# 			}
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 3 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = kimball_campaigns_maxson_tt
+	# 			}
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 4 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = kimball_campaigns_redding_tt
+	# 			}
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 5 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = kimball_campaigns_shady_sands_tt
+	# 			}
+	# 		}
+	# 	}
+	# }
+	# kimball_bloody_flag = {   #Kimball Against Us
+	# 	allowed = { always = yes }
+	# 	available = { hidden_trigger = { always = no } }
+	# 	activation = {
+	# 		has_country_flag = kimball_rallies_against_us
+	# 	}
+	# 	days_mission_timeout = 40
+	# 	is_good = no
+	# 	fire_only_once = yes
+	# 	icon = generic_briefcase
+	# 	timeout_effect = {
+	# 		add_war_support = -0.05
+	# 		custom_effect_tooltip = kimball_bloody_flag_tt
+	# 		set_temp_variable = { state_id = 1 }
+	# 		set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 		set_temp_variable = { support_to_add = 10 }
+	# 		ncr_elections_add_support_effect = yes
+	# 		set_temp_variable = { state_id = 2 }
+	# 		set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 		set_temp_variable = { support_to_add = 10 }
+	# 		ncr_elections_add_support_effect = yes
+	# 		set_temp_variable = { state_id = 3 }
+	# 		set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 		set_temp_variable = { support_to_add = 10 }
+	# 		ncr_elections_add_support_effect = yes
+	# 		set_temp_variable = { state_id = 4 }
+	# 		set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 		set_temp_variable = { support_to_add = 10 }
+	# 		ncr_elections_add_support_effect = yes
+	# 		set_temp_variable = { state_id = 5 }
+	# 		set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 		set_temp_variable = { support_to_add = 10 }
+	# 		ncr_elections_add_support_effect = yes
+	# 	}
+	# }
+	# kimball_divert_power_mojave = {   #Kimball Against Us
+	# 	allowed = { always = yes }
+	# 	available = {
+	# 		hidden_trigger = { always = no }
+	# 		MOT = { exists = yes }
+	# 	}
+	# 	activation = {
+	# 		has_country_flag = kimball_rallies_against_us
+	# 	}
+	# 	days_mission_timeout = 80
+	# 	is_good = no
+	# 	fire_only_once = yes
+	# 	icon = generic_briefcase
+	# 	timeout_effect = {
+	# 		custom_effect_tooltip = kimball_divert_power_mojave_tt
+	# 		set_temp_variable = { state_id = 1 }
+	# 		set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 		set_temp_variable = { support_to_add = 10 }
+	# 		ncr_elections_add_support_effect = yes
+	# 		set_temp_variable = { state_id = 2 }
+	# 		set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 		set_temp_variable = { support_to_add = 10 }
+	# 		ncr_elections_add_support_effect = yes
+	# 		set_temp_variable = { state_id = 3 }
+	# 		set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 		set_temp_variable = { support_to_add = 10 }
+	# 		ncr_elections_add_support_effect = yes
+	# 		set_temp_variable = { state_id = 4 }
+	# 		set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 		set_temp_variable = { support_to_add = 10 }
+	# 		ncr_elections_add_support_effect = yes
+	# 		set_temp_variable = { state_id = 5 }
+	# 		set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 		set_temp_variable = { support_to_add = 10 }
+	# 		ncr_elections_add_support_effect = yes
+	# 		if = {
+	# 			limit = {
+	# 				OR = {
+	# 					is_ai = yes
+	# 					has_equipment = {
+	# 						infantry_equipment > 200
+	# 					}
+	# 				}
+	# 			}
+	# 			send_equipment = {
+	# 				amount = 200
+	# 				type = infantry_equipment
+	# 				target = MOT
+	# 			}
+	# 		}
+	# 		MOT = { news_event = ncr_expansion.13 }
+	# 	}
+	# }
+	# kimball_divide_railroad = {  #Kimball Against Us
+	# 	allowed = { always = yes }
+	# 	available = {
+	# 		hidden_trigger = { always = no }
+	# 		MOS = { NCR = { sphere_controls_all_core_land_of_prev = yes } }
+	# 	}
+	# 	activation = {
+	# 		has_country_flag = kimball_rallies_against_us
+	# 	}
+	# 	days_mission_timeout = 90
+	# 	is_good = no
+	# 	fire_only_once = yes
+	# 	icon = generic_briefcase
+	# 	timeout_effect = {
+	# 		add_timed_idea = {
+	# 			idea = ncr_railroad_to_nowhere
+	# 			days = 100
+	# 		}
+	# 		custom_effect_tooltip = kimball_divide_railroad_tt
+	# 		set_temp_variable = { state_id = 1 }
+	# 		set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 		set_temp_variable = { support_to_add = 10 }
+	# 		ncr_elections_add_support_effect = yes
+	# 		set_temp_variable = { state_id = 2 }
+	# 		set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 		set_temp_variable = { support_to_add = 10 }
+	# 		ncr_elections_add_support_effect = yes
+	# 		set_temp_variable = { state_id = 3 }
+	# 		set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 		set_temp_variable = { support_to_add = 10 }
+	# 		ncr_elections_add_support_effect = yes
+	# 		set_temp_variable = { state_id = 4 }
+	# 		set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 		set_temp_variable = { support_to_add = 10 }
+	# 		ncr_elections_add_support_effect = yes
+	# 		set_temp_variable = { state_id = 5 }
+	# 		set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 		set_temp_variable = { support_to_add = 10 }
+	# 		ncr_elections_add_support_effect = yes
+
+	# 		# TO DO RAILROAD
+	# 	}
+	# }
+	# ### Start of Murphy Opposition
+	# murphy_campaigns_against_you = {  #Murphy rallies against you in this.  Murphy is the first candidate idID
+	# 	allowed = { always = yes }
+	# 	available = { hidden_trigger = { always = no } }
+	# 	activation = {
+	# 		has_country_flag = murphy_rallies_against_us
+	# 	}
+	# 	days_mission_timeout = 50
+	# 	is_good = no
+	# 	fire_only_once = no
+	# 	icon = generic_briefcase
+	# 	fixed_random_seed = no
+	# 	timeout_effect = {
+	# 		random_list = {
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 2 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = murphy_campaigns_dayglow_tt
+	# 			}
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 1 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = murphy_campaigns_boneyard_tt
+	# 			}
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 3 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = murphy_campaigns_maxson_tt
+	# 			}
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 4 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = murphy_campaigns_redding_tt
+	# 			}
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 5 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = murphy_campaigns_shady_sands_tt
+	# 			}
+	# 		}
+	# 	}
+	# }
+	# murphy_boneyard_support = {
+	# 	allowed = { always = yes } #Murphy against us
+	# 	available = { hidden_trigger = { always = no } }
+	# 	activation = {
+	# 		has_country_flag = murphy_rallies_against_us
+	# 	}
+	# 	days_mission_timeout = 120
+	# 	is_good = no
+	# 	fire_only_once = yes
+	# 	icon = generic_briefcase
+	# 	timeout_effect = {
+	# 		custom_effect_tooltip = murphy_boneyard_followers_tt
+	# 		set_temp_variable = { state_id = 1 }
+	# 		set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 		set_temp_variable = { support_to_add = 40 }
+	# 		ncr_elections_add_support_effect = yes
+	# 	}
+	# }
+	# murphy_redding_support = {
+	# 	allowed = { always = yes } #Murphy against us
+	# 	available = { hidden_trigger = { always = no } }
+	# 	activation = {
+	# 		has_country_flag = murphy_rallies_against_us
+	# 	}
+	# 	days_mission_timeout = 70
+	# 	is_good = no
+	# 	fire_only_once = yes
+	# 	icon = generic_briefcase
+	# 	timeout_effect = {
+	# 		custom_effect_tooltip = murphy_redding_tt
+	# 		set_temp_variable = { state_id = 4 } #redding
+	# 		set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 		set_temp_variable = { support_to_add = 40 }
+	# 		ncr_elections_add_support_effect = yes
+	# 	}
+	# }
+	# murphy_shady_sands_workers = {
+	# 	allowed = { always = yes } #Murphy against us
+	# 	available = { hidden_trigger = { always = no } }
+	# 	activation = {
+	# 		has_country_flag = murphy_rallies_against_us
+	# 	}
+	# 	days_mission_timeout = 70
+	# 	is_good = no
+	# 	fire_only_once = yes
+	# 	icon = generic_briefcase
+	# 	timeout_effect = {
+	# 		custom_effect_tooltip = murphy_shady_sands_tt
+	# 		set_temp_variable = { state_id =5 } #shady sands
+	# 		set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 		set_temp_variable = { support_to_add = 40 }
+	# 		ncr_elections_add_support_effect = yes
+	# 	}
+	# }
+	# murphy_maxson_appeal = {
+	# 	allowed = { always = yes } #Murphy against us
+	# 	available = {
+	# 		hidden_trigger = { always = no }
+	# 		BOS = { exists = yes }
+	# 		NOT = { has_war_with = BOS }
+	# 	}
+	# 	activation = {
+	# 		has_country_flag = murphy_rallies_against_us
+	# 	}
+	# 	days_mission_timeout = 70
+	# 	is_good = no
+	# 	fire_only_once = yes
+	# 	icon = generic_briefcase
+	# 	timeout_effect = {
+	# 		custom_effect_tooltip = murphy_maxson_appeal_tt
+	# 		set_temp_variable = { state_id = 3 } #Maxson
+	# 		set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 		set_temp_variable = { support_to_add = 40 }
+	# 		ncr_elections_add_support_effect = yes
+	# 		### TODO
+	# 	}
+	# }
+	# ### Start of Pro Murphy Things
+	# murphy_for_president_campaigns = { #ways for Murphy to get support
+	# 	allowed = { original_tag = NCR }
+	# 	visible = {
+	# 		has_country_flag = murphy_for_president
+	# 	}
+	# 	available = {
+	# 		original_tag = NCR
+	# 	}
+	# 	fire_only_once = no
+	# 	icon = generic_briefcase
+	# 	days_remove = 25
+	# 	complete_effect = {
+	# 	}
+	# 	cost = 15
+	# 	fixed_random_seed = no
+	# 	remove_effect = {
+	# 		random_list = {
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 2 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = murphy_campaigns_dayglow_tt
+	# 			}
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 1 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = murphy_campaigns_boneyard_tt
+	# 			}
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 3 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = murphy_campaigns_maxson_tt
+	# 			}
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 4 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = murphy_campaigns_redding_tt
+	# 			}
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 5 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = murphy_campaigns_shady_sands_tt
+	# 			}
+	# 		}
+	# 	}
+	# }
+	# murphy_approaches_arroyo = { ##Murphy Approaches Arroyo
+	# 	allowed = { original_tag = NCR }
+	# 	visible = {
+	# 		has_country_flag = murphy_for_president
+	# 	}
+	# 	custom_cost_trigger = {
+	# 		set_temp_variable = { temp_cap_cost = 25 }
+	# 		check_variable = {
+	# 			caps_number_display > temp_cap_cost
+	# 		}
+	# 	}
+	# 	custom_cost_text = "caps_decisions_cost_text"
+	# 	available = {
+	# 		original_tag = NCR
+	# 	}
+	# 	icon = generic_briefcase
+	# 	cost = 25
+	# 	days_remove = 25
+	# 	complete_effect = {
+	# 	}
+	# 	remove_effect = {
+	# 		custom_effect_tooltip = murphy_support_arroyo_tt
+	# 		set_temp_variable = { state_id = 4 } #Redding
+	# 		set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 		set_temp_variable = { support_to_add = 40 }
+	# 		set_temp_variable = {
+	# 			caps_to_add = -25
+	# 		}
+	# 		add_caps = yes
+	# 		ncr_elections_add_support_effect = yes
+	# 		ARR = { news_event = ncr_election.3 }
+	# 	}
+	# }
+	# murphy_preaches_land_reform = { ##Murphy  Land Reform
+	# 	allowed = { original_tag = NCR }
+	# 	visible = {
+	# 		has_country_flag = murphy_for_president
+	# 	}
+	# 	custom_cost_trigger = {
+	# 		set_temp_variable = { temp_cap_cost = 25 }
+	# 		check_variable = {
+	# 			caps_number_display > temp_cap_cost
+	# 		}
+	# 	}
+	# 	custom_cost_text = "caps_decisions_cost_text"
+	# 	available = {
+	# 		original_tag = NCR
+	# 	}
+	# 	icon = generic_briefcase
+	# 	cost = 25
+	# 	days_remove = 25
+	# 	complete_effect = {
+	# 	}
+	# 	remove_effect = {
+	# 		custom_effect_tooltip = murphy_preaches_land_reform_tt
+	# 		set_temp_variable = { state_id = 4 } #Redding
+	# 		set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 		set_temp_variable = { support_to_add = 40 }
+	# 		set_temp_variable = {
+	# 			caps_to_add = -25
+	# 		}
+	# 		add_caps = yes
+	# 		ncr_elections_add_support_effect = yes
+	# 	}
+	# }
+	# murphy_speaks_to_followers = { ##Murphy  Land Reform
+	# allowed = { original_tag = NCR }
+	# 	visible = {
+	# 		has_country_flag = murphy_for_president
+	# 	}
+	# 	available = {
+	# 		original_tag = NCR
+	# 	}
+	# 	icon = generic_briefcase
+	# 	cost = 25
+	# 	days_remove = 25
+	# 	complete_effect = {
+	# 	}
+	# 	remove_effect = {
+	# 		custom_effect_tooltip = murphy_speaks_to_followers_tt
+	# 		set_temp_variable = { state_id = 1 } #Boneyard
+	# 		set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 		set_temp_variable = { support_to_add = 40 }
+	# 		ncr_elections_add_support_effect = yes
+	# 	}
+	# }
+	# murphy_organize_workers = {  # Murphy organizes workers in Shady Sands and the Hub
+	# 	allowed = { original_tag = NCR }
+	# 	visible = {
+	# 		has_country_flag = murphy_for_president
+	# 	}
+	# 	available = {
+	# 		original_tag = NCR
+	# 	}
+	# 	fire_only_once = no
+	# 	cost = 20
+	# 	icon = generic_briefcase
+	# 	cost = 25
+	# 	days_remove = 25
+	# 	complete_effect = {
+	# 	}
+	# 	remove_effect = {
+	# 		custom_effect_tooltip = murphy_shady_sand_workers_tt
+	# 		set_temp_variable = { state_id = 5 } # Shady Sands
+	# 		set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 		set_temp_variable = { support_to_add = 40 }
+	# 		ncr_elections_add_support_effect = yes
+	# 	}
+	# }
+	# murphy_brotherhood_reachout = {  # Murphy reaches out to the Brotherhood
+	# 	allowed = { original_tag = NCR }
+	# 	visible = {
+	# 		has_country_flag = murphy_for_president
+	# 	}
+	# 	available = {
+	# 		original_tag = NCR
+	# 	}
+	# 	fire_only_once = yes
+	# 	cost = 20
+	# 	icon = generic_briefcase
+	# 	days_remove = 25
+	# 	complete_effect = {
+	# 	}
+	# 	remove_effect = {
+	# 		custom_effect_tooltip = murphy_brotherhood_reachout_tt
+	# 		set_temp_variable = { state_id = 3 } # Maxson
+	# 		set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+	# 		set_temp_variable = { support_to_add = 40 }
+	# 		ncr_elections_add_support_effect = yes
+	# 		# brotherhood Event
+	# 	}
+	# }
+
+	# ### Pro Hayes things
+	# hayes_campaigns_good = { #ways for Hayes to get support
+	# 	allowed = { original_tag = NCR }
+	# 	visible = {
+	# 		has_country_flag = hayes_for_president
+	# 	}
+	# 	fire_only_once = no
+	# 	icon = generic_briefcase
+	# 	days_remove = 25
+	# 	complete_effect = {
+	# 	}
+	# 	cost = 15
+	# 	fixed_random_seed = no
+	# 	remove_effect = {
+	# 		random_list = {
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 2 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = hayes_campaigns_dayglow_tt
+	# 			}
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 1 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = hayes_campaigns_boneyard_tt
+	# 			}
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 3 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = hayes_campaigns_maxson_tt
+	# 			}
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 4 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = hayes_campaigns_redding_tt
+	# 			}
+	# 			20 = {
+	# 				set_temp_variable = { state_id = 5 }
+	# 				set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+	# 				set_temp_variable = { support_to_add = 30 }
+	# 				ncr_elections_add_support_effect = yes
+	# 				custom_effect_tooltip = hayes_campaigns_shady_sands_tt
+	# 			}
+	# 		}
+	# 	}
+	# }
+	# hayes_provokes_brotherhood = { #Hayes challenges the dicks in the brotherhood
+	# 	allowed = { original_tag = NCR }
+	# 	visible = {
+	# 		has_country_flag = hayes_for_president
+	# 	}
+	# 	available = {
+	# 		original_tag = NCR
+	# 	}
+	# 	fire_only_once = yes
+	# 	cost = 20
+	# 	icon = generic_briefcase
+	# 	days_remove = 25
+	# 	complete_effect = {
+	# 	}
+	# 	remove_effect = {
+	# 		set_temp_variable = { state_id = 3 } #Maxson
+	# 		set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+	# 		set_temp_variable = { support_to_add = 40 }
+	# 		ncr_elections_add_support_effect = yes
+	# 		NCR = {
+	# 			set_temp_variable = { BOS_tension_to_add = 10 }
+	# 			bos_change_tension = yes
+	# 		}
+	# 		# brotherhood Event
+	# 	}
+	# }
+	# hayes_pushes_for_schools = { #Hayes demands schools
+	# 	allowed = { original_tag = NCR }
+	# 	visible = {
+	# 		has_country_flag = hayes_for_president
+	# 	}
+	# 	available = {
+	# 		original_tag = NCR
+	# 	}
+	# 	fire_only_once = yes
+	# 	custom_cost_trigger = {
+	# 		set_temp_variable = { temp_cap_cost = 35 }
+	# 		check_variable = {
+	# 			caps_number_display > temp_cap_cost
+	# 		}
+	# 	}
+	# 	custom_cost_text = "caps_decisions_cost_text"
+	# 	icon = generic_briefcase
+	# 	days_remove = 25
+	# 	complete_effect = {
+	# 	}
+	# 	remove_effect = {
+	# 		set_temp_variable = { state_id = 5 } #Shady Sands
+	# 		set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+	# 		set_temp_variable = { support_to_add = 40 }
+	# 		ncr_elections_add_support_effect = yes
+	# 		set_temp_variable = {
+	# 			caps_to_add = -35
+	# 		}
+	# 		add_caps = yes
+	# 	}
+	# }
+	# hayes_approaches_eureka = { ##Hayes Approaches Eureka
+	# 	allowed = { original_tag = NCR }
+	# 	visible = {
+	# 		has_country_flag = hayes_for_president
+	# 	}
+	# 	custom_cost_trigger = {
+	# 		set_temp_variable = { temp_cap_cost = 25 }
+	# 		check_variable = {
+	# 			caps_number_display > temp_cap_cost
+	# 		}
+	# 	}
+	# 	custom_cost_text = "caps_decisions_cost_text"
+	# 	available = {
+	# 		original_tag = NCR
+	# 	}
+	# 	fire_only_once = yes
+	# 	icon = generic_briefcase
+	# 	days_remove = 25
+	# 	complete_effect = {
+	# 	}
+	# 	remove_effect = {
+	# 		custom_effect_tooltip = hayes_support_eureka_tt
+	# 		set_temp_variable = { state_id = 4 } #Redding
+	# 		set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+	# 		set_temp_variable = { support_to_add = 40 }
+	# 		set_temp_variable = {
+	# 			caps_to_add = -25
+	# 		}
+	# 		add_caps = yes
+	# 		ncr_elections_add_support_effect = yes
+	# 		#EUR = { news_event = ncr_election.3 }
+	# 	}
+	# }
+	# hayes_power_dayglow = {
+	# 	allowed = { original_tag = NCR }
+	# 	visible = {
+	# 		has_country_flag = hayes_for_president
+	# 	}
+	# 	available = {
+	# 		original_tag = NCR
+	# 	}
+	# 	fire_only_once = yes
+	# 	icon = generic_briefcase
+	# 	days_remove = 25
+	# 	cost = 25
+	# 	complete_effect = {
+	# 	}
+	# 	remove_effect = {
+	# 		set_temp_variable = { state_id = 2 } #Dayglow
+	# 		set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+	# 		set_temp_variable = { support_to_add = 40 }
+	# 		ncr_elections_add_support_effect = yes
+
+	# 	}
+	# }
+	# hayes_promises_space_program_good = {  #Hayes against us
+	# 	allowed = { always = yes }
+	# 	available = { hidden_trigger = { always = no } }
+	# 	visible = {
+	# 		has_country_flag = hayes_for_president
+	# 	}
+	# 	#picture = decision_satellite
+	# 	# is_good = no	# Neither is putting mission code in standard decisions @tran
+	# 	cost = 200
+	# 	fire_only_once = yes
+	# 	icon = generic_briefcase
+	# 	# Pretty sure despite the comment next to the start of the decision block that this is supposed to be a support decision, not a mission
+	# 	# Country flag hayes_for_president is only set when Hayes's election path is chosen
+	# 	# Opting to fix the errors caught by CWTools here via converting from mission to decision @tran
+	# 	# timeout_effect = {
+	# 	remove_effect = {
+	# 		custom_effect_tooltip = hayes_promises_space_program_tt
+	# 		set_temp_variable = { state_id = 1 }
+	# 		set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+	# 		set_temp_variable = { support_to_add = 10 }
+	# 		ncr_elections_add_support_effect = yes
+	# 		set_temp_variable = { state_id = 2 }
+	# 		set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+	# 		set_temp_variable = { support_to_add = 10 }
+	# 		ncr_elections_add_support_effect = yes
+	# 		set_temp_variable = { state_id = 3 }
+	# 		set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+	# 		set_temp_variable = { support_to_add = 10 }
+	# 		ncr_elections_add_support_effect = yes
+	# 		set_temp_variable = { state_id = 4 }
+	# 		set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+	# 		set_temp_variable = { support_to_add = 10 }
+	# 		ncr_elections_add_support_effect = yes
+	# 		set_temp_variable = { state_id = 5 }
+	# 		set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+	# 		set_temp_variable = { support_to_add = 10 }
+	# 		ncr_elections_add_support_effect = yes
+	# 	}
+	# }
+}

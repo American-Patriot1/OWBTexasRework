@@ -106,6 +106,7 @@ characters = {
 	}
 	TBH_TEX_cho_bang = {
 		name = LNS_CHO_BANG_NAME
+		name = LNS_CHO_BANG_NAME
 		portraits = {
 			civilian = {
 				large = GFX_Portrait_LNS_cho_bang
@@ -115,6 +116,42 @@ characters = {
 				large = GFX_Portrait_LNS_cho_bang
 				#small =
 			}
+		}
+		country_leader = {
+			desc = LNS_CHO_BANG_DESC
+			ideology = town_hall_democracy
+			traits = {
+				lns_captivating_speaker
+				economic_knowhow
+				radical_reformer
+				stout_defender
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+		country_leader = {
+			desc = LNS_CHO_BANG_DESC
+			ideology = meritocracy
+			traits = {
+				lns_captivating_speaker
+				economic_knowhow
+				radical_reformer
+				stout_defender
+			}
+			expire = "3000.01.01.01"
+			id = -1
+		}
+		country_leader = {
+			desc = LNS_CHO_BANG_DESC
+			ideology = militarist_technocracy
+			traits = {
+				lns_captivating_speaker
+				economic_knowhow
+				radical_reformer
+				stout_defender
+			}
+			expire = "3000.01.01.01"
+			id = -1
 		}
 	}
 	TBH_ledroc_walker = {
@@ -181,6 +218,76 @@ characters = {
 			planning_skill = 2
 			logistics_skill = 1
 			legacy_id = -1
+		}
+	}
+	#uoa
+	TBH_TEX_keats = {
+		name = UOA_KEATS_NAME
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Keats_Animated
+			}
+			army = {
+				large = GFX_Portrait_Keats_Animated
+			}
+		}
+		country_leader = {
+			desc = UOA_KEATS_DESC
+			ideology = town_hall_democracy
+			expire = "3000.01.01.01"
+			id = -1
+		}
+		corps_commander = {
+			traits = {
+				intelligent_trait
+				charismatic_trait
+				vat_skin
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+	#lns
+	TBH_TEX_ralph_murdok = {
+		name = LNS_ralph_murdok_name
+		portraits = {
+			army = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_BOS_generic5
+			}
+			civilian = {
+				#large = gfx_sprite_type_name_or_file_path
+				small = GFX_idea_BOS_generic5
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = LNS_ralph_murdok_theorist
+			desc = LNS_ralph_murdok_theorist_desc
+			allowed = {
+				original_tag = LNS
+			}
+			available = {
+				LNS = {
+					has_completed_focus = lns_victory_of_the_greater_good
+				}
+			}
+			visible = {
+				original_tag = LNS
+			}
+			traits = {
+				military_theorist
+			}
+			research_bonus = {
+				cat_grand_army = 0.15
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 10
+			}
 		}
 	}
 }
