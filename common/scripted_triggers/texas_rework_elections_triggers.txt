@@ -7,7 +7,7 @@ calculate_texas_rework_election_state_frames_trigger = {
 	add_to_temp_array = { state_frame_temp_array = 0 }
 
 	all_of = {
-		array = TBH.states_indexes_array
+		array = TBH.texas_rework_states_indexes_array
 		value = texas_rework_state_id
 
 		# global.first_candidate_support^value -- first candidate's support
@@ -17,15 +17,15 @@ calculate_texas_rework_election_state_frames_trigger = {
 			# First candidate won
             limit = {
                 check_variable = { global.texas_rework_first_candidate_support_array^texas_rework_state_id > 40 }
-                check_variable = { global.texas_rework_first_candidate_support_array^texas_rework_state_id > global.texas_rework_first_candidate_support_array^texas_rework_state_id }
+                check_variable = { global.texas_rework_first_candidate_support_array^texas_rework_state_id > global.texas_rework_second_candidate_support_array^texas_rework_state_id }
             }
             add_to_temp_array = { state_frame_temp_array = global.texas_rework_first_candidate_id }
         }
         else_if = {
 			# Second candidate won
             limit = {
-                check_variable = { global.texas_rework_first_candidate_support_array^texas_rework_state_id > 40 }
-                check_variable = { global.texas_rework_first_candidate_support_array^texas_rework_state_id > global.texas_rework_first_candidate_support_array^texas_rework_state_id }
+                check_variable = { global.texas_rework_second_candidate_support_array^texas_rework_state_id > 40 }
+                check_variable = { global.texas_rework_second_candidate_support_array^texas_rework_state_id > global.texas_rework_first_candidate_support_array^texas_rework_state_id }
             }
             add_to_temp_array = { state_frame_temp_array = global.texas_rework_second_candidate_id }
         }
@@ -44,16 +44,16 @@ calculate_texas_rework_elections_progressbars_trigger = {
 	add_to_temp_array = { second_candidate_progress_frames_array = 0 }
 
 	all_of = {
-		array = TBH.states_indexes_array
+		array = TBH.texas_rework_states_indexes_array
 		value = texas_rework_state_id
 
 		# global.texas_rework_first_candidate_support_array^texas_rework_state_id -- first candidate's support
-		# global.texas_rework_first_candidate_support_array^texas_rework_state_id -- second candidate's support
+		# global.texas_rework_second_candidate_support_array^texas_rework_state_id -- second candidate's support
 
 		add_to_temp_array = { first_candidate_progress_frames_array = global.texas_rework_first_candidate_support_array^texas_rework_state_id }
 
 		set_temp_variable = { second_candidate_support_inverted = 100 }
-		subtract_from_temp_variable = { second_candidate_support_inverted = global.texas_rework_first_candidate_support_array^texas_rework_state_id }
+		subtract_from_temp_variable = { second_candidate_support_inverted = global.texas_rework_second_candidate_support_array^texas_rework_state_id }
 		add_to_temp_array = { second_candidate_progress_frames_array = second_candidate_support_inverted }
 
 		always = yes
@@ -68,32 +68,32 @@ calculate_texas_rework_election_winner_trigger = {
 	set_temp_variable = { second_candidate_states = 0 }
 
 	all_of = {
-		array = TBH.states_indexes_array
+		array = TBH.texas_rework_states_indexes_array
 		value = texas_rework_state_id
 
 		# global.texas_rework_first_candidate_support_array^texas_rework_state_id -- first candidate's support
-		# global.texas_rework_first_candidate_support_array^texas_rework_state_id -- second candidate's support
+		# global.texas_rework_second_candidate_support_array^texas_rework_state_id -- second candidate's support
 
 		if = {
 			limit = {
 				check_variable = { global.texas_rework_first_candidate_support_array^texas_rework_state_id < 40 }
-				check_variable = { global.texas_rework_first_candidate_support_array^texas_rework_state_id < 40 }
+				check_variable = { global.texas_rework_second_candidate_support_array^texas_rework_state_id < 40 }
 			}
 			# pass, no one gets anything
 		}
 		else_if = { # in case state is draw
-			limit = { check_variable = { global.texas_rework_first_candidate_support_array^texas_rework_state_id = global.texas_rework_first_candidate_support_array^texas_rework_state_id } }
+			limit = { check_variable = { global.texas_rework_first_candidate_support_array^texas_rework_state_id = global.texas_rework_second_candidate_support_array^texas_rework_state_id } }
 			# pass, no one gets anything
 		}
 		else_if = {
 			limit = {
-				check_variable = { global.texas_rework_first_candidate_support_array^texas_rework_state_id > global.texas_rework_first_candidate_support_array^texas_rework_state_id }
+				check_variable = { global.texas_rework_first_candidate_support_array^texas_rework_state_id > global.texas_rework_second_candidate_support_array^texas_rework_state_id }
 			}
 			add_to_temp_variable = { first_candidate_states = 1 }
 		}
 		else_if = {
 			limit = {
-				check_variable = { global.texas_rework_first_candidate_support_array^texas_rework_state_id > global.texas_rework_first_candidate_support_array^texas_rework_state_id }
+				check_variable = { global.texas_rework_second_candidate_support_array^texas_rework_state_id > global.texas_rework_first_candidate_support_array^texas_rework_state_id }
 			}
 			add_to_temp_variable = { second_candidate_states = 1 }
 		}

@@ -1,9 +1,13 @@
 ﻿#50 fireteam, 50 demo, 50 anti tank, and 250 infanty equipment a month
 #custom_template_084 - ncr gun
 #custom_template_147
+# Patrol Company
+# Ranger Company
+# Light Strike Team
+# Rapid Strike Team
+# Heavy Strike Team
 division_template = {
 	name = "Garrison Company"
-	template_counter = 147
 	regiments = {
 		police_infantry = { x = 0 y = 0 }
 		police_infantry = { x = 0 y = 1 }
@@ -157,14 +161,14 @@ units = {
 	division = {
 		name = "Strike Team Delta"
 		location = 11564
-		division_template = "Light Strike Team"
+		division_template = "Rapid Strike Team"
 		start_experience_factor = 0.8
 		start_equipment_factor = 1.0
 	}
 	division = {
 		name = "Strike Team Epsilon"
 		location = 11564
-		division_template = "Rapid Strike Team"
+		division_template = "Light Strike Team"
 		start_experience_factor = 0.8
 		start_equipment_factor = 1.0
 	}
@@ -326,7 +330,7 @@ instant_effect = {
 		}
 		requested_factories = 2
 		progress = 0.6
-		efficiency = 40
+		efficiency = 50
 	}
 
 	add_equipment_production = {
@@ -336,7 +340,7 @@ instant_effect = {
 		}
 		requested_factories = 1
 		progress = 0.6
-		efficiency = 25
+		efficiency = 50
 	}
 
 	add_equipment_production = {
@@ -346,7 +350,7 @@ instant_effect = {
 		}
 		requested_factories = 1
 		progress = 0.6
-		efficiency = 30
+		efficiency = 50
 	}
 
 	add_equipment_production = {
@@ -356,6 +360,6 @@ instant_effect = {
 		}
 		requested_factories = 1
 		progress = 0.6
-		efficiency = 25
+		efficiency = 50
 	}
 }

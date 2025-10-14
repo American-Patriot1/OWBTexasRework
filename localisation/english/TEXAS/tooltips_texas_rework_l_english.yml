@@ -38,3 +38,9 @@
   texas_rework_lend_lease_or_volunteer_intervention_support: "Can Only Lend Lease or Send Volunteers to Supported Countries in Active Intevention Zones"
   texas_rework_lend_lease_or_volunteer_intervention_support_tt: "$texas_rework_lend_lease_or_volunteer_intervention_support$"
   texas_rework_intervention_volunteer_size_tt: "Change our max volunteer size by [?TBH.texas_rework_volunteers_to_add|G+] "
+
+  texas_rework_modify_cap_patrol: "§YPatrol Company§!:\nAdd [?modify_unit_cap|.0+] to the §YTemplate Cap§! for this division template."
+  texas_rework_modify_cap_ranger: "§YRanger Company§!:\nAdd [?modify_unit_cap|.0+] to the §YTemplate Cap§! for this division template."
+  texas_rework_modify_cap_light: "§YLight Strike Team§!:\nAdd [?modify_unit_cap|.0+] to the §YTemplate Cap§! for this division template."
+  texas_rework_modify_cap_rapid: "§YRapid Strike Team§!:\nAdd [?modify_unit_cap|.0+] to the §YTemplate Cap§! for this division template."
+  texas_rework_modify_cap_heavy: "§YHeavy Strike Team§!:\nAdd [?modify_unit_cap|.0+] to the §YTemplate Cap§! for this division template."

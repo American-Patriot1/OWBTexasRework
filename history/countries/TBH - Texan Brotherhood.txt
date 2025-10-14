@@ -190,11 +190,11 @@ for_loop_effect = {
     end = 5
     compare = less_than_or_equals
     value = state_index
-	add_to_array = { states_indexes_array = state_index }
+	add_to_array = { texas_rework_states_indexes_array = state_index }
 }
 # 6 values: dump + 5 states
 resize_array = { global.texas_rework_first_candidate_support_array = 6 }
-resize_array = { global.texas_rework_first_candidate_support_array = 6 }
+resize_array = { global.texas_rework_second_candidate_support_array = 6 }
 
 set_rule = { can_send_volunteers = no }
 set_country_flag = is_brotherhood_nation
@@ -215,6 +215,16 @@ set_country_flag = is_texas_nation
 set_country_flag = is_super_mutant_nation
 set_country_flag = grand_doctrine_ai
 set_country_flag = grand_infantry_doctrine_ai
+
+
+#texas division
+country_lock_all_division_template = yes
+set_variable = { TEX_DIVISION_CAP_PATROL = 30 }
+set_variable = { TEX_DIVISION_CAP_RANGER = 10 }
+set_variable = { TEX_DIVISION_CAP_LIGHT = 3 }
+set_variable = { TEX_DIVISION_CAP_RAPID = 3 }
+set_variable = { TEX_DIVISION_CAP_HEAVY = 3 }
+
 
 add_to_array = { global.texas_rework_active_interventions = TBH }
 add_to_array = { global.texas_rework_active_interventions = TAA }

@@ -26,10 +26,10 @@ texas_rework_elections_add_support_effect = {
 	set_variable = { support_surplus = 100 } # how much people in a state are non-aligned
 
 	subtract_from_variable = { support_surplus = global.texas_rework_first_candidate_support_array^texas_rework_state_id }
-	subtract_from_variable = { support_surplus = global.texas_rework_first_candidate_support_array^texas_rework_state_id }
+	subtract_from_variable = { support_surplus = global.texas_rework_second_candidate_support_array^texas_rework_state_id }
 
 	set_temp_variable = { first_candidate_support_temp = global.texas_rework_first_candidate_support_array^texas_rework_state_id }
-	set_temp_variable = { second_candidate_support_temp = global.texas_rework_first_candidate_support_array^texas_rework_state_id }
+	set_temp_variable = { second_candidate_support_temp = global.texas_rework_second_candidate_support_array^texas_rework_state_id }
 
 	log = "[?state_id]"
 	if = {
@@ -137,7 +137,7 @@ texas_rework_elections_add_support_effect = {
 	# Returning results of calculations back into variables
 	log = "[?global.texas_rework_first_candidate_support_array^texas_rework_state_id]"
 	set_variable = { global.texas_rework_first_candidate_support_array^texas_rework_state_id = first_candidate_support_temp }
-	set_variable = { global.texas_rework_first_candidate_support_array^texas_rework_state_id = second_candidate_support_temp }
+	set_variable = { global.texas_rework_second_candidate_support_array^texas_rework_state_id = second_candidate_support_temp }
 	log = "[?global.texas_rework_first_candidate_support_array^texas_rework_state_id]"
 }
 
@@ -172,7 +172,7 @@ texas_rework_elections_remove_support_effect = {
 
 	# Get values of support
 	set_temp_variable = { first_candidate_support_temp = global.texas_rework_first_candidate_support_array^texas_rework_state_id }
-	set_temp_variable = { second_candidate_support_temp = global.texas_rework_first_candidate_support_array^texas_rework_state_id }
+	set_temp_variable = { second_candidate_support_temp = global.texas_rework_second_candidate_support_array^texas_rework_state_id }
 
 	if = {
 		limit = {
@@ -202,7 +202,7 @@ texas_rework_elections_remove_support_effect = {
 
 	# Returning results of calculations back into variables
 	set_variable = { global.texas_rework_first_candidate_support_array^texas_rework_state_id = first_candidate_support_temp }
-	set_variable = { global.texas_rework_first_candidate_support_array^texas_rework_state_id = second_candidate_support_temp }
+	set_variable = { global.texas_rework_second_candidate_support_array^texas_rework_state_id = second_candidate_support_temp }
 }
 
 calculate_texas_rework_elections_winner_effect = {

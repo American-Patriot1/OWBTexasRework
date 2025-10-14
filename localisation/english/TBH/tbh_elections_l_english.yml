@@ -19,11 +19,11 @@
   rio_grande_first_candidate_support: "[?global.texas_rework_first_candidate_support_array^4]%"
   pecos_first_candidate_support: "[?global.texas_rework_first_candidate_support_array^5]%"
 
-  trinity_second_candidate_support: "[?global.texas_rework_first_candidate_support_array^1]%"
-  colorado_second_candidate_support: "[?global.texas_rework_first_candidate_support_array^2]%"
-  lone_star_second_candidate_support: "[?global.texas_rework_first_candidate_support_array^3]%"
-  rio_grande_second_candidate_support: "[?global.texas_rework_first_candidate_support_array^4]%"
-  pecos_second_candidate_support: "[?global.texas_rework_first_candidate_support_array^5]%"
+  trinity_second_candidate_support: "[?global.texas_rework_second_candidate_support_array^1]%"
+  colorado_second_candidate_support: "[?global.texas_rework_second_candidate_support_array^2]%"
+  lone_star_second_candidate_support: "[?global.texas_rework_second_candidate_support_array^3]%"
+  rio_grande_second_candidate_support: "[?global.texas_rework_second_candidate_support_array^4]%"
+  pecos_second_candidate_support: "[?global.texas_rework_second_candidate_support_array^5]%"
 
   texas_rework_ELECTIONS_BUTTON_OPEN_TEXT: "Map of Elections"
   texas_rework_ELECTIONS_BUTTON_OPEN_TEXT_BLOCKED: "§gMap of Elections§!"

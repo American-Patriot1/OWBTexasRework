@@ -18,6 +18,11 @@ scripted_gui = {
 			# technical triggers, used to set up inner temp variables/arrays
 			calculate_texas_rework_election_state_frames_trigger = yes
 			calculate_texas_rework_elections_progressbars_trigger = yes
+			log = "[?state_frame_temp_array]"
+			log = "---------------"
+			log = "^1^1^1^1^"
+			log = "[?state_frame_temp_array^1]"
+			log = "---------------"
 		}
 
 		effects = {
@@ -27,26 +32,26 @@ scripted_gui = {
 		}
 
 		triggers = {
-			progressbar_blue_grey_visible = {
+			progressbar_green_grey_visible = {
 				check_variable = { global.texas_rework_first_candidate_id = 1 }
 			}
-			progressbar_red_grey_visible = {
+			progressbar_blue_grey_visible = {
 				check_variable = { global.texas_rework_first_candidate_id = 2 }
 			}
-			progressbar_green_grey_visible = {
+			progressbar_red_grey_visible = {
 				check_variable = { global.texas_rework_first_candidate_id = 3 }
 			}
 			progressbar_purple_grey_visible = {
 				check_variable = { global.texas_rework_first_candidate_id = 4 }
 			}
 
-			progressbar_grey_blue_visible = {
+			progressbar_grey_green_visible = {
 				check_variable = { global.texas_rework_second_candidate_id = 1 }
 			}
-			progressbar_grey_red_visible = {
+			progressbar_grey_blue_visible = {
 				check_variable = { global.texas_rework_second_candidate_id = 2 }
 			}
-			progressbar_grey_green_visible = {
+			progressbar_grey_red_visible = {
 				check_variable = { global.texas_rework_second_candidate_id = 3 }
 			}
 			progressbar_grey_purple_visible = {
@@ -80,26 +85,26 @@ scripted_gui = {
 			}
 
 			# Progressbars for indivdual states
+			progressbar_green_grey = {
+				frame = first_candidate_progress_frames_array^v
+			}
 			progressbar_blue_grey = {
 				frame = first_candidate_progress_frames_array^v
 			}
 			progressbar_red_grey = {
 				frame = first_candidate_progress_frames_array^v
 			}
-			progressbar_green_grey = {
-				frame = first_candidate_progress_frames_array^v
-			}
 			progressbar_purple_grey = {
 				frame = first_candidate_progress_frames_array^v
 			}
 
+			progressbar_grey_green = {
+				frame = second_candidate_progress_frames_array^v
+			}
 			progressbar_grey_blue = {
 				frame = second_candidate_progress_frames_array^v
 			}
 			progressbar_grey_red = {
-				frame = second_candidate_progress_frames_array^v
-			}
-			progressbar_grey_green = {
 				frame = second_candidate_progress_frames_array^v
 			}
 			progressbar_grey_purple = {
@@ -110,7 +115,7 @@ scripted_gui = {
 		# List of states
 		dynamic_lists = {
 			state_data_gridbox = {
-				array = TBH.states_indexes_array
+				array = TBH.texas_rework_states_indexes_array
 				entry_container = "texas_rework_state_data_entry_container"
 			}
 		}

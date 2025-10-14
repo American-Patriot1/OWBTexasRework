@@ -67,10 +67,16 @@ country_event = {
 			remove_ideas = texas_rework_no_research
 			remove_ideas = texas_rework_broken_economy
 		}
-		TAA = {
-			set_temp_variable = { texas_rework_add_market_factories_taa = 10 }
-			texas_rework_change_market_factories = yes
+		every_state = {
+			limit = {
+				is_controlled_by = TBH
+			}
+			add_core_of = TBH
 		}
+		# TAA = {
+		# 	set_temp_variable = { texas_rework_add_market_factories_taa = 10 }
+		# 	texas_rework_change_market_factories = yes
+		# }
 		# TBH = {
 		# 	load_oob = "TBH_houston_greater"
 		# 	load_oob = "TBH_assassin_city_greater"

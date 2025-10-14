@@ -20,6 +20,42 @@ on_actions = {
 				delete_unit_template_and_units = {
 					division_template = "Militia"
 				}
+				set_division_template_cap = {
+					division_template = "Patrol Company"
+					division_cap = TEX_DIVISION_CAP_PATROL
+				}
+				set_division_force_allow_recruiting = {
+					division_template = "Patrol Company"
+				}
+				set_division_template_cap = {
+					division_template = "Ranger Company"
+					division_cap = TEX_DIVISION_CAP_RANGER
+				}
+				set_division_force_allow_recruiting = {
+					division_template = "Ranger Company"
+				}
+				set_division_template_cap = {
+					division_template = "Light Strike Team"
+					division_cap = TEX_DIVISION_CAP_LIGHT
+				}
+				set_division_force_allow_recruiting = {
+					division_template = "Light Strike Team"
+				}
+				set_division_template_cap = {
+					division_template = "Rapid Strike Team"
+					division_cap = TEX_DIVISION_CAP_RAPID
+				}
+				set_division_force_allow_recruiting = {
+					division_template = "Rapid Strike Team"
+				}
+				set_division_template_cap = {
+					division_template = "Heavy Strike Team"
+					division_cap = TEX_DIVISION_CAP_HEAVY
+				}
+				set_division_force_allow_recruiting = {
+					division_template = "Heavy Strike Team"
+				}
+				
 			}
 		}
 	}

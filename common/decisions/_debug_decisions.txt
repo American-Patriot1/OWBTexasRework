@@ -180,9 +180,25 @@ debug_decisions = {
 			}
 		}
 		complete_effect = {
+			set_temp_variable = { state_id = 1 }
+			set_temp_variable = { candidate_id = global.first_candidate_id }
+			set_temp_variable = { support_to_add = 60 }
+			ncr_elections_add_support_effect = yes
+			set_temp_variable = { state_id = 2 }
+			set_temp_variable = { candidate_id = global.first_candidate_id }
+			set_temp_variable = { support_to_add = 60 }
+			ncr_elections_add_support_effect = yes
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.first_candidate_id }
+			set_temp_variable = { support_to_add = 60 }
+			ncr_elections_add_support_effect = yes
+			set_temp_variable = { state_id = 4 }
+			set_temp_variable = { candidate_id = global.first_candidate_id }
+			set_temp_variable = { support_to_add = 60 }
+			ncr_elections_add_support_effect = yes
 			set_temp_variable = { state_id = 5 }
 			set_temp_variable = { candidate_id = global.first_candidate_id }
-			set_temp_variable = { support_to_add = 40 }
+			set_temp_variable = { support_to_add = 60 }
 			ncr_elections_add_support_effect = yes
 		}
 	}
@@ -194,9 +210,33 @@ debug_decisions = {
 			}
 		}
 		complete_effect = {
+			set_temp_variable = { state_id = 1 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 60 }
+			ncr_elections_add_support_effect = yes
+		}
+		complete_effect = {
+			set_temp_variable = { state_id = 2 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 60 }
+			ncr_elections_add_support_effect = yes
+		}
+		complete_effect = {
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 60 }
+			ncr_elections_add_support_effect = yes
+		}
+		complete_effect = {
+			set_temp_variable = { state_id = 4 }
+			set_temp_variable = { candidate_id = global.second_candidate_id }
+			set_temp_variable = { support_to_add = 60 }
+			ncr_elections_add_support_effect = yes
+		}
+		complete_effect = {
 			set_temp_variable = { state_id = 5 }
 			set_temp_variable = { candidate_id = global.second_candidate_id }
-			set_temp_variable = { support_to_add = 30 }
+			set_temp_variable = { support_to_add = 60 }
 			ncr_elections_add_support_effect = yes
 		}
 	}
@@ -383,13 +423,6 @@ debug_decisions = {
 		days_re_enable = 1
 		complete_effect = {
 			set_country_flag = texas_rework_elections_gui_allowed_flag
-		}
-	}
-	set_texas_rework_elections = {
-		allowed = {
-			tag = TBH
-		}
-		complete_effect = {
 			set_variable = { global.texas_rework_first_candidate_id = 1 }
 			set_variable = { global.texas_rework_second_candidate_id = 2 }
 		}
@@ -399,9 +432,25 @@ debug_decisions = {
 			tag = TBH
 		}
 		complete_effect = {
+			set_temp_variable = { state_id = 1 }
+			set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+			set_temp_variable = { support_to_add = 60 }
+			texas_rework_elections_add_support_effect = yes
+			set_temp_variable = { state_id = 2 }
+			set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+			set_temp_variable = { support_to_add = 60 }
+			texas_rework_elections_add_support_effect = yes
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+			set_temp_variable = { support_to_add = 60 }
+			texas_rework_elections_add_support_effect = yes
+			set_temp_variable = { state_id = 4 }
+			set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
+			set_temp_variable = { support_to_add = 60 }
+			texas_rework_elections_add_support_effect = yes
 			set_temp_variable = { state_id = 5 }
 			set_temp_variable = { candidate_id = global.texas_rework_first_candidate_id }
-			set_temp_variable = { support_to_add = 40 }
+			set_temp_variable = { support_to_add = 60 }
 			texas_rework_elections_add_support_effect = yes
 		}
 	}
@@ -410,9 +459,33 @@ debug_decisions = {
 			tag = TBH
 		}
 		complete_effect = {
+			set_temp_variable = { state_id = 1 }
+			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+			set_temp_variable = { support_to_add = 60 }
+			texas_rework_elections_add_support_effect = yes
+		}
+		complete_effect = {
+			set_temp_variable = { state_id = 2 }
+			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+			set_temp_variable = { support_to_add = 60 }
+			texas_rework_elections_add_support_effect = yes
+		}
+		complete_effect = {
+			set_temp_variable = { state_id = 3 }
+			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+			set_temp_variable = { support_to_add = 60 }
+			texas_rework_elections_add_support_effect = yes
+		}
+		complete_effect = {
+			set_temp_variable = { state_id = 4 }
+			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
+			set_temp_variable = { support_to_add = 60 }
+			texas_rework_elections_add_support_effect = yes
+		}
+		complete_effect = {
 			set_temp_variable = { state_id = 5 }
 			set_temp_variable = { candidate_id = global.texas_rework_second_candidate_id }
-			set_temp_variable = { support_to_add = 30 }
+			set_temp_variable = { support_to_add = 60 }
 			texas_rework_elections_add_support_effect = yes
 		}
 	}
