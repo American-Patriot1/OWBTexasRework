@@ -138,21 +138,21 @@ division_template = {
 
 units = {
 	division = {
-		name = "Strike Team Alpha"
+		name = "Strike Team Alfa"
 		location = 11960
 		division_template = "Rapid Strike Team"
 		start_experience_factor = 0.8
 		start_equipment_factor = 1.0
 	}
 	division = {
-		name = "Strike Team Beta"
+		name = "Strike Team Bravo"
 		location = 11960
 		division_template = "Light Strike Team"
 		start_experience_factor = 0.8
 		start_equipment_factor = 1.0
 	}
 	division = {
-		name = "Strike Team Gamma"
+		name = "Strike Team Charlie"
 		location = 11960
 		division_template = "Heavy Strike Team"
 		start_experience_factor = 0.8
@@ -166,14 +166,14 @@ units = {
 		start_equipment_factor = 1.0
 	}
 	division = {
-		name = "Strike Team Epsilon"
+		name = "Strike Team Echo"
 		location = 11564
 		division_template = "Light Strike Team"
 		start_experience_factor = 0.8
 		start_equipment_factor = 1.0
 	}
 	division = {
-		name = "Strike Team Zeta"
+		name = "Strike Team Foxtrot"
 		location = 11564
 		division_template = "Heavy Strike Team"
 		start_experience_factor = 0.8
